@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PortalTextureSetup : MonoBehaviour {
 
-	public Camera cameraA;
-	public Camera cameraB;
+	[SerializeField] private Camera cameraA;
+	[SerializeField] private Camera cameraB;
 
-	public Material cameraMatA;
-	public Material cameraMatB;
+	[SerializeField] private Material cameraMatA;
+	[SerializeField] private Material cameraMatB;
 
 	// Use this for initialization
 	void Start () {

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PortalTeleporter : MonoBehaviour {
 
-	public Transform player;
-	public Transform reciever;
+	[SerializeField] private Transform player;
+	[SerializeField] private Transform reciever;
 
-	private bool playerIsOverlapping = false;
+	private bool playerOverlaps = false;
 
 	// Update is called once per frame
 	void Update () {
-		if (playerIsOverlapping)
+		if (playerOverlaps)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
 			float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
@@ -27,7 +27,7 @@ public class PortalTeleporter : MonoBehaviour {
 				Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
 				player.position = reciever.position + positionOffset;
 
-				playerIsOverlapping = false;
+				playerOverlaps = false;
 			}
 		}
 	}
@@ -36,7 +36,7 @@ public class PortalTeleporter : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			playerIsOverlapping = true;
+			playerOverlaps = true;
 		}
 	}
 
@@ -44,7 +44,7 @@ public class PortalTeleporter : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			playerIsOverlapping = false;
+			playerOverlaps = false;
 		}
 	}
 }

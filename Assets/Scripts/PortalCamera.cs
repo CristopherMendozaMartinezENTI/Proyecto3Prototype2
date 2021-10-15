@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PortalCamera : MonoBehaviour {
 
-	public Transform playerCamera;
-	public Transform portal;
-	public Transform otherPortal;
+	[SerializeField] private Transform playerCamera;
+	[SerializeField] private Transform portal;
+	[SerializeField] private Transform otherPortal;
 	
 	// Update is called once per frame
 	void Update () {

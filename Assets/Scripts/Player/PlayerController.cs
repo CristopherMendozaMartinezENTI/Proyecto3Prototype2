@@ -99,12 +99,12 @@ public class PlayerController : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
         jumping = Input.GetButton("Jump");
-        crouching = Input.GetKey(KeyCode.LeftShift);
+        crouching = Input.GetKey(KeyCode.LeftControl);
 
         //Crouching
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
             startCrouch();
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftControl))
             stopCrouch();
 
         //Double Jumping
@@ -126,6 +126,17 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(transform.position, orientation.forward, 1, LadderLayer) && y > .9f)
             climb();
         else alreadyStoppedAtLadder = false;
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Time.timeScale = 0.5f;
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02f;
+        }
     }
 
     private void resetTapTimes()

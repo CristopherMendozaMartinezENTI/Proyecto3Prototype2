@@ -36,7 +36,8 @@ public class TerminalGameManager : MonoBehaviour {
 
     private void Awake()
     {
-
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Application.targetFrameRate = 60;
 
         pawns = new List<GameObject>();

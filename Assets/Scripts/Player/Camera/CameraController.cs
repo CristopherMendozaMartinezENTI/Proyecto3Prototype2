@@ -19,6 +19,7 @@ public class CameraController : MonoBehaviour {
 	//Variables to store old rotation values for interpolation purposes;
 	float oldHorizontalInput = 0f;
 	float oldVerticalInput = 0f;
+	bool isLocked = false;
 
 	//Camera turning speed; 
 	public float cameraSpeed = 250f;
@@ -78,10 +79,17 @@ public class CameraController : MonoBehaviour {
 		HandleCameraRotation();
 	}
 
+	public void LockRotation(bool isLockedNow)
+    {
+		isLocked = isLockedNow;
+	}
+
 	//Get user input and handle camera rotation;
 	//This method can be overridden in classes derived from this base class to modify camera behaviour;
 	protected virtual void HandleCameraRotation()
 	{
+		if(isLocked) { return; }
+
 		if(cameraInput == null)
 			return;
 

@@ -77,7 +77,7 @@ public class Pawns : MonoBehaviour {
                 if (newPos != path[0].transform.position + Vector3.up)
                     transform.position = path[0].transform.position + Vector3.up;
 
-                CheckRenderQueue(myGm.MainCam);
+                //CheckRenderQueue(myGm.MainCam);
                 path.RemoveAt(0);
                 newPos = Vector3.one * 10000;
                 

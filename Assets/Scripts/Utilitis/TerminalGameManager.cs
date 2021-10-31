@@ -114,7 +114,7 @@ public class TerminalGameManager : MonoBehaviour {
                         {
                             if (selectedPlayer) selectedPlayer.GetComponent<Outline>().OutlineWidth = 0.0f;
                             selectedPlayer = hit.collider.gameObject;
-                            selectedPlayer.GetComponent<Outline>().OutlineWidth = 3.5f;
+                            selectedPlayer.GetComponent<Outline>().OutlineWidth = 1.5f;
                         }
                     }
                     else if (hit.collider.tag == "Platform" && selectedPlayer)

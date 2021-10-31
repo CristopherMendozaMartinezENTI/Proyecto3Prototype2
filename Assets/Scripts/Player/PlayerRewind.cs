@@ -19,12 +19,12 @@ public class PlayerRewind : MonoBehaviour
         public Quaternion cameraRot;
     }
 
-    [SerializeField]  private  List<RewindData> rData = new List<RewindData>();
+    [SerializeField] private List<RewindData> rData = new List<RewindData>();
 
     // Start is called before the first frame update
     private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,19 +32,17 @@ public class PlayerRewind : MonoBehaviour
     {
         manageRewindData();
 
-        for(int i = 0; i < rData.Count - 1; i++)
+        for (int i = 0; i < rData.Count - 1; i++)
         {
             Debug.DrawLine(rData[i].playerPos, rData[i + 1].playerPos);
         }
 
         getRewindInpunt();
-
-
     }
 
     private void getRewindInpunt()
     {
-        if(Input.GetKeyDown(KeyCode.E) && rData.Count != 0)
+        if (Input.GetKeyDown(KeyCode.E) && rData.Count != 0)
         {
             StartCoroutine(Rewind());
         }
@@ -87,6 +85,7 @@ public class PlayerRewind : MonoBehaviour
         Vector3 curretDataPlayerStarPos = transform.position;
         Quaternion currentPlayerStartRotation = transform.rotation;
         //Quaternion currentCameraStartRotation = playerCameraController.transform.rotation;
+        Camera.main.GetComponent<ScanlinesEffect>().enabled = true;
 
         while (rData.Count > 0)
         {
@@ -95,14 +94,14 @@ public class PlayerRewind : MonoBehaviour
 
             while (t < secordsPerData)
             {
-                transform.position = Vector3.Lerp(curretDataPlayerStarPos, 
-                    rData[rData.Count - 1].playerPos, t /secordsPerData);
+                transform.position = Vector3.Lerp(curretDataPlayerStarPos,
+                    rData[rData.Count - 1].playerPos, t / secordsPerData);
 
                 transform.rotation = Quaternion.Lerp(currentPlayerStartRotation,
                          rData[rData.Count - 1].playerRot, t / secordsPerData);
 
                 //transform.rotation = Quaternion.Lerp(currentCameraStartRotation,
-                         //rData[rData.Count - 1].cameraRot, t / secordsPerData);
+                //rData[rData.Count - 1].cameraRot, t / secordsPerData);
 
                 t += Time.deltaTime;
 
@@ -116,5 +115,6 @@ public class PlayerRewind : MonoBehaviour
         }
         playerCameraController.LockRotation(false);
         canCollectRecallData = true;
+        Camera.main.GetComponent<ScanlinesEffect>().enabled = false;
     }
 }

@@ -15,5 +15,10 @@ public class SceneChanger : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }

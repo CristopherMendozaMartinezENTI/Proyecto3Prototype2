@@ -20,5 +20,10 @@ public class SceneChanger : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }

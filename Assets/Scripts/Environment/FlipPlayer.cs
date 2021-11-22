@@ -38,7 +38,7 @@ public class FlipPlayer : MonoBehaviour {
 			return;
 
 		//Play audio cue;
-		//audioSource.Play();
+		audioSource.Play();
 
 		Transform _transform = _controller.transform;
 

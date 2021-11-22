@@ -16,6 +16,7 @@ public class EnableObj : MonoBehaviour
             {
                 obj.SetActive(true);
                 pressE.SetActive(false);
+                this.gameObject.GetComponent<AudioSource>().Play();
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;
             }
         }

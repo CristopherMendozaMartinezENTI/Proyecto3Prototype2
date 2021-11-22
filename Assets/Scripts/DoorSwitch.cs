@@ -16,6 +16,7 @@ public class DoorSwitch : MonoBehaviour
             {
                 door.GetComponent<Animator>().Play("door_3_open");
                 pressE.SetActive(false);
+                this.gameObject.GetComponent<AudioSource>().Play();
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;
             }
         }

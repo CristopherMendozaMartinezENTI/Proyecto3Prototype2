@@ -42,7 +42,7 @@ public class PlayerRewind : MonoBehaviour
 
     private void getRewindInpunt()
     {
-        if (Input.GetKeyDown(KeyCode.E) && rData.Count != 0)
+        if (Input.GetKeyDown(KeyCode.R) && rData.Count != 0)
         {
             StartCoroutine(Rewind());
         }

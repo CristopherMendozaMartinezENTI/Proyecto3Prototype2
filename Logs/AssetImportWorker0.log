@@ -15,11 +15,19 @@ D:/Proyectos/Juegos/Proyecto3Prototype2
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 54976
 Successfully changed project path to: D:/Proyectos/Juegos/Proyecto3Prototype2
 D:/Proyectos/Juegos/Proyecto3Prototype2
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 66.92 ms, found 0 plugins.
+=======
+1114
+Successfully changed project path to: C:/Users/Roger/Documents/GitHub/Proyecto3Prototype2
+C:/Users/Roger/Documents/GitHub/Proyecto3Prototype2
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 57.96 ms, found 0 plugins.
+>>>>>>> master
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.4f1 (4cd64a618c1b)
 [Subsystems] Discovering subsystems at path D:/Unity Editor/2021.1.4f1/Editor/Data/Resources/UnitySubsystems
@@ -32,6 +40,7 @@ Direct3D:
     VRAM:     6052 MB
     Driver:   27.21.14.6611
 Initialize mono
+<<<<<<< HEAD
 Mono path[0] = 'D:/Unity Editor/2021.1.4f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
@@ -443,10 +452,110 @@ System memory in use after: 146.6 MB.
 
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3800.
 Total: 9.729700 ms (FindLiveObjects: 0.933800 ms CreateObjectMapping: 0.382500 ms MarkObjects: 8.034500 ms  DeleteObjects: 0.375800 ms)
+=======
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001607 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 57.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.033 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001958 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 55.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.858 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2754 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.9 MB.
+System memory in use after: 124.8 MB.
+
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 3200.
+Total: 5.245600 ms (FindLiveObjects: 0.232500 ms CreateObjectMapping: 0.069400 ms MarkObjects: 4.732400 ms  DeleteObjects: 0.210400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Textures/Icon.png
+  artifactKey: Guid(96051da8e12a13f4cb66582f4c4b4c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Icon.png using Guid(96051da8e12a13f4cb66582f4c4b4c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efbd26c0bd58659499c6bbd7487def2a') in 0.083206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Textures/Tittle.png
+  artifactKey: Guid(2d7894a523d2ad04aac48fd6278aad45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Tittle.png using Guid(2d7894a523d2ad04aac48fd6278aad45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bc482da344376c497825affc92be94a') in 0.020653 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Textures/grid.png
+  artifactKey: Guid(3993c009518dfd344b43b0f5b2befdd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/grid.png using Guid(3993c009518dfd344b43b0f5b2befdd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a947eac882a2332c15364e534eba1a1') in 0.007969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Assets/Textures/Loading Screen.png
+  artifactKey: Guid(d1a0042ab7191a441a016d30fa68cd24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Loading Screen.png using Guid(d1a0042ab7191a441a016d30fa68cd24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f98d088ba2c1d5ed5b799bb4ab14f32e') in 0.010996 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002599 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.861 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2690 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.0 MB.
+System memory in use after: 126.9 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3272.
+Total: 5.225200 ms (FindLiveObjects: 0.285000 ms CreateObjectMapping: 0.068800 ms MarkObjects: 4.679400 ms  DeleteObjects: 0.191100 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+Registered in 0.002002 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.842 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.9 MB.
+System memory in use after: 126.8 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3275.
+Total: 5.254300 ms (FindLiveObjects: 0.278100 ms CreateObjectMapping: 0.063100 ms MarkObjects: 4.699200 ms  DeleteObjects: 0.212800 ms)
+>>>>>>> master
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002156 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -495,10 +604,85 @@ System memory in use after: 146.1 MB.
 
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3806.
 Total: 9.083700 ms (FindLiveObjects: 0.342000 ms CreateObjectMapping: 0.185600 ms MarkObjects: 8.252800 ms  DeleteObjects: 0.301800 ms)
+=======
+Registered in 0.002040 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.806 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.0 MB.
+System memory in use after: 126.9 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3278.
+Total: 5.831600 ms (FindLiveObjects: 0.245600 ms CreateObjectMapping: 0.069500 ms MarkObjects: 5.303600 ms  DeleteObjects: 0.212100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2877.622326 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_3_LOD0.fbx
+  artifactKey: Guid(6503a922a0ea44849b460610b2ab6d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_3_LOD0.fbx using Guid(6503a922a0ea44849b460610b2ab6d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba24fcac4020bac78053b158441eec8') in 0.085663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.440290 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_3_LOD1.fbx
+  artifactKey: Guid(a140b27441a26454b823cd2bbd6ed96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_3_LOD1.fbx using Guid(a140b27441a26454b823cd2bbd6ed96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21ffee3d572b496ee262a8fe8317f388') in 0.013810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 541.241886 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/New Prefab.prefab
+  artifactKey: Guid(8fb91aebd5e59e64ca1e175ae1f9f470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/New Prefab.prefab using Guid(8fb91aebd5e59e64ca1e175ae1f9f470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b290f93a24b1df478fa9219d07f10373') in 0.008325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.233975 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/Zona distorsion.prefab
+  artifactKey: Guid(44506cadc0e600c41a89c41f7e2523a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/Zona distorsion.prefab using Guid(44506cadc0e600c41a89c41f7e2523a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f0c19f9ea87e6f7d196d4dcad135ec') in 0.108930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.497333 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/Zona distorsion.prefab
+  artifactKey: Guid(44506cadc0e600c41a89c41f7e2523a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/Zona distorsion.prefab using Guid(44506cadc0e600c41a89c41f7e2523a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525f1815de99f1b04a2a8ccd375e1c83') in 0.085111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.176183 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/Zona distorsion.prefab
+  artifactKey: Guid(44506cadc0e600c41a89c41f7e2523a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/Zona distorsion.prefab using Guid(44506cadc0e600c41a89c41f7e2523a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '301c823587064f405e516c2920a9be42') in 0.083996 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002193 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.817 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.6 MB.
+System memory in use after: 128.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3289.
+Total: 5.486800 ms (FindLiveObjects: 0.260800 ms CreateObjectMapping: 0.069700 ms MarkObjects: 4.931700 ms  DeleteObjects: 0.223700 ms)
+>>>>>>> master
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.003006 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -515,10 +699,29 @@ System memory in use after: 146.2 MB.
 
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3809.
 Total: 15.261000 ms (FindLiveObjects: 1.455600 ms CreateObjectMapping: 0.550500 ms MarkObjects: 12.535500 ms  DeleteObjects: 0.713500 ms)
+=======
+Registered in 0.002204 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.803 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.6 MB.
+System memory in use after: 128.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3292.
+Total: 5.211800 ms (FindLiveObjects: 0.240800 ms CreateObjectMapping: 0.068700 ms MarkObjects: 4.688900 ms  DeleteObjects: 0.212600 ms)
+>>>>>>> master
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002179 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -535,10 +738,29 @@ System memory in use after: 146.2 MB.
 
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3812.
 Total: 12.629500 ms (FindLiveObjects: 0.487700 ms CreateObjectMapping: 0.230800 ms MarkObjects: 11.572500 ms  DeleteObjects: 0.336900 ms)
+=======
+Registered in 0.002001 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.773 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.6 MB.
+System memory in use after: 128.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3295.
+Total: 5.102500 ms (FindLiveObjects: 0.250300 ms CreateObjectMapping: 0.068400 ms MarkObjects: 4.588900 ms  DeleteObjects: 0.194000 ms)
+>>>>>>> master
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002168 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -555,10 +777,29 @@ System memory in use after: 146.2 MB.
 
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3815.
 Total: 8.803600 ms (FindLiveObjects: 0.348200 ms CreateObjectMapping: 0.170500 ms MarkObjects: 7.990700 ms  DeleteObjects: 0.292700 ms)
+=======
+Registered in 0.002000 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.825 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.8 MB.
+System memory in use after: 128.7 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3298.
+Total: 5.585200 ms (FindLiveObjects: 0.269600 ms CreateObjectMapping: 0.069800 ms MarkObjects: 5.017400 ms  DeleteObjects: 0.227600 ms)
+>>>>>>> master
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.001997 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -580,11 +821,47 @@ Total: 14.721900 ms (FindLiveObjects: 1.124700 ms CreateObjectMapping: 0.891900 
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.002176 seconds.
+=======
+Registered in 0.001905 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.774 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.8 MB.
+System memory in use after: 128.7 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3301.
+Total: 5.075400 ms (FindLiveObjects: 0.238600 ms CreateObjectMapping: 0.065600 ms MarkObjects: 4.561800 ms  DeleteObjects: 0.208700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3174.635703 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_4_LOD.prefab
+  artifactKey: Guid(04109e82c0d966447966dba624e3821b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_4_LOD.prefab using Guid(04109e82c0d966447966dba624e3821b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fd1080af4389dc0b4e5ed8cd3200cf1') in 0.069084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.005751 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_4_LOD.prefab
+  artifactKey: Guid(04109e82c0d966447966dba624e3821b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_4_LOD.prefab using Guid(04109e82c0d966447966dba624e3821b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c92f4f109b83fa6e28d854fbb707e251') in 0.014149 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002166 seconds.
+>>>>>>> master
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.482 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
@@ -596,4 +873,205 @@ System memory in use after: 146.3 MB.
 Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3821.
 Total: 9.529000 ms (FindLiveObjects: 0.341800 ms CreateObjectMapping: 0.148900 ms MarkObjects: 8.489100 ms  DeleteObjects: 0.546600 ms)
 
+=======
+- Completed reload, in  0.761 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.8 MB.
+System memory in use after: 128.7 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3305.
+Total: 5.127400 ms (FindLiveObjects: 0.246800 ms CreateObjectMapping: 0.077800 ms MarkObjects: 4.592600 ms  DeleteObjects: 0.209300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1027.691974 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L 1.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L 1.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '117e39f03104fdb140139fd9f29d3683') in 0.053911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.419420 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L 1.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L 1.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aedc4eaa86d50186afa8f08a35172fa') in 0.018557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.856090 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_2.prefab
+  artifactKey: Guid(6812e31ceb91fc04da03973c6b1054cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_2.prefab using Guid(6812e31ceb91fc04da03973c6b1054cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76c3cd374e874b88e049842ce0a84509') in 0.012816 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 374.266848 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L 1.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L 1.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64b21e1ba5e0d803616e43e1357a7e9b') in 0.026046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.922641 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61aaa30ec3d86b8451fbe4ff56fb09b3') in 0.024920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.431220 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3d9d9cd9ab065116dfb3c3669c62faa') in 0.026962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.630355 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a2cb41291ed281af61e29836f315ba') in 0.026705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.936062 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd27cae1a9db46e0933e4d191b8e4ee7') in 0.024922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.194851 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '448a653472d73f6efb4ca473cd9c688f') in 0.023824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.800036 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bea19d379b10a676b4c3d130c3af9f9') in 0.025018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.588928 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee52709c038be80374806509743e5651') in 0.023033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.385470 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b16bb0bb8142e610dc3b8b7b274eb6') in 0.024587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.183012 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a99d3d4200fd295db50eae5975614d9') in 0.023460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.425110 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad89d722e71f136765256a2023e432be') in 0.024817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.674406 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebc844d2918da5e95ca4f0772c165ef8') in 0.025693 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.480043 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6966b4832f12f222221b10a814d882e') in 0.026267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.983242 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c8fb0e9f058afab92299024505b154e') in 0.025575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.635826 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74416d359d11c839488ff71f8b573e18') in 0.025848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.819088 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c5fe2d897118d1b6a35723a4646ee1b') in 0.023383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.626975 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c11035bb0a06d9c09171960a5145700') in 0.026270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.378387 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c76893175465f9cd56b67dd85c68152b') in 0.022258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.335361 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c665ce9d9bd98cc38ec5fecf9d16576a') in 0.022979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.790989 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '354925b63ced8409e7ca86be7892dd84') in 0.027456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.025274 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1413aebd19351293cf3a172f4539bb60') in 0.026043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.096333 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b43e596021542272a5354bb592ff471e') in 0.022123 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.796544 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccc08eef3351ddee0a71816cf84117ca') in 0.027636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.281299 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab
+  artifactKey: Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_B.prefab using Guid(cade73de963c0764583275bc6ac32e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30d7396cb395ab2416fe2a170b22a2a4') in 0.024250 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001972 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.786 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.3 MB.
+System memory in use after: 129.2 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3309.
+Total: 7.427400 ms (FindLiveObjects: 0.332800 ms CreateObjectMapping: 0.082700 ms MarkObjects: 6.696700 ms  DeleteObjects: 0.313900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 346.412502 seconds.
+  path: Assets/Design/ProtoLevel/PrototypeMadness.unity
+  artifactKey: Guid(ec8de684b43e7b440a03d7bf8a406e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Design/ProtoLevel/PrototypeMadness.unity using Guid(ec8de684b43e7b440a03d7bf8a406e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '200d50e0a4149e0f1c40581df2aa64c3') in 0.013117 seconds 
+>>>>>>> master
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

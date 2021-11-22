@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorSwitch : MonoBehaviour
+public class EnableObj : MonoBehaviour
 {
-    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject obj;
     [SerializeField] private GameObject pressE;
 
     private void OnTriggerStay(Collider other)
@@ -14,7 +14,7 @@ public class DoorSwitch : MonoBehaviour
             pressE.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                door.GetComponent<Animator>().Play("door_3_open");
+                obj.SetActive(true);
                 pressE.SetActive(false);
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;
             }

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//This camera input class is an example of how to get input from a connected mouse using Unity's default input system;
-//It also includes an optional mouse sensitivity setting;
+//Este script permite controlar la camara mediante el uso del raton
 public class CameraMouseInput : CameraInput
 {
     //Mouse input axes;

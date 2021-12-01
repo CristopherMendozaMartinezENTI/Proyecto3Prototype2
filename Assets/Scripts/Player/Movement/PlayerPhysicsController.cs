@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-//This script handles all physics, collision detection and ground detection;
-//It expects a movement velocity (via 'SetVelocity') every 'FixedUpdate' frame from an external script (like a controller script) to work;
-//It also provides several getter methods for important information (whether the mover is grounded, the current surface normal [...]);
+//Esta script controla todo lo relacionado con las fisicas del player
 public class PlayerPhysicsController : MonoBehaviour {
 
 	//Collider variables;

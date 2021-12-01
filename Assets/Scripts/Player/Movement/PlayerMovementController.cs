@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Advanced walker controller script;
-//This controller is used as a basis for other controller types ('SidescrollerController');
-//Custom movement input can be implemented by creating a new script that inherits 'AdvancedWalkerController' and overriding the 'CalculateMovementDirection' function;
+////Esta script permite controlar el movimiento del player
 public class PlayerMovementController : Controller {
 
 	//References to attached components;

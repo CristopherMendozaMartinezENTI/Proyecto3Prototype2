@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//This abstract class is the base for all other controller components (such as 'AdvancedWalkerController');
-//It can be extended to create a custom controller class;
+//Esto es una clase abstracta que se puede utilizar para crear controladores tanto players como IA
 public abstract class Controller : MonoBehaviour {
 
 	//Getters;

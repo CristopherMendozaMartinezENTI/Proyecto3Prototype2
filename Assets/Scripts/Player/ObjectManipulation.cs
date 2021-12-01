@@ -19,7 +19,6 @@ public class ObjectManipulation : MonoBehaviour
     private GameObject player;
     private Rigidbody grabbedRigidbody;
 
-
     private void Start()
     {
         player = GameObject.Find("Player");

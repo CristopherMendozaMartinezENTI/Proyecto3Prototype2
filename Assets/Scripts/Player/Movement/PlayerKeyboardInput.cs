@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//This character movement input class is an example of how to get input from a keyboard to control the character;
+//Clase para control por teclado
 public class PlayerKeyboardInput : PlayerInput
 {
 	public string horizontalInputAxis = "Horizontal";

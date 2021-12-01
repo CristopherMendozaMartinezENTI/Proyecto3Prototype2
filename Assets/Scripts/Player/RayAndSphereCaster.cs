@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 //This script is responsible for casting rays and spherecasts;
-//It is instantiated by the 'Mover' component at runtime;
 [System.Serializable]
 public class RayAndSphereCaster {
 

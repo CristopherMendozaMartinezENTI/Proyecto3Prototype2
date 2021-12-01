@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//This abstract camera input class serves as a base for all other camera input classes;
-//The 'CameraController' component will access this script at runtime to get input for the camera's rotation;
-//By extending this class, it is possible to implement custom camera input;
+//Clase base para las clases que contralaran los inputs de la camara 
 public abstract class CameraInput : MonoBehaviour
 {
     public abstract float GetHorizontalCameraInput();

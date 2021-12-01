@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//This is a static helper class that offers various methods for calculating and modifying vectors (as well as float values);
+//Clase Singleton para realizar operaciones con Vector3
 public static class MathVector {
 
 	//Calculate signed angle (ranging from -180 to +180) between '_vector_1' and '_vector_2';

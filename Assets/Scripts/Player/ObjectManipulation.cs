@@ -125,7 +125,7 @@ public class ObjectManipulation : MonoBehaviour
         else
         {
             //Rotate object
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeyCode.E))
             {
                 rotationInput += new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             }

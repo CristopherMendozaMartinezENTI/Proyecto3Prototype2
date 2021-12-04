@@ -5,9 +5,9 @@ using System.Collections;
 public class PlayerPhysicsController : MonoBehaviour {
 
 	//Collider variables;
-	[Header("Mover Options :")]
+	[Header("Player Options")]
 	[Range(0f, 1f)][SerializeField] float stepHeightRatio = 0.25f;
-	[Header("Collider Options :")]
+	[Header("Collider Options")]
 	[SerializeField] float colliderHeight = 2f;
 	[SerializeField] float colliderThickness = 1f;
 	[SerializeField] Vector3 colliderOffset = Vector3.zero;
@@ -18,15 +18,11 @@ public class PlayerPhysicsController : MonoBehaviour {
 	CapsuleCollider capsuleCollider;
 
 	//Sensor variables;
-	[Header("Sensor Options :")]
+	[Header("Caster Options")]
 	[SerializeField] public RayAndSphereCaster.CastType sensorType = RayAndSphereCaster.CastType.Raycast;
 	private float sensorRadiusModifier = 0.8f;
 	private int currentLayer;
 	[SerializeField] bool isInDebugMode = false;
-	[Header("Sensor Array Options :")]
-	[SerializeField] [Range(1, 5)] int sensorArrayRows = 1;
-	[SerializeField] [Range(3, 10)] int sensorArrayRayCount = 6;
-	[SerializeField] bool sensorArrayRowsAreOffset = false;
 
 	[HideInInspector] public Vector3[] raycastArrayPreviewPositions;
 
@@ -65,11 +61,6 @@ public class PlayerPhysicsController : MonoBehaviour {
 		//Recalculate collider dimensions;
 		if(this.gameObject.activeInHierarchy)
 			RecalculateColliderDimensions();
-
-		//Recalculate raycast array preview positions;
-		if(sensorType == RayAndSphereCaster.CastType.RaycastArray)
-			raycastArrayPreviewPositions =
-				RayAndSphereCaster.GetRaycastStartPositions(sensorArrayRows, sensorArrayRayCount, sensorArrayRowsAreOffset, 1f);
 	}
 
 	//Setup references to components;
@@ -206,18 +197,11 @@ public class PlayerPhysicsController : MonoBehaviour {
 		baseSensorRange = _length * (1f + _safetyDistanceFactor) * tr.localScale.x;
 		caster.castLength = _length * tr.localScale.x;
 
-		//Set sensor array variables;
-		caster.ArrayRows = sensorArrayRows;
-		caster.arrayRayCount = sensorArrayRayCount;
-		caster.offsetArrayRows = sensorArrayRowsAreOffset;
 		caster.isInDebugMode = isInDebugMode;
 
 		//Set sensor spherecast variables;
 		caster.calculateRealDistance = true;
 		caster.calculateRealSurfaceNormal = true;
-
-		//Recalibrate sensor to the new values;
-		caster.RecalibrateRaycastArrayPositions();
 	}
 
 	//Recalculate sensor layermask based on current physics settings;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerRewind : MonoBehaviour
 {
+    [Header("Rewind Options")]
     [SerializeField] private int maxRewindData = 30;
     [SerializeField] private float secondsBetweenData = 0.5f;
     [SerializeField] private float rewindDuration = 1.25f;
@@ -51,9 +52,7 @@ public class PlayerRewind : MonoBehaviour
                 {
                     rData.RemoveAt(0);
                 }
-
                 rData.Add(GetRewindData());
-
                 currentDataTimer = 0.0f;
             }
         }

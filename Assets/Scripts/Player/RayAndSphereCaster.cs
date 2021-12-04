@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-//This script is responsible for casting rays and spherecasts;
+//Este script se encarga de castear Raycast y Spherecast
+//Es utilizada por PlayerPhysicsController
 [System.Serializable]
 public class RayAndSphereCaster {
 
@@ -39,14 +40,12 @@ public class RayAndSphereCaster {
 
 	//References to attached components;
 	private Transform tr;
-	private Collider col;
 
 	//Enum describing different types of ground detection methods;
 	[SerializeField]
 	public enum CastType
 	{
 		Raycast,
-		RaycastArray,
 		Spherecast
 	}
 
@@ -57,23 +56,11 @@ public class RayAndSphereCaster {
 	int ignoreRaycastLayer;
 
 	//Spherecast settings;
-
 	//Cast an additional ray to get the true surface normal;
 	public bool calculateRealSurfaceNormal = false;
 	//Cast an additional ray to get the true distance to the ground;
 	public bool calculateRealDistance = false;
 
-	//Array raycast settings;
-
-	//Number of rays in every row;
-	public int arrayRayCount = 9;
-	//Number of rows around the central ray;
-	public int ArrayRows = 3;
-	//Whether or not to offset every other row;
-	public bool offsetArrayRows = false;
-
-	//Array containing all array raycast start positions (in local coordinates);
-	private Vector3[] raycastArrayStartPositions;
 
 	//Optional list of colliders to ignore when raycasting;
 	private Collider[] ignoreList;
@@ -84,10 +71,6 @@ public class RayAndSphereCaster {
 	//Whether to draw debug information (hit positions, hit normals...) in the editor;
 	public bool isInDebugMode = false;
 
-	List<Vector3> arrayNormals = new List<Vector3>();
-	List<Vector3> arrayPoints = new List<Vector3>();
-
-	//Constructor;
 	public RayAndSphereCaster(Transform _transform, Collider _collider)
 	{
 		tr = _transform;
@@ -188,9 +171,6 @@ public class RayAndSphereCaster {
 			case CastType.Spherecast:
 				CastSphere(_worldOrigin, _worldDirection);
 				break;
-				case CastType.RaycastArray:
-				CastRayArray(_worldOrigin, _worldDirection);
-				break;
 			default:
 				hasDetectedHit = false;
 				break;
@@ -200,66 +180,6 @@ public class RayAndSphereCaster {
 		for(int i = 0; i < ignoreList.Length; i++)
 		{
 			ignoreList[i].gameObject.layer = ignoreListLayers[i];
-		}
-	}
-
-	//Cast an array of rays into '_direction' and centered around '_origin';
-	private void CastRayArray(Vector3 _origin, Vector3 _direction)
-	{
-		//Calculate origin and direction of ray in world coordinates;
-		Vector3 _rayStartPosition = Vector3.zero;
-		Vector3 rayDirection = GetCastDirection();
-
-		//Clear results from last frame;
-		arrayNormals.Clear();
-		arrayPoints.Clear();
-
-		RaycastHit _hit;
-
-		//Cast array;
-		for(int i = 0; i < raycastArrayStartPositions.Length; i++)
-		{
-			//Calculate ray start position;
-			_rayStartPosition = _origin + tr.TransformDirection(raycastArrayStartPositions[i]);
-
-			if(Physics.Raycast(_rayStartPosition, rayDirection, out _hit, castLength, layermask, QueryTriggerInteraction.Ignore))
-			{
-				if(isInDebugMode)
-					Debug.DrawRay(_hit.point, _hit.normal, Color.red, Time.fixedDeltaTime * 1.01f);
-
-				hitColliders.Add(_hit.collider);
-				hitTransforms.Add(_hit.transform);
-				arrayNormals.Add(_hit.normal);
-				arrayPoints.Add(_hit.point);
-			}
-		}
-
-		//Evaluate results;
-		hasDetectedHit = (arrayPoints.Count > 0);
-
-		if(hasDetectedHit)
-		{
-			//Calculate average surface normal;
-			Vector3 _averageNormal = Vector3.zero;
-			for(int i = 0; i < arrayNormals.Count; i++)
-			{
-				_averageNormal += arrayNormals[i];
-			}
-
-			_averageNormal.Normalize();
-
-			//Calculate average surface point;
-			Vector3 _averagePoint = Vector3.zero;
-			for(int i = 0; i < arrayPoints.Count; i++)
-			{
-				_averagePoint += arrayPoints[i];
-			}
-
-			_averagePoint /= arrayPoints.Count;
-				
-			hitPosition = _averagePoint;
-			hitNormal = _averageNormal;
-			hitDistance = MathVector.ExtractDotVector(_origin - hitPosition, _direction).magnitude;
 		}
 	}
 
@@ -420,11 +340,5 @@ public class RayAndSphereCaster {
 			return;
 
 		castDirection = _direction;
-	}
-
-	//Recalculate start positions for the raycast array;
-	public void RecalibrateRaycastArrayPositions()
-	{
-		raycastArrayStartPositions = GetRaycastStartPositions(ArrayRows, arrayRayCount, offsetArrayRows, sphereCastRadius);
 	}
 }

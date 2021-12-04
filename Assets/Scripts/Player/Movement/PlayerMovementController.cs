@@ -16,6 +16,7 @@ public class PlayerMovementController : Controller {
 	bool jumpKeyWasLetGo = false;
 	bool jumpKeyIsPressed = false;
 
+	[Header("Player Options")]
 	//Movement speed;
 	public float movementSpeed = 7f;
 

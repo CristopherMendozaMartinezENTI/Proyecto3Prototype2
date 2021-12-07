@@ -98,12 +98,14 @@ public class PlayerRewind : MonoBehaviour
 
                 yield return null;
             }
+            Time.timeScale = 0.3f;
             curretDataPlayerStarPos = rData[rData.Count - 1].playerPos;
             currentPlayerStartRotation = rData[rData.Count - 1].playerRot;
             //currentCameraStartRotation = rData[rData.Count - 1].cameraRot;
 
             rData.RemoveAt(rData.Count - 1);
         }
+        Time.timeScale = 1.0f;
         playerCameraController.LockRotation(false);
         canCollectRecallData = true;
         Camera.main.GetComponent<ScanlinesEffect>().enabled = false;

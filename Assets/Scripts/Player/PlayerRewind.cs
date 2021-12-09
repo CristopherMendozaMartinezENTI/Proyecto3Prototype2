@@ -85,6 +85,7 @@ public class PlayerRewind : MonoBehaviour
 
             while (t < secordsPerData)
             {
+                Time.timeScale = 0.5f;
                 transform.position = Vector3.Lerp(curretDataPlayerStarPos,
                     rData[rData.Count - 1].playerPos, t / secordsPerData);
 
@@ -98,7 +99,6 @@ public class PlayerRewind : MonoBehaviour
 
                 yield return null;
             }
-            Time.timeScale = 0.3f;
             curretDataPlayerStarPos = rData[rData.Count - 1].playerPos;
             currentPlayerStartRotation = rData[rData.Count - 1].playerRot;
             //currentCameraStartRotation = rData[rData.Count - 1].cameraRot;

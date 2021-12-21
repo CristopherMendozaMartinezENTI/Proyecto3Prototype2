@@ -32,9 +32,9 @@ public class TelekinesisLineRenderer : MonoBehaviour
         if (_lineRenderer == null)
             _lineRenderer = gameObject.AddComponent<LineRenderer>();
 
-        _inputPoints                = new Vector3[_arcResolution];
+        _inputPoints = new Vector3[_arcResolution];
         _lineRenderer.positionCount = _arcResolution;
-        _lineRenderer.enabled       = false;
+        _lineRenderer.enabled = false;
 
         _outlineEffect = Camera.main.GetComponent<OutlineEffect>();
 
@@ -81,8 +81,8 @@ public class TelekinesisLineRenderer : MonoBehaviour
 
         //Align our attached effect with the surface of the grabbed object
 
-        var rayOrigin       = Vector3.Lerp(_inputPoints[0], _inputPoints[_arcResolution - 1], 0.999f);
-        var rayDirection    = _objectToHightlight.transform.position - rayOrigin;
+        var rayOrigin = Vector3.Lerp(_inputPoints[0], _inputPoints[_arcResolution - 1], 0.999f);
+        var rayDirection = _objectToHightlight.transform.position - rayOrigin;
 
         Debug.DrawRay(rayOrigin, rayDirection, Color.yellow);
 

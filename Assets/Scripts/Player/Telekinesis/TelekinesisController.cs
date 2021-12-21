@@ -387,8 +387,8 @@ public class TelekinesisController : MonoBehaviour
 
             //Update public properties
             StartPoint  = _laserStartPoint.transform.position;
-            MidPoint    = holdPoint;
-            EndPoint    = _grabbedTransform.TransformPoint(_hitOffsetLocal);
+            MidPoint = holdPoint;
+            EndPoint = _grabbedTransform.TransformPoint(_hitOffsetLocal);
         }
     }
 
@@ -451,8 +451,8 @@ public class TelekinesisController : MonoBehaviour
 
     private Vector3 GetDirectionVector(List<Vector3> directions, Vector3 direction)
     {
-        var maxDot  = -Mathf.Infinity;
-        var ret     = Vector3.zero;
+        var maxDot = -Mathf.Infinity;
+        var ret = Vector3.zero;
 
         for (var i = 0; i < directions.Count; i++)
         {
@@ -460,7 +460,7 @@ public class TelekinesisController : MonoBehaviour
 
             if (dot > maxDot)
             {
-                ret     = directions[i];
+                ret = directions[i];
                 maxDot  = dot;
             }
         }
@@ -477,10 +477,10 @@ public class TelekinesisController : MonoBehaviour
     //Check distance is within range when moving object with the scroll wheel
     private bool CheckObjectDistance(float direction)
     {
-        var pointA      = playerTransform.position;
-        var pointB      = _grabbedRigidbody.position;
+        var pointA = playerTransform.position;
+        var pointB = _grabbedRigidbody.position;
 
-        var distance    = Vector3.Distance(pointA, pointB);
+        var distance = Vector3.Distance(pointA, pointB);
 
         if (direction > 0)
             return distance <= _maxGrabDistance;
@@ -496,17 +496,17 @@ public class TelekinesisController : MonoBehaviour
         //Move rotation to desired rotation in case the lerp hasn't finished
         _grabbedRigidbody.MoveRotation(_desiredRotation);
         // Reset the rigidbody to how it was before we grabbed it
-        _grabbedRigidbody.isKinematic               = _wasKinematic;
-        _grabbedRigidbody.interpolation             = _initialInterpolationSetting;
-        _grabbedRigidbody.freezeRotation            = false;
-        _grabbedRigidbody                           = null;
-        _scrollWheelInput                           = _zeroVector3;
-        _grabbedTransform                           = null;
-        _userRotation                               = false;
-        _snapRotation                               = false;
-        StartPoint                                  = _zeroVector3;
-        MidPoint                                    = _zeroVector3;
-        EndPoint                                    = _zeroVector3;
+        _grabbedRigidbody.isKinematic = _wasKinematic;
+        _grabbedRigidbody.interpolation = _initialInterpolationSetting;
+        _grabbedRigidbody.freezeRotation = false;
+        _grabbedRigidbody = null;
+        _scrollWheelInput = _zeroVector3;
+        _grabbedTransform = null;
+        _userRotation = false;
+        _snapRotation = false;
+        StartPoint = _zeroVector3;
+        MidPoint = _zeroVector3;
+        EndPoint = _zeroVector3;
 
         OnObjectGrabbed.Invoke(null);
     }

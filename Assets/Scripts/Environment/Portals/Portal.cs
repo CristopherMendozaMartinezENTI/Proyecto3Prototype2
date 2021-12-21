@@ -8,9 +8,9 @@ public class Portal : MonoBehaviour {
     [SerializeField] private MeshRenderer screen;
     [SerializeField] private int recursionLimit = 5;
 
-    [Header ("Advanced Settings")]
-    [SerializeField] private float nearClipOffset = 0.05f;
-    [SerializeField] private float nearClipLimit = 0.2f;
+    //Advanced Settings
+    private float nearClipOffset = 0.05f;
+     private float nearClipLimit = 0.2f;
 
     // Private variables
     RenderTexture viewTexture;
@@ -56,7 +56,7 @@ public class Portal : MonoBehaviour {
 
             } else {
                 traveller.graphicsClone.transform.SetPositionAndRotation (m.GetColumn (3), m.rotation);
-                //UpdateSliceParams (traveller);
+                UpdateSliceParams (traveller);
                 traveller.previousOffsetFromPortal = offsetFromPortal;
             }
         }

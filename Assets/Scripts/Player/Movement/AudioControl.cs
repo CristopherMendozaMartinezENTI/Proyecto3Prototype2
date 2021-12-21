@@ -2,126 +2,95 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CMF
+//Script para los sonidos del player
+public class AudioControl : MonoBehaviour 
 {
-	//This script handles and plays audio cues like footsteps, jump and land audio clips based on character movement speed and events; 
-	public class AudioControl : MonoBehaviour {
+	Controller controller;
+	Animator animator;
+	Controller mover;
+	Transform tr;
+	[SerializeField] private AudioSource audioSource;
 
-		//References to components;
-		Controller controller;
-		Animator animator;
-		Controller mover;
-		Transform tr;
-		public AudioSource audioSource;
+	//Esto es para cuando el player tenga animaciones
+	[SerializeField] private bool useAnimationBasedFootsteps = true;
 
-		//Whether footsteps will be based on the currently playing animation or calculated based on walked distance (see further below);
-		public bool useAnimationBasedFootsteps = true;
+	[SerializeField] private float landVelocityThreshold = 5f;
+	[SerializeField] private float footstepDistance = 0.2f;
+	float currentFootstepDistance = 0f;
 
-		//Velocity threshold for landing sound effect;
-		//Sound effect will only be played if downward velocity exceeds this threshold;
-		public float landVelocityThreshold = 5f;
+	private float currentFootStepValue = 0f;
 
-		//Footsteps will be played every time the traveled distance reaches this value (if 'useAnimationBasedFootsteps' is set to 'true');
-		public float footstepDistance = 0.2f;
-		float currentFootstepDistance = 0f;
+	[Range(0f, 1f)]
+	[SerializeField] private float audioClipVolume = 0.1f;
+	[SerializeField] private float relativeRandomizedVolumeRange = 0.2f;
 
-		private float currentFootStepValue = 0f;
+	[SerializeField] private AudioClip[] footStepClips;
+	[SerializeField] private AudioClip jumpClip;
+	[SerializeField] private AudioClip landClip;
 
-		//Volume of all audio clips;
-		[Range(0f, 1f)]
-		public float audioClipVolume = 0.1f;
-
-		//Range of random volume deviation used for footsteps;
-		//Footstep audio clips will be played at different volumes for a more "natural sounding" result;
-		public float relativeRandomizedVolumeRange = 0.2f;
-
-		//Audio clips;
-		public AudioClip[] footStepClips;
-		public AudioClip jumpClip;
-		public AudioClip landClip;
-
-		//Setup;
-		void Start () {
-			//Get component references;
-			controller = GetComponent<Controller>();
-			animator = GetComponentInChildren<Animator>();
-			mover = GetComponent<Controller>();
-			tr = transform;
-
-			//Connecting events to controller events;
-			controller.OnLand += OnLand;
-			controller.OnJump += OnJump;
-
-			if(!animator)
-				useAnimationBasedFootsteps = false;
-		}
+	void Start ()
+	{
+		controller = GetComponent<Controller>();
+		animator = GetComponentInChildren<Animator>();
+		mover = GetComponent<Controller>();
+		tr = transform;
+		controller.OnLand += OnLand;
+		controller.OnJump += OnJump;
+		if(!animator)
+			useAnimationBasedFootsteps = false;
+	}
 		
-		//Update;
-		void Update () {
+	void Update ()
+	{
 
-			//Get controller velocity;
-			Vector3 _velocity = controller.GetVelocity();
+		Vector3 _velocity = controller.GetVelocity();
+		Vector3 _horizontalVelocity = MathVector.RemoveDotVector(_velocity, tr.up);
+		FootStepUpdate(_horizontalVelocity.magnitude);
+	}
 
-			//Calculate horizontal velocity;
-			Vector3 _horizontalVelocity = MathVector.RemoveDotVector(_velocity, tr.up);
-
-			FootStepUpdate(_horizontalVelocity.magnitude);
-		}
-
-		void FootStepUpdate(float _movementSpeed)
+	void FootStepUpdate(float _movementSpeed)
+	{
+		float _speedThreshold = 0.05f;
+		if(useAnimationBasedFootsteps)
 		{
-			float _speedThreshold = 0.05f;
-
-			if(useAnimationBasedFootsteps)
+			//Cogemos las animaciones para reproducir los pasos
+			float _newFootStepValue = animator.GetFloat("FootStep");
+			if((currentFootStepValue <= 0f && _newFootStepValue > 0f) || (currentFootStepValue >= 0f && _newFootStepValue < 0f))
 			{
-				//Get current foot step value from animator;
-				float _newFootStepValue = animator.GetFloat("FootStep");
-
-				//Play a foot step audio clip whenever the foot step value changes its sign;
-				if((currentFootStepValue <= 0f && _newFootStepValue > 0f) || (currentFootStepValue >= 0f && _newFootStepValue < 0f))
-				{
-					//Only play footstep sound if mover is grounded and movement speed is above the threshold;
-					if(mover.IsGrounded() && _movementSpeed > _speedThreshold)
-						PlayFootstepSound(_movementSpeed);
-				}
-				currentFootStepValue = _newFootStepValue;
+				if(mover.IsGrounded() && _movementSpeed > _speedThreshold)
+					PlayFootstepSound(_movementSpeed);
 			}
-			else
+			currentFootStepValue = _newFootStepValue;
+		}
+		else
+		{
+			currentFootstepDistance += Time.deltaTime * _movementSpeed;
+			if(currentFootstepDistance > footstepDistance)
 			{
-				currentFootstepDistance += Time.deltaTime * _movementSpeed;
-
-				//Play foot step audio clip if a certain distance has been traveled;
-				if(currentFootstepDistance > footstepDistance)
-				{
-					//Only play footstep sound if mover is grounded and movement speed is above the threshold;
-					if(mover.IsGrounded() && _movementSpeed > _speedThreshold)
-						PlayFootstepSound(_movementSpeed);
-					currentFootstepDistance = 0f;
-				}
+				if(mover.IsGrounded() && _movementSpeed > _speedThreshold)
+					PlayFootstepSound(_movementSpeed);
+				currentFootstepDistance = 0f;
 			}
-		}
-
-		void PlayFootstepSound(float _movementSpeed)
-		{
-			int _footStepClipIndex = Random.Range(0, footStepClips.Length);
-			audioSource.PlayOneShot(footStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
-		}
-
-		void OnLand(Vector3 _v)
-		{
-			//Only trigger sound if downward velocity exceeds threshold;
-			if(MathVector.GetDotProduct(_v, tr.up) > -landVelocityThreshold)
-				return;
-
-			//Play land audio clip;
-			audioSource.PlayOneShot(landClip, audioClipVolume);
-		}
-
-		void OnJump(Vector3 _v)
-		{
-			//Play jump audio clip;
-			audioSource.PlayOneShot(jumpClip, audioClipVolume);
 		}
 	}
+
+	void PlayFootstepSound(float _movementSpeed)
+	{
+		int _footStepClipIndex = Random.Range(0, footStepClips.Length);
+		audioSource.PlayOneShot(footStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
+	}
+
+	void OnLand(Vector3 _v)
+	{
+		if(MathVector.GetDotProduct(_v, tr.up) > -landVelocityThreshold)
+			return;
+		audioSource.PlayOneShot(landClip, audioClipVolume);
+	}
+
+	void OnJump(Vector3 _v)
+	{
+		audioSource.PlayOneShot(jumpClip, audioClipVolume);
+	}
 }
+
 

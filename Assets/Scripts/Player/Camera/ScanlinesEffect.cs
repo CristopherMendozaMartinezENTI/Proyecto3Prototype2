@@ -9,13 +9,13 @@ public class ScanlinesEffect : MonoBehaviour {
   private Material _material;
 
   [Range(0, 10)]
-  public float lineWidth = 2f;
+    [SerializeField] private float lineWidth = 2f;
 
   [Range(0, 1)]
-  public float hardness = 0.9f;
+    [SerializeField] private float hardness = 0.9f;
 
   [Range(0, 1)]
-  public float displacementSpeed = 0.1f;
+    [SerializeField] private float displacementSpeed = 0.1f;
 
   protected Material material {
     get {

@@ -8,7 +8,6 @@ public class PortalCamera : MonoBehaviour {
 	[SerializeField] private Transform portal;
 	[SerializeField] private Transform otherPortal;
 	
-	// Update is called once per frame
 	void Update () {
 		Vector3 playerOffsetFromPortal = playerCamera.position - otherPortal.position;
 		transform.position = portal.position + playerOffsetFromPortal;

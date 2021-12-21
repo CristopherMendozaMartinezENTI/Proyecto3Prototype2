@@ -1,18 +1,9 @@
-﻿//
-//  Outline.cs
-//  QuickOutline
-//
-//  Created by Chris Nolet on 3/30/18.
-//  Copyright © 2018 Chris Nolet. All rights reserved.
-//
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-
 public class OutlineMesh : MonoBehaviour {
   private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
 

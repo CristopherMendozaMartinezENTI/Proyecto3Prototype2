@@ -8,17 +8,14 @@ public class Portal : MonoBehaviour {
     [SerializeField] private MeshRenderer screen;
     [SerializeField] private int recursionLimit = 5;
 
-    //Advanced Settings
     private float nearClipOffset = 0.05f;
-     private float nearClipLimit = 0.2f;
-
-    // Private variables
-    RenderTexture viewTexture;
-    Camera portalCam;
-    Camera playerCam;
-    Material firstRecursionMat;
-    List<PortalTraveller> trackedTravellers;
-    MeshFilter screenMeshFilter;
+    private float nearClipLimit = 0.2f;
+    private RenderTexture viewTexture;
+    private Camera portalCam;
+    private Camera playerCam;
+    private Material firstRecursionMat;
+    private List<PortalTraveller> trackedTravellers;
+    private MeshFilter screenMeshFilter;
 
     void Awake () {
         playerCam = Camera.main;

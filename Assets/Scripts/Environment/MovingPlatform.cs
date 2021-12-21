@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class MovingPlatform : MonoBehaviour {
 
-	public float movementSpeed = 10f;
-	public bool reverseDirection = false;
-	public float waitTime = 1f;
+	[SerializeField] private float movementSpeed = 10f;
+	[SerializeField] private bool reverseDirection = false;
+	[SerializeField] private float waitTime = 1f;
 	private bool isWaiting = false;
 	Rigidbody r;
 	TriggerArea triggerArea;
-	public List<Transform> waypoints = new List<Transform>();
+	[SerializeField] private List<Transform> waypoints = new List<Transform>();
 	int currentWaypointIndex = 0;
 	Transform currentWaypoint;
 
@@ -22,7 +22,7 @@ public class MovingPlatform : MonoBehaviour {
 		r.isKinematic = true;
 
 		if(waypoints.Count <= 0){
-			Debug.LogWarning("No waypoints have been assigned to 'MovingPlatform'!");
+			Debug.LogWarning("Faltan puntos a los que se pueda mover la plataforma. Agregalos a lista crack.");
 		} else {
 			currentWaypoint = waypoints[currentWaypointIndex];
 		}

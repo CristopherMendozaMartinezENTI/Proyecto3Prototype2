@@ -10,7 +10,7 @@ public class DynamicTextures : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float minScale;
     [SerializeField] private float maxScale;
-     private float realRotation;
+    private float realRotation;
     private Vector3 scaleChange;
 
     private void Start()

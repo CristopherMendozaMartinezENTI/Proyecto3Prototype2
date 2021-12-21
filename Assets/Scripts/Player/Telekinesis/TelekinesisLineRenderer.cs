@@ -73,14 +73,9 @@ public class TelekinesisLineRenderer : MonoBehaviour
             return;
 
         UpdateArcPoints(_playerrTelekinesis.StartPoint, _playerrTelekinesis.MidPoint, _playerrTelekinesis.EndPoint);
-
-        //Animate Line Renderer Texture
         _uvOffset -= _uvAnimationRate * Time.deltaTime;
         _lineRenderer.material.SetTextureOffset(MainTex, _uvOffset);
         _lineRenderer.SetPositions(_inputPoints);
-
-        //Align our attached effect with the surface of the grabbed object
-
         var rayOrigin = Vector3.Lerp(_inputPoints[0], _inputPoints[_arcResolution - 1], 0.999f);
         var rayDirection = _objectToHightlight.transform.position - rayOrigin;
 

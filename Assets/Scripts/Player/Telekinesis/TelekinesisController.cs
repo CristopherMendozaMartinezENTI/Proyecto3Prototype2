@@ -9,12 +9,12 @@ public class TelekinesisController : MonoBehaviour
     [SerializeField] private Camera  _camera;
 
     [Header("Input Setting"), Space(10)]
-    public KeyCode Rotate = KeyCode.R;
-    public KeyCode SnapRotation = KeyCode.LeftShift;
-    public KeyCode SwitchAxis = KeyCode.Tab;
-    public KeyCode RotateZ  = KeyCode.Space;
-    public KeyCode RotationSpeedIncrease = KeyCode.LeftControl;
-    public KeyCode ResetRotation = KeyCode.LeftAlt;
+    [SerializeField] private KeyCode Rotate = KeyCode.R;
+    [SerializeField] private KeyCode SnapRotation = KeyCode.LeftShift;
+    [SerializeField] private KeyCode SwitchAxis = KeyCode.Tab;
+    [SerializeField] private KeyCode RotateZ  = KeyCode.Space;
+    [SerializeField] private KeyCode RotationSpeedIncrease = KeyCode.LeftControl;
+    [SerializeField] private KeyCode ResetRotation = KeyCode.LeftAlt;
     private Rigidbody _grabbedRigidbody;
     private Transform _grabbedTransform; 
     private Vector3 _hitOffsetLocal;
@@ -22,12 +22,12 @@ public class TelekinesisController : MonoBehaviour
     private RigidbodyInterpolation  _initialInterpolationSetting;
     private Quaternion  _rotationDifference;
     [SerializeField]
-    private Transform  _laserStartPoint        = null;
-    private Vector3  _rotationInput = Vector3.zero;
+    private Transform _laserStartPoint = null;
+    private Vector3 _rotationInput = Vector3.zero;
 
     [Header("Rotation Settings")]
     [Tooltip("Transform of the player, that rotations should be relative to")]
-    public Transform playerTransform;
+    [SerializeField] private Transform playerTransform;
     [SerializeField] private float _rotationSenstivity = 1.5f;
     [SerializeField] private float  SnapRotationDegrees = 45f;
     [SerializeField] private float  _snappedRotationSens = 15f;
@@ -36,8 +36,43 @@ public class TelekinesisController : MonoBehaviour
     [SerializeField, Tooltip("Input values above this will be considered and intentional change in rotation")]
     private float  _rotationTollerance = 0.8f;
 
-    private bool  m_UserRotation;
+    private Vector3 _lockedRot;
+    private Vector3 _forward;
+    private Vector3 _up;
+    private Vector3 _right;
 
+    [Header("Scroll Wheel Object Movement"), Space(5)]
+    private Vector3  _scrollWheelInput = Vector3.zero;
+    [SerializeField]
+    private float _scrollWheelSensitivity = 5f;
+    [SerializeField, Tooltip("The min distance the object can be from the player")]
+    private float _minObjectDistance = 2.5f;
+    [SerializeField, Tooltip("The maximum distance at which a new object can be picked up")]
+    private float _maxGrabDistance = 50f;
+    private bool _distanceChanged;
+    private Vector3 _zeroVector3 = Vector3.zero;
+    private Vector3 _oneVector3 = Vector3.one;
+    private Vector3 _zeroVector2 = Vector2.zero;
+
+    private bool _justReleased;
+    private bool _wasKinematic;
+   
+    [Serializable] public class BoolEvent : UnityEvent<bool> { };
+    [Serializable]public class GrabEvent : UnityEvent<GameObject> { };
+
+    [Header("Events"), Space(10)]
+    public BoolEvent OnRotation;
+    public BoolEvent OnRotationSnapped;
+    public BoolEvent OnAxisChanged;
+
+    public GrabEvent OnObjectGrabbed;
+
+    //Line Renderer variables
+    public Vector3 StartPoint { get; private set; }
+    public Vector3 MidPoint { get; private set; }
+    public Vector3 EndPoint { get; private set; }
+
+    private bool m_UserRotation;
     private bool _userRotation
     {
         get
@@ -90,44 +125,6 @@ public class TelekinesisController : MonoBehaviour
         }
     }
 
-    private Vector3 _lockedRot;
-    private Vector3 _forward;
-    private Vector3 _up;
-    private Vector3 _right;
-
-    [Header("Scroll Wheel Object Movement"), Space(5)]
-    private Vector3  _scrollWheelInput = Vector3.zero;
-    [SerializeField]
-    private float _scrollWheelSensitivity = 5f;
-    [SerializeField, Tooltip("The min distance the object can be from the player")]
-    private float _minObjectDistance = 2.5f;
-    [SerializeField, Tooltip("The maximum distance at which a new object can be picked up")]
-    private float _maxGrabDistance = 50f;
-    private bool _distanceChanged;
-
-    //Vector3.Zero and Vector2.zero create a new Vector3 each time they are called so these simply save that process and a small amount of cpu runtime.
-    private Vector3 _zeroVector3 = Vector3.zero;
-    private Vector3 _oneVector3 = Vector3.one;
-    private Vector3 _zeroVector2 = Vector2.zero;
-
-    private bool _justReleased;
-    private bool _wasKinematic;
-   
-    [Serializable] public class BoolEvent : UnityEvent<bool> { };
-    [Serializable]public class GrabEvent : UnityEvent<GameObject> { };
-
-    [Header("Events"), Space(10)]
-    public BoolEvent OnRotation;
-    public BoolEvent OnRotationSnapped;
-    public BoolEvent OnAxisChanged;
-
-    public GrabEvent OnObjectGrabbed;
-
-    //Line Renderer variables
-    public Vector3 StartPoint { get; private set; }
-    public Vector3 MidPoint { get; private set; }
-    public Vector3 EndPoint { get; private set; } 
-
     private void Start()
     {
         if(_camera == null)
@@ -143,11 +140,89 @@ public class TelekinesisController : MonoBehaviour
         }
     }
 
-	private void Update ()
+    private void FixedUpdate()
+    {
+        if (_grabbedRigidbody)
+        {
+            Ray ray = CenterRay();
+
+            UpdateRotationAxis();
+
+            Debug.DrawRay(_grabbedTransform.position, _up * 5f, Color.green);
+            Debug.DrawRay(_grabbedTransform.position, _right * 5f, Color.red);
+            Debug.DrawRay(_grabbedTransform.position, _forward * 5f, Color.blue);
+
+            var intentionalRotation = Quaternion.AngleAxis(_rotationInput.z, _forward) * Quaternion.AngleAxis(_rotationInput.y, _right) * Quaternion.AngleAxis(-_rotationInput.x, _up) * _desiredRotation;
+            var relativeToPlayerRotation = playerTransform.rotation * _rotationDifference;
+
+            if (_userRotation && _snapRotation)
+            {
+                _lockedRot += _rotationInput;
+                if (Mathf.Abs(_lockedRot.x) > _snappedRotationSens || Mathf.Abs(_lockedRot.y) > _snappedRotationSens || Mathf.Abs(_lockedRot.z) > _snappedRotationSens)
+                {
+                    for (var i = 0; i < 3; i++)
+                    {
+                        if (_lockedRot[i] > _snappedRotationSens)
+                        {
+                            _lockedRot[i] += SnapRotationDegrees;
+                        }
+                        else if (_lockedRot[i] < -_snappedRotationSens)
+                        {
+                            _lockedRot[i] += -SnapRotationDegrees;
+                        }
+                        else
+                        {
+                            _lockedRot[i] = 0;
+                        }
+                    }
+
+                    var q = Quaternion.AngleAxis(-_lockedRot.x, _up) * Quaternion.AngleAxis(_lockedRot.y, _right) * Quaternion.AngleAxis(_lockedRot.z, _forward) * _desiredRotation;
+                    var newRot = q.eulerAngles;
+                    newRot.x = Mathf.Round(newRot.x / SnapRotationDegrees) * SnapRotationDegrees;
+                    newRot.y = Mathf.Round(newRot.y / SnapRotationDegrees) * SnapRotationDegrees;
+                    newRot.z = Mathf.Round(newRot.z / SnapRotationDegrees) * SnapRotationDegrees;
+                    _desiredRotation = Quaternion.Euler(newRot);
+                    _lockedRot = _zeroVector2;
+                }
+            }
+            else
+            {
+                _desiredRotation = _userRotation ? intentionalRotation : relativeToPlayerRotation;
+            }
+            _grabbedRigidbody.angularVelocity = _zeroVector3;
+            _rotationInput = _zeroVector2;
+            _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _desiredRotation;
+            var holdPoint = ray.GetPoint(_currentGrabDistance) + _scrollWheelInput;
+            var centerDestination = holdPoint - _grabbedTransform.TransformVector(_hitOffsetLocal);
+
+            Debug.DrawLine(ray.origin, holdPoint, Color.blue, Time.fixedDeltaTime);
+
+            var toDestination = centerDestination - _grabbedTransform.position;
+
+            var force = toDestination / Time.fixedDeltaTime * 0.3f / _grabbedRigidbody.mass;
+
+            //force += _scrollWheelInput;
+            _grabbedRigidbody.velocity = _zeroVector3;
+            _grabbedRigidbody.AddForce(force, ForceMode.VelocityChange);
+
+            RotateGrabbedObject();
+
+            if (_distanceChanged)
+            {
+                _distanceChanged = false;
+                _currentGrabDistance = Vector3.Distance(ray.origin, holdPoint);
+            }
+
+            StartPoint = _laserStartPoint.transform.position;
+            MidPoint = holdPoint;
+            EndPoint = _grabbedTransform.TransformPoint(_hitOffsetLocal);
+        }
+    }
+
+    private void Update ()
     {
         if (!Input.GetMouseButton(0))
         {
-            // We are not holding the mouse button. Release the object and return before checking for a new one
             if (_grabbedRigidbody != null)
             {                
                 ReleaseObject();
@@ -159,34 +234,27 @@ public class TelekinesisController : MonoBehaviour
 
         if (_grabbedRigidbody == null && !_justReleased)
         {
-
-            // We are not holding an object, look for one to pick up
             Ray ray = CenterRay();
             RaycastHit hit;
                        
-            //Just so These aren't included in a build
             Debug.DrawRay(ray.origin, ray.direction * _maxGrabDistance, Color.blue, 0.01f);
 
             if (Physics.Raycast(ray, out hit, _maxGrabDistance, _grabLayer))
             {
-                // Don't pick up kinematic rigidbodies (they can't move)
                 if (hit.rigidbody != null /*&& !hit.rigidbody.isKinematic*/)
                 {
-                    // Track rigidbody's initial information
                     _grabbedRigidbody = hit.rigidbody;
+                    _grabbedRigidbody.transform.parent = playerTransform.transform;
                     _wasKinematic = _grabbedRigidbody.isKinematic;
                     _grabbedRigidbody.isKinematic = false;
                     _grabbedRigidbody.freezeRotation = true;
                     _initialInterpolationSetting = _grabbedRigidbody.interpolation;
                     _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _grabbedRigidbody.rotation;
                     _hitOffsetLocal = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
-                    _currentGrabDistance = hit.distance; // Vector3.Distance(ray.origin, hit.point);
+                    _currentGrabDistance = hit.distance; 
                     _grabbedTransform = _grabbedRigidbody.transform;
-                    // Set rigidbody's interpolation for proper collision detection when being moved by the player
                     _grabbedRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
-
                     OnObjectGrabbed.Invoke(_grabbedRigidbody.gameObject);
-
                     Debug.DrawRay(hit.point, hit.normal * 10f, Color.red, 10f);
                 }
             }
@@ -205,7 +273,6 @@ public class TelekinesisController : MonoBehaviour
                 _grabbedRigidbody.MoveRotation(Quaternion.identity);  
             }
 
-            // We are already holding an object, listen for rotation input
             if (Input.GetKey(Rotate))
             {
                 var rotateZ = Input.GetKey(RotateZ);
@@ -219,7 +286,6 @@ public class TelekinesisController : MonoBehaviour
                     OnAxisChanged.Invoke(_rotationAxis);
                 }
 
-                //Snap Object nearest _snapRotationDegrees
                 if (Input.GetKeyDown(SnapRotation))
                 {
                     _snapRotation = true;
@@ -263,7 +329,6 @@ public class TelekinesisController : MonoBehaviour
 
             var direction = Input.GetAxis("Mouse ScrollWheel");
         
-            //Optional Keyboard inputs
             if (Input.GetKeyDown(KeyCode.T))
                 direction = -0.1f;
             else if (Input.GetKeyDown(KeyCode.G))
@@ -281,116 +346,14 @@ public class TelekinesisController : MonoBehaviour
 
             if(Input.GetMouseButtonDown(1))
             {
-                //To prevent warnings in the inpector
                 _grabbedRigidbody.collisionDetectionMode = !_wasKinematic ? CollisionDetectionMode.ContinuousSpeculative : CollisionDetectionMode.Continuous;
                 _grabbedRigidbody.isKinematic = _wasKinematic = !_wasKinematic;
-               
+
                 _justReleased = true;
                 ReleaseObject();
             }
         }
 	}
-
-    private void FixedUpdate()
-    {
-        if (_grabbedRigidbody)
-        {
-            // We are holding an object, time to rotate & move it
-            Ray ray = CenterRay();
-
-            UpdateRotationAxis();
-
-            Debug.DrawRay(_grabbedTransform.position, _up * 5f      , Color.green);
-            Debug.DrawRay(_grabbedTransform.position, _right * 5f   , Color.red);
-            Debug.DrawRay(_grabbedTransform.position, _forward * 5f , Color.blue);
-
-            // Apply any intentional rotation input made by the player & clear tracked input
-            var intentionalRotation = Quaternion.AngleAxis(_rotationInput.z, _forward) * Quaternion.AngleAxis(_rotationInput.y, _right) * Quaternion.AngleAxis(-_rotationInput.x, _up) * _desiredRotation;
-            var relativeToPlayerRotation = playerTransform.rotation * _rotationDifference;
-
-            if (_userRotation && _snapRotation)
-            {
-                //Add mouse movement to vector so we can measure the amount of movement
-                _lockedRot += _rotationInput;    
-
-                //If the mouse has moved far enough to rotate the snapped object
-                if (Mathf.Abs(_lockedRot.x) > _snappedRotationSens || Mathf.Abs(_lockedRot.y) > _snappedRotationSens || Mathf.Abs(_lockedRot.z) > _snappedRotationSens)
-                {
-                    for (var i = 0; i < 3; i++)
-                    {
-                        if (_lockedRot[i] > _snappedRotationSens)
-                        {
-                            _lockedRot[i] += SnapRotationDegrees;
-                        }
-                        else if (_lockedRot[i] < -_snappedRotationSens)
-                        {
-                            _lockedRot[i] += -SnapRotationDegrees;
-                        }
-                        else
-                        {
-                            _lockedRot[i] = 0;
-                        }
-                    }
-
-                    var q = Quaternion.AngleAxis(-_lockedRot.x, _up) * Quaternion.AngleAxis(_lockedRot.y, _right) * Quaternion.AngleAxis(_lockedRot.z, _forward) * _desiredRotation;
-
-                    var newRot = q.eulerAngles;
-
-                    newRot.x = Mathf.Round(newRot.x / SnapRotationDegrees) * SnapRotationDegrees;
-                    newRot.y = Mathf.Round(newRot.y / SnapRotationDegrees) * SnapRotationDegrees;
-                    newRot.z = Mathf.Round(newRot.z / SnapRotationDegrees) * SnapRotationDegrees;
-
-                    _desiredRotation = Quaternion.Euler(newRot);
-
-                    _lockedRot = _zeroVector2;
-                }
-            }
-            else
-            {
-                //Rotate the object to remain consistent with any changes in player's rotation
-                _desiredRotation = _userRotation ? intentionalRotation : relativeToPlayerRotation;
-            }
-            // Remove all torque, reset rotation input & store the rotation difference for next FixedUpdate call
-            _grabbedRigidbody.angularVelocity   = _zeroVector3;
-            _rotationInput = _zeroVector2;
-            _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _desiredRotation;
-
-            // Calculate object's center position based on the offset we stored
-            // NOTE: We need to convert the local-space point back to world coordinates
-            // Get the destination point for the point on the object we grabbed
-            var holdPoint = ray.GetPoint(_currentGrabDistance) + _scrollWheelInput;
-            var centerDestination = holdPoint - _grabbedTransform.TransformVector(_hitOffsetLocal);
-
-#if UNITY_EDITOR
-            Debug.DrawLine(ray.origin, holdPoint, Color.blue, Time.fixedDeltaTime);
-#endif
-            // Find vector from current position to destination
-            var toDestination = centerDestination - _grabbedTransform.position;
-
-            // Calculate force
-            var force = toDestination / Time.fixedDeltaTime * 0.3f / _grabbedRigidbody.mass;
-
-            //force += _scrollWheelInput;
-            // Remove any existing velocity and add force to move to final position
-            _grabbedRigidbody.velocity = _zeroVector3;
-            _grabbedRigidbody.AddForce(force, ForceMode.VelocityChange);
-
-            //Rotate object
-            RotateGrabbedObject();
-
-            //We need to recalculte the grabbed distance as the object distance from the player has been changed
-            if (_distanceChanged)
-            {
-                _distanceChanged = false;
-                _currentGrabDistance = Vector3.Distance(ray.origin, holdPoint);
-            }
-
-            //Update public properties
-            StartPoint  = _laserStartPoint.transform.position;
-            MidPoint = holdPoint;
-            EndPoint = _grabbedTransform.TransformPoint(_hitOffsetLocal);
-        }
-    }
 
     private void RotateGrabbedObject()
     {
@@ -400,7 +363,6 @@ public class TelekinesisController : MonoBehaviour
         _grabbedRigidbody.MoveRotation(Quaternion.Lerp(_grabbedRigidbody.rotation, _desiredRotation, Time.fixedDeltaTime * _rotationSpeed));
     }
 
-    //Update Rotation axis based on movement
     private void UpdateRotationAxis()
     {
         if (!_snapRotation)
@@ -434,14 +396,10 @@ public class TelekinesisController : MonoBehaviour
             -transformToCheck.right,
         };
 
-        //Find the up Vector
         up = GetDirectionVector(directions, referenceTransform.up);
-        //Remove Vectors from list to prevent duplicates and the opposite vector being found in case where the player is at around a 45 degree angle to the object
         directions.Remove(up);
-        directions.Remove(-up);
-        //Find the Forward Vector       
+        directions.Remove(-up);      
         forward = GetDirectionVector(directions, referenceTransform.forward);
-        //Remove used directions
         directions.Remove(forward);
         directions.Remove(-forward);
 
@@ -468,13 +426,11 @@ public class TelekinesisController : MonoBehaviour
         return ret;
     }     
 
-    //Ray from center of the main camera's viewport forward
     private Ray CenterRay()
     {
         return _camera.ViewportPointToRay(_oneVector3 * 0.5f);
     }
 
-    //Check distance is within range when moving object with the scroll wheel
     private bool CheckObjectDistance(float direction)
     {
         var pointA = playerTransform.position;
@@ -493,12 +449,11 @@ public class TelekinesisController : MonoBehaviour
 
     private void ReleaseObject()
     {
-        //Move rotation to desired rotation in case the lerp hasn't finished
         _grabbedRigidbody.MoveRotation(_desiredRotation);
-        // Reset the rigidbody to how it was before we grabbed it
         _grabbedRigidbody.isKinematic = _wasKinematic;
         _grabbedRigidbody.interpolation = _initialInterpolationSetting;
         _grabbedRigidbody.freezeRotation = false;
+        _grabbedRigidbody.transform.parent = null;
         _grabbedRigidbody = null;
         _scrollWheelInput = _zeroVector3;
         _grabbedTransform = null;

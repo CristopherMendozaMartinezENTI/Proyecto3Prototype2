@@ -9,7 +9,6 @@ public class PortalTeleporter : MonoBehaviour {
 
 	private bool playerOverlaps = false;
 
-	// Update is called once per frame
 	void Update () {
 		if (playerOverlaps)
 		{
@@ -19,7 +18,7 @@ public class PortalTeleporter : MonoBehaviour {
 			// If this is true: The player has moved across the portal
 			if (dotProduct < 0f)
 			{
-				// Teleport him!
+				// Teleport
 				float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
 				rotationDiff += 180;
 				player.Rotate(Vector3.up, rotationDiff);

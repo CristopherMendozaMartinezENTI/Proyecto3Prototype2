@@ -10,7 +10,7 @@ public class RotationCameraFreeze : MonoBehaviour
         camController = FindObjectOfType<CameraController>();
         if(camController == null)
         {
-            Debug.LogError($"{nameof(RotationCameraFreeze)} is missing {nameof(CameraController)}", this);
+            Debug.LogError($"{nameof(RotationCameraFreeze)} le falta un {nameof(CameraController)}", this);
             return;
         }
 

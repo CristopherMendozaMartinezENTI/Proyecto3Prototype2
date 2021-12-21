@@ -6,12 +6,12 @@ using UnityEngine;
 //Clase para control por teclado
 public class PlayerKeyboardInput : PlayerInput
 {
-	public string horizontalInputAxis = "Horizontal";
-	public string verticalInputAxis = "Vertical";
-	public KeyCode jumpKey = KeyCode.Space;
+	[SerializeField] private string horizontalInputAxis = "Horizontal";
+	[SerializeField] private string verticalInputAxis = "Vertical";
+	[SerializeField] private KeyCode jumpKey = KeyCode.Space;
 
-	//If this is enabled, Unity's internal input smoothing is bypassed;
-	public bool useRawInput = true;
+	//Para usar los Raw inputs de unity o no
+	[SerializeField] private bool useRawInput = true;
 
     public override float GetHorizontalMovementInput()
 	{

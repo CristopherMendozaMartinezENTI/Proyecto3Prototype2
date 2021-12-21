@@ -173,17 +173,17 @@ public class TelekinesisController : MonoBehaviour
                 if (hit.rigidbody != null /*&& !hit.rigidbody.isKinematic*/)
                 {
                     // Track rigidbody's initial information
-                    _grabbedRigidbody                   = hit.rigidbody;
-                    _wasKinematic                       = _grabbedRigidbody.isKinematic;
-                    _grabbedRigidbody.isKinematic       = false;
-                    _grabbedRigidbody.freezeRotation    = true;
-                    _initialInterpolationSetting        = _grabbedRigidbody.interpolation;
-                    _rotationDifference                 = Quaternion.Inverse(playerTransform.rotation) * _grabbedRigidbody.rotation;
-                    _hitOffsetLocal                     = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
-                    _currentGrabDistance                = hit.distance; // Vector3.Distance(ray.origin, hit.point);
-                    _grabbedTransform                   = _grabbedRigidbody.transform;
+                    _grabbedRigidbody = hit.rigidbody;
+                    _wasKinematic = _grabbedRigidbody.isKinematic;
+                    _grabbedRigidbody.isKinematic = false;
+                    _grabbedRigidbody.freezeRotation = true;
+                    _initialInterpolationSetting = _grabbedRigidbody.interpolation;
+                    _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _grabbedRigidbody.rotation;
+                    _hitOffsetLocal = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
+                    _currentGrabDistance = hit.distance; // Vector3.Distance(ray.origin, hit.point);
+                    _grabbedTransform = _grabbedRigidbody.transform;
                     // Set rigidbody's interpolation for proper collision detection when being moved by the player
-                    _grabbedRigidbody.interpolation     = RigidbodyInterpolation.Interpolate;
+                    _grabbedRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
                     OnObjectGrabbed.Invoke(_grabbedRigidbody.gameObject);
 
@@ -208,9 +208,9 @@ public class TelekinesisController : MonoBehaviour
             // We are already holding an object, listen for rotation input
             if (Input.GetKey(Rotate))
             {
-                var rotateZ         = Input.GetKey(RotateZ);
+                var rotateZ = Input.GetKey(RotateZ);
 
-                var increaseSens    = Input.GetKey(RotationSpeedIncrease) ? 2.5f : 1f;
+                var increaseSens = Input.GetKey(RotationSpeedIncrease) ? 2.5f : 1f;
 
                 if(Input.GetKeyDown(SwitchAxis))
                 {
@@ -271,8 +271,8 @@ public class TelekinesisController : MonoBehaviour
 
             if (Mathf.Abs(direction) > 0 && CheckObjectDistance(direction))
             {
-                _distanceChanged    = true;
-                _scrollWheelInput   = playerTransform.forward * _scrollWheelSensitivity * direction;
+                _distanceChanged = true;
+                _scrollWheelInput = playerTransform.forward * _scrollWheelSensitivity * direction;
             } 
             else
             {
@@ -305,8 +305,8 @@ public class TelekinesisController : MonoBehaviour
             Debug.DrawRay(_grabbedTransform.position, _forward * 5f , Color.blue);
 
             // Apply any intentional rotation input made by the player & clear tracked input
-            var intentionalRotation         = Quaternion.AngleAxis(_rotationInput.z, _forward) * Quaternion.AngleAxis(_rotationInput.y, _right) * Quaternion.AngleAxis(-_rotationInput.x, _up) * _desiredRotation;
-            var relativeToPlayerRotation    = playerTransform.rotation * _rotationDifference;
+            var intentionalRotation = Quaternion.AngleAxis(_rotationInput.z, _forward) * Quaternion.AngleAxis(_rotationInput.y, _right) * Quaternion.AngleAxis(-_rotationInput.x, _up) * _desiredRotation;
+            var relativeToPlayerRotation = playerTransform.rotation * _rotationDifference;
 
             if (_userRotation && _snapRotation)
             {

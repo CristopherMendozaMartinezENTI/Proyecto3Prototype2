@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class MainCamera : MonoBehaviour {
+//Este script va en la Main Camara y permite pinta los portales
+public class PortalMainCameraRenderer : MonoBehaviour {
 
     Portal[] portals;
 

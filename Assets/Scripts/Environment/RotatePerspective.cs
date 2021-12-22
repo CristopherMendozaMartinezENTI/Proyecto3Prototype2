@@ -4,7 +4,7 @@ using UnityEngine;
 
 //Este script permite cambiar la direccion respecto la se aplica la gravedad al los controllers que colisionen con el boxCollider que lo contenga
 //Creando el efecto de que el escenario se ha rotado sobre su eje
-public class FlipPlayer : MonoBehaviour
+public class RotatePerspective : MonoBehaviour
 {
 	Transform tr;
 	AudioSource audioSource;

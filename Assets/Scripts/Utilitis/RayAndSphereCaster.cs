@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 //Este script se encarga de castear Raycast y Spherecast
-//Es utilizada por PlayerPhysicsController
+//Es utilizada por PlayerColliderController
 [System.Serializable]
 public class RayAndSphereCaster {
 
@@ -226,7 +226,6 @@ public class RayAndSphereCaster {
 
 			Collider _col = hitColliders[0];
 
-			//Calculate real surface normal by casting an additional raycast;
 			if(calculateRealSurfaceNormal)
 			{
 				if(_col.Raycast(new Ray(hitPosition - _direction, _direction), out _hit, 1.5f))

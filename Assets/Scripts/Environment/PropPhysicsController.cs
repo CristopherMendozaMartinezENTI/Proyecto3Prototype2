@@ -9,6 +9,12 @@ public class PropPhysicsController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private GravitationalForce gravityOrientation;
     [SerializeField] private float gravityForce = 9.81f;
+    private Vector3 initialPos;
+
+    private void Start()
+    {
+        initialPos = transform.position;
+    }
 
     private void FixedUpdate()
     {
@@ -38,6 +44,11 @@ public class PropPhysicsController : MonoBehaviour
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(gravityForce, 0.0f, 0.0f), ForceMode.Acceleration);
                 return;
         }
+    }
+
+    public void ResetPos()
+    {
+        transform.position = initialPos;
     }
 
     public Vector3 GetVelocity()

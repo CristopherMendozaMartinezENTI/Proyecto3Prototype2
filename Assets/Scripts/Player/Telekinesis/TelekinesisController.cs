@@ -447,7 +447,13 @@ public class TelekinesisController : MonoBehaviour
         return false;
     }
 
-    private void ReleaseObject()
+    public bool IsObjectGrabbed()
+    {
+        if (_grabbedRigidbody != null) return true;
+        else return false;
+    }
+
+    public void ReleaseObject()
     {
         _grabbedRigidbody.MoveRotation(_desiredRotation);
         _grabbedRigidbody.isKinematic = _wasKinematic;

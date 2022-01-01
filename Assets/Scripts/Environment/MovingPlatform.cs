@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MovingPlatform : MonoBehaviour {
-
+public class MovingPlatform : MonoBehaviour
+{
+	[Header("Settings")]
 	[SerializeField] private float movementSpeed = 10f;
-	[SerializeField] private bool reverseDirection = false;
 	[SerializeField] private float waitTime = 1f;
+	[SerializeField] private bool reverseDirection = false;
+	public bool movementEnabled = false;
 	private bool isWaiting = false;
 	Rigidbody r;
 	TriggerArea triggerArea;
@@ -41,34 +43,38 @@ public class MovingPlatform : MonoBehaviour {
 		}
 	}
 
-	void MovePlatform () {
+	void MovePlatform () 
+	{
 
-		if(waypoints.Count <= 0)
-			return;
+		if(movementEnabled)
+        {
+			if (waypoints.Count <= 0)
+				return;
 
-		if(isWaiting)
-			return;
+			if (isWaiting)
+				return;
 
-		Vector3 _toCurrentWaypoint = currentWaypoint.position - transform.position;
-		Vector3 _movement = _toCurrentWaypoint.normalized;
-		_movement *= movementSpeed * Time.deltaTime;
+			Vector3 _toCurrentWaypoint = currentWaypoint.position - transform.position;
+			Vector3 _movement = _toCurrentWaypoint.normalized;
+			_movement *= movementSpeed * Time.deltaTime;
 
-		if(_movement.magnitude >= _toCurrentWaypoint.magnitude || _movement.magnitude == 0f)
-		{
-			r.transform.position = currentWaypoint.position;
-			UpdateWaypoint();
-		}
-		else
-		{
-			r.transform.position += _movement;
-		}
+			if (_movement.magnitude >= _toCurrentWaypoint.magnitude || _movement.magnitude == 0f)
+			{
+				r.transform.position = currentWaypoint.position;
+				UpdateWaypoint();
+			}
+			else
+			{
+				r.transform.position += _movement;
+			}
 
-		if(triggerArea == null)
-			return;
+			if (triggerArea == null)
+				return;
 
-		for(int i = 0; i < triggerArea.rigidbodiesInTriggerArea.Count; i++) 
-		{
-			triggerArea.rigidbodiesInTriggerArea[i].MovePosition(triggerArea.rigidbodiesInTriggerArea[i].position + _movement);
+			for (int i = 0; i < triggerArea.rigidbodiesInTriggerArea.Count; i++)
+			{
+				triggerArea.rigidbodiesInTriggerArea[i].MovePosition(triggerArea.rigidbodiesInTriggerArea[i].position + _movement);
+			}
 		}
 	}
 

@@ -9,7 +9,14 @@ public class OpenDoor : MonoBehaviour
         if(other.tag == "Player")
         {
             this.gameObject.GetComponent<Animator>().Play("door_3_open");
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            this.gameObject.GetComponent<Animator>().Play("door_3_opened");
         }
     }
 }

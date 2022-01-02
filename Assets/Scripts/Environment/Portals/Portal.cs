@@ -16,6 +16,7 @@ public class Portal : MonoBehaviour {
     private Material firstRecursionMat;
     private List<PortalTraveller> trackedTravellers;
     private MeshFilter screenMeshFilter;
+    private GameObject playerCameraRig;
 
     void Awake () {
         playerCam = Camera.main;
@@ -24,6 +25,7 @@ public class Portal : MonoBehaviour {
         trackedTravellers = new List<PortalTraveller> ();
         screenMeshFilter = screen.GetComponent<MeshFilter> ();
         screen.material.SetInt ("displayMask", 1);
+        playerCameraRig = GameObject.Find("CameraRig");
     }
 
     void LateUpdate () {
@@ -260,6 +262,7 @@ public class Portal : MonoBehaviour {
     void OnTriggerEnter (Collider other) {
         var traveller = other.GetComponent<PortalTraveller> ();
         if (traveller) {
+            playerCameraRig.GetComponent<SmoothRotation>().enabled = false;
             OnTravellerEnterPortal (traveller);
         }
     }
@@ -267,6 +270,7 @@ public class Portal : MonoBehaviour {
     void OnTriggerExit (Collider other) {
         var traveller = other.GetComponent<PortalTraveller> ();
         if (traveller && trackedTravellers.Contains (traveller)) {
+            playerCameraRig.GetComponent<SmoothRotation>().enabled = true;
             traveller.ExitPortalThreshold ();
             trackedTravellers.Remove (traveller);
         }

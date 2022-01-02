@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenDoor : MonoBehaviour
+public class AutomaticDoor : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
-            this.gameObject.GetComponent<Animator>().Play("door_3_open");
+            this.gameObject.GetComponent<Animator>().Play("Door_open");
         }
     }
 
@@ -16,7 +16,7 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            this.gameObject.GetComponent<Animator>().Play("door_3_opened");
+            this.gameObject.GetComponent<Animator>().Play("Door_opened");
         }
     }
 }

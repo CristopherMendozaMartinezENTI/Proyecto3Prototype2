@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Connections { Lvl1Door, Platform, ForceFild }
+public enum Connections { Door, Platform, ForceFild, DisableObject }
 
 public class PressurePad : MonoBehaviour
 {
@@ -23,15 +23,17 @@ public class PressurePad : MonoBehaviour
             onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.cyan;
             switch (ConnectedTo)
             {
-                case Connections.Lvl1Door:
-                    connectedGameObject.GetComponent<Animator>().Play("door_3_open");
+                case Connections.Door:
+                    connectedGameObject.GetComponent<Animator>().Play("Door_open");
                     return;
                 case Connections.Platform:
                     connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
                     return;
                 case Connections.ForceFild:
-                    //connectedGameObject.GetComponent<BoxCollider>().enabled = false;
                     connectedGameObject.SetActive(false);
+                    return;
+                case Connections.DisableObject:
+                    connectedGameObject.SetActive(true);
                     return;
             }
         }
@@ -44,15 +46,17 @@ public class PressurePad : MonoBehaviour
             onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.red;
             switch (ConnectedTo)
             {
-                case Connections.Lvl1Door:
-                    connectedGameObject.GetComponent<Animator>().Play("door_3_opened");
+                case Connections.Door:
+                    connectedGameObject.GetComponent<Animator>().Play("Door_opened");
                     return;
                 case Connections.Platform:
                     connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
                     return;
                 case Connections.ForceFild:
-                    //connectedGameObject.GetComponent<BoxCollider>().enabled = true;
                     connectedGameObject.SetActive(true);
+                    return;
+                case Connections.DisableObject:
+                    connectedGameObject.SetActive(false);
                     return;
             }
         }

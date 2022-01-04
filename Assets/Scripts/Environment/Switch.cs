@@ -5,7 +5,7 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private GameObject pressE;
+    [SerializeField] private GameObject pressECanvas;
     [SerializeField] private Connections ConnectedTo;
     [SerializeField] private GameObject connectedGameObject;
     private bool active = true;
@@ -44,7 +44,7 @@ public class Switch : MonoBehaviour
         if (other.tag == "Player")
         {
             triggerStay = true;
-            pressE.SetActive(true);
+            pressECanvas.SetActive(true);
             if(keyPressed)
             {
                 if (!active)
@@ -107,7 +107,7 @@ public class Switch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            pressE.SetActive(false);
+            pressECanvas.SetActive(false);
             triggerStay = false;
         }
     }

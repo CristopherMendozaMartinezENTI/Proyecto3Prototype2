@@ -54,6 +54,11 @@ public class TelekinesisController : MonoBehaviour
     private Vector3 _oneVector3 = Vector3.one;
     private Vector3 _zeroVector2 = Vector2.zero;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip onGrabbed;
+    [SerializeField] private AudioClip onReleased;
+
+
     private bool _justReleased;
     private bool _wasKinematic;
    
@@ -243,6 +248,8 @@ public class TelekinesisController : MonoBehaviour
             {
                 if (hit.rigidbody != null /*&& !hit.rigidbody.isKinematic*/)
                 {
+                    gameObject.GetComponent<AudioSource>().clip = onGrabbed;
+                    gameObject.GetComponent<AudioSource>().Play();
                     _grabbedRigidbody = hit.rigidbody;
                     _grabbedRigidbody.transform.parent = playerTransform.transform;
                     _wasKinematic = _grabbedRigidbody.isKinematic;
@@ -455,6 +462,8 @@ public class TelekinesisController : MonoBehaviour
 
     public void ReleaseObject()
     {
+        gameObject.GetComponent<AudioSource>().clip = onReleased;
+        gameObject.GetComponent<AudioSource>().Play();
         _grabbedRigidbody.MoveRotation(_desiredRotation);
         _grabbedRigidbody.isKinematic = _wasKinematic;
         _grabbedRigidbody.interpolation = _initialInterpolationSetting;

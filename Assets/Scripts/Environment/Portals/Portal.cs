@@ -289,6 +289,16 @@ public class Portal : MonoBehaviour {
             return portalCam.transform.position;
         }
     }
+     
+    public Portal GetLinkedPortal()
+    {
+        return linkedPortal;
+    }
+
+    public MeshRenderer GetRenderer()
+    {
+        return screen;
+    }
 
     void OnValidate () {
         if (linkedPortal != null) {

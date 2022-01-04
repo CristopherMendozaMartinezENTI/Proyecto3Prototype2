@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Connections { Door, Platform, ForceFild, DisableObject }
+public enum Connections { Door, Platform, ForceFild, DisableObject, Portal }
 
 public class PressurePad : MonoBehaviour
 {
@@ -35,6 +35,12 @@ public class PressurePad : MonoBehaviour
                 case Connections.DisableObject:
                     connectedGameObject.SetActive(true);
                     return;
+                case Connections.Portal:
+                    connectedGameObject.GetComponent<BoxCollider>().enabled = true;
+                    connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = true;
+                    connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = true;
+                    connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = true;
+                    return;
             }
         }
     }
@@ -57,6 +63,12 @@ public class PressurePad : MonoBehaviour
                     return;
                 case Connections.DisableObject:
                     connectedGameObject.SetActive(false);
+                    return;
+                case Connections.Portal:
+                    connectedGameObject.GetComponent<BoxCollider>().enabled = false;
+                    connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = false;
+                    connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = false;
+                    connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = false;
                     return;
             }
         }

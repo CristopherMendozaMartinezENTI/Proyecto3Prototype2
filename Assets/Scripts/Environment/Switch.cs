@@ -57,13 +57,19 @@ public class Switch : MonoBehaviour
                             connectedGameObject.GetComponent<Animator>().Play("Door_open");
                             return;
                         case Connections.Platform:
-                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
+                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
                             return;
                         case Connections.ForceFild:
                             connectedGameObject.SetActive(false);
                             return;
                         case Connections.DisableObject:
                             connectedGameObject.SetActive(true);
+                            return;
+                        case Connections.Portal:
+                            connectedGameObject.GetComponent<BoxCollider>().enabled = true;
+                            connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = true;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = true;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = true;
                             return;
                     }
                 }
@@ -77,13 +83,19 @@ public class Switch : MonoBehaviour
                             connectedGameObject.GetComponent<Animator>().Play("Door_opened");
                             return;
                         case Connections.Platform:
-                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
+                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
                             return;
                         case Connections.ForceFild:
                             connectedGameObject.SetActive(true);
                             return;
                         case Connections.DisableObject:
                             connectedGameObject.SetActive(false);
+                            return;
+                        case Connections.Portal:
+                            connectedGameObject.GetComponent<BoxCollider>().enabled = false;
+                            connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = false;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = false;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = false;
                             return;
                     }
                 }

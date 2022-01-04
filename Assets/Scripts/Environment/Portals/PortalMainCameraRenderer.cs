@@ -9,7 +9,8 @@ public class PortalMainCameraRenderer : MonoBehaviour {
         portals = FindObjectsOfType<Portal> ();
     }
 
-    void OnPreCull () {
+    void OnPreCull () 
+    {
 
         for (int i = 0; i < portals.Length; i++) {
             portals[i].PrePortalRender ();

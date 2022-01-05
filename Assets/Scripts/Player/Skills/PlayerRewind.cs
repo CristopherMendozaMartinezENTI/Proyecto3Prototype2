@@ -11,6 +11,12 @@ public class PlayerRewind : MonoBehaviour
     [SerializeField] private CameraController playerCameraController;
     private bool canCollectRecallData = true;
     private float currentDataTimer = 0.0f;
+    AudioSource[] audiosSources;
+
+    void Awake()
+    {
+        audiosSources = FindObjectsOfType<AudioSource>();
+    }
 
     [System.Serializable]
     private class RewindData
@@ -35,7 +41,7 @@ public class PlayerRewind : MonoBehaviour
 
     private void getRewindInpunt()
     {
-        if (Input.GetKeyDown(KeyCode.R) && rData.Count != 0)
+        if (Input.GetKeyUp(KeyCode.R) && rData.Count != 0)
         {
             StartCoroutine(Rewind());
         }
@@ -43,17 +49,20 @@ public class PlayerRewind : MonoBehaviour
 
     private void manageRewindData()
     {
-        currentDataTimer += Time.deltaTime;
-        if (canCollectRecallData)
+        if(Input.GetKey(KeyCode.R))
         {
-            if (currentDataTimer > secondsBetweenData)
+            currentDataTimer += Time.deltaTime;
+            if (canCollectRecallData)
             {
-                if (rData.Count >= maxRewindData)
+                if (currentDataTimer > secondsBetweenData)
                 {
-                    rData.RemoveAt(0);
+                    if (rData.Count >= maxRewindData)
+                    {
+                        rData.RemoveAt(0);
+                    }
+                    rData.Add(GetRewindData());
+                    currentDataTimer = 0.0f;
                 }
-                rData.Add(GetRewindData());
-                currentDataTimer = 0.0f;
             }
         }
     }
@@ -75,25 +84,28 @@ public class PlayerRewind : MonoBehaviour
         float secordsPerData = rewindDuration / rData.Count;
         Vector3 curretDataPlayerStarPos = transform.position;
         Quaternion currentPlayerStartRotation = transform.rotation;
-        //Quaternion currentCameraStartRotation = playerCameraController.transform.rotation;
+        Quaternion currentCameraStartRotation = playerCameraController.transform.rotation;
+        Quaternion lastCameraStartRotation = rData[0].cameraRot;
         Camera.main.GetComponent<ScanlinesEffect>().enabled = true;
+
+        for (int i = 0; i < audiosSources.Length; i++)
+        {
+            audiosSources[i].pitch = -audiosSources[i].pitch;
+        }
 
         while (rData.Count > 0)
         {
             float t = 0;
-
-
             while (t < secordsPerData)
             {
-                Time.timeScale = 0.5f;
                 transform.position = Vector3.Lerp(curretDataPlayerStarPos,
                     rData[rData.Count - 1].playerPos, t / secordsPerData);
 
                 transform.rotation = Quaternion.Lerp(currentPlayerStartRotation,
                          rData[rData.Count - 1].playerRot, t / secordsPerData);
 
-                //transform.rotation = Quaternion.Lerp(currentCameraStartRotation,
-                //rData[rData.Count - 1].cameraRot, t / secordsPerData);
+                playerCameraController.transform.rotation = Quaternion.Lerp(currentCameraStartRotation,
+                rData[rData.Count - 1].cameraRot, t / secordsPerData);
 
                 t += Time.deltaTime;
 
@@ -101,13 +113,16 @@ public class PlayerRewind : MonoBehaviour
             }
             curretDataPlayerStarPos = rData[rData.Count - 1].playerPos;
             currentPlayerStartRotation = rData[rData.Count - 1].playerRot;
-            //currentCameraStartRotation = rData[rData.Count - 1].cameraRot;
+            currentCameraStartRotation = rData[rData.Count - 1].cameraRot;
 
             rData.RemoveAt(rData.Count - 1);
         }
-        Time.timeScale = 1.0f;
         playerCameraController.LockRotation(false);
         canCollectRecallData = true;
         Camera.main.GetComponent<ScanlinesEffect>().enabled = false;
+        for (int i = 0; i < audiosSources.Length; i++)
+        {
+            audiosSources[i].pitch = -audiosSources[i].pitch;
+        }
     }
 }

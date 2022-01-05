@@ -12,21 +12,32 @@ public class PlayerRewind : MonoBehaviour
     private bool canCollectRecallData = true;
     private float currentDataTimer = 0.0f;
     AudioSource[] audiosSources;
+    PropPhysicsController[] props;
 
     void Awake()
     {
         audiosSources = FindObjectsOfType<AudioSource>();
+        props = FindObjectsOfType<PropPhysicsController>();
     }
 
     [System.Serializable]
-    private class RewindData
+    private class PlayerRewindData
     {
         public Vector3 playerPos;
         public Quaternion playerRot;
         public Quaternion cameraRot;
     }
 
-    [SerializeField] private List<RewindData> rData = new List<RewindData>();
+    [System.Serializable]
+    private class PropsRewindData
+    {
+        public Vector3 objPos;
+        public Quaternion objRot;
+    }
+
+    [SerializeField] private List<PlayerRewindData> rData = new List<PlayerRewindData>();
+    [SerializeField] private List<List<PropsRewindData>> rPropsData = new List<List<PropsRewindData>>();
+
     private void Update()
     {
         manageRewindData();
@@ -59,22 +70,43 @@ public class PlayerRewind : MonoBehaviour
                     if (rData.Count >= maxRewindData)
                     {
                         rData.RemoveAt(0);
+                        rPropsData.RemoveAt(0);
                     }
-                    rData.Add(GetRewindData());
+                    rData.Add(GetPlayerRewindData());
+                    rPropsData.Add(GetPropRewindData());
                     currentDataTimer = 0.0f;
                 }
             }
         }
     }
 
-    private RewindData GetRewindData()
+    private PlayerRewindData GetPlayerRewindData()
     {
-        return new RewindData()
+        return new PlayerRewindData()
         {
             playerPos = transform.position,
             playerRot = transform.rotation,
             cameraRot = playerCameraController.transform.rotation
         };
+    }
+
+    private List<PropsRewindData> GetPropRewindData()
+    {
+        List<PropsRewindData> objData = new List<PropsRewindData>();
+
+        for (int i = 0; i < props.Length; i++)
+        {
+            Vector3 pos = props[i].gameObject.transform.position;
+            Quaternion rot = props[i].gameObject.transform.rotation;
+            PropsRewindData data  = new PropsRewindData()
+            {
+                objPos = pos,
+                objRot = rot
+            };
+            objData.Add(data);
+        }
+
+        return objData;
     }
 
     private IEnumerator Rewind()
@@ -85,14 +117,22 @@ public class PlayerRewind : MonoBehaviour
         Vector3 curretDataPlayerStarPos = transform.position;
         Quaternion currentPlayerStartRotation = transform.rotation;
         Quaternion currentCameraStartRotation = playerCameraController.transform.rotation;
-        Quaternion lastCameraStartRotation = rData[0].cameraRot;
-        Camera.main.GetComponent<ScanlinesEffect>().enabled = true;
+
+        List<Vector3> curretDataPropStarPos = new List<Vector3>();
+        List<Quaternion> currentPropStartRot = new List<Quaternion>();
+
+        for (int i = 0; i < props.Length; i++)
+        {
+            curretDataPropStarPos.Add(props[i].gameObject.transform.position);
+            currentPropStartRot.Add(props[i].gameObject.transform.rotation);
+        }
 
         for (int i = 0; i < audiosSources.Length; i++)
         {
             audiosSources[i].pitch = -audiosSources[i].pitch;
         }
 
+        Camera.main.GetComponent<ScanlinesEffect>().enabled = true;
         while (rData.Count > 0)
         {
             float t = 0;
@@ -107,6 +147,14 @@ public class PlayerRewind : MonoBehaviour
                 playerCameraController.transform.rotation = Quaternion.Lerp(currentCameraStartRotation,
                 rData[rData.Count - 1].cameraRot, t / secordsPerData);
 
+                for (int i = 0; i < props.Length; i++)
+                {
+                    props[i].gameObject.transform.position = Vector3.Lerp(curretDataPropStarPos[i],
+                                                    rPropsData[rPropsData.Count - 1][i].objPos, t / secordsPerData); ;
+                    props[i].gameObject.transform.rotation = Quaternion.Lerp(currentPropStartRot[i],
+                                                   rPropsData[rPropsData.Count - 1][i].objRot, t / secordsPerData); ;
+                }
+
                 t += Time.deltaTime;
 
                 yield return null;
@@ -114,8 +162,15 @@ public class PlayerRewind : MonoBehaviour
             curretDataPlayerStarPos = rData[rData.Count - 1].playerPos;
             currentPlayerStartRotation = rData[rData.Count - 1].playerRot;
             currentCameraStartRotation = rData[rData.Count - 1].cameraRot;
-
             rData.RemoveAt(rData.Count - 1);
+
+            for (int i = 0; i < props.Length; i++)
+            {
+                curretDataPropStarPos[i] = rPropsData[rPropsData.Count - 1][i].objPos;
+                currentPropStartRot[i] = rPropsData[rPropsData.Count - 1][i].objRot;
+            }
+
+            rPropsData.RemoveAt(rPropsData.Count - 1);
         }
         playerCameraController.LockRotation(false);
         canCollectRecallData = true;

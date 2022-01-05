@@ -15,11 +15,11 @@ D:/Git_repos/Proyecto3Prototype2
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60574
+61230
 Successfully changed project path to: D:/Git_repos/Proyecto3Prototype2
 D:/Git_repos/Proyecto3Prototype2
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 281.25 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 642.84 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.4f1 (4cd64a618c1b)
 [Subsystems] Discovering subsystems at path E:/Unity Editors/2021.1.4f1/Editor/Data/Resources/UnitySubsystems
@@ -37,517 +37,189 @@ Initialize mono
 Mono path[0] = 'E:/Unity Editors/2021.1.4f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity Editors/2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'E:/Unity Editors/2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56360
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity Editors/2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001374 seconds.
+Registered in 0.002684 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 202.69 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 321.74 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.767 seconds
+- Completed reload, in  4.069 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005040 seconds.
+Registered in 0.005401 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 229.28 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 264.72 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.780 seconds
+- Completed reload, in  2.747 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.65 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 2.42 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3279 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 201.9 MB.
-System memory in use after: 202.1 MB.
+System memory in use before: 202.0 MB.
+System memory in use after: 202.2 MB.
 
 Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 3747.
-Total: 8.313400 ms (FindLiveObjects: 0.268500 ms CreateObjectMapping: 0.160400 ms MarkObjects: 7.625400 ms  DeleteObjects: 0.257500 ms)
+Total: 17.708900 ms (FindLiveObjects: 0.431200 ms CreateObjectMapping: 0.413600 ms MarkObjects: 16.713800 ms  DeleteObjects: 0.148700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(c6c487745307bc7479a500de21476d55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(c6c487745307bc7479a500de21476d55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36a962b6f5326582e8dafcbfe0a8e6a8') in 0.268252 seconds 
+  path: Assets/Scripts/Player/Skills/Telekinesis/TelekinesisLineRenderer.cs
+  artifactKey: Guid(55e6c652e4ea80d4f90f669085d3fd22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Skills/Telekinesis/TelekinesisLineRenderer.cs using Guid(55e6c652e4ea80d4f90f669085d3fd22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56d374d808f9a3c77775c33b96f7ab08') in 0.082539 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 99.318290 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room
-  artifactKey: Guid(9b3ec04c040b3f947aec3623017dc130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room using Guid(9b3ec04c040b3f947aec3623017dc130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e084707dc1d68d67759c4cafc7855e09') in 0.004845 seconds 
+  Time since last request: 0.000227 seconds.
+  path: Assets/Scripts/Player/Skills/Telekinesis
+  artifactKey: Guid(952d6b81a6f31e9499ab99a550e4163a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Skills/Telekinesis using Guid(952d6b81a6f31e9499ab99a550e4163a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cce8bbabcfd0bcdc0b548e903194c60') in 0.002834 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.700390 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Big Door Blockers.prefab
-  artifactKey: Guid(fd7f3f0bff18e77429e93bdd61fef0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Big Door Blockers.prefab using Guid(fd7f3f0bff18e77429e93bdd61fef0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a638771c9a0a81a1c4c3ec2683fa85c') in 0.033113 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000303 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Ceiling Corridor.prefab
-  artifactKey: Guid(3d2e791e27d224445abb06d984acbc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Ceiling Corridor.prefab using Guid(3d2e791e27d224445abb06d984acbc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ece7e7a4c61ab0a541b89ad5baafb347') in 0.023770 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Ceiling Perimeter.prefab
-  artifactKey: Guid(d88d92f45874f0b4388557823ff48363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Ceiling Perimeter.prefab using Guid(d88d92f45874f0b4388557823ff48363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe3fafed786b491bfc75093fe9806c81') in 0.014884 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000222 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Floor.prefab
-  artifactKey: Guid(83763a0bfb299974e894e2b7ea69cc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Floor.prefab using Guid(83763a0bfb299974e894e2b7ea69cc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e5cbcd34676e4d3493bf71aab9f6163') in 0.032192 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Window.prefab
-  artifactKey: Guid(b6dffe4605e996f41a034c9ce98f262a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Window.prefab using Guid(b6dffe4605e996f41a034c9ce98f262a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '566e1d209993ae573cb0519174c7ca69') in 0.024717 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner.prefab
-  artifactKey: Guid(b32ddd94072ef63419381e4bec843ce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner.prefab using Guid(b32ddd94072ef63419381e4bec843ce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb760c159ce3ee5244d998ca18422808') in 0.021072 seconds 
+  Time since last request: 0.000225 seconds.
+  path: Assets/Scripts/Player
+  artifactKey: Guid(98a54c76f0e111c4ba346edfd28c7f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player using Guid(98a54c76f0e111c4ba346edfd28c7f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bf7549893e7cd8c48715cc67f603806') in 0.002165 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000184 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner Window.prefab
-  artifactKey: Guid(e8347ad6dcdd7224483721490442df7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner Window.prefab using Guid(e8347ad6dcdd7224483721490442df7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1829db2be295c4b651ac4334012eedd9') in 0.021941 seconds 
+  path: Assets/Scripts/Player/Skills/Telekinesis/RotationCameraFreeze.cs
+  artifactKey: Guid(73161c079d1bf9a4cab55a2d494e48ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Skills/Telekinesis/RotationCameraFreeze.cs using Guid(73161c079d1bf9a4cab55a2d494e48ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeba0ad200bf534a939b1b9657f8dd47') in 0.002622 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.647712 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area
-  artifactKey: Guid(e2f15e9be6ce285479d3162f0f3e34fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area using Guid(e2f15e9be6ce285479d3162f0f3e34fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aafe16fe85bba7a85fb79b358c6be8c') in 0.002918 seconds 
+  Time since last request: 0.000221 seconds.
+  path: Assets/Scripts/Player/Skills/Telekinesis/TelekinesisController.cs
+  artifactKey: Guid(1671265afba22e341a3a32faea6f5e50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Skills/Telekinesis/TelekinesisController.cs using Guid(1671265afba22e341a3a32faea6f5e50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f8c55264033199b5545d77c424a6558') in 0.002436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Scripts/Player/Skills
+  artifactKey: Guid(035136451ef49194f8b241d0a72c8f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Skills using Guid(035136451ef49194f8b241d0a72c8f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1911cc634e1a4904f4e534527667449') in 0.002837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.070837 seconds.
+  path: Assets/Scripts/Effects
+  artifactKey: Guid(bb8bc5b98f3da744dacdf197a7f08a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Effects using Guid(bb8bc5b98f3da744dacdf197a7f08a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c262edae60b6f91f48d9c1e55a394fad') in 0.002120 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004186 seconds.
+Registered in 0.017820 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.96 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 3.10 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.208 seconds
+- Completed reload, in  1.871 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.79 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.72 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.3 MB.
-System memory in use after: 169.5 MB.
+System memory in use before: 165.0 MB.
+System memory in use after: 165.3 MB.
 
-Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3758.
-Total: 7.268100 ms (FindLiveObjects: 0.289500 ms CreateObjectMapping: 0.170100 ms MarkObjects: 6.761300 ms  DeleteObjects: 0.046000 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3750.
+Total: 6.858500 ms (FindLiveObjects: 0.266500 ms CreateObjectMapping: 0.180000 ms MarkObjects: 6.384200 ms  DeleteObjects: 0.026800 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 6.965598 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area/Evac Room
-  artifactKey: Guid(ab21018f1887b6647b85aebc8f73f1f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area/Evac Room using Guid(ab21018f1887b6647b85aebc8f73f1f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01843af3c8fdc033f53353e2db094e8c') in 0.005590 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 35.811012 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area/Evac Room/Mirrorred Wall.prefab
-  artifactKey: Guid(f13753df739a86f4999f1c3a8b50c07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area/Evac Room/Mirrorred Wall.prefab using Guid(f13753df739a86f4999f1c3a8b50c07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a0bf760466ab017d40d45e01c9afd06') in 0.063813 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 44.865694 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area/Evac Room/Mirrorred Wall.prefab
-  artifactKey: Guid(f13753df739a86f4999f1c3a8b50c07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Main Area/Evac Room/Mirrorred Wall.prefab using Guid(f13753df739a86f4999f1c3a8b50c07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eeda898eb70a3ce10515627a3e723e3') in 0.048528 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 60.285063 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/MIrrored Floor.prefab
-  artifactKey: Guid(260dc06d70d86604b84eee52cdaf1859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/MIrrored Floor.prefab using Guid(260dc06d70d86604b84eee52cdaf1859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec93f7dad9bd1a0fbab4c61ff728bcb') in 0.004773 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.213715 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Ceiling.prefab
-  artifactKey: Guid(c58f3e8455439c04b9035eee1cb104d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Ceiling.prefab using Guid(c58f3e8455439c04b9035eee1cb104d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac42d41e0dcce882751eb5be2c69887a') in 0.006945 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 50.620668 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/MIrrored Floor.prefab
-  artifactKey: Guid(260dc06d70d86604b84eee52cdaf1859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/MIrrored Floor.prefab using Guid(260dc06d70d86604b84eee52cdaf1859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2366f15462fcccbc77a70d243b4fb3c') in 0.015451 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 82.436931 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/MIrrored Floor Trail.prefab
-  artifactKey: Guid(260dc06d70d86604b84eee52cdaf1859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/MIrrored Floor Trail.prefab using Guid(260dc06d70d86604b84eee52cdaf1859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67f379614339c03de807813871714255') in 0.017619 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003624 seconds.
+Registered in 0.012953 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.03 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 5.56 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.204 seconds
+- Completed reload, in  3.245 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 5.95 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2.06 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.5 MB.
-System memory in use after: 169.7 MB.
+System memory in use before: 165.1 MB.
+System memory in use after: 165.3 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3753.
+Total: 11.222000 ms (FindLiveObjects: 0.314800 ms CreateObjectMapping: 0.209400 ms MarkObjects: 10.661900 ms  DeleteObjects: 0.034300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005595 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.024 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 2.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 165.1 MB.
+System memory in use after: 165.4 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3756.
+Total: 14.756500 ms (FindLiveObjects: 1.514100 ms CreateObjectMapping: 1.333000 ms MarkObjects: 11.846600 ms  DeleteObjects: 0.061100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004841 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.270 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 165.1 MB.
+System memory in use after: 165.4 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3759.
+Total: 7.115000 ms (FindLiveObjects: 0.271400 ms CreateObjectMapping: 0.185200 ms MarkObjects: 6.629200 ms  DeleteObjects: 0.027700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.047972 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.449 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 165.2 MB.
+System memory in use after: 165.4 MB.
 
 Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3762.
-Total: 7.434700 ms (FindLiveObjects: 0.265700 ms CreateObjectMapping: 0.169600 ms MarkObjects: 6.974400 ms  DeleteObjects: 0.023900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 923.339869 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrorred Wall.prefab
-  artifactKey: Guid(f13753df739a86f4999f1c3a8b50c07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrorred Wall.prefab using Guid(f13753df739a86f4999f1c3a8b50c07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fb3882bafa419ea484e77cd62a42f50') in 0.103356 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003939 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.262 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.70 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.5 MB.
-System memory in use after: 169.7 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3766.
-Total: 6.699200 ms (FindLiveObjects: 0.274600 ms CreateObjectMapping: 0.161000 ms MarkObjects: 6.234400 ms  DeleteObjects: 0.027800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.091066 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor Trail L.prefab
-  artifactKey: Guid(0752dd8ef6b8589498f610873cbe7dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor Trail L.prefab using Guid(0752dd8ef6b8589498f610873cbe7dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49939f8b4a9b5f1dfafd347254105212') in 0.051978 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.949453 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor.prefab
-  artifactKey: Guid(12956b46d15ae7e4ba22ead4afd88d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor.prefab using Guid(12956b46d15ae7e4ba22ead4afd88d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f8947868be899c384176d68b6a7fc5a') in 0.008430 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.954217 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor Trail L.prefab
-  artifactKey: Guid(0752dd8ef6b8589498f610873cbe7dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor Trail L.prefab using Guid(0752dd8ef6b8589498f610873cbe7dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a1d2dd26385bcd8c0b3d1c8f36db44c') in 0.048655 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 78.546861 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor.prefab
-  artifactKey: Guid(12956b46d15ae7e4ba22ead4afd88d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Mirrored Floor.prefab using Guid(12956b46d15ae7e4ba22ead4afd88d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0086db295e9769826bb9e00eb637db2c') in 0.017563 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003908 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.78 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.262 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.98 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.5 MB.
-System memory in use after: 169.8 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3770.
-Total: 6.883300 ms (FindLiveObjects: 0.254200 ms CreateObjectMapping: 0.149900 ms MarkObjects: 6.423100 ms  DeleteObjects: 0.054700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 394.265203 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Full Glass.prefab
-  artifactKey: Guid(369139570d77140469c2d7f2819fdfa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Full Glass.prefab using Guid(369139570d77140469c2d7f2819fdfa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fcf24e4ee75d4fc43cc4a8371d49100') in 0.057351 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.877574 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Half Glass.prefab
-  artifactKey: Guid(e63f7857d7168494bb518cce9bef47e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Half Glass.prefab using Guid(e63f7857d7168494bb518cce9bef47e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed3a829181c66f55f62e60702b9982b9') in 0.003899 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.562273 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Full Glass.prefab
-  artifactKey: Guid(369139570d77140469c2d7f2819fdfa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Full Glass.prefab using Guid(369139570d77140469c2d7f2819fdfa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8ca4cca455259131425a7d87f97c16d') in 0.062916 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 50.721549 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Half Wall.prefab
-  artifactKey: Guid(e63f7857d7168494bb518cce9bef47e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Evac Room/Half Wall.prefab using Guid(e63f7857d7168494bb518cce9bef47e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12c7905ede922311c246eda46a8b92fe') in 0.027640 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005728 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.93 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.275 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.85 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.6 MB.
-System memory in use after: 169.8 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3774.
-Total: 6.862900 ms (FindLiveObjects: 0.269900 ms CreateObjectMapping: 0.157500 ms MarkObjects: 6.385700 ms  DeleteObjects: 0.048500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 981.858788 seconds.
-  path: Assets/Prefabs/Mechanisms/Disable Portal.prefab
-  artifactKey: Guid(55ac31bfe6545c54da142f0f42e875c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Disable Portal.prefab using Guid(55ac31bfe6545c54da142f0f42e875c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a6259e30fd63e9466de7976c8f0ca3') in 0.157498 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Switch).prefab
-  artifactKey: Guid(cf23cda2b8d44f140aa7a18e8097f882) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Switch).prefab using Guid(cf23cda2b8d44f140aa7a18e8097f882) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa8fdc1e57102b309fcfe2cad783474') in 0.034397 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bbbc28cfbb7e2f398938d6d2beb586c') in 0.021878 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/Prefabs/Mechanisms/PressurePad.prefab
-  artifactKey: Guid(6f5623750be0502458a172a837b5e677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/PressurePad.prefab using Guid(6f5623750be0502458a172a837b5e677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4360db310b64e44ebad13f475f5b47f9') in 0.083742 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000233 seconds.
-  path: Assets/Prefabs/Mechanisms/Switch.prefab
-  artifactKey: Guid(218803e45402f904aa5e604f6eb438d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Switch.prefab using Guid(218803e45402f904aa5e604f6eb438d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7107e962be68f548e89a39ca9605a72b') in 0.015079 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003743 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.242 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.64 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.7 MB.
-System memory in use after: 169.9 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3778.
-Total: 6.949900 ms (FindLiveObjects: 0.270500 ms CreateObjectMapping: 0.166100 ms MarkObjects: 6.489100 ms  DeleteObjects: 0.023300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 44.337147 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '895cda8c6b1a4969539797f825a11c41') in 0.133024 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.230127 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c69700c734a4d1b9416ebd305114d2a6') in 0.037105 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 49.986107 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a73c47979b03b17c5917ffc5c4810c3e') in 0.034533 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.990994 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6b9e68ec4486145f8e8042049bdde1c') in 0.024581 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.382011 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90f3f93d631d374dcb2c609105e18b62') in 0.027881 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.368726 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abbbb2a1f84137f19125030e515c81b5') in 0.021069 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.227559 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1da14e6cdc3eaf297049017cf2be5849') in 0.031043 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.985341 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d937d7fad222117ea8052d983a6b433') in 0.020068 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.631077 seconds.
-  path: Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab
-  artifactKey: Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/Lvl1 Door (Automatic).prefab using Guid(ad48dc2c53168e74fbce98f694a0c185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '381da89e02038d95fcac4d38f814f6c8') in 0.023869 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003720 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.02 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.258 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 2.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.7 MB.
-System memory in use after: 169.9 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3782.
-Total: 7.261200 ms (FindLiveObjects: 0.284700 ms CreateObjectMapping: 0.186200 ms MarkObjects: 6.756700 ms  DeleteObjects: 0.032100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 265.540301 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box.prefab
-  artifactKey: Guid(1e228e3360f758040b50b700ea796ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box.prefab using Guid(1e228e3360f758040b50b700ea796ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa26c5b5d30a5b18081ec1cfad5532f6') in 0.061943 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.977290 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box.prefab
-  artifactKey: Guid(1e228e3360f758040b50b700ea796ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box.prefab using Guid(1e228e3360f758040b50b700ea796ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16828e3eecaedd21a09999ff03aa7a52') in 0.041538 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 71.796658 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box Cube.prefab
-  artifactKey: Guid(aecb0e8291b728c4a8e5c49c63e3a2e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box Cube.prefab using Guid(aecb0e8291b728c4a8e5c49c63e3a2e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a7fc7859f1c7c0f0b17416e77722e0e') in 0.005549 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.905506 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box Half.prefab
-  artifactKey: Guid(1e228e3360f758040b50b700ea796ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box Half.prefab using Guid(1e228e3360f758040b50b700ea796ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adcb9d3031683519d6122c970543a080') in 0.029854 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 293.901598 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box Cube.prefab
-  artifactKey: Guid(aecb0e8291b728c4a8e5c49c63e3a2e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Box Cube.prefab using Guid(aecb0e8291b728c4a8e5c49c63e3a2e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb0d87896208dfe20f6396bee15bb674') in 0.021355 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003804 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.99 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.292 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.65 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.7 MB.
-System memory in use after: 170.0 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3786.
-Total: 6.472500 ms (FindLiveObjects: 0.252200 ms CreateObjectMapping: 0.152100 ms MarkObjects: 6.017200 ms  DeleteObjects: 0.049900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.018651 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Cylinder.prefab
-  artifactKey: Guid(e9974dad7392a8f428eb9bf294d05891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Cylinder.prefab using Guid(e9974dad7392a8f428eb9bf294d05891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34f01ec27cd227e2b1b9a0eb549183a') in 0.049536 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.721931 seconds.
-  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Cylinder.prefab
-  artifactKey: Guid(e9974dad7392a8f428eb9bf294d05891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Obstacle Cylinder.prefab using Guid(e9974dad7392a8f428eb9bf294d05891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5503a46327ac4fdda1db830ce7d883ef') in 0.051347 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003672 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.88 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.268 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.62 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2906 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.8 MB.
-System memory in use after: 170.0 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3790.
-Total: 6.749000 ms (FindLiveObjects: 0.262600 ms CreateObjectMapping: 0.155000 ms MarkObjects: 6.290300 ms  DeleteObjects: 0.040000 ms)
+Total: 9.281700 ms (FindLiveObjects: 0.263800 ms CreateObjectMapping: 0.159800 ms MarkObjects: 8.825500 ms  DeleteObjects: 0.031100 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

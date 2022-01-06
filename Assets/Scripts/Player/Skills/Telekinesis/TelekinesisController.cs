@@ -16,7 +16,8 @@ public class TelekinesisController : MonoBehaviour
     [SerializeField] private KeyCode RotationSpeedIncrease = KeyCode.LeftControl;
     [SerializeField] private KeyCode ResetRotation = KeyCode.LeftAlt;
     private Rigidbody _grabbedRigidbody;
-    private Transform _grabbedTransform; 
+    private Transform _grabbedTransform;
+    private bool hasFreezedRotation;
     private Vector3 _hitOffsetLocal;
     private float  _currentGrabDistance;
     private RigidbodyInterpolation  _initialInterpolationSetting;
@@ -69,7 +70,6 @@ public class TelekinesisController : MonoBehaviour
     public BoolEvent OnRotation;
     public BoolEvent OnRotationSnapped;
     public BoolEvent OnAxisChanged;
-
     public GrabEvent OnObjectGrabbed;
 
     //Line Renderer variables
@@ -254,7 +254,14 @@ public class TelekinesisController : MonoBehaviour
                     _grabbedRigidbody.transform.parent = playerTransform.transform;
                     _wasKinematic = _grabbedRigidbody.isKinematic;
                     _grabbedRigidbody.isKinematic = false;
-                    _grabbedRigidbody.freezeRotation = true;
+                    if (!_grabbedRigidbody.freezeRotation)
+                    {
+                        _grabbedRigidbody.freezeRotation = true;
+                    }
+                    else
+                    {
+                        hasFreezedRotation = true;
+                    }
                     _initialInterpolationSetting = _grabbedRigidbody.interpolation;
                     _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _grabbedRigidbody.rotation;
                     _hitOffsetLocal = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
@@ -467,7 +474,14 @@ public class TelekinesisController : MonoBehaviour
         _grabbedRigidbody.MoveRotation(_desiredRotation);
         _grabbedRigidbody.isKinematic = _wasKinematic;
         _grabbedRigidbody.interpolation = _initialInterpolationSetting;
-        _grabbedRigidbody.freezeRotation = false;
+        if (hasFreezedRotation)
+        {
+            _grabbedRigidbody.freezeRotation = true;
+        }
+        else
+        {
+            _grabbedRigidbody.freezeRotation = false;
+        }
         _grabbedRigidbody.transform.parent = null;
         _grabbedRigidbody = null;
         _scrollWheelInput = _zeroVector3;

@@ -13,21 +13,25 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             gameObject.GetComponent<Animator>().Play("Run");
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             gameObject.GetComponent<Animator>().Play("RunBackwards");
         }
-        else if(Input.GetKeyDown(KeyCode.D))
+        else if(Input.GetKey(KeyCode.D))
         {
             gameObject.GetComponent<Animator>().Play("RunRight");
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetKey(KeyCode.A))
         {
             gameObject.GetComponent<Animator>().Play("RunLeft");
+        }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            gameObject.GetComponent<Animator>().Play("Jump");
         }
         else if (playerController.GetComponent<Controller>().GetVelocity() == Vector3.zero)
         {

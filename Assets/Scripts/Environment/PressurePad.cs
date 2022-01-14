@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum Connections { Door, Platform, ForceFild, DisableObject, Portal }
 
 public class PressurePad : MonoBehaviour
 {
     [Header("Settings")]
+    [TagSelector] public string KeyTag = "";
     [SerializeField] private Connections ConnectedTo;
     [SerializeField] private GameObject connectedGameObject;
     private GameObject onTriggerVfx;
@@ -18,7 +20,7 @@ public class PressurePad : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Key")
+        if(other.tag == KeyTag)
         {
             onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.cyan;
             switch (ConnectedTo)
@@ -47,7 +49,7 @@ public class PressurePad : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Key")
+        if (other.tag == KeyTag)
         {
             onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.red;
             switch (ConnectedTo)

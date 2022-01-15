@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AntimatterForceField : MonoBehaviour
 {
-    [SerializeField] private GameObject playerTelekinesis;
     [SerializeField] private GameObject collisionTrailsPrefab;
+    private GameObject playerTelekinesis;
     private GameObject _collisionTrailsTmp;
 
     public void OnTriggerEnter(Collider other)
@@ -17,6 +17,11 @@ public class AntimatterForceField : MonoBehaviour
             if (playerTelekinesis.GetComponent<TelekinesisController>().IsObjectGrabbed())
                 playerTelekinesis.GetComponent<TelekinesisController>().ReleaseObject();
         }
+    }
+
+    private void Start()
+    {
+        playerTelekinesis = GameObject.Find("TelekinesisGaunlet");
     }
 
     private void Update()

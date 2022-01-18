@@ -1,348 +1,1030 @@
 Using pre-set license
 Built from '2021.1/release' branch; Version is '2021.1.4f1 (4cd64a618c1b) revision 5035594'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.1466; Version 2009; 64bit' Language: 'es' Physical Memory: 16238 MB
+OS: 'Windows 10 Home; OS build 22000.434; Version 2009; 64bit' Language: 'es' Physical Memory: 16260 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity 2021.1.4f1\Editor\Unity.exe
+D:\Unity Editor\2021.1.4f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Proyecto3Prototype2
+D:/Proyectos/Juegos/Proyecto3Prototype2
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63588
+<<<<<<< HEAD
+54190
+Successfully changed project path to: D:/Proyectos/Juegos/Proyecto3Prototype2
+D:/Proyectos/Juegos/Proyecto3Prototype2
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 154.99 ms, found 0 plugins.
+=======
+62615
 Successfully changed project path to: D:/Proyecto3Prototype2
 D:/Proyecto3Prototype2
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 114.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 123.45 ms, found 0 plugins.
+>>>>>>> LevelDesign
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.4f1 (4cd64a618c1b)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.1.4f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Proyecto3Prototype2/Assets
+[Subsystems] Discovering subsystems at path D:/Unity Editor/2021.1.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Proyectos/Juegos/Proyecto3Prototype2/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
     Vendor:   NVIDIA
-    VRAM:     8043 MB
-    Driver:   30.0.14.9709
+    VRAM:     6052 MB
+    Driver:   27.21.14.6611
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
 Initialize mono
+<<<<<<< HEAD
+Mono path[0] = 'D:/Unity Editor/2021.1.4f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56676
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity Editor/2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000756 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 157.08 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.364 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002521 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 198.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.479 seconds
+=======
 Mono path[0] = 'C:/Program Files/Unity 2021.1.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity 2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001350 seconds.
+Registered in 0.001374 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 118.31 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 119.45 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.941 seconds
+- Completed reload, in  0.926 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001632 seconds.
+Registered in 0.001748 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 118.35 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 123.35 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.941 seconds
+- Completed reload, in  0.967 seconds
+>>>>>>> LevelDesign
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.50 ms, found 0 plugins.
+<<<<<<< HEAD
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 3.63 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3285 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 268.6 MB.
-System memory in use after: 268.8 MB.
+System memory in use before: 287.1 MB.
+System memory in use after: 287.3 MB.
 
-Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 3743.
-Total: 5.020200 ms (FindLiveObjects: 0.252300 ms CreateObjectMapping: 0.149700 ms MarkObjects: 4.510800 ms  DeleteObjects: 0.106600 ms)
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 3758.
+Total: 8.580700 ms (FindLiveObjects: 0.299700 ms CreateObjectMapping: 0.190200 ms MarkObjects: 7.686000 ms  DeleteObjects: 0.400800 ms)
 
 ========================================================================
 Received Import Request.
+  path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle3.unity
+  artifactKey: Guid(9c2ec5712b23f46439b992f577a5ce3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle3.unity using Guid(9c2ec5712b23f46439b992f577a5ce3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65df41ee290c989d21f85f0ef83c4ca2') in 0.023474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 179.941857 seconds.
   path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.unity
   artifactKey: Guid(6223f0e7de9bf6d47bee29c07d492da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.unity using Guid(6223f0e7de9bf6d47bee29c07d492da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6549190995cb85031bf08681ef3ee7ba') in 0.017479 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.674322 seconds.
-  path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle2.unity
-  artifactKey: Guid(eb463e91a620f1c4684778735f72d205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle2.unity using Guid(eb463e91a620f1c4684778735f72d205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fb805d5d2990d60cd702ea72a79af83') in 0.005691 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.425832 seconds.
-  path: Assets/Scenes/Chapter1/Chapter1_Puzzle1.unity
-  artifactKey: Guid(2b70a30d3c674d243ad4d6a5ca31f795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Chapter1/Chapter1_Puzzle1.unity using Guid(2b70a30d3c674d243ad4d6a5ca31f795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8801283574fbd51803095d6b9bafe4e0') in 0.006623 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.686970 seconds.
-  path: Assets/Scenes/Chapter1/Chapter1_Puzzle2_Test.unity
-  artifactKey: Guid(81a24a9c5584dcf45a4f62183859d163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Chapter1/Chapter1_Puzzle2_Test.unity using Guid(81a24a9c5584dcf45a4f62183859d163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e06d6a345ee6bb6e0b61bf5339fbe4af') in 0.006538 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.601798 seconds.
-  path: Assets/Scenes/Chapter1/Chapter1_Puzzle3.unity
-  artifactKey: Guid(42e1e4d6110b1a14e8e1b27a6b072552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Chapter1/Chapter1_Puzzle3.unity using Guid(42e1e4d6110b1a14e8e1b27a6b072552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe7e0e462816c49d7e5e72faa602df5') in 0.005297 seconds 
+Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.unity using Guid(6223f0e7de9bf6d47bee29c07d492da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd47650412c89149c676b73d02fb7a0c') in 0.004179 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001982 seconds.
+Registered in 0.002454 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.53 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.77 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.767 seconds
+- Completed reload, in  1.036 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.60 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 3.01 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 231.3 MB.
-System memory in use after: 231.5 MB.
+System memory in use before: 249.8 MB.
+System memory in use after: 250.0 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3746.
-Total: 4.967700 ms (FindLiveObjects: 0.277500 ms CreateObjectMapping: 0.182400 ms MarkObjects: 4.486100 ms  DeleteObjects: 0.020700 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3761.
+Total: 10.555200 ms (FindLiveObjects: 0.382500 ms CreateObjectMapping: 0.200900 ms MarkObjects: 9.934000 ms  DeleteObjects: 0.036100 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1133.487295 seconds.
-  path: Assets/Imports/SkySerie Freebie
-  artifactKey: Guid(86042e07dceeebf458c19cd337a66bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/SkySerie Freebie using Guid(86042e07dceeebf458c19cd337a66bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8165510a353450f1d16a8a5a9a803374') in 0.010445 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 94.977484 seconds.
-  path: Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps
-  artifactKey: Guid(cdca3ee8720cd794baf13bf3cbdb1042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps using Guid(cdca3ee8720cd794baf13bf3cbdb1042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff864ee4f5ca98bc61fa62714b0fead') in 0.006991 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.047948 seconds.
-  path: Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps/Stump 1.prefab
-  artifactKey: Guid(9bc0385753ee8cb48b6c4ea0d1847e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps/Stump 1.prefab using Guid(9bc0385753ee8cb48b6c4ea0d1847e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f280c8ab4d6af3e8e6358cfa8b7cd2') in 0.113383 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps/Stump 3.prefab
-  artifactKey: Guid(e7f0e2c64d131ab428c33872ffabae8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps/Stump 3.prefab using Guid(e7f0e2c64d131ab428c33872ffabae8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296f6e855081e82cf95032b27c95f2ac') in 0.011497 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000302 seconds.
-  path: Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps/Stump 2.prefab
-  artifactKey: Guid(697cd58e3e524ec4b9ab34bf2089ba14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Distant Lands/Hylophobia - Stylized Forest/Contents/Prefabs/Details/Stumps/Stump 2.prefab using Guid(697cd58e3e524ec4b9ab34bf2089ba14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f42abac969fd353c950da9f87eb629e3') in 0.010772 seconds 
+  Time since last request: 43.727762 seconds.
+  path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.unity
+  artifactKey: Guid(6223f0e7de9bf6d47bee29c07d492da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.unity using Guid(6223f0e7de9bf6d47bee29c07d492da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcfe76ea3123d886310e7776e4ed28c7') in 0.121709 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002076 seconds.
+Registered in 0.002785 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.54 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.770 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.61 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.0 MB.
-System memory in use after: 235.2 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3756.
-Total: 5.091100 ms (FindLiveObjects: 0.273500 ms CreateObjectMapping: 0.149700 ms MarkObjects: 4.644900 ms  DeleteObjects: 0.022200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001992 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.62 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.751 seconds
+- Completed reload, in  1.224 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
 Refreshing native plugins compatible for Editor in 1.57 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.0 MB.
-System memory in use after: 235.2 MB.
+System memory in use before: 249.9 MB.
+System memory in use after: 250.1 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3759.
-Total: 5.330200 ms (FindLiveObjects: 0.241200 ms CreateObjectMapping: 0.150700 ms MarkObjects: 4.917800 ms  DeleteObjects: 0.019500 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3764.
+Total: 6.427800 ms (FindLiveObjects: 0.265000 ms CreateObjectMapping: 0.133100 ms MarkObjects: 6.009000 ms  DeleteObjects: 0.019600 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 530.849560 seconds.
-  path: Assets/Scripts
-  artifactKey: Guid(0e472f2c18452c84f9b6e530ccc4dc55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts using Guid(0e472f2c18452c84f9b6e530ccc4dc55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66d64699de1f87f107ace781b8807397') in 0.009848 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.216950 seconds.
-  path: Assets/Prefabs/Mechanisms/LoadLevelDoor.prefab
-  artifactKey: Guid(bb8cbfd4c76a0ef4793e4494ca17a096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/LoadLevelDoor.prefab using Guid(bb8cbfd4c76a0ef4793e4494ca17a096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a02149b127c859bc2a75726ee89724') in 0.113142 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/Prefabs/Mechanisms/TimerSwitch.prefab
-  artifactKey: Guid(774127f23f01a5143aeb3377779f9ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Mechanisms/TimerSwitch.prefab using Guid(774127f23f01a5143aeb3377779f9ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7cb797f1c344588339d1db620a043c') in 0.038084 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002175 seconds.
+Registered in 0.002689 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.58 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.025 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 2.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 249.9 MB.
+System memory in use after: 250.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3767.
+Total: 8.544200 ms (FindLiveObjects: 0.771000 ms CreateObjectMapping: 0.348200 ms MarkObjects: 7.376700 ms  DeleteObjects: 0.045700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002645 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.085 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 249.9 MB.
+System memory in use after: 250.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3770.
+Total: 6.240100 ms (FindLiveObjects: 0.275900 ms CreateObjectMapping: 0.154000 ms MarkObjects: 5.786800 ms  DeleteObjects: 0.021800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002541 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.977 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 249.9 MB.
+System memory in use after: 250.2 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3773.
+Total: 5.971100 ms (FindLiveObjects: 0.259700 ms CreateObjectMapping: 0.130900 ms MarkObjects: 5.561500 ms  DeleteObjects: 0.018300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1011.166570 seconds.
+  path: Assets/Scenes/Chapter1/Chapter1_Puzzle3.unity
+  artifactKey: Guid(42e1e4d6110b1a14e8e1b27a6b072552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter1/Chapter1_Puzzle3.unity using Guid(42e1e4d6110b1a14e8e1b27a6b072552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '502af16d71023eb568f2fc688a334423') in 0.294773 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002549 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.254 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 2.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 249.9 MB.
+System memory in use after: 250.2 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3776.
+Total: 9.550600 ms (FindLiveObjects: 0.341900 ms CreateObjectMapping: 0.258100 ms MarkObjects: 8.919700 ms  DeleteObjects: 0.029100 ms)
+=======
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3285 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 268.9 MB.
+System memory in use after: 269.1 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 3744.
+Total: 5.531500 ms (FindLiveObjects: 0.281200 ms CreateObjectMapping: 0.187800 ms MarkObjects: 4.952300 ms  DeleteObjects: 0.109000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.1.unity
+  artifactKey: Guid(97402bf3462f81e4d81e7aadcbbdb9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle1.1.unity using Guid(97402bf3462f81e4d81e7aadcbbdb9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0323258c65b5e63b979dffc2ad01e170') in 0.015021 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 224.278390 seconds.
+  path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle3.unity
+  artifactKey: Guid(9c2ec5712b23f46439b992f577a5ce3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle3.unity using Guid(9c2ec5712b23f46439b992f577a5ce3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41fc151558e511d61d39017ae5802e65') in 0.007786 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002045 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.57 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.755 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.64 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.66 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.1 MB.
-System memory in use after: 235.3 MB.
+System memory in use before: 231.6 MB.
+System memory in use after: 231.8 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3763.
-Total: 4.853000 ms (FindLiveObjects: 0.320200 ms CreateObjectMapping: 0.164200 ms MarkObjects: 4.350900 ms  DeleteObjects: 0.016900 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3747.
+Total: 5.525900 ms (FindLiveObjects: 0.255700 ms CreateObjectMapping: 0.141900 ms MarkObjects: 5.104200 ms  DeleteObjects: 0.022800 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+Registered in 0.002062 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.853 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.6 MB.
+System memory in use after: 231.9 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3750.
+Total: 5.759300 ms (FindLiveObjects: 0.265000 ms CreateObjectMapping: 0.160600 ms MarkObjects: 5.308400 ms  DeleteObjects: 0.024100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002190 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.898 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 231.9 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3753.
+Total: 6.080100 ms (FindLiveObjects: 0.319400 ms CreateObjectMapping: 0.212600 ms MarkObjects: 5.521900 ms  DeleteObjects: 0.024600 ms)
+>>>>>>> LevelDesign
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 0.002895 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.389 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 2.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 249.9 MB.
+System memory in use after: 250.2 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3779.
+Total: 10.562000 ms (FindLiveObjects: 0.430800 ms CreateObjectMapping: 0.622900 ms MarkObjects: 9.456300 ms  DeleteObjects: 0.049800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1133.278118 seconds.
+  path: Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials
+  artifactKey: Guid(70b7bd9acca87cb449129b60ee5988dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials using Guid(70b7bd9acca87cb449129b60ee5988dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1953139cfbf21abe1b4fc4ab75ab8b7c') in 0.113210 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002377 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.946 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 250.0 MB.
+System memory in use after: 250.2 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3782.
+Total: 6.165700 ms (FindLiveObjects: 0.253700 ms CreateObjectMapping: 0.150500 ms MarkObjects: 5.739600 ms  DeleteObjects: 0.020900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.496192 seconds.
+  path: Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials/Skybox 6.mat
+  artifactKey: Guid(e5078b65a49349247ab58b4598d4cfc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials/Skybox 6.mat using Guid(e5078b65a49349247ab58b4598d4cfc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '938e2e9a4385b54521e543be061919da') in 0.263397 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 60.329597 seconds.
+  path: Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials/Skybox 6.mat
+  artifactKey: Guid(e5078b65a49349247ab58b4598d4cfc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials/Skybox 6.mat using Guid(e5078b65a49349247ab58b4598d4cfc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03f3888777fdc06a9723b243baf6d260') in 0.034783 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002683 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.080 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.8 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3825.
+Total: 7.422400 ms (FindLiveObjects: 0.313400 ms CreateObjectMapping: 0.162600 ms MarkObjects: 6.921300 ms  DeleteObjects: 0.023900 ms)
+=======
+Registered in 0.002545 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.907 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 231.9 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3756.
+Total: 5.739200 ms (FindLiveObjects: 0.264100 ms CreateObjectMapping: 0.157900 ms MarkObjects: 5.292700 ms  DeleteObjects: 0.023200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002100 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.814 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 231.9 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3759.
+Total: 5.575600 ms (FindLiveObjects: 0.317500 ms CreateObjectMapping: 0.206100 ms MarkObjects: 5.027800 ms  DeleteObjects: 0.022500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002181 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.768 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 231.9 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3762.
+Total: 5.468700 ms (FindLiveObjects: 0.276700 ms CreateObjectMapping: 0.173200 ms MarkObjects: 4.997100 ms  DeleteObjects: 0.020800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002126 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 231.9 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3765.
+Total: 5.739600 ms (FindLiveObjects: 0.301500 ms CreateObjectMapping: 0.157100 ms MarkObjects: 5.254100 ms  DeleteObjects: 0.025600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002018 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.868 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 232.0 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3768.
+Total: 6.269100 ms (FindLiveObjects: 0.325000 ms CreateObjectMapping: 0.186100 ms MarkObjects: 5.735900 ms  DeleteObjects: 0.021000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002242 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.781 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 232.0 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3771.
+Total: 5.352400 ms (FindLiveObjects: 0.308900 ms CreateObjectMapping: 0.185600 ms MarkObjects: 4.836900 ms  DeleteObjects: 0.019900 ms)
+>>>>>>> LevelDesign
+
+========================================================================
+Received Import Request.
+  Time since last request: 120.856395 seconds.
+  path: Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials/Skybox 6.mat
+  artifactKey: Guid(e5078b65a49349247ab58b4598d4cfc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Distant Lands/Distant Suite Volume III/Wild - Low Poly Nature Reserve/Contents/Materials/Skybox 6.mat using Guid(e5078b65a49349247ab58b4598d4cfc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e044b6dd0e528f2560e19d48cb1ae5') in 0.129288 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 0.002772 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.931 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.8 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3829.
+Total: 6.292900 ms (FindLiveObjects: 0.275200 ms CreateObjectMapping: 0.167400 ms MarkObjects: 5.825900 ms  DeleteObjects: 0.023100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002958 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.118 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 2.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.8 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3832.
+Total: 10.184500 ms (FindLiveObjects: 0.308900 ms CreateObjectMapping: 0.194600 ms MarkObjects: 9.649000 ms  DeleteObjects: 0.030500 ms)
+=======
+Registered in 0.002109 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.782 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 231.7 MB.
+System memory in use after: 232.0 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3774.
+Total: 5.167700 ms (FindLiveObjects: 0.248600 ms CreateObjectMapping: 0.166400 ms MarkObjects: 4.733900 ms  DeleteObjects: 0.017600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3572.071549 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_T_test.prefab
+  artifactKey: Guid(2685731a95834954eb897098c6f10e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_T_test.prefab using Guid(2685731a95834954eb897098c6f10e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c75f91e36dbc9ca14fdaea80f186c980') in 0.539852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.892894 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/color base Custom.mat
+  artifactKey: Guid(62695caf4e7178a46b789d352cf35115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/color base Custom.mat using Guid(62695caf4e7178a46b789d352cf35115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6094265fd14a09cdd8d8d309466b68ce') in 0.050407 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.959454 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room
+  artifactKey: Guid(9b3ec04c040b3f947aec3623017dc130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room using Guid(9b3ec04c040b3f947aec3623017dc130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee960cc0a8fc73958393153ef4ecc74') in 0.007019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.057224 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Big Door Blockers.prefab
+  artifactKey: Guid(fd7f3f0bff18e77429e93bdd61fef0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Big Door Blockers.prefab using Guid(fd7f3f0bff18e77429e93bdd61fef0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc29e0a55187dcb9145cf5cdf3615783') in 0.017175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Ceiling Perimeter.prefab
+  artifactKey: Guid(d88d92f45874f0b4388557823ff48363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Ceiling Perimeter.prefab using Guid(d88d92f45874f0b4388557823ff48363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f75ab6e2d7f3d0355f6acb5891d6064') in 0.048136 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Floor.prefab
+  artifactKey: Guid(83763a0bfb299974e894e2b7ea69cc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Mirrored Floor.prefab using Guid(83763a0bfb299974e894e2b7ea69cc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '934271e3e4c9363dc48d9d88d96039ca') in 0.017912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Window.prefab
+  artifactKey: Guid(b6dffe4605e996f41a034c9ce98f262a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Window.prefab using Guid(b6dffe4605e996f41a034c9ce98f262a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e57365b58ae0fa88fc3ff840a0f84a32') in 0.026250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner.prefab
+  artifactKey: Guid(b32ddd94072ef63419381e4bec843ce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner.prefab using Guid(b32ddd94072ef63419381e4bec843ce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc50f1057d74678971c5acc3d0752ae5') in 0.013570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner Window.prefab
+  artifactKey: Guid(e8347ad6dcdd7224483721490442df7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Control Room/Control R Corner Window.prefab using Guid(e8347ad6dcdd7224483721490442df7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed2d56163c9ed0424f31a8d18d1556bd') in 0.015767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.362787 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5
+  artifactKey: Guid(5c5e7ec1097faf8449e89f8c3aa73c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5 using Guid(5c5e7ec1097faf8449e89f8c3aa73c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a17da3df53b7bb0ff65583c6da5ec18') in 0.005318 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.016917 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Column white.prefab
+  artifactKey: Guid(661eb86bf8a8bb147824bc81144d63ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Column white.prefab using Guid(661eb86bf8a8bb147824bc81144d63ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6723a8e7badf52722d4e8774f908f91f') in 0.014999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/L White Trail Mirrored.prefab
+  artifactKey: Guid(2aedbe2d52962b8458474b939cb9679f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/L White Trail Mirrored.prefab using Guid(2aedbe2d52962b8458474b939cb9679f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3324e9317f2b871476104cb3f8b9abfa') in 0.014129 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/White Trail Mirrored.prefab
+  artifactKey: Guid(e4ae78fad26d53e42b0dc2faf02d2864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/White Trail Mirrored.prefab using Guid(e4ae78fad26d53e42b0dc2faf02d2864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd49594f7b3ea8933f9078cb878b67b4') in 0.014143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Mirrored Floor White.prefab
+  artifactKey: Guid(1bf4d75a6e891e842ad24fe0240f0dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Mirrored Floor White.prefab using Guid(1bf4d75a6e891e842ad24fe0240f0dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '469daba3d684ea18766ddd2c64870a7a') in 0.015454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Mirrored Ceiling Corridor 2.prefab
+  artifactKey: Guid(e151cbd01af4f7841a359b67f6c775e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Mirrored Ceiling Corridor 2.prefab using Guid(e151cbd01af4f7841a359b67f6c775e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c9d71216e4c7ddfc92c350254f1228f') in 0.014321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Trail Floor.prefab
+  artifactKey: Guid(2e29c050b64ff6a419c173162ab5897e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Trail Floor.prefab using Guid(2e29c050b64ff6a419c173162ab5897e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '483e25e3eefdc259c290c6c0c3d0a2c1') in 0.014610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Column.prefab
+  artifactKey: Guid(a51c01a7d1dc5c440b7cd35e17edf5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Column.prefab using Guid(a51c01a7d1dc5c440b7cd35e17edf5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b4ccc23473762525d8ba487cec156dc') in 0.013477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Mirrored Floor 1.prefab
+  artifactKey: Guid(994caa39551d7704f832fc80494f51c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Sci-Fi Styled Modular Pack/Custom and Prefab Variants/Corridor 5/Mirrored Floor 1.prefab using Guid(994caa39551d7704f832fc80494f51c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd2f5f104fc78124741c6f361851b5c4') in 0.014824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 507.257961 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Button Blue 1.mat
+  artifactKey: Guid(d039561a0d242784196a9f282d2d2c08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Button Blue 1.mat using Guid(d039561a0d242784196a9f282d2d2c08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49d8907534954a77d20817fde70297aa') in 0.032069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Mega Toon Tilemap Red.mat
+  artifactKey: Guid(22724e17defc4ae4fa59efdb31729388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Mega Toon Tilemap Red.mat using Guid(22724e17defc4ae4fa59efdb31729388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33033d2dd126d207a1417461ebbf7ae3') in 0.018707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Mega Toon Tilemap Blue.mat
+  artifactKey: Guid(f004dbfd656339b4f8e4cff9df92a875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Mega Toon Tilemap Blue.mat using Guid(f004dbfd656339b4f8e4cff9df92a875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27cf48db1f10cc9c5cc63266c988805c') in 0.010975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Waypoint.mat
+  artifactKey: Guid(92e53f10fc59cb84fa5a5c3696a57041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Waypoint.mat using Guid(92e53f10fc59cb84fa5a5c3696a57041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '062c8cef4a2b4b8eb2bb9b590e4b7856') in 0.008435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Button Blue.mat
+  artifactKey: Guid(11f4cd7516661214090022c23b90b537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Button Blue.mat using Guid(11f4cd7516661214090022c23b90b537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c14739d048de9efb973887b69ceb099') in 0.013921 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Mega Toon Tilemap 01.mat
+  artifactKey: Guid(e11820def211aac499d1bcf50c3e3f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/Mega Toon Tilemap 01.mat using Guid(e11820def211aac499d1bcf50c3e3f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '564279c4b2fe29c271f4df4aa65ad2e3') in 0.008619 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/FX Star.mat
+  artifactKey: Guid(3841fc494b23b3f42adf71e7d6beaf94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Meshtint Free Tile Map Mega Toon Series/Materials/FX Star.mat using Guid(3841fc494b23b3f42adf71e7d6beaf94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfb8fc58d6bda82a84075cb46ac53d6c') in 0.017184 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002371 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.766 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 236.2 MB.
+System memory in use after: 236.4 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3817.
+Total: 6.797000 ms (FindLiveObjects: 0.408800 ms CreateObjectMapping: 0.211700 ms MarkObjects: 6.144700 ms  DeleteObjects: 0.029900 ms)
+>>>>>>> LevelDesign
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 0.003790 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.259 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 3.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.8 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3835.
+Total: 9.598100 ms (FindLiveObjects: 0.355600 ms CreateObjectMapping: 0.228200 ms MarkObjects: 8.975500 ms  DeleteObjects: 0.037000 ms)
+=======
+Registered in 0.002075 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 236.2 MB.
+System memory in use after: 236.4 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3820.
+Total: 5.136100 ms (FindLiveObjects: 0.256700 ms CreateObjectMapping: 0.165500 ms MarkObjects: 4.694300 ms  DeleteObjects: 0.018600 ms)
+>>>>>>> LevelDesign
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 0.002371 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.228 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 2.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.8 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3838.
+Total: 9.879900 ms (FindLiveObjects: 0.466300 ms CreateObjectMapping: 0.559400 ms MarkObjects: 8.827700 ms  DeleteObjects: 0.024800 ms)
+=======
 Registered in 0.001971 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.82 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.73 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.963 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 2.04 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.1 MB.
-System memory in use after: 235.3 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3766.
-Total: 6.636200 ms (FindLiveObjects: 0.904900 ms CreateObjectMapping: 0.322500 ms MarkObjects: 5.384700 ms  DeleteObjects: 0.022900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001929 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.50 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.758 seconds
-Platform modules already initialized, skipping
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.56 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.1 MB.
-System memory in use after: 235.3 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3769.
-Total: 5.324200 ms (FindLiveObjects: 0.251600 ms CreateObjectMapping: 0.164500 ms MarkObjects: 4.888100 ms  DeleteObjects: 0.018600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002016 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.746 seconds
+- Completed reload, in  0.760 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
 Refreshing native plugins compatible for Editor in 1.80 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.1 MB.
-System memory in use after: 235.3 MB.
+System memory in use before: 236.2 MB.
+System memory in use after: 236.5 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3772.
-Total: 5.677500 ms (FindLiveObjects: 0.278300 ms CreateObjectMapping: 0.161100 ms MarkObjects: 5.213300 ms  DeleteObjects: 0.023800 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3823.
+Total: 5.757400 ms (FindLiveObjects: 0.302800 ms CreateObjectMapping: 0.204500 ms MarkObjects: 5.228000 ms  DeleteObjects: 0.020700 ms)
+>>>>>>> LevelDesign
 
+========================================================================
+Received Import Request.
+  Time since last request: 790.491121 seconds.
+  path: Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle3.unity
+  artifactKey: Guid(9c2ec5712b23f46439b992f577a5ce3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter1/Chapter1_PresalaPuzzle3.unity using Guid(9c2ec5712b23f46439b992f577a5ce3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d91cd0051e90df72c682157e214c2f5') in 0.317711 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001937 seconds.
+<<<<<<< HEAD
+Registered in 0.003004 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2.74 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.762 seconds
+- Completed reload, in  1.385 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.68 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 4.77 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.1 MB.
-System memory in use after: 235.3 MB.
+System memory in use before: 253.9 MB.
+System memory in use after: 254.1 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3775.
-Total: 6.183000 ms (FindLiveObjects: 0.257500 ms CreateObjectMapping: 0.148900 ms MarkObjects: 5.749100 ms  DeleteObjects: 0.026300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002407 seconds.
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3841.
+Total: 12.816100 ms (FindLiveObjects: 0.488900 ms CreateObjectMapping: 0.656000 ms MarkObjects: 11.630300 ms  DeleteObjects: 0.037400 ms)
+=======
+Registered in 0.002055 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 1.42 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.756 seconds
+- Completed reload, in  0.760 seconds
 Platform modules already initialized, skipping
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
 Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Refreshing native plugins compatible for Editor in 1.68 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.79 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 235.1 MB.
-System memory in use after: 235.4 MB.
+System memory in use before: 236.2 MB.
+System memory in use after: 236.5 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3778.
-Total: 5.336600 ms (FindLiveObjects: 0.278600 ms CreateObjectMapping: 0.154300 ms MarkObjects: 4.879900 ms  DeleteObjects: 0.022700 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3826.
+Total: 5.764600 ms (FindLiveObjects: 0.253400 ms CreateObjectMapping: 0.175900 ms MarkObjects: 5.315300 ms  DeleteObjects: 0.018700 ms)
+>>>>>>> LevelDesign
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 0.002773 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.145 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.9 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3844.
+Total: 8.409500 ms (FindLiveObjects: 0.328100 ms CreateObjectMapping: 0.182200 ms MarkObjects: 7.868200 ms  DeleteObjects: 0.029100 ms)
+=======
+Registered in 0.002430 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.759 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 236.2 MB.
+System memory in use after: 236.5 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3829.
+Total: 6.505500 ms (FindLiveObjects: 0.521600 ms CreateObjectMapping: 0.300900 ms MarkObjects: 5.658100 ms  DeleteObjects: 0.023300 ms)
+>>>>>>> LevelDesign
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+<<<<<<< HEAD
+Registered in 0.002667 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.000 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.9 MB.
+System memory in use after: 254.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3847.
+Total: 7.159700 ms (FindLiveObjects: 0.317200 ms CreateObjectMapping: 0.198400 ms MarkObjects: 6.619900 ms  DeleteObjects: 0.023100 ms)
+=======
+Registered in 0.002031 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.776 seconds
+Platform modules already initialized, skipping
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 236.2 MB.
+System memory in use after: 236.5 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3832.
+Total: 6.463100 ms (FindLiveObjects: 0.270800 ms CreateObjectMapping: 0.148000 ms MarkObjects: 6.021600 ms  DeleteObjects: 0.021500 ms)
+>>>>>>> LevelDesign
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

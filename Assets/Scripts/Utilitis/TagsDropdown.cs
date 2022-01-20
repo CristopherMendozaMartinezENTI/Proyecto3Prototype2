@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class TagSelectorAttribute : PropertyAttribute
-{
-    public bool UseDefaultTagFieldDrawer = false;
-}
-
-
+/*
 [CustomPropertyDrawer(typeof(TagSelectorAttribute))]
 public class TagSelectorPropertyDrawer : PropertyDrawer
 {
-
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         if (property.propertyType == SerializedPropertyType.String)
@@ -78,3 +72,4 @@ public class TagSelectorPropertyDrawer : PropertyDrawer
         }
     }
 }
+*/

@@ -15,7 +15,6 @@ public class PortalTraveller : MonoBehaviour
         transform.rotation = rot;
     }
 
-    // Called when first touches portal
     public virtual void EnterPortalThreshold () {
         if (graphicsClone == null) {
             graphicsClone = Instantiate (graphicsObject);
@@ -28,10 +27,8 @@ public class PortalTraveller : MonoBehaviour
         }
     }
 
-    // Called once no longer touching portal (excluding when teleporting)
     public virtual void ExitPortalThreshold () {
         graphicsClone.SetActive (false);
-        // Disable slicing
         for (int i = 0; i < originalMaterials.Length; i++) {
             originalMaterials[i].SetVector ("sliceNormal", Vector3.zero);
         }
@@ -44,7 +41,6 @@ public class PortalTraveller : MonoBehaviour
             } else {
                 originalMaterials[i].SetFloat ("sliceOffsetDst", dst);
             }
-
         }
     }
 

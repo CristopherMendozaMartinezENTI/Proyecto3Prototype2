@@ -10,16 +10,14 @@ public class PlayerColliderController : MonoBehaviour
 	[SerializeField] private float colliderHeight = 2f;
 	[SerializeField] private float colliderThickness = 1f;
 	[SerializeField] Vector3 colliderOffset = Vector3.zero;
+	[SerializeField] private bool isInDebugMode = false;
 
 	BoxCollider boxCollider;
 	SphereCollider sphereCollider;
 	CapsuleCollider capsuleCollider;
 
-	[Header("Caster Options")]
-	[SerializeField] private RayAndSphereCaster.CastType sensorType = RayAndSphereCaster.CastType.Raycast;
 	private float sensorRadiusModifier = 0.8f;
 	private int currentLayer;
-	[SerializeField] private bool isInDebugMode = false;
 
 	[HideInInspector] public Vector3[] raycastArrayPreviewPositions;
 
@@ -33,12 +31,12 @@ public class PlayerColliderController : MonoBehaviour
 	Collider col;
 	Rigidbody rig;
 	Transform tr;
-	RayAndSphereCaster caster;
+	RayCaster caster;
 
 	void Awake()
 	{
 		Setup();
-		caster = new RayAndSphereCaster(this.tr, col);
+		caster = new RayCaster(this.tr, col);
 		RecalculateColliderDimensions();
 		RecalibrateSensor();
 	}
@@ -139,9 +137,8 @@ public class PlayerColliderController : MonoBehaviour
 	void RecalibrateSensor()
 	{
 		caster.SetCastOrigin(GetColliderCenter());
-		caster.SetCastDirection(RayAndSphereCaster.CastDirection.Down);
+		caster.SetCastDirection(RayCaster.CastDirection.Down);
 		RecalculateSensorLayerMask();
-		caster.castType = sensorType;
 		float _radius = colliderThickness/2f * sensorRadiusModifier;
 		float _safetyDistanceFactor = 0.001f;
 
@@ -152,15 +149,12 @@ public class PlayerColliderController : MonoBehaviour
 		else if(capsuleCollider)
 			_radius = Mathf.Clamp(_radius, _safetyDistanceFactor, (capsuleCollider.height/2f) * (1f - _safetyDistanceFactor));
 
-		caster.sphereCastRadius = _radius * tr.localScale.x;
 		float _length = 0f;
 		_length += (colliderHeight * (1f - stepHeightRatio)) * 0.5f;
 		_length += colliderHeight * stepHeightRatio;
 		baseSensorRange = _length * (1f + _safetyDistanceFactor) * tr.localScale.x;
 		caster.castLength = _length * tr.localScale.x;
 		caster.isInDebugMode = isInDebugMode;
-		caster.calculateRealDistance = true;
-		caster.calculateRealSurfaceNormal = true;
 	}
 
 

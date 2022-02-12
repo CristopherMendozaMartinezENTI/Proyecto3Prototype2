@@ -8,7 +8,7 @@ public enum Connections { Door, Platform, ForceFild, DisableObject, Portal }
 public class PressurePad : MonoBehaviour
 {
     [Header("Settings")]
-    [TagSelector] public string KeyTag = "";
+    [SerializeField] public string KeyTag = "";
     [SerializeField] private Connections ConnectedTo;
     [SerializeField] private GameObject connectedGameObject;
     private GameObject onTriggerVfx;

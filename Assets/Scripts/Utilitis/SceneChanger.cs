@@ -25,5 +25,35 @@ public class SceneChanger : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            SceneManager.LoadScene(4);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            SceneManager.LoadScene(5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F7))
+        {
+            SceneManager.LoadScene(6);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F8))
+        {
+            SceneManager.LoadScene(7);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            SceneManager.LoadScene(8);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            SceneManager.LoadScene(9);
+        }
     }
 }

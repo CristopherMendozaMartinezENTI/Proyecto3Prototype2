@@ -3,7 +3,7 @@
 //Este script va en la Main Camara y permite pinta los portales
 public class PortalMainCameraRenderer : MonoBehaviour {
 
-    Portal[] portals;
+    private Portal[] portals;
 
     void Awake () {
         portals = FindObjectsOfType<Portal> ();
@@ -11,18 +11,20 @@ public class PortalMainCameraRenderer : MonoBehaviour {
 
     void OnPreCull () 
     {
-
-        for (int i = 0; i < portals.Length; i++) {
-            portals[i].PrePortalRender ();
-        }
-        for (int i = 0; i < portals.Length; i++) {
-            portals[i].Render ();
+        foreach(Portal portal in portals)
+        {
+            portal.PrePortalRender();
         }
 
-        for (int i = 0; i < portals.Length; i++) {
-            portals[i].PostPortalRender ();
+        foreach (Portal portal in portals)
+        {
+            portal.Render();
         }
 
+        foreach (Portal portal in portals)
+        {
+            portal.PostPortalRender();
+        }
     }
 
 }

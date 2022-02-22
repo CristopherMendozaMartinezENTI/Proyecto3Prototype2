@@ -342,10 +342,11 @@ public class TelekinesisController : MonoBehaviour
             }
 
             var direction = Input.GetAxis("Mouse ScrollWheel");
-        
-            if (Input.GetKeyDown(KeyCode.T))
+            
+            //Move Object Foward Or backwards
+            if (Input.GetKeyDown(KeyCode.E))
                 direction = -0.1f;
-            else if (Input.GetKeyDown(KeyCode.G))
+            else if (Input.GetKeyDown(KeyCode.Q))
                 direction = 0.1f;
 
             if (Mathf.Abs(direction) > 0 && CheckObjectDistance(direction))
@@ -358,7 +359,8 @@ public class TelekinesisController : MonoBehaviour
                 _scrollWheelInput = _zeroVector3;
             }
 
-            if(Input.GetMouseButtonDown(1))
+            //Freeze
+            if(Input.GetKeyDown(KeyCode.F))
             {
                 _grabbedRigidbody.collisionDetectionMode = !_wasKinematic ? CollisionDetectionMode.ContinuousSpeculative : CollisionDetectionMode.Continuous;
                 _grabbedRigidbody.isKinematic = _wasKinematic = !_wasKinematic;

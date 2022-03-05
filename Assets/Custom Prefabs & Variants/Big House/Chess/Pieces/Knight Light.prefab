@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 4196850095716728647}
   - component: {fileID: 4186869738983295793}
   - component: {fileID: 4200461777741279285}
-  - component: {fileID: 796332990960594898}
   - component: {fileID: 8145617413596040668}
+  - component: {fileID: 564425581950091674}
+  - component: {fileID: 8651767430341203353}
+  - component: {fileID: -202215415399160179}
   m_Layer: 9
   m_Name: Knight Light
   m_TagString: Untagged
@@ -100,21 +102,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!136 &796332990960594898
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4199752040337308515}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.01940207
-  m_Height: 0.06580229
-  m_Direction: 2
-  m_Center: {x: -0.0001598705, y: 1.5281533e-18, z: 0.032901444}
+  m_CollisionDetection: 0
 --- !u!114 &8145617413596040668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +119,44 @@ MonoBehaviour:
   gravityForce: 9.81
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
+--- !u!64 &564425581950091674
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199752040337308515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5538ed982796ebd4c8cc731f2b530e42, type: 3}
+--- !u!136 &8651767430341203353
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199752040337308515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0148637025
+  m_Height: 0.06562788
+  m_Direction: 2
+  m_Center: {x: 0.0000000017029899, y: -1.0400784e-16, z: 0.032814022}
+--- !u!65 &-202215415399160179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199752040337308515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.020705704, y: 0.021021575, z: 0.021468306}
+  m_Center: {x: 0.000039475304, y: -0.000039484672, z: 0.011189392}

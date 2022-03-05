@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2567866799571550477}
   - component: {fileID: 2559854431288953383}
   - component: {fileID: 2582770859082104891}
-  - component: {fileID: 3172449365783152333}
   - component: {fileID: 3403963828676018843}
+  - component: {fileID: -1772250460780300968}
+  - component: {fileID: -1507873507383148022}
+  - component: {fileID: -3167073888096217350}
   m_Layer: 9
   m_Name: Rook Light
   m_TagString: Untagged
@@ -100,21 +102,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!136 &3172449365783152333
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2581782945144898151}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.014995037
-  m_Height: 0.042676818
-  m_Direction: 2
-  m_Center: {x: 0.000000076293944, y: -4.7313778e-17, z: 0.02133835}
+  m_CollisionDetection: 0
 --- !u!114 &3403963828676018843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +119,44 @@ MonoBehaviour:
   gravityForce: 9.81
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
+--- !u!64 &-1772250460780300968
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581782945144898151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b66f4744e8bb24a448fcfa81a1781df5, type: 3}
+--- !u!136 &-1507873507383148022
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581782945144898151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.014863702
+  m_Height: 0.042676818
+  m_Direction: 2
+  m_Center: {x: 0.0000000023841857, y: -4.7313778e-17, z: 0.02133835}
+--- !u!65 &-3167073888096217350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581782945144898151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.020705704, y: 0.021021575, z: 0.013061228}
+  m_Center: {x: 0.000039474962, y: -0.0000394845, z: 0.006530577}

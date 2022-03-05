@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 1575066266246901330}
   - component: {fileID: 1585066248451405434}
   - component: {fileID: 1562466741999190269}
-  - component: {fileID: 1013021147733248384}
   - component: {fileID: 1142525183640887783}
+  - component: {fileID: -6834204079276636626}
+  - component: {fileID: 1040710633964500322}
+  - component: {fileID: 6805062613511538620}
   m_Layer: 9
   m_Name: Queen Light
   m_TagString: Untagged
@@ -100,21 +102,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!136 &1013021147733248384
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562030781087609512}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.015015058
-  m_Height: 0.057977017
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.000023897488, z: 0.028988443}
+  m_CollisionDetection: 0
 --- !u!114 &1142525183640887783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +119,44 @@ MonoBehaviour:
   gravityForce: 9.81
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
+--- !u!64 &-6834204079276636626
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562030781087609512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 63372fdecc46ca243992469e037a3b89, type: 3}
+--- !u!136 &1040710633964500322
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562030781087609512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.014863702
+  m_Height: 0.057912447
+  m_Direction: 2
+  m_Center: {x: 0.0000000023841857, y: 3.726172e-17, z: 0.02895623}
+--- !u!65 &6805062613511538620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562030781087609512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.020705704, y: 0.021021575, z: 0.013061228}
+  m_Center: {x: 0.000039474962, y: -0.0000394845, z: 0.006530577}

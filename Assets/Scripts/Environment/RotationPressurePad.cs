@@ -16,20 +16,18 @@ public class RotationPressurePad : MonoBehaviour
 
     private void Start()
     {
-        initialRotation = connectedGameObject.transform.eulerAngles;
-
 
         if (rotationIsLocal)
             worldDesiredRotation = desiredRotation + connectedGameObject.transform.localEulerAngles;
         else
             worldDesiredRotation = desiredRotation;
 
-        worldDesiredRotation.x %= 360;
-        worldDesiredRotation.y %= 360;
-        worldDesiredRotation.z %= 360;
+        ConvertToEuler(ref worldDesiredRotation);
+
+        initialRotation = connectedGameObject.transform.eulerAngles;
+        returnToInitial = false;
 
         onTriggerVfx = transform.GetChild(0).gameObject;
-        returnToInitial = false;
 
         /*Debug.Log("EULER" + connectedGameObject.transform.eulerAngles);
         Debug.Log("LOCAL EULER" + connectedGameObject.transform.localEulerAngles);
@@ -77,5 +75,23 @@ public class RotationPressurePad : MonoBehaviour
             onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.white;
             returnToInitial = true;
         }
+    }
+
+    private void ConvertToEuler(ref Vector3 vector3)
+    {
+        //-359 to 359
+        vector3.x %= 360;
+        vector3.y %= 360;
+        vector3.z %= 360;
+
+        //0 to 359x2
+        vector3.x += 360;
+        vector3.y += 360;
+        vector3.z += 360;
+
+        //0 to 359
+        vector3.x %= 360;
+        vector3.y %= 360;
+        vector3.z %= 360;
     }
 }

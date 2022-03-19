@@ -9,25 +9,32 @@ public class RotationPressurePad : MonoBehaviour
     [SerializeField] private GameObject connectedGameObject;
     [SerializeField] private Vector3 desiredRotation;
     [SerializeField] private bool rotationIsLocal;
-    private Vector3 worldDesiredRotation;
-    private Vector3 initialRotation;
-    private GameObject onTriggerVfx;
+    public Vector3 worldDesiredRotation;
+    public Vector3 worldInitialRotation;
     private bool returnToInitial;
+
+    private GameObject onTriggerVfx;
 
     private void Start()
     {
+        onTriggerVfx = transform.GetChild(0).gameObject;
 
         if (rotationIsLocal)
-            worldDesiredRotation = desiredRotation + connectedGameObject.transform.localEulerAngles;
+        {
+            worldInitialRotation = connectedGameObject.transform.localEulerAngles;
+            ConvertToEuler(ref worldInitialRotation);
+            worldDesiredRotation = desiredRotation + worldInitialRotation;
+            ConvertToEuler(ref worldDesiredRotation);
+        }
         else
+        {
+            worldInitialRotation = connectedGameObject.transform.eulerAngles;
+            ConvertToEuler(ref worldInitialRotation);
             worldDesiredRotation = desiredRotation;
+            ConvertToEuler(ref worldDesiredRotation);
+        }
 
-        ConvertToEuler(ref worldDesiredRotation);
-
-        initialRotation = connectedGameObject.transform.eulerAngles;
         returnToInitial = false;
-
-        onTriggerVfx = transform.GetChild(0).gameObject;
 
         /*Debug.Log("EULER" + connectedGameObject.transform.eulerAngles);
         Debug.Log("LOCAL EULER" + connectedGameObject.transform.localEulerAngles);
@@ -39,8 +46,8 @@ public class RotationPressurePad : MonoBehaviour
     private void Update()
     {
         if (returnToInitial)
-            if (connectedGameObject.transform.eulerAngles != initialRotation)
-                connectedGameObject.transform.eulerAngles = Vector3.Lerp(connectedGameObject.transform.eulerAngles, initialRotation, Time.deltaTime * 5);
+            if (connectedGameObject.transform.eulerAngles != worldInitialRotation)
+                connectedGameObject.transform.eulerAngles = Vector3.Lerp(connectedGameObject.transform.eulerAngles, worldInitialRotation, Time.deltaTime * 5);
             else
                 returnToInitial = false;        
     }
@@ -61,8 +68,8 @@ public class RotationPressurePad : MonoBehaviour
             if (KeyTag == "KeyPurple")
                 onTriggerVfx.GetComponent<ParticleSystem>().startColor = new Color(148, 0, 211);
 
-            if (connectedGameObject.transform.eulerAngles != desiredRotation)
-                connectedGameObject.transform.eulerAngles = Vector3.Lerp(connectedGameObject.transform.eulerAngles, worldDesiredRotation, Time.deltaTime*5);
+            if (connectedGameObject.transform.eulerAngles != worldDesiredRotation)
+                connectedGameObject.transform.eulerAngles = Vector3.Lerp(connectedGameObject.transform.eulerAngles, worldDesiredRotation, Time.deltaTime * 5);
 
             returnToInitial = false;
         }

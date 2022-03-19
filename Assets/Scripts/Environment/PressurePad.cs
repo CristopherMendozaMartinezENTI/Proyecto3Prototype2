@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Connections { Door, Platform, ForceFild, DisableObject, Portal }
+public enum Connections { Door, Platform, ForceFild, DisableObject, Portal, None }
 
 public class PressurePad : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class PressurePad : MonoBehaviour
     [SerializeField] public string KeyTag = "";
     [SerializeField] private Connections ConnectedTo;
     [SerializeField] private GameObject connectedGameObject;
+    [SerializeField] private bool invertedAMFF;
+    public bool active { get; private set; } = false;
     private GameObject onTriggerVfx;
 
     private void Start()
@@ -22,7 +24,9 @@ public class PressurePad : MonoBehaviour
     {
         if(other.tag == KeyTag)
         {
-            if(KeyTag == "KeyBlue")
+            active = true;
+
+            if (KeyTag == "KeyBlue")
                 onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.cyan;
 
             if (KeyTag == "KeyRed")
@@ -43,7 +47,7 @@ public class PressurePad : MonoBehaviour
                     connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
                     return;
                 case Connections.ForceFild:
-                    connectedGameObject.SetActive(false);
+                    connectedGameObject.SetActive(invertedAMFF);
                     return;
                 case Connections.DisableObject:
                     connectedGameObject.SetActive(true);
@@ -54,6 +58,8 @@ public class PressurePad : MonoBehaviour
                     connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = true;
                     connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = true;
                     return;
+                case Connections.None:
+                    return;
             }
         }
     }
@@ -62,6 +68,8 @@ public class PressurePad : MonoBehaviour
     {
         if (other.tag == KeyTag)
         {
+            active = false;
+
             onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.white;
             switch (ConnectedTo)
             {
@@ -72,7 +80,7 @@ public class PressurePad : MonoBehaviour
                     connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
                     return;
                 case Connections.ForceFild:
-                    connectedGameObject.SetActive(true);
+                    connectedGameObject.SetActive(!invertedAMFF);
                     return;
                 case Connections.DisableObject:
                     connectedGameObject.SetActive(false);
@@ -82,6 +90,8 @@ public class PressurePad : MonoBehaviour
                     connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = false;
                     connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = false;
                     connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = false;
+                    return;
+                case Connections.None:
                     return;
             }
         }

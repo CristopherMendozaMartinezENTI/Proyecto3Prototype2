@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 7942659757478014483}
   - component: {fileID: 4249799528624030028}
   - component: {fileID: 553271180397793061}
+  - component: {fileID: 4997198817053514802}
   m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
@@ -197,7 +198,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3646328223476686485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -246,6 +247,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &4997198817053514802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646328223476686485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.000001, z: 1.0000006}
+  m_Center: {x: 0.000000059138983, y: 0.00000023841858, z: -0.00000009080398}
 --- !u!1 &7201936096525132433
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +353,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7210632348376721989}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7021765793356261015
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8887093785881877859}
-  - component: {fileID: 1334736278081878731}
-  m_Layer: 0
-  m_Name: capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8887093785881877859
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7021765793356261015}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
-  m_Father: {fileID: 7721705563152087993}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1334736278081878731
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7021765793356261015}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4967255
-  m_Height: 4.0997925
-  m_Direction: 1
-  m_Center: {x: 0.0027934313, y: 0.0004811287, z: 0.0032745004}
 --- !u!54 &2437520479344892545
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70,7 +25,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7721705563151906275}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 1.0000182
   m_Height: 8.09018
   m_Direction: 1
@@ -129,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475546, guid: 4f4063561a2d9a84786be0389aae9d5b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 475546, guid: 4f4063561a2d9a84786be0389aae9d5b, type: 3}
       propertyPath: m_LocalScale.y
@@ -137,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475546, guid: 4f4063561a2d9a84786be0389aae9d5b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 475546, guid: 4f4063561a2d9a84786be0389aae9d5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,12 +139,6 @@ PrefabInstance:
 --- !u!1 &7721705563151906275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 167872, guid: 4f4063561a2d9a84786be0389aae9d5b,
-    type: 3}
-  m_PrefabInstance: {fileID: 7721705563151743523}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7721705563152087993 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 475546, guid: 4f4063561a2d9a84786be0389aae9d5b,
     type: 3}
   m_PrefabInstance: {fileID: 7721705563151743523}
   m_PrefabAsset: {fileID: 0}

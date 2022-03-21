@@ -56,6 +56,8 @@ public class PropPhysicsController : MonoBehaviour
     public void ResetPos()
     {
         _RespawFxTmp = Instantiate(RespawFxPrefab, initialPos, transform.rotation);
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         transform.position = initialPos;
     }
 

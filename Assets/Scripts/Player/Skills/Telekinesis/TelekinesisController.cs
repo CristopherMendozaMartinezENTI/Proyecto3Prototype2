@@ -11,6 +11,7 @@ public class TelekinesisController : MonoBehaviour
     [Header("Input Setting"), Space(10)]
     [SerializeField] private KeyCode Rotate = KeyCode.R;
     [SerializeField] private KeyCode SnapRotation = KeyCode.LeftShift;
+    [SerializeField] private KeyCode Freeze = KeyCode.F;
     [SerializeField] private KeyCode SwitchAxis = KeyCode.Tab;
     [SerializeField] private KeyCode RotateZ  = KeyCode.Space;
     [SerializeField] private KeyCode RotationSpeedIncrease = KeyCode.LeftControl;
@@ -341,6 +342,7 @@ public class TelekinesisController : MonoBehaviour
                 _snapRotation = false;
             }
 
+            /*
             var direction = Input.GetAxis("Mouse ScrollWheel");
             
             //Move Object Foward Or backwards
@@ -358,9 +360,10 @@ public class TelekinesisController : MonoBehaviour
             {
                 _scrollWheelInput = _zeroVector3;
             }
+            */
 
             //Freeze
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(Freeze))
             {
                 _grabbedRigidbody.collisionDetectionMode = !_wasKinematic ? CollisionDetectionMode.ContinuousSpeculative : CollisionDetectionMode.Continuous;
                 _grabbedRigidbody.isKinematic = _wasKinematic = !_wasKinematic;

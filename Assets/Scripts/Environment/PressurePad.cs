@@ -30,7 +30,7 @@ public class PressurePad : MonoBehaviour
                 onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.cyan;
 
             if (KeyTag == "KeyRed")
-                onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.red;
+                onTriggerVfx.GetComponent<ParticleSystem>().startColor = new Color(255, 69, 0);
 
             if (KeyTag == "KeyGreen")
                 onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.green;

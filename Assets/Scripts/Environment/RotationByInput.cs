@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +50,7 @@ public class RotationByInput : MonoBehaviour
         bool rotate = false;
 
         foreach (Switch _switch in inputSwitches)
-            if (_switch.active)
+            if (!_switch.active) //la logica del switch va al reves ¯\_(ツ)_/¯
             {
         Debug.Log(_switch);
                 rotate = true;

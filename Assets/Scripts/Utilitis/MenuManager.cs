@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject optionsCamera;
     [SerializeField] private GameObject creditsCamera;
     [SerializeField] private GameObject returnButton;
+    [SerializeField] private GameObject SettingsCanvas;
     [SerializeField] List<GameObject> uiElements;
 
     private void LoadScene()
@@ -41,6 +42,7 @@ public class MenuManager : MonoBehaviour
             uiElement.SetActive(false);
         }
         optionsCamera.SetActive(true);
+        SettingsCanvas.SetActive(true);
         returnButton.SetActive(true);
     }
 
@@ -61,6 +63,7 @@ public class MenuManager : MonoBehaviour
             uiElement.SetActive(true);
         }
         optionsCamera.SetActive(false);
+        SettingsCanvas.SetActive(false);
         creditsCamera.SetActive(false);
         returnButton.SetActive(false);
     }

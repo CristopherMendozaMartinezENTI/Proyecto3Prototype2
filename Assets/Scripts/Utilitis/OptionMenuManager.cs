@@ -9,8 +9,6 @@ public class OptionMenuManager : MonoBehaviour
     [SerializeField ]private AudioMixer audioMixer;
     [SerializeField] private Dropdown resolutionDropdown;
     [SerializeField] private Dropdown qualityDropdown;
-    //[SerializeField] private Dropdown textureDropdown;
-    //[SerializeField] private Dropdown aaDropdown;
     [SerializeField] private Slider volumeSlider;
 
     float currentVolume;
@@ -57,18 +55,16 @@ public class OptionMenuManager : MonoBehaviour
     public void SetTextureQuality(int textureIndex)
     {
         QualitySettings.masterTextureLimit = textureIndex;
-        //qualityDropdown.value = 6;
     }
 
     public void SetAntiAliasing(int aaIndex)
     {
         QualitySettings.antiAliasing = aaIndex;
-        //qualityDropdown.value = 6;
     }
 
     public void SetQuality(int qualityIndex)
     {
-        if (qualityIndex != 6) // if the user is not using any of the presets
+        if (qualityIndex != 6)
             QualitySettings.SetQualityLevel(qualityIndex);
         qualityDropdown.value = qualityIndex;
     }
@@ -77,8 +73,6 @@ public class OptionMenuManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
-        //PlayerPrefs.SetInt("TextureQualityPreference", textureDropdown.value);
-        //PlayerPrefs.SetInt("AntiAliasingPreference", aaDropdown.value);
         PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
         PlayerPrefs.SetFloat("VolumePreference", currentVolume);
         PlayerPrefs.Save();
@@ -95,18 +89,6 @@ public class OptionMenuManager : MonoBehaviour
             resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
         else
             resolutionDropdown.value = currentResolutionIndex;
-
-        /*
-        if (PlayerPrefs.HasKey("TextureQualityPreference"))
-            textureDropdown.value = PlayerPrefs.GetInt("TextureQualityPreference");
-        else
-            textureDropdown.value = 0;
-
-        if (PlayerPrefs.HasKey("AntiAliasingPreference"))
-            aaDropdown.value = PlayerPrefs.GetInt("AntiAliasingPreference");
-        else
-            aaDropdown.value = 0;
-        */
 
         if (PlayerPrefs.HasKey("FullscreenPreference"))
             Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));

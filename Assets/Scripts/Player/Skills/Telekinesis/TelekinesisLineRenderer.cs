@@ -1,6 +1,7 @@
 ﻿using cakeslice;
 using UnityEngine;
 
+//Con este scrip pintamos la linea y el outline del objeto que el player coge con la Telekinesis
 [RequireComponent(typeof(TelekinesisLineRenderer))]
 public class TelekinesisLineRenderer : MonoBehaviour
 {
@@ -79,8 +80,8 @@ public class TelekinesisLineRenderer : MonoBehaviour
         _uvOffset -= _uvAnimationRate * Time.deltaTime;
         _lineRenderer.material.SetTextureOffset(MainTex, _uvOffset);
         _lineRenderer.SetPositions(_inputPoints);
-        var rayOrigin = Vector3.Lerp(_inputPoints[0], _inputPoints[_arcResolution - 1], 0.999f);
-        var rayDirection = _objectToHightlight.transform.position - rayOrigin;
+        Vector3 rayOrigin = Vector3.Lerp(_inputPoints[0], _inputPoints[_arcResolution - 1], 0.999f);
+        Vector3 rayDirection = _objectToHightlight.transform.position - rayOrigin;
 
         Debug.DrawRay(rayOrigin, rayDirection, Color.yellow);
 
@@ -103,13 +104,13 @@ public class TelekinesisLineRenderer : MonoBehaviour
         _lineRenderer.enabled = true;
         _objectToHightlight = objectToHighlight;
 
-        var renderers = _objectToHightlight.GetComponents<Renderer>();
+        Renderer[] renderers = _objectToHightlight.GetComponents<Renderer>();
         if(renderChildren)
             renderers = _objectToHightlight.GetComponentsInChildren<Renderer>();
 
         for (int i = 0; i < renderers.Length; i++)
         {
-            var outline = renderers[i].GetComponent<Outline>();
+            Outline outline = renderers[i].GetComponent<Outline>();
 
             if (outline == null)
                 outline = renderers[i].gameObject.AddComponent<Outline>();
@@ -127,11 +128,11 @@ public class TelekinesisLineRenderer : MonoBehaviour
 
         _lineRenderer.SetPositions(_inputPoints);
 
-        var renderers = _objectToHightlight.GetComponentsInChildren<Renderer>();
+        Renderer[] renderers = _objectToHightlight.GetComponentsInChildren<Renderer>();
 
         for (int i = 0; i < renderers.Length; i++)
         {
-            var outline = renderers[i].GetComponent<Outline>();
+            Outline outline = renderers[i].GetComponent<Outline>();
 
             if (outline != null)
             {
@@ -151,7 +152,7 @@ public class TelekinesisLineRenderer : MonoBehaviour
 
         for (int i = 0; i < _arcResolution - 1; i++)
         {
-            var t = (float)i / _arcResolution;
+            float t = (float)i / _arcResolution;
             _inputPoints[i] = Vector3.Lerp(Vector3.Lerp(a, b, t), Vector3.Lerp(b, c, t), t);
         }
 

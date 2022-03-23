@@ -6,16 +6,16 @@ using UnityEngine;
 //Creando el efecto de que el escenario se ha rotado sobre su eje
 public class RotatePerspective : MonoBehaviour
 {
-	Transform tr;
-	AudioSource audioSource;
+	private Transform tr;
+	private AudioSource audioSource;
 
-	void Start()
+	private void Start()
 	{
 		tr = transform;
 		audioSource = GetComponent<AudioSource>();
 	}
 
-	void OnTriggerEnter(Collider col)
+	private void OnTriggerEnter(Collider col)
 	{
 		if(col.GetComponent<Controller>() == null)
 			return;
@@ -23,7 +23,7 @@ public class RotatePerspective : MonoBehaviour
 		SwitchDirection(tr.forward, col.GetComponent<Controller>());
 	}
 
-	void SwitchDirection(Vector3 _newUpDirection, Controller _controller)
+	private void SwitchDirection(Vector3 _newUpDirection, Controller _controller)
 	{
 		float _angleThreshold = 0.001f;
 		float _angleBetweenUpDirections = Vector3.Angle(_newUpDirection, _controller.transform.up);

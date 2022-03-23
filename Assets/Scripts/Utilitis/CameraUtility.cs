@@ -19,8 +19,8 @@ public static class CameraUtility {
 
     public static bool BoundsOverlap (MeshFilter nearObject, MeshFilter farObject, Camera camera) {
 
-        var near = GetScreenRectFromBounds (nearObject, camera);
-        var far = GetScreenRectFromBounds (farObject, camera);
+        MinMax3D near = GetScreenRectFromBounds (nearObject, camera);
+        MinMax3D far = GetScreenRectFromBounds (farObject, camera);
 
         if (far.zMax > near.zMin) {
             if (far.xMax < near.xMin || far.xMin > near.xMax) {
@@ -38,7 +38,7 @@ public static class CameraUtility {
         MinMax3D minMax = new MinMax3D (float.MaxValue, float.MinValue);
 
         Vector3[] screenBoundsExtents = new Vector3[8];
-        var localBounds = renderer.sharedMesh.bounds;
+        Bounds localBounds = renderer.sharedMesh.bounds;
         bool anyPointIsInFrontOfCamera = false;
 
         for (int i = 0; i < 8; i++) {

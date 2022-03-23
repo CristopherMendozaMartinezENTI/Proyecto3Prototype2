@@ -59,7 +59,7 @@ public class TriggerZoom : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (onTrigger)
         {

@@ -28,8 +28,8 @@ public class SmoothPosition : MonoBehaviour
 	[SerializeField] private SmoothType smoothType;
 	Vector3 localPositionOffset;
 	Vector3 refVelocity;
-		
-	void Awake () 
+
+	private void Awake () 
 	{	
 		if(target == null)
 			target = this.transform.parent;
@@ -39,30 +39,32 @@ public class SmoothPosition : MonoBehaviour
 		localPositionOffset = tr.localPosition;
 	}
 
-	void OnEnable()
+	private void OnEnable()
 	{
 		ResetCurrentPosition();
 	}
 
-	void Update () {
+	private void Update ()
+	{
 		if(updateType == UpdateType.LateUpdate)
 			return;
 		SmoothUpdate();
 	}
 
-	void LateUpdate () {
+	private void LateUpdate () 
+	{
 		if(updateType == UpdateType.Update)
 			return;
 		SmoothUpdate();
 	}
 
-	void SmoothUpdate()
+	private void SmoothUpdate()
 	{
 		currentPosition = Smooth (currentPosition, target.position, lerpSpeed);
 		tr.position = currentPosition;
 	}
 
-	Vector3 Smooth(Vector3 _start, Vector3 _target, float _smoothTime)
+	private Vector3 Smooth(Vector3 _start, Vector3 _target, float _smoothTime)
 	{
 		Vector3 _offset = tr.localToWorldMatrix * localPositionOffset;
 

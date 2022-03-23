@@ -9,31 +9,26 @@ public class PlayerColliderController : MonoBehaviour
 	[Header("Collider Options")]
 	[SerializeField] private float colliderHeight = 2f;
 	[SerializeField] private float colliderThickness = 1f;
-	[SerializeField] Vector3 colliderOffset = Vector3.zero;
-	[SerializeField] private bool isInDebugMode = false;
-
-	BoxCollider boxCollider;
-	SphereCollider sphereCollider;
-	CapsuleCollider capsuleCollider;
+	[SerializeField] private Vector3 colliderOffset = Vector3.zero;
 
 	private float sensorRadiusModifier = 0.8f;
 	private int currentLayer;
+	private bool isGrounded = false;
+	private bool IsUsingExtendedSensorRange = true;
+	private float baseSensorRange = 0f;
+	private Vector3 currentGroundAdjustmentVelocity = Vector3.zero;
+
+	private Collider col;
+	private Rigidbody rig;
+	private Transform tr;
+	private RayCaster caster;
+	private BoxCollider boxCollider;
+	private SphereCollider sphereCollider;
+	private CapsuleCollider capsuleCollider;
 
 	[HideInInspector] public Vector3[] raycastArrayPreviewPositions;
 
-	bool isGrounded = false;
-
-	bool IsUsingExtendedSensorRange  = true;
-	float baseSensorRange = 0f;
-
-	Vector3 currentGroundAdjustmentVelocity = Vector3.zero;
-
-	Collider col;
-	Rigidbody rig;
-	Transform tr;
-	RayCaster caster;
-
-	void Awake()
+	private void Awake()
 	{
 		Setup();
 		caster = new RayCaster(this.tr, col);
@@ -41,17 +36,17 @@ public class PlayerColliderController : MonoBehaviour
 		RecalibrateSensor();
 	}
 
-	void Reset () {
+	private void Reset () {
 		Setup();
 	}
 
-	void OnValidate()
+	private void OnValidate()
 	{
 		if(this.gameObject.activeInHierarchy)
 			RecalculateColliderDimensions();
 	}
 
-	void Setup()
+	private void Setup()
 	{
 		tr = transform;
 		col = GetComponent<Collider>();
@@ -76,12 +71,6 @@ public class PlayerColliderController : MonoBehaviour
 
 		rig.freezeRotation = true;
 		rig.useGravity = false;
-	}
-
-	void LateUpdate()
-	{
-		if(isInDebugMode)
-			caster.DrawDebug();
 	}
 
 	public void RecalculateColliderDimensions()
@@ -134,7 +123,7 @@ public class PlayerColliderController : MonoBehaviour
 			RecalibrateSensor();
 	}
 
-	void RecalibrateSensor()
+	private void RecalibrateSensor()
 	{
 		caster.SetCastOrigin(GetColliderCenter());
 		caster.SetCastDirection(RayCaster.CastDirection.Down);
@@ -154,11 +143,10 @@ public class PlayerColliderController : MonoBehaviour
 		_length += colliderHeight * stepHeightRatio;
 		baseSensorRange = _length * (1f + _safetyDistanceFactor) * tr.localScale.x;
 		caster.castLength = _length * tr.localScale.x;
-		caster.isInDebugMode = isInDebugMode;
 	}
 
 
-	void RecalculateSensorLayerMask()
+	private void RecalculateSensorLayerMask()
 	{
 		int _layerMask = 0;
 		int _objectLayer = this.gameObject.layer;
@@ -178,7 +166,7 @@ public class PlayerColliderController : MonoBehaviour
 		currentLayer = _objectLayer;
 	}
 
-	Vector3 GetColliderCenter()
+	private Vector3 GetColliderCenter()
 	{
 		if(col == null)
 			Setup();
@@ -186,7 +174,7 @@ public class PlayerColliderController : MonoBehaviour
 		return col.bounds.center;
 	}
 
-	void Check()
+	private void CheckBounds()
 	{
 		currentGroundAdjustmentVelocity = Vector3.zero;
 
@@ -214,7 +202,7 @@ public class PlayerColliderController : MonoBehaviour
 	{
 		if(currentLayer != this.gameObject.layer)
 			RecalculateSensorLayerMask();
-		Check();
+		CheckBounds();
 	}
 
 	public void SetVelocity(Vector3 _velocity)

@@ -203,7 +203,7 @@ public class TelekinesisController : MonoBehaviour
 
             Vector3 force = toDestination / Time.fixedDeltaTime * 0.3f / _grabbedRigidbody.mass;
 
-            //force += _scrollWheelInput;
+            force += _scrollWheelInput;
             _grabbedRigidbody.velocity = _zeroVector3;
             _grabbedRigidbody.AddForce(force, ForceMode.VelocityChange);
 
@@ -322,14 +322,17 @@ public class TelekinesisController : MonoBehaviour
                 _snapRotation = false;
             }
 
-            /*
+           
             float direction = Input.GetAxis("Mouse ScrollWheel");
             
+           /* 
             //Move Object Foward Or backwards
             if (Input.GetKeyDown(KeyCode.E))
                 direction = -0.1f;
             else if (Input.GetKeyDown(KeyCode.Q))
                 direction = 0.1f;
+
+            */
 
             if (Mathf.Abs(direction) > 0 && CheckObjectDistance(direction))
             {
@@ -340,7 +343,6 @@ public class TelekinesisController : MonoBehaviour
             {
                 _scrollWheelInput = _zeroVector3;
             }
-            */
 
             //Freeze
             if(Input.GetKeyDown(Freeze))

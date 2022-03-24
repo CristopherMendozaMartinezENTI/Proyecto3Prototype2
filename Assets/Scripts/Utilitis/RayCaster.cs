@@ -35,8 +35,6 @@ public class RayCaster
 	private Collider[] ignoreList;
 	private int[] ignoreListLayers;
 
-	public bool isInDebugMode = false;
-
 	public RayCaster(Transform _transform, Collider _collider)
 	{
 		tr = _transform;
@@ -128,18 +126,6 @@ public class RayCaster
 			return -tr.up;
 		default:
 			return Vector3.one;
-		}
-	}
-
-	public void DrawDebug()
-	{
-		if(hasDetectedHit && isInDebugMode)
-		{
-			Debug.DrawRay(hitPosition, hitNormal, Color.red, Time.deltaTime);
-			float _markerSize = 0.2f;
-			Debug.DrawLine(hitPosition + Vector3.up * _markerSize, hitPosition - Vector3.up * _markerSize, Color.green, Time.deltaTime);
-			Debug.DrawLine(hitPosition + Vector3.right * _markerSize, hitPosition - Vector3.right * _markerSize, Color.green, Time.deltaTime);
-			Debug.DrawLine(hitPosition + Vector3.forward * _markerSize, hitPosition - Vector3.forward * _markerSize, Color.green, Time.deltaTime);
 		}
 	}
 

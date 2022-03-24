@@ -45,10 +45,10 @@ public class PortalTraveller : MonoBehaviour
     }
 
     Material[] GetMaterials (GameObject g) {
-        var renderers = g.GetComponentsInChildren<MeshRenderer> ();
-        var matList = new List<Material> ();
-        foreach (var renderer in renderers) {
-            foreach (var mat in renderer.materials) {
+        MeshRenderer[] renderers = g.GetComponentsInChildren<MeshRenderer> ();
+        List<Material> matList = new List<Material> ();
+        foreach (MeshRenderer renderer in renderers) {
+            foreach (Material mat in renderer.materials) {
                 matList.Add (mat);
             }
         }

@@ -5,18 +5,19 @@ using UnityEngine;
 //Script para los sonidos del player
 public class AudioControl : MonoBehaviour 
 {
-	Controller controller;
-	Animator animator;
-	Controller mover;
-	Transform tr;
 	[SerializeField] private AudioSource audioSource;
+
+	private Controller controller;
+	private Animator animator;
+	private Controller mover;
+	private Transform tr;
 
 	//Esto es para cuando el player tenga animaciones
 	[SerializeField] private bool useAnimationBasedFootsteps = true;
 
 	[SerializeField] private float landVelocityThreshold = 5f;
 	[SerializeField] private float footstepDistance = 0.2f;
-	float currentFootstepDistance = 0f;
+	private float currentFootstepDistance = 0f;
 
 	private float currentFootStepValue = 0f;
 
@@ -28,7 +29,7 @@ public class AudioControl : MonoBehaviour
 	[SerializeField] private AudioClip jumpClip;
 	[SerializeField] private AudioClip landClip;
 
-	void Start ()
+	private void Start ()
 	{
 		controller = GetComponent<Controller>();
 		animator = GetComponentInChildren<Animator>();
@@ -39,8 +40,8 @@ public class AudioControl : MonoBehaviour
 		if(!animator)
 			useAnimationBasedFootsteps = false;
 	}
-		
-	void Update ()
+
+	private void Update ()
 	{
 
 		Vector3 _velocity = controller.GetVelocity();
@@ -48,7 +49,7 @@ public class AudioControl : MonoBehaviour
 		FootStepUpdate(_horizontalVelocity.magnitude);
 	}
 
-	void FootStepUpdate(float _movementSpeed)
+	private void FootStepUpdate(float _movementSpeed)
 	{
 		float _speedThreshold = 0.05f;
 		if(useAnimationBasedFootsteps)
@@ -74,20 +75,20 @@ public class AudioControl : MonoBehaviour
 		}
 	}
 
-	void PlayFootstepSound(float _movementSpeed)
+	private void PlayFootstepSound(float _movementSpeed)
 	{
 		int _footStepClipIndex = Random.Range(0, footStepClips.Length);
 		audioSource.PlayOneShot(footStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
 	}
 
-	void OnLand(Vector3 _v)
+	private void OnLand(Vector3 _v)
 	{
 		if(MathVector.GetDotProduct(_v, tr.up) > -landVelocityThreshold)
 			return;
 		audioSource.PlayOneShot(landClip, audioClipVolume);
 	}
 
-	void OnJump(Vector3 _v)
+	private void OnJump(Vector3 _v)
 	{
 		audioSource.PlayOneShot(jumpClip, audioClipVolume);
 	}

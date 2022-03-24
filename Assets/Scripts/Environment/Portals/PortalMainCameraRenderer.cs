@@ -5,11 +5,11 @@ public class PortalMainCameraRenderer : MonoBehaviour {
 
     private Portal[] portals;
 
-    void Awake () {
+    private void Awake () {
         portals = FindObjectsOfType<Portal> ();
     }
 
-    void OnPreCull () 
+    private void OnPreCull () 
     {
         foreach(Portal portal in portals)
         {

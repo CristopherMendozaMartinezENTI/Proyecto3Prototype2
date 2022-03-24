@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Este Script le permite al player Rotarse a si mismo a voluntad 
 public class SelfRotate : MonoBehaviour
 {
     [SerializeField] private float maxGrabDistance = 3.0f;

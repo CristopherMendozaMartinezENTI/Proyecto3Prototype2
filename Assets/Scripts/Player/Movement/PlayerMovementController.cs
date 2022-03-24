@@ -9,10 +9,10 @@ public class PlayerMovementController : Controller
 	protected PlayerColliderController collCtrl;
 	protected PlayerInput characterInput;
 
-    bool jumpInputIsLocked = false;
-    bool jumpKeyWasPressed = false;
-	bool jumpKeyWasLetGo = false;
-	bool jumpKeyIsPressed = false;
+	private bool jumpInputIsLocked = false;
+	private bool jumpKeyWasPressed = false;
+	private bool jumpKeyWasLetGo = false;
+	private bool jumpKeyIsPressed = false;
 
 	[Header("Player Options")]
 	[SerializeField] private float movementSpeed = 7f;
@@ -24,8 +24,8 @@ public class PlayerMovementController : Controller
 	[SerializeField] private float groundFriction = 100f;
 
 	protected Vector3 momentum = Vector3.zero;
-	Vector3 savedVelocity = Vector3.zero;
-	Vector3 savedMovementVelocity = Vector3.zero;
+	private Vector3 savedVelocity = Vector3.zero;
+	private Vector3 savedMovementVelocity = Vector3.zero;
 
 	[SerializeField] private float gravity = 30f;
 	[SerializeField] private float slideGravity = 5f;
@@ -40,12 +40,12 @@ public class PlayerMovementController : Controller
 		Rising,
 		Jumping
 	}
-		
-	ControllerState currentControllerState = ControllerState.Falling;
+
+	private ControllerState currentControllerState = ControllerState.Falling;
 
 	[SerializeField] private Transform cameraTransform;
-		
-	void Awake () {
+
+	private void Awake () {
 		collCtrl = GetComponent<PlayerColliderController>();
 		tr = transform;
 		characterInput = GetComponent<PlayerInput>();
@@ -56,17 +56,17 @@ public class PlayerMovementController : Controller
 
 	protected virtual void Setup(){}
 
-	void FixedUpdate()
+	private void FixedUpdate()
 	{
 		ControllerUpdate();
 	}
 
-	void Update()
+	private void Update()
 	{
 		HandleJumpKeyInput();
 	}
 
-	void ControllerUpdate()
+	private void ControllerUpdate()
 	{
 		collCtrl.CheckForGround();
 		currentControllerState = DetermineControllerState();
@@ -119,7 +119,7 @@ public class PlayerMovementController : Controller
 		return _velocity;
 	}
 
-	void HandleJumpKeyInput()
+	private void HandleJumpKeyInput()
 	{
 		bool _newJumpKeyPressedState = IsJumpKeyPressed();
 		if (jumpKeyIsPressed == false && _newJumpKeyPressedState == true)
@@ -139,7 +139,7 @@ public class PlayerMovementController : Controller
 		return characterInput.IsJumpKeyPressed();
 	}
 
-	ControllerState DetermineControllerState()
+	private ControllerState DetermineControllerState()
 	{
 		bool _isRising = IsRisingOrFalling() && (MathVector.GetDotProduct(GetMomentum(), tr.up) > 0f);
 		bool _isSliding = collCtrl.IsGrounded() && IsGroundTooSteep();
@@ -223,7 +223,7 @@ public class PlayerMovementController : Controller
 		return ControllerState.Falling;
 	}
 
-    void HandleJumping()
+	private void HandleJumping()
     {
         if (currentControllerState == ControllerState.Grounded)
         {
@@ -237,7 +237,7 @@ public class PlayerMovementController : Controller
         }
     }
 
-    void HandleMomentum()
+	private void HandleMomentum()
 	{
 		if(useLocalMomentum)
 			momentum = tr.localToWorldMatrix * momentum;
@@ -316,7 +316,7 @@ public class PlayerMovementController : Controller
 			momentum = tr.worldToLocalMatrix * momentum;
 	}
 
-	void OnJumpStart()
+	private void OnJumpStart()
 	{
 		if(useLocalMomentum)
 			momentum = tr.localToWorldMatrix * momentum;
@@ -330,7 +330,7 @@ public class PlayerMovementController : Controller
 			momentum = tr.worldToLocalMatrix * momentum;
 	}
 
-	void OnGroundContactLost()
+	private void OnGroundContactLost()
 	{
 		if(useLocalMomentum)
 			momentum = tr.localToWorldMatrix * momentum;
@@ -351,7 +351,7 @@ public class PlayerMovementController : Controller
 			momentum = tr.worldToLocalMatrix * momentum;
 	}
 
-	void OnGroundContactRegained()
+	private void OnGroundContactRegained()
 	{
 		if(OnLand != null)
 		{
@@ -362,17 +362,6 @@ public class PlayerMovementController : Controller
 			OnLand(_collisionVelocity);
 		}
 				
-	}
-
-	void OnCeilingContact()
-	{
-		if(useLocalMomentum)
-			momentum = tr.localToWorldMatrix * momentum;
-
-		momentum = MathVector.RemoveDotVector(momentum, tr.up);
-
-		if(useLocalMomentum)
-			momentum = tr.worldToLocalMatrix * momentum;
 	}
 
 	private bool IsRisingOrFalling()

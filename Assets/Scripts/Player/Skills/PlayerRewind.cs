@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script que le permite al player volver sobre sus pasos unos segundos 
 public class PlayerRewind : MonoBehaviour
 {
     [Header("Rewind Options")]

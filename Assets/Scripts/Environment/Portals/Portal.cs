@@ -37,14 +37,14 @@ public class Portal : MonoBehaviour {
         for (int i = 0; i < trackedTravellers.Count; i++) {
             PortalTraveller traveller = trackedTravellers[i];
             Transform travellerT = traveller.transform;
-            var m = linkedPortal.transform.localToWorldMatrix * transform.worldToLocalMatrix * travellerT.localToWorldMatrix;
+            Matrix4x4 m = linkedPortal.transform.localToWorldMatrix * transform.worldToLocalMatrix * travellerT.localToWorldMatrix;
 
             Vector3 offsetFromPortal = travellerT.position - transform.position;
             int portalSide = System.Math.Sign (Vector3.Dot (offsetFromPortal, transform.forward));
             int portalSideOld = System.Math.Sign (Vector3.Dot (traveller.previousOffsetFromPortal, transform.forward));
             if (portalSide != portalSideOld) {
-                var positionOld = travellerT.position;
-                var rotOld = travellerT.rotation;
+                Vector3 positionOld = travellerT.position;
+                Quaternion rotOld = travellerT.rotation;
                 traveller.Teleport (transform, linkedPortal.transform, m.GetColumn (3), m.rotation);
                 traveller.graphicsClone.transform.SetPositionAndRotation (positionOld, rotOld);
                 linkedPortal.OnTravellerEnterPortal (traveller);
@@ -60,7 +60,7 @@ public class Portal : MonoBehaviour {
     }
 
     public void PrePortalRender () {
-        foreach (var traveller in trackedTravellers) {
+        foreach (PortalTraveller traveller in trackedTravellers) {
             UpdateSliceParams (traveller);
         }
     }
@@ -73,9 +73,9 @@ public class Portal : MonoBehaviour {
 
         CreateViewTexture ();
 
-        var localToWorldMatrix = playerCam.transform.localToWorldMatrix;
-        var renderPositions = new Vector3[recursionLimit];
-        var renderRotations = new Quaternion[recursionLimit];
+        Matrix4x4 localToWorldMatrix = playerCam.transform.localToWorldMatrix;
+        Vector3[] renderPositions = new Vector3[recursionLimit];
+        Quaternion[] renderRotations = new Quaternion[recursionLimit];
 
         int startIndex = 0;
         portalCam.projectionMatrix = playerCam.projectionMatrix;
@@ -113,7 +113,7 @@ public class Portal : MonoBehaviour {
         const float showDst = 1000;
         float screenThickness = linkedPortal.ProtectScreenFromClipping (portalCam.transform.position);
 
-        foreach (var traveller in trackedTravellers) {
+        foreach (PortalTraveller traveller in trackedTravellers) {
             if (SameSideOfPortal (traveller.transform.position, portalCamPos)) {
                 traveller.SetSliceOffsetDst (hideDst, false);
             } else {
@@ -129,10 +129,10 @@ public class Portal : MonoBehaviour {
             }
         }
 
-        var offsetFromPortalToCam = portalCamPos - transform.position;
-        foreach (var linkedTraveller in linkedPortal.trackedTravellers) {
-            var travellerPos = linkedTraveller.graphicsObject.transform.position;
-            var clonePos = linkedTraveller.graphicsClone.transform.position;
+        Vector3 offsetFromPortalToCam = portalCamPos - transform.position;
+        foreach (PortalTraveller linkedTraveller in linkedPortal.trackedTravellers) {
+            Vector3 travellerPos = linkedTraveller.graphicsObject.transform.position;
+            Vector3 clonePos = linkedTraveller.graphicsClone.transform.position;
             bool cloneOnSameSideAsCam = linkedPortal.SideOfPortal (travellerPos) != SideOfPortal (portalCamPos);
             if (cloneOnSameSideAsCam) {
                 linkedTraveller.SetSliceOffsetDst (hideDst, true);
@@ -150,7 +150,7 @@ public class Portal : MonoBehaviour {
     }
 
     public void PostPortalRender () {
-        foreach (var traveller in trackedTravellers) {
+        foreach (PortalTraveller traveller in trackedTravellers) {
             UpdateSliceParams (traveller);
         }
         ProtectScreenFromClipping (playerCam.transform.position);
@@ -238,7 +238,7 @@ public class Portal : MonoBehaviour {
     }
 
     void OnTriggerEnter (Collider other) {
-        var traveller = other.GetComponent<PortalTraveller> ();
+        PortalTraveller traveller = other.GetComponent<PortalTraveller> ();
         if (traveller) {
             playerCameraRig.GetComponent<SmoothRotation>().enabled = false;
             OnTravellerEnterPortal (traveller);
@@ -246,7 +246,7 @@ public class Portal : MonoBehaviour {
     }
 
     void OnTriggerExit (Collider other) {
-        var traveller = other.GetComponent<PortalTraveller> ();
+        PortalTraveller traveller = other.GetComponent<PortalTraveller> ();
         if (traveller && trackedTravellers.Contains (traveller)) {
             playerCameraRig.GetComponent<SmoothRotation>().enabled = true;
             traveller.ExitPortalThreshold ();

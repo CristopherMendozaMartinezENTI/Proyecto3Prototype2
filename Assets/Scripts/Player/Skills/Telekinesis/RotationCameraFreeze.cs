@@ -14,7 +14,7 @@ public class RotationCameraFreeze : MonoBehaviour
             return;
         }
 
-        var gun = FindObjectOfType<TelekinesisController>();
+        TelekinesisController gun = FindObjectOfType<TelekinesisController>();
 
         if (gun != null && camController != null)
         {

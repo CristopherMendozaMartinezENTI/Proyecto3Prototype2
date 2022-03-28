@@ -46,6 +46,11 @@ public class PauseMenuManager : MonoBehaviour
     }
     public void ExitScene()
     {
-        Application.Quit();
+        gameIsPaused = false;
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PauseMenuCanvas.SetActive(false);
+        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "MainMenu"));
     }
 }

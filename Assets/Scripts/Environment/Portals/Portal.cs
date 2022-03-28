@@ -18,7 +18,7 @@ public class Portal : MonoBehaviour {
     private MeshFilter screenMeshFilter;
     private GameObject playerCameraRig;
 
-    void Awake () {
+    void Start () {
         playerCam = Camera.main;
         portalCam = GetComponentInChildren<Camera> ();
         portalCam.enabled = false;
@@ -94,13 +94,17 @@ public class Portal : MonoBehaviour {
             startIndex = renderOrderIndex;
         }
         screen.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
-        linkedPortal.screen.material.SetInt ("displayMask", 1);
+        linkedPortal.screen.material.SetInt ("displayMask", 0);
 
         for (int i = startIndex; i < recursionLimit; i++) {
             portalCam.transform.SetPositionAndRotation (renderPositions[i], renderRotations[i]);
             SetNearClipPlane ();
             HandleClipping ();
-            portalCam.Render();
+            if (portalCam.transform.eulerAngles != Vector3.zero)
+            {
+                portalCam.Render();
+
+            }
             if (i == startIndex) {
                 linkedPortal.screen.material.SetInt ("displayMask", 1);
             }

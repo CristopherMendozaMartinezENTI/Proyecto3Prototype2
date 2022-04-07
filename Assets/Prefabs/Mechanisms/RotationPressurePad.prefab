@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f004dbfd656339b4f8e4cff9df92a875, type: 2}
+  - {fileID: 2100000, guid: e11820def211aac499d1bcf50c3e3f8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,9 @@ MonoBehaviour:
   KeyTag: KeyBlue
   connectedGameObject: {fileID: 0}
   desiredRotation: {x: 0, y: 90, z: 0}
-  initialRotation: {x: 0, y: 0, z: 0}
+  rotationIsLocal: 0
+  worldDesiredRotation: {x: 0, y: 0, z: 0}
+  worldInitialRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1362842187574511115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,16 +1168,16 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
+          value: 0.71622276
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -1449,7 +1451,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 47417
+        atime1: 27949
         atime2: 65535
         atime3: 0
         atime4: 0

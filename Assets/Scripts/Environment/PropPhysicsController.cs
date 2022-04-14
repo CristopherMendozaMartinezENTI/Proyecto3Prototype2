@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GravitationalForce { Up, Down, Left, Right, Foward, Backward }
+public enum GravitationalForce {xFoward, xBackward, yFoward, yBackward, zForward, zBackward }
 
 public class PropPhysicsController : MonoBehaviour
 {
@@ -22,26 +22,26 @@ public class PropPhysicsController : MonoBehaviour
     {
         switch (gravityOrientation)
         {
-            case GravitationalForce.Up:
+            case GravitationalForce.yFoward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(-Physics.gravity, ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Down:
+            case GravitationalForce.yBackward:
                 gameObject.GetComponent<Rigidbody>().useGravity = true;
                 return;
-            case GravitationalForce.Left:
+            case GravitationalForce.zBackward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, -gravityForce), ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Right:
+            case GravitationalForce.zForward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, gravityForce), ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Foward:
+            case GravitationalForce.xBackward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-gravityForce, 0.0f, 0.0f), ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Backward:
+            case GravitationalForce.xFoward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(gravityForce, 0.0f, 0.0f), ForceMode.Acceleration);
                 return;

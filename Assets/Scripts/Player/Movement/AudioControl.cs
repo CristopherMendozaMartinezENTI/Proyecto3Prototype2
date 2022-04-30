@@ -86,6 +86,16 @@ public class AudioControl : MonoBehaviour
 		if(MathVector.GetDotProduct(_v, tr.up) > -landVelocityThreshold)
 			return;
 		audioSource.PlayOneShot(landClip, audioClipVolume);
+
+		/*if (defCollider == true)
+		{
+			Debug.Log("TRUE");
+		}
+		else 
+		{
+			audioSource.PlayOneShot(landClip, audioClipVolume);
+			Debug.Log("FALSE");
+		}*/
 	}
 
 	private void OnJump(Vector3 _v)

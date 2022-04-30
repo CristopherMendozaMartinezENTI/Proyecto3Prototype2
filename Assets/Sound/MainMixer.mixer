@@ -14,6 +14,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6815222225905896489
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Elements
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: bb79d757fdcfa494fa73c910dca5c728
+  m_Children: []
+  m_Volume: bb1c966a01710b24f9af4b4ef064565b
+  m_Pitch: 22888033831fe524c9dfc5c6c7ce27ef
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -1017426400824794668}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-5828041112668325335
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -27,6 +46,7 @@ AudioMixerGroupController:
   - {fileID: 6594326454014518365}
   - {fileID: 5040441736160806149}
   - {fileID: 2525859580704306082}
+  - {fileID: -6815222225905896489}
   m_Volume: c19a63a2b50ae674c803d18d297e40da
   m_Pitch: e35ec6f1aafb2564084b90cabc17bbd5
   m_Send: 00000000000000000000000000000000
@@ -36,6 +56,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-1017426400824794668
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5a8067a53a17ebb40bbcc89bf5e4d422
+  m_EffectName: Attenuation
+  m_MixLevel: d58515d98e8198e4fb5488bc5e9946d8
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -59,6 +93,7 @@ AudioMixerController:
     - 52a455c0db280cd43b74945bd51b18d9
     - a5bb8db18074c5d4b955c652eb7120d6
     - 46933c3d0e435394cbad04bd6cb48c8b
+    - bb79d757fdcfa494fa73c910dca5c728
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -106,7 +141,10 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: c5c83d0f5f9d07049b397f735220521a
   m_FloatValues:
-    c0f9841cdc1f6624785eebf0e61233dc: 20
+    cdb920b430d142a41a99a68da105588e: -12
+    bb1c966a01710b24f9af4b4ef064565b: -3.1841109
+    c0f9841cdc1f6624785eebf0e61233dc: 9.757735
+    b7072ebf32f4dad45bd52fe3af660474: 9.757737
   m_TransitionOverrides: {}
 --- !u!244 &1642066082130785091
 AudioMixerEffectController:

@@ -17,6 +17,7 @@ public class AutomaticDoor_mod : MonoBehaviour
         if(other.tag == "Player")
         {
             audioComponent.PlayOneShot(openDoorClip);
+            audioComponent.volume = 0.3f;
         }
     }
 

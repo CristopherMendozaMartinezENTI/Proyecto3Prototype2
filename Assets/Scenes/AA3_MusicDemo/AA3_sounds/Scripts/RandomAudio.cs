@@ -8,7 +8,7 @@ public class RandomAudio : MonoBehaviour
     private AudioSource audioComponent;
 
     public float fRandomMin = 2.0f, fRandomMax = 8.0f, fRandomTime = 0.0f;
-    public float fvolMin = 0.7f, fvolMax = 1.0f;
+    public float fvolMin = 0.03f, fvolMax = 0.15f;
     public float fPitchMin = 0.8f, fPitchMax = 1.2f;
 
     // Start is called before the first frame update

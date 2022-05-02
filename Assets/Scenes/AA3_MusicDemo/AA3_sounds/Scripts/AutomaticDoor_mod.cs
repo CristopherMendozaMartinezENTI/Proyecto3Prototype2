@@ -7,6 +7,8 @@ public class AutomaticDoor_mod : MonoBehaviour
 {
     [SerializeField] private AudioClip openDoorClip;
     private AudioSource audioComponent;
+    public float fvolMin = 0.15f, fvolMax = 0.25f;
+    public float fPitchMin = 0.8f, fPitchMax = 1.2f;
     private void Start()
     {
         audioComponent = GetComponent<AudioSource>();
@@ -16,8 +18,9 @@ public class AutomaticDoor_mod : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            audioComponent.volume = Random.Range(fvolMin, fvolMax);
+            audioComponent.pitch = Random.Range(fPitchMin, fPitchMax);
             audioComponent.PlayOneShot(openDoorClip);
-            audioComponent.volume = 0.3f;
         }
     }
 

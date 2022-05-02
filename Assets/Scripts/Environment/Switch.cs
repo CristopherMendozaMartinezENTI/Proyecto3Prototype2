@@ -44,7 +44,10 @@ public class Switch : MonoBehaviour
         if (other.tag == "Player")
         {
             triggerStay = true;
-            pressECanvas.SetActive(true);
+            if (pressECanvas)
+                pressECanvas.SetActive(true);
+            else
+                Debug.Log("Missing Canvas reference in switch");
             if (keyPressed)
             {
                 if (!active)
@@ -107,7 +110,10 @@ public class Switch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            pressECanvas.SetActive(false);
+            if (pressECanvas)
+                pressECanvas.SetActive(false);
+            else
+                Debug.Log("Missing Canvas reference in switch");
             triggerStay = false;
         }
     }

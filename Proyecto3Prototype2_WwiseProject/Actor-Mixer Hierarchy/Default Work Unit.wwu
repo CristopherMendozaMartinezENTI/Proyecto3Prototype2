@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="SFX1" ID="{5B8AA765-3183-475F-8E09-E651BE1D89BD}" ShortID="48745482">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="SoundSeed Air Wind" ID="{EE8A9647-8919-4D2E-AB89-D356C3D34C61}" ShortID="465382302" PluginName="SoundSeed Air Wind" CompanyID="0" PluginID="119">
+							<Language>SFX</Language>
+							<PluginData/>
+							<PluginInnerObjectList>
+								<List Name="Deflectors">
+									<PluginInnerObject Name="" ID="{829832A0-E6ED-4B87-B7E0-AF7CA31BE6A1}" PluginName="Deflector" CompanyID="0" PluginID="121"/>
+								</List>
+							</PluginInnerObjectList>
+						</SourcePlugin>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="SoundSeed Air Wind" ID="{EE8A9647-8919-4D2E-AB89-D356C3D34C61}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

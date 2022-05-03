@@ -447,6 +447,13 @@ public class TelekinesisController : MonoBehaviour
         return false;
     }
 
+    public void SetDistanceToMin()
+    {
+
+        if(_grabbedRigidbody != null)
+            _grabbedRigidbody.transform.localPosition = _grabbedRigidbody.transform.localPosition / _minObjectDistance;
+    }
+
     public bool IsObjectGrabbed()
     {
         if (_grabbedRigidbody != null) return true;

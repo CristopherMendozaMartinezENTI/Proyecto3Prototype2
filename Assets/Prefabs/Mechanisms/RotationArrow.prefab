@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4635206698664144}
   - component: {fileID: 206342877290004372}
-  - component: {fileID: 5253315087204612319}
   - component: {fileID: 82200963698192314}
   - component: {fileID: 114963660857855570}
   m_Layer: 0
-  m_Name: RotationChanger
+  m_Name: RotationArrow
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -47,22 +46,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4794631, y: 1.4578311, z: 1.0022302}
-  m_Center: {x: -0.028203726, y: 2.6404972, z: -1.450331}
---- !u!136 &5253315087204612319
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713206883672332}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.3347149
-  m_Height: 1.311063
-  m_Direction: 0
-  m_Center: {x: 0.0027706623, y: 1.6117415, z: -0.84705853}
+  m_Size: {x: 1.7741768, y: 1.4578314, z: 0.37335515}
+  m_Center: {x: -0.010106772, y: 2.6404972, z: -1.7711006}
 --- !u!82 &82200963698192314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -171,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f81dbe5e0c02214a9323c73646ecb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isField: 0
 --- !u!1 &6966142205444280101
 GameObject:
   m_ObjectHideFlags: 0

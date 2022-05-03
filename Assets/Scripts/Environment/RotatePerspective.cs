@@ -8,12 +8,14 @@ public class RotatePerspective : MonoBehaviour
 {
 	private Transform tr;
 	private AudioSource audioSource;
+	private GameObject telekinesisController;
 	[SerializeField] private bool isField = false;
 
 	private void Start()
 	{
 		tr = transform;
 		audioSource = GetComponent<AudioSource>();
+		telekinesisController = GameObject.Find("TelekinesisGaunlet");
 	}
 
 	private void OnTriggerEnter(Collider col)
@@ -35,6 +37,8 @@ public class RotatePerspective : MonoBehaviour
 		
 		if(isField)
 			_controller.transform.position = tr.position;
+
+		telekinesisController.GetComponent<TelekinesisController>().SetDistanceToMin();
 
 		Transform _transform = _controller.transform;
 		Quaternion _rotationDifference = Quaternion.FromToRotation(_transform.up, _newUpDirection);

@@ -8,6 +8,7 @@ public class RotatePerspective : MonoBehaviour
 {
 	private Transform tr;
 	private AudioSource audioSource;
+	[SerializeField] private bool isField = false;
 
 	private void Start()
 	{
@@ -31,6 +32,9 @@ public class RotatePerspective : MonoBehaviour
 			return;
 
 		audioSource.Play();
+		
+		if(isField)
+			_controller.transform.position = tr.position;
 
 		Transform _transform = _controller.transform;
 		Quaternion _rotationDifference = Quaternion.FromToRotation(_transform.up, _newUpDirection);

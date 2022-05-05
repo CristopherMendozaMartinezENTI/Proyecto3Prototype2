@@ -13,11 +13,42 @@ public class PressurePad : MonoBehaviour
     [SerializeField] private GameObject connectedGameObject;
     [SerializeField] private bool invertedAMFF;
     public bool active { get; private set; } = false;
-    private GameObject onTriggerVfx;
+    private ParticleSystem ps;
+    private ParticleSystem.MainModule main;
 
     private void Start()
     {
-        onTriggerVfx = transform.GetChild(0).gameObject;
+        ps = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        main = ps.main;
+    }
+
+    private void Update()
+    {
+        if(active)
+        {
+            if (KeyTag == "KeyBlue")
+                main.startColor = Color.cyan;
+
+            if (KeyTag == "KeyGreen")
+                main.startColor = Color.green;
+
+            if (KeyTag == "KeyPurple")
+                main.startColor = new Color(0.5f, 0, 1);
+
+            if (KeyTag == "KeyOrange")
+                main.startColor = new Color(1, 0.3f, 0);
+
+            if (KeyTag == "KeyYelow")
+                main.startColor = new Color(1, 1, 0);
+
+            if (KeyTag == "KeyPink")
+                main.startColor = new Color(1, 0.3f, 0.8f);
+        }
+
+       else
+       {
+            main.startColor = Color.white;
+       }
     }
 
     private void OnTriggerStay(Collider other)
@@ -25,18 +56,6 @@ public class PressurePad : MonoBehaviour
         if(other.tag == KeyTag)
         {
             active = true;
-
-            if (KeyTag == "KeyBlue")
-                onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.cyan;
-
-            if (KeyTag == "KeyRed")
-                onTriggerVfx.GetComponent<ParticleSystem>().startColor = new Color(255, 69, 0);
-
-            if (KeyTag == "KeyGreen")
-                onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.green;
-
-            if (KeyTag == "KeyPurple")
-                onTriggerVfx.GetComponent<ParticleSystem>().startColor =  new Color(148, 0, 211);
 
             switch (ConnectedTo)
             {
@@ -69,8 +88,6 @@ public class PressurePad : MonoBehaviour
         if (other.tag == KeyTag)
         {
             active = false;
-
-            onTriggerVfx.GetComponent<ParticleSystem>().startColor = Color.white;
             switch (ConnectedTo)
             {
                 case Connections.Door:

@@ -13,6 +13,7 @@ public class TriggerArea : MonoBehaviour {
 			rigidbodiesInTriggerArea.Add(col.attachedRigidbody);
 		}
 	}
+
 	private void OnTriggerExit(Collider col)
 	{
 		if(col.attachedRigidbody != null && col.GetComponent<PlayerColliderController>() != null)

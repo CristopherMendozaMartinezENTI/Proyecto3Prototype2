@@ -38,7 +38,8 @@ public class RotatePerspective : MonoBehaviour
 		if(isField)
 			_controller.transform.position = tr.position;
 
-		telekinesisController.GetComponent<TelekinesisController>().SetDistanceToMin();
+		if(telekinesisController.GetComponent<TelekinesisController>().IsObjectGrabbed())
+			telekinesisController.GetComponent<TelekinesisController>().ReleaseObject();
 
 		Transform _transform = _controller.transform;
 		Quaternion _rotationDifference = Quaternion.FromToRotation(_transform.up, _newUpDirection);

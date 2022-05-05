@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GravitationalForce {xFoward, xBackward, yFoward, yBackward, zForward, zBackward }
-
+public enum GravitationalForce {xFoward, xBackward, yFoward, yBackward, zForward, zBackward, None }
 public class PropPhysicsController : MonoBehaviour
 {
     [Header("Settings")]
@@ -44,6 +43,8 @@ public class PropPhysicsController : MonoBehaviour
             case GravitationalForce.xFoward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(gravityForce, 0.0f, 0.0f), ForceMode.Acceleration);
+                return;
+            case GravitationalForce.None:
                 return;
         }
     }

@@ -10,20 +10,23 @@ public class CableScaffolding : MonoBehaviour
 
     void Start()
     {
-        
         line = this.gameObject.GetComponent<LineRenderer>();
         matArray = line.materials;
         red = Resources.Load<Material>(@"Materials/" + "HologramRed");
-        green = Resources.Load<Material>(@"Materials/" + "HologramYellow");
+        green = Resources.Load<Material>(@"Materials/" + "HologramGreen");
     }
 
     void Update() //Esto hay q optimizarlo para q no cambie el material a cada frame -> unirx
     {
         if (GetComponent<ActiveStateManager>().active)
-            matArray[1] = red;
-        else
+        {
             matArray[1] = green;
-
-        line.materials = matArray;
+            line.materials = matArray;
+        }
+        else
+        {
+            matArray[1] = red;
+            line.materials = matArray;
+        }
     }
 }

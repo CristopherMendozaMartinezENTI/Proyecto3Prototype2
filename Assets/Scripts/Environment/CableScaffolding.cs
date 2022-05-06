@@ -5,22 +5,25 @@ using UnityEngine;
 public class CableScaffolding : MonoBehaviour
 {
     private Material[] matArray;
-    private Material screenOn;
-    private Material screenOff;
-
-
+    private Material red; private Material green;
+    private LineRenderer line;
 
     void Start()
     {
-
-        screenOn = Resources.Load<Material>(@"Materials/" + "OnMat");
-        screenOff = Resources.Load<Material>(@"Materials/" + "OffMat");
+        
+        line = this.gameObject.GetComponent<LineRenderer>();
+        matArray = line.materials;
+        red = Resources.Load<Material>(@"Materials/" + "HologramRed");
+        green = Resources.Load<Material>(@"Materials/" + "HologramYellow");
     }
 
-    void Update()
+    void Update() //Esto hay q optimizarlo para q no cambie el material a cada frame -> unirx
     {
+        if (GetComponent<ActiveStateManager>().active)
+            matArray[1] = red;
+        else
+            matArray[1] = green;
 
-        //matArray[1]= GetComponent<LineRenderer>().materials;
-        GetComponent<MeshRenderer>().materials = matArray;
+        line.materials = matArray;
     }
 }

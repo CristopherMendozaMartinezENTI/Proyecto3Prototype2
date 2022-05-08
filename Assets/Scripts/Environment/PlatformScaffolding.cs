@@ -23,6 +23,7 @@ public class PlatformScaffolding : MonoBehaviour
     {
         Activate(GetComponent<ActiveStateManager>().active);
 
+        /*
         if (GetComponent<ActiveStateManager>().active)
         {
             matArray[1] = green;
@@ -33,6 +34,7 @@ public class PlatformScaffolding : MonoBehaviour
             matArray[1] = red;
             line.materials = matArray;
         }
+        */
     }
     public void Activate(bool state)
     {

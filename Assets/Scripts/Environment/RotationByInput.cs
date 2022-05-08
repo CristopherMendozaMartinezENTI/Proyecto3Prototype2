@@ -52,7 +52,7 @@ public class RotationByInput : MonoBehaviour
         foreach (Switch _switch in inputSwitches)
             if (!_switch.active) //la logica del switch va al reves ¯\_(ツ)_/¯
             {
-        Debug.Log(_switch);
+        //Debug.Log(_switch);
                 rotate = true;
                 break;
             }

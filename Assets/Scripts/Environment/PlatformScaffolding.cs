@@ -13,10 +13,10 @@ public class PlatformScaffolding : MonoBehaviour
 
     void Start()
     {
-        line = this.gameObject.GetComponent<LineRenderer>();
-        matArray = line.materials;
-        red = Resources.Load<Material>(@"Materials/" + "HologramRed");
-        green = Resources.Load<Material>(@"Materials/" + "HologramGreen");
+        //line = this.gameObject.GetComponent<LineRenderer>();
+        //matArray = line.materials;
+        //red = Resources.Load<Material>(@"Materials/" + "HologramRed");
+        //green = Resources.Load<Material>(@"Materials/" + "HologramGreen");
     }
 
     void Update() //Esto hay q optimizarlo para q no cambie el material a cada frame -> unirx

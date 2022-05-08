@@ -10,6 +10,7 @@ public class RotatePerspective : MonoBehaviour
 	private AudioSource audioSource;
 	private GameObject telekinesisController;
 	[SerializeField] private bool isField = false;
+	[SerializeField] private bool is90dg = false;
 
 	private void Start()
 	{
@@ -44,5 +45,8 @@ public class RotatePerspective : MonoBehaviour
 		Transform _transform = _controller.transform;
 		Quaternion _rotationDifference = Quaternion.FromToRotation(_transform.up, _newUpDirection);
 		_transform.rotation = _rotationDifference * _transform.rotation;
+
+		if (is90dg)
+			Destroy(gameObject);
 	}
 }

@@ -31,7 +31,8 @@ public class PlayerKeyboardInput : PlayerInput
 
 	public override bool IsJumpKeyPressed()
 	{
-		return Input.GetKey(jumpKey);
+		if (Time.timeScale != 0f) return Input.GetKey(jumpKey);
+		else return false;
 	}
 }
 

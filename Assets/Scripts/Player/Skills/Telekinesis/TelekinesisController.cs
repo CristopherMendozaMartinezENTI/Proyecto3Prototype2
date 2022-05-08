@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//Script que controla todo relacionado con la Telekinesis
 public class TelekinesisController : MonoBehaviour
 {
     [SerializeField] private LayerMask _grabLayer;
@@ -11,12 +12,14 @@ public class TelekinesisController : MonoBehaviour
     [Header("Input Setting"), Space(10)]
     [SerializeField] private KeyCode Rotate = KeyCode.R;
     [SerializeField] private KeyCode SnapRotation = KeyCode.LeftShift;
+    [SerializeField] private KeyCode Freeze = KeyCode.F;
     [SerializeField] private KeyCode SwitchAxis = KeyCode.Tab;
     [SerializeField] private KeyCode RotateZ  = KeyCode.Space;
     [SerializeField] private KeyCode RotationSpeedIncrease = KeyCode.LeftControl;
     [SerializeField] private KeyCode ResetRotation = KeyCode.LeftAlt;
     private Rigidbody _grabbedRigidbody;
-    private Transform _grabbedTransform; 
+    private Transform _grabbedTransform;
+    private bool hasFreezedRotation;
     private Vector3 _hitOffsetLocal;
     private float  _currentGrabDistance;
     private RigidbodyInterpolation  _initialInterpolationSetting;
@@ -54,6 +57,10 @@ public class TelekinesisController : MonoBehaviour
     private Vector3 _oneVector3 = Vector3.one;
     private Vector3 _zeroVector2 = Vector2.zero;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip onGrabbed;
+    [SerializeField] private AudioClip onReleased;
+
     private bool _justReleased;
     private bool _wasKinematic;
    
@@ -64,7 +71,6 @@ public class TelekinesisController : MonoBehaviour
     public BoolEvent OnRotation;
     public BoolEvent OnRotationSnapped;
     public BoolEvent OnAxisChanged;
-
     public GrabEvent OnObjectGrabbed;
 
     //Line Renderer variables
@@ -129,14 +135,14 @@ public class TelekinesisController : MonoBehaviour
     {
         if(_camera == null)
         {
-            Debug.LogError($"{nameof(TelekinesisController)} missing Camera", this);
+            Debug.LogError($"{nameof(TelekinesisController)} No hay camara asignada", this);
             return;
         }
 
         if(playerTransform == null) 
         {
             playerTransform = this.transform;
-            Debug.Log($"As {nameof(playerTransform)} is null, it have been set to set to this.transform", this);
+            Debug.Log($"El {nameof(playerTransform)} es, asi que se ha tomado como referencia en transform del objetivo que contiene el script", this);
         }
     }
 
@@ -148,19 +154,15 @@ public class TelekinesisController : MonoBehaviour
 
             UpdateRotationAxis();
 
-            Debug.DrawRay(_grabbedTransform.position, _up * 5f, Color.green);
-            Debug.DrawRay(_grabbedTransform.position, _right * 5f, Color.red);
-            Debug.DrawRay(_grabbedTransform.position, _forward * 5f, Color.blue);
-
-            var intentionalRotation = Quaternion.AngleAxis(_rotationInput.z, _forward) * Quaternion.AngleAxis(_rotationInput.y, _right) * Quaternion.AngleAxis(-_rotationInput.x, _up) * _desiredRotation;
-            var relativeToPlayerRotation = playerTransform.rotation * _rotationDifference;
+            Quaternion intentionalRotation = Quaternion.AngleAxis(_rotationInput.z, _forward) * Quaternion.AngleAxis(_rotationInput.y, _right) * Quaternion.AngleAxis(-_rotationInput.x, _up) * _desiredRotation;
+            Quaternion relativeToPlayerRotation = playerTransform.rotation * _rotationDifference;
 
             if (_userRotation && _snapRotation)
             {
                 _lockedRot += _rotationInput;
                 if (Mathf.Abs(_lockedRot.x) > _snappedRotationSens || Mathf.Abs(_lockedRot.y) > _snappedRotationSens || Mathf.Abs(_lockedRot.z) > _snappedRotationSens)
                 {
-                    for (var i = 0; i < 3; i++)
+                    for (int i = 0; i < 3; i++)
                     {
                         if (_lockedRot[i] > _snappedRotationSens)
                         {
@@ -176,8 +178,8 @@ public class TelekinesisController : MonoBehaviour
                         }
                     }
 
-                    var q = Quaternion.AngleAxis(-_lockedRot.x, _up) * Quaternion.AngleAxis(_lockedRot.y, _right) * Quaternion.AngleAxis(_lockedRot.z, _forward) * _desiredRotation;
-                    var newRot = q.eulerAngles;
+                    Quaternion q = Quaternion.AngleAxis(-_lockedRot.x, _up) * Quaternion.AngleAxis(_lockedRot.y, _right) * Quaternion.AngleAxis(_lockedRot.z, _forward) * _desiredRotation;
+                    Vector3 newRot = q.eulerAngles;
                     newRot.x = Mathf.Round(newRot.x / SnapRotationDegrees) * SnapRotationDegrees;
                     newRot.y = Mathf.Round(newRot.y / SnapRotationDegrees) * SnapRotationDegrees;
                     newRot.z = Mathf.Round(newRot.z / SnapRotationDegrees) * SnapRotationDegrees;
@@ -192,16 +194,16 @@ public class TelekinesisController : MonoBehaviour
             _grabbedRigidbody.angularVelocity = _zeroVector3;
             _rotationInput = _zeroVector2;
             _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _desiredRotation;
-            var holdPoint = ray.GetPoint(_currentGrabDistance) + _scrollWheelInput;
-            var centerDestination = holdPoint - _grabbedTransform.TransformVector(_hitOffsetLocal);
+            Vector3 holdPoint = ray.GetPoint(_currentGrabDistance) + _scrollWheelInput;
+            Vector3 centerDestination = holdPoint - _grabbedTransform.TransformVector(_hitOffsetLocal);
 
             Debug.DrawLine(ray.origin, holdPoint, Color.blue, Time.fixedDeltaTime);
 
-            var toDestination = centerDestination - _grabbedTransform.position;
+            Vector3 toDestination = centerDestination - _grabbedTransform.position;
 
-            var force = toDestination / Time.fixedDeltaTime * 0.3f / _grabbedRigidbody.mass;
+            Vector3 force = toDestination / Time.fixedDeltaTime * 0.3f / _grabbedRigidbody.mass;
 
-            //force += _scrollWheelInput;
+            force += _scrollWheelInput;
             _grabbedRigidbody.velocity = _zeroVector3;
             _grabbedRigidbody.AddForce(force, ForceMode.VelocityChange);
 
@@ -223,11 +225,7 @@ public class TelekinesisController : MonoBehaviour
     {
         if (!Input.GetMouseButton(0))
         {
-            if (_grabbedRigidbody != null)
-            {                
-                ReleaseObject();
-            }
-
+            if (_grabbedRigidbody != null) ReleaseObject();
             _justReleased = false;
             return;
         }
@@ -243,11 +241,20 @@ public class TelekinesisController : MonoBehaviour
             {
                 if (hit.rigidbody != null /*&& !hit.rigidbody.isKinematic*/)
                 {
+                    gameObject.GetComponent<AudioSource>().clip = onGrabbed;
+                    gameObject.GetComponent<AudioSource>().Play();
                     _grabbedRigidbody = hit.rigidbody;
                     _grabbedRigidbody.transform.parent = playerTransform.transform;
                     _wasKinematic = _grabbedRigidbody.isKinematic;
                     _grabbedRigidbody.isKinematic = false;
-                    _grabbedRigidbody.freezeRotation = true;
+                    if (!_grabbedRigidbody.freezeRotation)
+                    {
+                        _grabbedRigidbody.freezeRotation = true;
+                    }
+                    else
+                    {
+                        hasFreezedRotation = true;
+                    }
                     _initialInterpolationSetting = _grabbedRigidbody.interpolation;
                     _rotationDifference = Quaternion.Inverse(playerTransform.rotation) * _grabbedRigidbody.rotation;
                     _hitOffsetLocal = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
@@ -263,43 +270,31 @@ public class TelekinesisController : MonoBehaviour
         {
             _userRotation = Input.GetKey(Rotate);
 
-            if (Input.GetKeyDown(Rotate))
-            {
-                _desiredRotation = _grabbedRigidbody.rotation;
-            }
-
-            if (Input.GetKey(ResetRotation))
-            {
-                _grabbedRigidbody.MoveRotation(Quaternion.identity);  
-            }
-
+            //Rotation
+            if (Input.GetKeyDown(Rotate)) _desiredRotation = _grabbedRigidbody.rotation;
+        
+            if (Input.GetKey(ResetRotation)) _grabbedRigidbody.MoveRotation(Quaternion.identity);  
+            
             if (Input.GetKey(Rotate))
             {
-                var rotateZ = Input.GetKey(RotateZ);
-
-                var increaseSens = Input.GetKey(RotationSpeedIncrease) ? 2.5f : 1f;
+                bool rotateZ = Input.GetKey(RotateZ);
+                float increaseSens = Input.GetKey(RotationSpeedIncrease) ? 2.5f : 1f;
 
                 if(Input.GetKeyDown(SwitchAxis))
                 {
                     _rotationAxis = !_rotationAxis;
-
                     OnAxisChanged.Invoke(_rotationAxis);
                 }
 
                 if (Input.GetKeyDown(SnapRotation))
                 {
                     _snapRotation = true;
-
-                    var newRot = _grabbedRigidbody.transform.rotation.eulerAngles;
-
+                    Vector3 newRot = _grabbedRigidbody.transform.rotation.eulerAngles;
                     newRot.x = Mathf.Round(newRot.x / SnapRotationDegrees) * SnapRotationDegrees;
                     newRot.y = Mathf.Round(newRot.y / SnapRotationDegrees) * SnapRotationDegrees;
                     newRot.z = Mathf.Round(newRot.z / SnapRotationDegrees) * SnapRotationDegrees;
-
-                    var rot = Quaternion.Euler(newRot);
-
+                    Quaternion rot = Quaternion.Euler(newRot);
                     _grabbedRigidbody.MoveRotation(rot);
-
                     _desiredRotation = rot;
      
                 }
@@ -308,8 +303,8 @@ public class TelekinesisController : MonoBehaviour
                     _snapRotation = false;
                 }
 
-                var x = Input.GetAxisRaw("Mouse X");
-                var y = Input.GetAxisRaw("Mouse Y");
+                float x = Input.GetAxisRaw("Mouse X");
+                float y = Input.GetAxisRaw("Mouse Y");
 
                 if (Mathf.Abs(x) > _rotationTollerance)
                 {
@@ -327,12 +322,17 @@ public class TelekinesisController : MonoBehaviour
                 _snapRotation = false;
             }
 
-            var direction = Input.GetAxis("Mouse ScrollWheel");
-        
-            if (Input.GetKeyDown(KeyCode.T))
+           
+            float direction = Input.GetAxis("Mouse ScrollWheel");
+            
+           /* 
+            //Move Object Foward Or backwards
+            if (Input.GetKeyDown(KeyCode.E))
                 direction = -0.1f;
-            else if (Input.GetKeyDown(KeyCode.G))
+            else if (Input.GetKeyDown(KeyCode.Q))
                 direction = 0.1f;
+
+            */
 
             if (Mathf.Abs(direction) > 0 && CheckObjectDistance(direction))
             {
@@ -344,11 +344,11 @@ public class TelekinesisController : MonoBehaviour
                 _scrollWheelInput = _zeroVector3;
             }
 
-            if(Input.GetMouseButtonDown(1))
+            //Freeze
+            if(Input.GetKeyDown(Freeze))
             {
                 _grabbedRigidbody.collisionDetectionMode = !_wasKinematic ? CollisionDetectionMode.ContinuousSpeculative : CollisionDetectionMode.Continuous;
                 _grabbedRigidbody.isKinematic = _wasKinematic = !_wasKinematic;
-
                 _justReleased = true;
                 ReleaseObject();
             }
@@ -386,7 +386,7 @@ public class TelekinesisController : MonoBehaviour
 
     private void NearestTranformDirection(Transform transformToCheck, Transform referenceTransform, ref Vector3 up, ref Vector3 forward, ref Vector3 right)
     {
-        var directions = new List<Vector3>()
+        List<Vector3> directions = new List<Vector3>()
         {
             transformToCheck.forward,
             -transformToCheck.forward,
@@ -409,12 +409,12 @@ public class TelekinesisController : MonoBehaviour
 
     private Vector3 GetDirectionVector(List<Vector3> directions, Vector3 direction)
     {
-        var maxDot = -Mathf.Infinity;
-        var ret = Vector3.zero;
+        float maxDot = -Mathf.Infinity;
+        Vector3 ret = Vector3.zero;
 
-        for (var i = 0; i < directions.Count; i++)
+        for (int i = 0; i < directions.Count; i++)
         {
-            var dot = Vector3.Dot(direction, directions[i]);
+            float dot = Vector3.Dot(direction, directions[i]);
 
             if (dot > maxDot)
             {
@@ -433,10 +433,10 @@ public class TelekinesisController : MonoBehaviour
 
     private bool CheckObjectDistance(float direction)
     {
-        var pointA = playerTransform.position;
-        var pointB = _grabbedRigidbody.position;
+        Vector3 pointA = playerTransform.position;
+        Vector3 pointB = _grabbedRigidbody.position;
 
-        var distance = Vector3.Distance(pointA, pointB);
+        float distance = Vector3.Distance(pointA, pointB);
 
         if (direction > 0)
             return distance <= _maxGrabDistance;
@@ -447,6 +447,13 @@ public class TelekinesisController : MonoBehaviour
         return false;
     }
 
+    public void SetDistanceToMin()
+    {
+
+        if(_grabbedRigidbody != null)
+            _grabbedRigidbody.transform.localPosition = _grabbedRigidbody.transform.localPosition / _minObjectDistance;
+    }
+
     public bool IsObjectGrabbed()
     {
         if (_grabbedRigidbody != null) return true;
@@ -455,10 +462,19 @@ public class TelekinesisController : MonoBehaviour
 
     public void ReleaseObject()
     {
+        gameObject.GetComponent<AudioSource>().clip = onReleased;
+        gameObject.GetComponent<AudioSource>().Play();
         _grabbedRigidbody.MoveRotation(_desiredRotation);
         _grabbedRigidbody.isKinematic = _wasKinematic;
         _grabbedRigidbody.interpolation = _initialInterpolationSetting;
-        _grabbedRigidbody.freezeRotation = false;
+        if (hasFreezedRotation)
+        {
+            _grabbedRigidbody.freezeRotation = true;
+        }
+        else
+        {
+            _grabbedRigidbody.freezeRotation = false;
+        }
         _grabbedRigidbody.transform.parent = null;
         _grabbedRigidbody = null;
         _scrollWheelInput = _zeroVector3;
@@ -468,7 +484,6 @@ public class TelekinesisController : MonoBehaviour
         StartPoint = _zeroVector3;
         MidPoint = _zeroVector3;
         EndPoint = _zeroVector3;
-
         OnObjectGrabbed.Invoke(null);
     }
 }

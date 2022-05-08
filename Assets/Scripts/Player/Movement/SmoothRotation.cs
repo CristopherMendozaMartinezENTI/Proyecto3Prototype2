@@ -17,7 +17,7 @@ public class SmoothRotation : MonoBehaviour
 	}
 	[SerializeField] private UpdateType updateType;
 
-	void Awake () 
+	private void Awake () 
 	{
 		if(target == null)
 			target = this.transform.parent;
@@ -26,30 +26,30 @@ public class SmoothRotation : MonoBehaviour
 		currentRotation = transform.rotation;
 	}
 
-	void OnEnable()
+	private void OnEnable()
 	{
 		ResetCurrentRotation();
 	}
 
-	void Update () {
+	private void Update () {
 		if(updateType == UpdateType.LateUpdate)
 			return;
 		SmoothUpdate();
 	}
 
-	void LateUpdate () {
+	private void LateUpdate () {
 		if(updateType == UpdateType.Update)
 			return;
 		SmoothUpdate();
 	}
 
-	void SmoothUpdate()
+	private void SmoothUpdate()
 	{
 		currentRotation = Smooth (currentRotation, target.rotation, smoothSpeed);
 		tr.rotation = currentRotation;
 	}
 
-	Quaternion Smooth(Quaternion _currentRotation, Quaternion _targetRotation, float _smoothSpeed)
+	private Quaternion Smooth(Quaternion _currentRotation, Quaternion _targetRotation, float _smoothSpeed)
 	{
 		if (extrapolateRotation && Quaternion.Angle(_currentRotation, _targetRotation) < 90f) {
 			Quaternion difference = _targetRotation * Quaternion.Inverse (_currentRotation);

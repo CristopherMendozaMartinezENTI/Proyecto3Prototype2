@@ -5,10 +5,10 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private GameObject pressE;
+    [SerializeField] private GameObject pressECanvas;
     [SerializeField] private Connections ConnectedTo;
     [SerializeField] private GameObject connectedGameObject;
-    private bool active = true;
+    public bool active { get; private set; } = true; // on / off
     private bool triggerStay = false;
     private bool keyPressed = false;
     private Material[] matArray;
@@ -44,8 +44,11 @@ public class Switch : MonoBehaviour
         if (other.tag == "Player")
         {
             triggerStay = true;
-            pressE.SetActive(true);
-            if(keyPressed)
+            if (pressECanvas)
+                pressECanvas.SetActive(true);
+            else
+                Debug.Log("Missing Canvas reference in switch");
+            if (keyPressed)
             {
                 if (!active)
                 {
@@ -57,13 +60,19 @@ public class Switch : MonoBehaviour
                             connectedGameObject.GetComponent<Animator>().Play("Door_open");
                             return;
                         case Connections.Platform:
-                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
+                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
                             return;
                         case Connections.ForceFild:
                             connectedGameObject.SetActive(false);
                             return;
                         case Connections.DisableObject:
                             connectedGameObject.SetActive(true);
+                            return;
+                        case Connections.Portal:
+                            connectedGameObject.GetComponent<BoxCollider>().enabled = true;
+                            connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = true;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = true;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = true;
                             return;
                     }
                 }
@@ -77,13 +86,19 @@ public class Switch : MonoBehaviour
                             connectedGameObject.GetComponent<Animator>().Play("Door_opened");
                             return;
                         case Connections.Platform:
-                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
+                            connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
                             return;
                         case Connections.ForceFild:
                             connectedGameObject.SetActive(true);
                             return;
                         case Connections.DisableObject:
                             connectedGameObject.SetActive(false);
+                            return;
+                        case Connections.Portal:
+                            connectedGameObject.GetComponent<BoxCollider>().enabled = false;
+                            connectedGameObject.GetComponent<Portal>().GetRenderer().enabled = false;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().gameObject.GetComponent<BoxCollider>().enabled = false;
+                            connectedGameObject.GetComponent<Portal>().GetLinkedPortal().GetRenderer().enabled = false;
                             return;
                     }
                 }
@@ -95,7 +110,10 @@ public class Switch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            pressE.SetActive(false);
+            if (pressECanvas)
+                pressECanvas.SetActive(false);
+            else
+                Debug.Log("Missing Canvas reference in switch");
             triggerStay = false;
         }
     }

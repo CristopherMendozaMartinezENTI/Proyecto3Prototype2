@@ -6,14 +6,15 @@ using System.Collections.Generic;
 public class TriggerArea : MonoBehaviour {
 
 	public List <Rigidbody> rigidbodiesInTriggerArea = new List<Rigidbody>();
-	void OnTriggerEnter(Collider col)
+	private void OnTriggerEnter(Collider col)
 	{
 		if(col.attachedRigidbody != null && col.GetComponent<PlayerColliderController>() != null)
 		{
 			rigidbodiesInTriggerArea.Add(col.attachedRigidbody);
 		}
 	}
-	void OnTriggerExit(Collider col)
+
+	private void OnTriggerExit(Collider col)
 	{
 		if(col.attachedRigidbody != null && col.GetComponent<PlayerColliderController>() != null)
 		{

@@ -6,20 +6,39 @@ public class EnableDoor : MonoBehaviour
 {
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject pressE;
-    [SerializeField] private GameObject uiIcon;
+    [SerializeField] private GameObject kissaMesh;
+    private bool triggerStay = false;
+    private bool keyPressed = false;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && triggerStay)
+        {
+            keyPressed = true;
+            triggerStay = false;
+            gameObject.GetComponent<AudioSource>().Play();
+        }
+
+        if (Input.GetKeyUp(KeyCode.E) && triggerStay)
+        {
+            keyPressed = false;
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             pressE.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            triggerStay = true;
+            if (keyPressed)
             {
+                triggerStay = false;
                 pressE.SetActive(false);
-                this.gameObject.GetComponent<AudioSource>().Play();
+                kissaMesh.SetActive(false);
                 door.GetComponent<BoxCollider>().enabled = true;
-                this.gameObject.SetActive(false);
-                uiIcon.SetActive(true);
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<BoxCollider>().enabled = false;
             }
         }
     }
@@ -29,6 +48,7 @@ public class EnableDoor : MonoBehaviour
         if (other.tag == "Player")
         {
             pressE.SetActive(false);
+            triggerStay = false;
         }
     }
 }

@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class AntimatterForceField : MonoBehaviour
 {
-    [SerializeField] private GameObject playerTelekinesis;
     [SerializeField] private GameObject collisionTrailsPrefab;
-    private GameObject _collisionTrailsTmp;
+    [SerializeField] private List<GameObject> ActiveScaffolding;
+    [SerializeField] private List<GameObject> InnactiveScaffolding;
 
-    public void OnTriggerEnter(Collider other)
+    private GameObject playerTelekinesis;
+    private GameObject _collisionTrailsTmp;
+    private bool destroy;
+
+    private void Start()
     {
-        if(other.GetComponent<PropPhysicsController>() != null)
+        playerTelekinesis = GameObject.Find("TelekinesisGaunlet");
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(destroy && other.GetComponent<PropPhysicsController>() != null)
         {
             _collisionTrailsTmp = Instantiate(collisionTrailsPrefab, other.transform.position, other.transform.rotation);
             other.GetComponent<PropPhysicsController>().ResetPos();
@@ -21,6 +30,18 @@ public class AntimatterForceField : MonoBehaviour
 
     private void Update()
     {
-        Destroy(_collisionTrailsTmp, 5.0f);
+        Activate(GetComponent<ActiveStateManager>().active);
+
+        if (destroy)
+            Destroy(_collisionTrailsTmp, 5.0f);
+    }
+
+    public void Activate(bool state)
+    {
+        destroy = state;
+        foreach (GameObject obj in ActiveScaffolding)
+            obj.SetActive(state);
+        foreach (GameObject obj in InnactiveScaffolding)
+            obj.SetActive(!state);
     }
 }

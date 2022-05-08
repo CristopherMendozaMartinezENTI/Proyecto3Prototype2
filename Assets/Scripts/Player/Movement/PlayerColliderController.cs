@@ -9,51 +9,44 @@ public class PlayerColliderController : MonoBehaviour
 	[Header("Collider Options")]
 	[SerializeField] private float colliderHeight = 2f;
 	[SerializeField] private float colliderThickness = 1f;
-	[SerializeField] Vector3 colliderOffset = Vector3.zero;
+	[SerializeField] private Vector3 colliderOffset = Vector3.zero;
 
-	BoxCollider boxCollider;
-	SphereCollider sphereCollider;
-	CapsuleCollider capsuleCollider;
-
-	[Header("Caster Options")]
-	[SerializeField] private RayAndSphereCaster.CastType sensorType = RayAndSphereCaster.CastType.Raycast;
 	private float sensorRadiusModifier = 0.8f;
 	private int currentLayer;
-	[SerializeField] private bool isInDebugMode = false;
+	private bool isGrounded = false;
+	private bool IsUsingExtendedSensorRange = true;
+	private float baseSensorRange = 0f;
+	private Vector3 currentGroundAdjustmentVelocity = Vector3.zero;
+
+	private Collider col;
+	private Rigidbody rig;
+	private Transform tr;
+	private RayCaster caster;
+	private BoxCollider boxCollider;
+	private SphereCollider sphereCollider;
+	private CapsuleCollider capsuleCollider;
 
 	[HideInInspector] public Vector3[] raycastArrayPreviewPositions;
 
-	bool isGrounded = false;
-
-	bool IsUsingExtendedSensorRange  = true;
-	float baseSensorRange = 0f;
-
-	Vector3 currentGroundAdjustmentVelocity = Vector3.zero;
-
-	Collider col;
-	Rigidbody rig;
-	Transform tr;
-	RayAndSphereCaster caster;
-
-	void Awake()
+	private void Awake()
 	{
 		Setup();
-		caster = new RayAndSphereCaster(this.tr, col);
+		caster = new RayCaster(this.tr, col);
 		RecalculateColliderDimensions();
 		RecalibrateSensor();
 	}
 
-	void Reset () {
+	private void Reset () {
 		Setup();
 	}
 
-	void OnValidate()
+	private void OnValidate()
 	{
 		if(this.gameObject.activeInHierarchy)
 			RecalculateColliderDimensions();
 	}
 
-	void Setup()
+	private void Setup()
 	{
 		tr = transform;
 		col = GetComponent<Collider>();
@@ -78,12 +71,6 @@ public class PlayerColliderController : MonoBehaviour
 
 		rig.freezeRotation = true;
 		rig.useGravity = false;
-	}
-
-	void LateUpdate()
-	{
-		if(isInDebugMode)
-			caster.DrawDebug();
 	}
 
 	public void RecalculateColliderDimensions()
@@ -136,12 +123,11 @@ public class PlayerColliderController : MonoBehaviour
 			RecalibrateSensor();
 	}
 
-	void RecalibrateSensor()
+	private void RecalibrateSensor()
 	{
 		caster.SetCastOrigin(GetColliderCenter());
-		caster.SetCastDirection(RayAndSphereCaster.CastDirection.Down);
+		caster.SetCastDirection(RayCaster.CastDirection.Down);
 		RecalculateSensorLayerMask();
-		caster.castType = sensorType;
 		float _radius = colliderThickness/2f * sensorRadiusModifier;
 		float _safetyDistanceFactor = 0.001f;
 
@@ -152,19 +138,15 @@ public class PlayerColliderController : MonoBehaviour
 		else if(capsuleCollider)
 			_radius = Mathf.Clamp(_radius, _safetyDistanceFactor, (capsuleCollider.height/2f) * (1f - _safetyDistanceFactor));
 
-		caster.sphereCastRadius = _radius * tr.localScale.x;
 		float _length = 0f;
 		_length += (colliderHeight * (1f - stepHeightRatio)) * 0.5f;
 		_length += colliderHeight * stepHeightRatio;
 		baseSensorRange = _length * (1f + _safetyDistanceFactor) * tr.localScale.x;
 		caster.castLength = _length * tr.localScale.x;
-		caster.isInDebugMode = isInDebugMode;
-		caster.calculateRealDistance = true;
-		caster.calculateRealSurfaceNormal = true;
 	}
 
 
-	void RecalculateSensorLayerMask()
+	private void RecalculateSensorLayerMask()
 	{
 		int _layerMask = 0;
 		int _objectLayer = this.gameObject.layer;
@@ -184,7 +166,7 @@ public class PlayerColliderController : MonoBehaviour
 		currentLayer = _objectLayer;
 	}
 
-	Vector3 GetColliderCenter()
+	private Vector3 GetColliderCenter()
 	{
 		if(col == null)
 			Setup();
@@ -192,7 +174,7 @@ public class PlayerColliderController : MonoBehaviour
 		return col.bounds.center;
 	}
 
-	void Check()
+	private void CheckBounds()
 	{
 		currentGroundAdjustmentVelocity = Vector3.zero;
 
@@ -220,7 +202,7 @@ public class PlayerColliderController : MonoBehaviour
 	{
 		if(currentLayer != this.gameObject.layer)
 			RecalculateSensorLayerMask();
-		Check();
+		CheckBounds();
 	}
 
 	public void SetVelocity(Vector3 _velocity)

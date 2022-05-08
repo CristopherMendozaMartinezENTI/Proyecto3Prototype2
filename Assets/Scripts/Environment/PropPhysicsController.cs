@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GravitationalForce { Up, Down, Left, Right, Foward, Backward }
-
+public enum GravitationalForce { xRedFoward, xRedBackward, yGreenFoward, yGreenBackward, zBlueForward, zBlueBackward, None }
 public class PropPhysicsController : MonoBehaviour
 {
     [Header("Settings")]
@@ -22,28 +21,30 @@ public class PropPhysicsController : MonoBehaviour
     {
         switch (gravityOrientation)
         {
-            case GravitationalForce.Up:
+            case GravitationalForce.yGreenFoward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(-Physics.gravity, ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Down:
+            case GravitationalForce.yGreenBackward:
                 gameObject.GetComponent<Rigidbody>().useGravity = true;
                 return;
-            case GravitationalForce.Left:
+            case GravitationalForce.zBlueBackward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, -gravityForce), ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Right:
+            case GravitationalForce.zBlueForward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, gravityForce), ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Foward:
+            case GravitationalForce.xRedBackward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-gravityForce, 0.0f, 0.0f), ForceMode.Acceleration);
                 return;
-            case GravitationalForce.Backward:
+            case GravitationalForce.xRedFoward:
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(gravityForce, 0.0f, 0.0f), ForceMode.Acceleration);
+                return;
+            case GravitationalForce.None:
                 return;
         }
     }
@@ -56,6 +57,8 @@ public class PropPhysicsController : MonoBehaviour
     public void ResetPos()
     {
         _RespawFxTmp = Instantiate(RespawFxPrefab, initialPos, transform.rotation);
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         transform.position = initialPos;
     }
 

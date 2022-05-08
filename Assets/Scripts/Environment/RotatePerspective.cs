@@ -6,16 +6,20 @@ using UnityEngine;
 //Creando el efecto de que el escenario se ha rotado sobre su eje
 public class RotatePerspective : MonoBehaviour
 {
-	Transform tr;
-	AudioSource audioSource;
+	private Transform tr;
+	private AudioSource audioSource;
+	private GameObject telekinesisController;
+	[SerializeField] private bool isField = false;
+	[SerializeField] private bool is90dg = false;
 
-	void Start()
+	private void Start()
 	{
 		tr = transform;
 		audioSource = GetComponent<AudioSource>();
+		telekinesisController = GameObject.Find("TelekinesisGaunlet");
 	}
 
-	void OnTriggerEnter(Collider col)
+	private void OnTriggerEnter(Collider col)
 	{
 		if(col.GetComponent<Controller>() == null)
 			return;
@@ -23,7 +27,7 @@ public class RotatePerspective : MonoBehaviour
 		SwitchDirection(tr.forward, col.GetComponent<Controller>());
 	}
 
-	void SwitchDirection(Vector3 _newUpDirection, Controller _controller)
+	private void SwitchDirection(Vector3 _newUpDirection, Controller _controller)
 	{
 		float _angleThreshold = 0.001f;
 		float _angleBetweenUpDirections = Vector3.Angle(_newUpDirection, _controller.transform.up);
@@ -31,9 +35,18 @@ public class RotatePerspective : MonoBehaviour
 			return;
 
 		audioSource.Play();
+		
+		if(isField)
+			_controller.transform.position = tr.position;
+
+		if(telekinesisController.GetComponent<TelekinesisController>().IsObjectGrabbed())
+			telekinesisController.GetComponent<TelekinesisController>().ReleaseObject();
 
 		Transform _transform = _controller.transform;
 		Quaternion _rotationDifference = Quaternion.FromToRotation(_transform.up, _newUpDirection);
 		_transform.rotation = _rotationDifference * _transform.rotation;
+
+		if (is90dg)
+			Destroy(gameObject);
 	}
 }

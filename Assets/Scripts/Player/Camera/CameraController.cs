@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Este script permite controlar la Camera realizaon rotaciones del gameobject que lo contiene
-public class CameraController : MonoBehaviour {
-
-	float currentXAngle = 0f;
-	float currentYAngle = 0f;
-
+public class CameraController : MonoBehaviour 
+{
 	[Range(0f, 90f)]
 	[SerializeField] private float upperVerticalLimit = 60f;
 	[Range(0f, 90f)]
 	[SerializeField] private float lowerVerticalLimit = 60f;
 
-	float oldHorizontalInput = 0f;
-	float oldVerticalInput = 0f;
-	bool isLocked = false;
+	private float currentXAngle = 0f;
+	private float currentYAngle = 0f;
+	private float oldHorizontalInput = 0f;
+	private float oldVerticalInput = 0f;
+	private bool isLocked = false;
 
 	[SerializeField] private float cameraSpeed = 250f;
 	[SerializeField] private bool smoothCameraRotation = false;
 	[Range(1f, 50f)]
 	[SerializeField] private float cameraSmoothingFactor = 25f;
 
-	Vector3 facingDirection;
-	Vector3 upwardsDirection;
+	private Vector3 facingDirection;
+	private Vector3 upwardsDirection;
 
 	protected Transform tr;
 	protected Camera cam;
@@ -50,7 +49,7 @@ public class CameraController : MonoBehaviour {
 
 	protected virtual void Setup(){}
 
-	void Update()
+	private void Update()
 	{
 		HandleCameraRotation();
 	}
@@ -158,9 +157,14 @@ public class CameraController : MonoBehaviour {
 		return currentYAngle;
 	}
 
-	public Vector3 GetFacingDirection ()
+	public Vector3 GetFacingDirection()
 	{
 		return facingDirection;
+	}
+
+	public Vector3 GetUpDirection()
+	{
+		return upwardsDirection;
 	}
 
 	public Vector3 GetAimingDirection ()
@@ -172,11 +176,5 @@ public class CameraController : MonoBehaviour {
 	{
 		return tr.right;
 	}
-
-	public Vector3 GetUpDirection ()
-	{
-		return upwardsDirection;
-	}
-
 }
 

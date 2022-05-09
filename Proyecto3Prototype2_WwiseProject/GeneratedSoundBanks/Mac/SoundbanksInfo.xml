@@ -1,28 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Roger\Documents\GitHub\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Roger\Documents\GitHub\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Roger\Documents\GitHub\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Roger\Documents\GitHub\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="460350371" Language="SFX" Hash="2845989042">
-			<ObjectPath>\SoundBanks\Default Work Unit\SB1</ObjectPath>
-			<ShortName>SB1</ShortName>
-			<Path>SB1.bnk</Path>
+		<SoundBank Id="77978275" Language="SFX" Hash="2242028756">
+			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
+			<ShortName>Ambient</ShortName>
+			<Path>Ambient.bnk</Path>
 			<IncludedEvents>
-				<Event Id="4278995784" Name="Play_SFX1" ObjectPath="\Events\Default Work Unit\Play_SFX1" DurationType="OneShot" DurationMin="10." DurationMax="10."/>
+				<Event Id="2161176454" Name="Play_2Dext_Wind" ObjectPath="\Events\Default Work Unit\Play_2Dext_Wind" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="876069347" Language="SFX">
+							<ShortName>2Dext_Wind.wav</ShortName>
+							<Path>SFX\2Dext_Wind_1209036B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="602173894" Name="Play_3D_Birds" ObjectPath="\Events\Default Work Unit\Play_3D_Birds" MaxAttenuation="50." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="192987934" Language="SFX">
+							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
+							<Path>SFX\3Dext_forest_birds_ambient_AD566B1E.wem</Path>
+						</File>
+						<File Id="223278858" Language="SFX">
+							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
+							<Path>SFX\3Dext_forest_birds_ambient_D79FB2B7.wem</Path>
+						</File>
+						<File Id="742168086" Language="SFX">
+							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
+							<Path>SFX\3Dext_forest_birds_ambient_239AC608.wem</Path>
+						</File>
+						<File Id="1000819824" Language="SFX">
+							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
+							<Path>SFX\3Dext_forest_birds_ambient_582CF1D0.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="626408553" Name="Play_3D_Electrical_towers" ObjectPath="\Events\Default Work Unit\Play_3D_Electrical_towers" MaxAttenuation="50." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="287365950" Language="SFX">
+							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
+							<Path>SFX\3D_Electrical_towers_buzz_4B7623A6.wem</Path>
+						</File>
+						<File Id="549529856" Language="SFX">
+							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
+							<Path>SFX\3D_Electrical_towers_buzz_FE5FFAAC.wem</Path>
+						</File>
+						<File Id="763936304" Language="SFX">
+							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
+							<Path>SFX\3D_Electrical_towers_buzz_4EB080E3.wem</Path>
+						</File>
+						<File Id="899621406" Language="SFX">
+							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
+							<Path>SFX\3D_Electrical_towers_buzz_E9AA1D03.wem</Path>
+						</File>
+						<File Id="964190120" Language="SFX">
+							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
+							<Path>SFX\3D_Electrical_towers_buzz_C5579977.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="140370495" Name="Play_3D_radiof" ObjectPath="\Events\Default Work Unit\Play_3D_radiof" MaxAttenuation="20." DurationType="OneShot" DurationMin="13.857551" DurationMax="15.554576">
+					<IncludedMemoryFiles>
+						<File Id="607329239" Language="SFX">
+							<ShortName>3D_radiof.wav</ShortName>
+							<Path>SFX\3D_radiof_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3164696837" Language="SFX" Hash="2110556289">
+			<ObjectPath>\SoundBanks\Default Work Unit\Player_Effects</ObjectPath>
+			<ShortName>Player_Effects</ShortName>
+			<Path>Player_Effects.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Play_Footsteps" DurationType="OneShot" DurationMin="0.257451" DurationMax="0.337265">
+					<IncludedMemoryFiles>
+						<File Id="606957613" Language="SFX">
+							<ShortName>FSt_Dirt.wav</ShortName>
+							<Path>SFX\FSt_Dirt_10C4C929.wem</Path>
+						</File>
+						<File Id="743130849" Language="SFX">
+							<ShortName>Fts_Wood.wav</ShortName>
+							<Path>SFX\Fts_Wood_10C4C929.wem</Path>
+						</File>
+						<File Id="924003502" Language="SFX">
+							<ShortName>FSt_Grass.wav</ShortName>
+							<Path>SFX\FSt_Grass_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{911CF4E1-4A24-4433-8095-D113C68AE2E5}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{F654352D-C109-4CF0-9BA4-A352FDF234D6}">
+							<Media>
+								<File Id="606957613"/>
+								<File Id="924003502"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{92EE8D96-C080-4381-93D6-D823F4017887}">
+							<Media>
+								<File Id="743130849"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{911CF4E1-4A24-4433-8095-D113C68AE2E5}">
+							<Media>
+								<File Id="606957613"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3689126666" Name="Play_Jump" ObjectPath="\Events\Default Work Unit\Play_Jump" DurationType="OneShot" DurationMin="0.262132" DurationMax="0.262132">
+					<IncludedMemoryFiles>
+						<File Id="872421389" Language="SFX">
+							<ShortName>Audio_Jump.wav</ShortName>
+							<Path>SFX\Audio_Jump_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4285282925" Name="Play_Land" ObjectPath="\Events\Default Work Unit\Play_Land" DurationType="OneShot" DurationMin="0.155533" DurationMax="0.155533">
+					<IncludedMemoryFiles>
+						<File Id="10437246" Language="SFX">
+							<ShortName>Audio_Land.wav</ShortName>
+							<Path>SFX\Audio_Land_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2385628198" Name="Footsteps" ObjectPath="\Switches\Default Work Unit\Footsteps" GUID="{022CEB6E-B0B2-4FB9-A3CC-5BC0785803F7}">
+					<Switches>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\Footsteps\Dirt" GUID="{911CF4E1-4A24-4433-8095-D113C68AE2E5}"/>
+						<Switch Id="4248645337" Name="Grass" ObjectPath="\Switches\Default Work Unit\Footsteps\Grass" GUID="{F654352D-C109-4CF0-9BA4-A352FDF234D6}"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Footsteps\Wood" GUID="{92EE8D96-C080-4381-93D6-D823F4017887}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

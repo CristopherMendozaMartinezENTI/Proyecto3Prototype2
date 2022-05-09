@@ -33,9 +33,7 @@ public class PlayerAnimationController : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().Play("Jump");
         }
-        else if (playerController.GetComponent<Controller>().GetVelocity() == Vector3.zero)
-        {
-            gameObject.GetComponent<Animator>().Play("Iddle");
-        }
+        else
+        { }
     }
 }

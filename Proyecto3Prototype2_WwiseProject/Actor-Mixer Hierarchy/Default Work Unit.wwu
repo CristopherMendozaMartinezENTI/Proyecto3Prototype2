@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="SFX1" ID="{5B8AA765-3183-475F-8E09-E651BE1D89BD}" ShortID="48745482">
+				<Sound Name="UI_Play" ID="{5B67BFD3-EE55-44B2-BDEF-06A6193FECCE}" ShortID="768771159">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
@@ -13,21 +13,1103 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<SourcePlugin Name="SoundSeed Air Wind" ID="{EE8A9647-8919-4D2E-AB89-D356C3D34C61}" ShortID="465382302" PluginName="SoundSeed Air Wind" CompanyID="0" PluginID="119">
+						<AudioFileSource Name="UI_play" ID="{AD49E6A9-4AF3-4034-B977-F2AAE5A3DBF2}">
 							<Language>SFX</Language>
-							<PluginData/>
-							<PluginInnerObjectList>
-								<List Name="Deflectors">
-									<PluginInnerObject Name="" ID="{829832A0-E6ED-4B87-B7E0-AF7CA31BE6A1}" PluginName="Deflector" CompanyID="0" PluginID="121"/>
-								</List>
-							</PluginInnerObjectList>
-						</SourcePlugin>
+							<AudioFile>UI_play.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="681137049"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
-						<ActiveSource Name="SoundSeed Air Wind" ID="{EE8A9647-8919-4D2E-AB89-D356C3D34C61}" Platform="Linked"/>
+						<ActiveSource Name="UI_play" ID="{AD49E6A9-4AF3-4034-B977-F2AAE5A3DBF2}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="3D_radiof" ID="{11D8F3EB-9643-4ACD-BC36-6E08892DE0DB}" ShortID="1014745906">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Highpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{7A64B3D8-3B80-481A-9C8D-E787D34167BE}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="10"/>
+											<Property Name="Min" Type="Real64" Value="-10"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{F7BB7AB9-4BDD-49FB-8091-804AA95B6067}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="10"/>
+											<Property Name="Min" Type="Real64" Value="-10"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{8855E955-403D-4261-8410-614BCC9E2510}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="100"/>
+											<Property Name="Min" Type="Real64" Value="-100"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{E5FE9F79-06CF-4717-9029-7D12151F596D}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="5"/>
+											<Property Name="Min" Type="Real64" Value="-10"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Radio" ID="{648EE15B-96B4-4BE8-A2CA-FCEB7798DF04}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="3D_radiof" ID="{ACF4152D-FEB3-4015-9460-2FE892C5A357}">
+							<Language>SFX</Language>
+							<AudioFile>3D_radiof.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="607329239"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="3D_radiof" ID="{ACF4152D-FEB3-4015-9460-2FE892C5A357}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_exit" ID="{42180CDE-F4E3-4F3D-81C5-CA590C5E0396}" ShortID="408302008">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UI_exit" ID="{29AF91FF-7018-4CB0-A927-FA2ED3755AFD}">
+							<Language>SFX</Language>
+							<AudioFile>UI_exit.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="803145863"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="UI_exit" ID="{29AF91FF-7018-4CB0-A927-FA2ED3755AFD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_reset" ID="{C7DC7EA2-4FE3-4949-92DB-8DCAE4D0CC0C}" ShortID="835218661">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UI_reset" ID="{EA7F4CEE-4A2D-4C19-8772-CF1539B18AFC}">
+							<Language>SFX</Language>
+							<AudioFile>UI_reset.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="77513625"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="UI_reset" ID="{EA7F4CEE-4A2D-4C19-8772-CF1539B18AFC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2Dext_Wind" ID="{42F1C91E-3E87-43D0-9263-EFF5D70A4D08}" ShortID="360675783">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="2Dext_Wind" ID="{5D100EFF-5C57-4A4C-8F1E-DFC6E0D9229F}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.725845272206304"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.508091690544411"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.290338108882521"/>
+								<Property Name="TrimEnd" Type="Real64" Value="49.0671404011461"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>2Dext_Wind.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="876069347"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="2Dext_Wind" ID="{5D100EFF-5C57-4A4C-8F1E-DFC6E0D9229F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Audio_Jump" ID="{3FA38DAA-59EA-4AEE-9F4D-A590AE53C005}" ShortID="715452996">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Audio_Jump" ID="{6D903E0F-64C1-4ED8-B3F8-360B736BC5CE}">
+							<Language>SFX</Language>
+							<AudioFile>Audio_Jump.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="872421389"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Audio_Jump" ID="{6D903E0F-64C1-4ED8-B3F8-360B736BC5CE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Audio_Land" ID="{722C4F39-BA75-4493-98D9-DD04978E61F7}" ShortID="489667034">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Audio_Land" ID="{5908D375-2C8B-4B02-8F16-17F78547E1B3}">
+							<Language>SFX</Language>
+							<AudioFile>Audio_Land.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="10437246"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Audio_Land" ID="{5908D375-2C8B-4B02-8F16-17F78547E1B3}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="ElectricalTowers" ID="{5CD34E4D-B7D3-426C-ABCE-B5E779D34391}" ShortID="524413110">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2F5DCC81-F807-4131-B7F8-6F309C144108}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="50"/>
+											<Property Name="Min" Type="Real64" Value="-50"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{DF04E695-6488-414F-9E5F-28C0EAA5DFAD}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-10"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="ElectricalPosts" ID="{0DE67BE5-5DB4-4A02-8811-45D70B9C19EE}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="3D_Electrical_towers_buzz" ID="{2B8DC980-E11F-4ECC-88F5-F30722EA9B12}" ShortID="108710427">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1DE05773-E734-4EFF-8E1D-0EDFB439F296}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5ED6E0AF-1173-455D-93DE-1BF543098885}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ElectricalPosts" ID="{0DE67BE5-5DB4-4A02-8811-45D70B9C19EE}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3D_Electrical_towers_buzz" ID="{B71B1FE2-380F-4790-B3D4-C0E485880925}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3D_Electrical_towers_buzz.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="964190120"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3D_Electrical_towers_buzz" ID="{B71B1FE2-380F-4790-B3D4-C0E485880925}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_Electrical_towers_buzz_01" ID="{4DAB9048-8C02-472D-B14F-4B3FDC60A08E}" ShortID="1042999651">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B436D961-8529-42B8-8089-E0F270B631FE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{18FC8009-27DD-42B3-A77D-97E4927BA181}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3D_Electrical_towers_buzz" ID="{792A910E-0899-4EA2-B481-D7D842A7FB31}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.292608229538234"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.164592129115256"/>
+										<Property Name="LoopBegin" Type="Real64" Value="6.18134884899518"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="6.18134884899519"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3D_Electrical_towers_buzz.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="899621406"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3D_Electrical_towers_buzz" ID="{792A910E-0899-4EA2-B481-D7D842A7FB31}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_Electrical_towers_buzz_02" ID="{06991E38-58A7-49B9-9D87-5C120B0E3C6B}" ShortID="507638434">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{545CA87A-6B33-4C2C-AFA4-53E034C7B018}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4B0233FC-C68C-4D21-8D21-4B10C5E30726}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3D_Electrical_towers_buzz" ID="{3514F76E-A7BD-48CB-8AE8-65B4D85D6F56}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.146304114769117"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.164592129115256"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.54787478315108"/>
+										<Property Name="TrimEnd" Type="Real64" Value="9.76579966083855"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3D_Electrical_towers_buzz.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="549529856"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3D_Electrical_towers_buzz" ID="{3514F76E-A7BD-48CB-8AE8-65B4D85D6F56}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_Electrical_towers_buzz_03" ID="{EFD3E40D-250D-4B5E-A4F4-FA8BAE833EED}" ShortID="160242914">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AB5568ED-EBF6-49B5-954B-448F8B4EDC90}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C2190E4E-81E4-429D-80B2-498A5C298EA3}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ElectricalPosts" ID="{0DE67BE5-5DB4-4A02-8811-45D70B9C19EE}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3D_Electrical_towers_buzz" ID="{DC533DF2-7E88-4299-9195-0CD021EE2852}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.128016100422977"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0731520573845583"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.310896243884373"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.04165117049685"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3D_Electrical_towers_buzz.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="763936304"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3D_Electrical_towers_buzz" ID="{DC533DF2-7E88-4299-9195-0CD021EE2852}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_Electrical_towers_buzz_04" ID="{5C03A7C4-60A0-4344-A21B-9B52FA204B1D}" ShortID="260724324">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{0BB9939C-4247-427A-B835-E901239E1265}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DB657154-4608-4BEC-AB31-FB35CBB090ED}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ElectricalPosts" ID="{0DE67BE5-5DB4-4A02-8811-45D70B9C19EE}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3D_Electrical_towers_buzz" ID="{761AB92A-42F0-4BB0-A4F4-48B4E9D3487C}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.256032200845955"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.182880143461395"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="7.02259750891761"/>
+										<Property Name="TrimEnd" Type="Real64" Value="10.479032220338"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3D_Electrical_towers_buzz.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="287365950"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3D_Electrical_towers_buzz" ID="{761AB92A-42F0-4BB0-A4F4-48B4E9D3487C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Birds" ID="{CF1AEF5C-B8EC-42A1-84D6-7A9A0100A67A}" ShortID="839675801">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{85FD1590-0CF1-43E4-BBB8-1EFBF8BF8C6A}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="50"/>
+											<Property Name="Min" Type="Real64" Value="-50"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{638CEE67-280A-4507-BEF1-F53EDB639A79}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-10"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Enviroment" ID="{69723173-E97D-40BA-895D-74E1E4D5359B}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="3D_forest_birds_ambient" ID="{AADD7125-EF35-49B6-8D48-E7ED82655F2F}" ShortID="724722145">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{FA9EBA8E-5071-4059-98E7-A0CA6D3DA794}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{81641D65-27F9-4138-8635-E73712647298}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Enviroment" ID="{69723173-E97D-40BA-895D-74E1E4D5359B}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3Dext_forest_birds_ambient" ID="{DE14305B-DFFA-43E1-A9AA-8CE3DB694FBF}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.630372492836671"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.378223495702017"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="50.3037249283667"/>
+										<Property Name="TrimEnd" Type="Real64" Value="81.6962750716332"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3Dext_forest_birds_ambient.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="742168086"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3Dext_forest_birds_ambient" ID="{DE14305B-DFFA-43E1-A9AA-8CE3DB694FBF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_forest_birds_ambient_01" ID="{5451849E-6DCC-4B88-826E-7D6544218266}" ShortID="1067768615">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{668F55C7-7E63-4817-A75B-933F7443D2DC}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2F8291AB-1987-4E11-9B92-7AEB194E1465}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3Dext_forest_birds_ambient" ID="{3E73ED4F-565C-4AEF-8869-28D77C47CD24}">
+									<Language>SFX</Language>
+									<AudioFile>3Dext_forest_birds_ambient.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="223278858"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3Dext_forest_birds_ambient" ID="{3E73ED4F-565C-4AEF-8869-28D77C47CD24}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_forest_birds_ambient_02" ID="{75A7F350-7AF2-4489-8C64-96EF586695E2}" ShortID="572678089">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{04035A73-12B8-4DA4-9370-49F48EA3691C}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F6247C0C-002D-4AE2-9627-14F8ADF7016E}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3Dext_forest_birds_ambient" ID="{8E101539-7EF6-488F-B1E6-378B19C683B6}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.26074498567335"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.504297994269344"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="21.6848137535816"/>
+										<Property Name="TrimEnd" Type="Real64" Value="48.2865329512894"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3Dext_forest_birds_ambient.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1000819824"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3Dext_forest_birds_ambient" ID="{8E101539-7EF6-488F-B1E6-378B19C683B6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="3D_forest_birds_ambient_03" ID="{E772F21D-F8D4-412B-8551-5DDB4EEF5C8D}" ShortID="689853028">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BFCE619B-AA7D-4506-9C94-02E832CBA2B0}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{7328783D-51D7-4428-BA4F-ED56F4E4A983}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="3Dext_forest_birds_ambient" ID="{5391272C-5E1A-4240-B539-B013E635D6D3}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.756446991404011"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.50429799426934"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="20.297994269341"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>3Dext_forest_birds_ambient.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="192987934"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="3Dext_forest_birds_ambient" ID="{5391272C-5E1A-4240-B539-B013E635D6D3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+				<SwitchContainer Name="Footsteps" ID="{EFECE585-5DAF-4D88-B612-AA3F7A4884EE}" ShortID="625647347">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{5DDA5E04-C7DF-4084-9AE1-041A3A6D9FF4}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Dirt" ID="{911CF4E1-4A24-4433-8095-D113C68AE2E5}" WorkUnitID="{9D5FEB42-889A-4896-8C36-EE1CC88B2BDE}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Footsteps" ID="{022CEB6E-B0B2-4FB9-A3CC-5BC0785803F7}" WorkUnitID="{9D5FEB42-889A-4896-8C36-EE1CC88B2BDE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Dirt" ID="{868B6FBD-8A55-44D9-8B48-EF4FAC4BB278}" ShortID="145761355">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{0708D576-8DCB-4C0C-8085-6212C9522827}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{111BB207-6625-489B-80E4-7CFE6448F4CA}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FSt_Dirt" ID="{CC4AFEAC-6041-47D3-BBA9-48C3AECA0BE6}" ShortID="606174890">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E34E0C8D-B944-4DE3-8DA2-DE60EB87B13A}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FSt_Dirt" ID="{3DA16FD0-A8A0-43FA-A45C-E2E38B9E47CC}">
+											<Language>SFX</Language>
+											<AudioFile>FSt_Dirt.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="606957613"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="FSt_Dirt" ID="{3DA16FD0-A8A0-43FA-A45C-E2E38B9E47CC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Grass" ID="{3DACE7A2-4AD6-45ED-931F-C69C05EA669B}" ShortID="488442582">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E0EC888E-09FC-4BE4-8B8A-F3149FC6DF04}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{7FE940AB-879F-484B-9645-7771879DECE8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FSt_Grass" ID="{47B63C19-8987-4163-9A2B-013734E0EB47}" ShortID="181605729">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E911306B-3D23-42A3-A1C4-66665B3B287C}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FSt_Grass" ID="{E8C660D2-ACDB-409E-9C07-AE14896BB41C}">
+											<Language>SFX</Language>
+											<AudioFile>FSt_Grass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="924003502"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="FSt_Grass" ID="{E8C660D2-ACDB-409E-9C07-AE14896BB41C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Wood" ID="{AAA05EDE-B6B3-405C-93C7-09E8425EF96F}" ShortID="605644926">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2F159C16-A56B-43B2-8757-060B59F0B91B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BF073B25-60FC-497C-9A1A-7C981CFE92AF}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Fts_Wood" ID="{0A506778-C2B0-4E3A-806B-398996CDA9A2}" ShortID="534097429">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{DA2CEEBD-2FBE-4946-98A4-8050652E0076}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fts_Wood" ID="{78AF8FA1-B185-44C9-8F88-8DFC365910D6}">
+											<Language>SFX</Language>
+											<AudioFile>Fts_Wood.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="743130849"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Fts_Wood" ID="{78AF8FA1-B185-44C9-8F88-8DFC365910D6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Grass" ID="{3DACE7A2-4AD6-45ED-931F-C69C05EA669B}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Dirt" ID="{868B6FBD-8A55-44D9-8B48-EF4FAC4BB278}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Wood" ID="{AAA05EDE-B6B3-405C-93C7-09E8425EF96F}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Grass" ID="{F654352D-C109-4CF0-9BA4-A352FDF234D6}"/>
+								<ItemList>
+									<ItemRef Name="Dirt" ID="{868B6FBD-8A55-44D9-8B48-EF4FAC4BB278}"/>
+									<ItemRef Name="Grass" ID="{3DACE7A2-4AD6-45ED-931F-C69C05EA669B}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Wood" ID="{92EE8D96-C080-4381-93D6-D823F4017887}"/>
+								<ItemList>
+									<ItemRef Name="Wood" ID="{AAA05EDE-B6B3-405C-93C7-09E8425EF96F}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Dirt" ID="{911CF4E1-4A24-4433-8095-D113C68AE2E5}"/>
+								<ItemList>
+									<ItemRef Name="Dirt" ID="{868B6FBD-8A55-44D9-8B48-EF4FAC4BB278}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

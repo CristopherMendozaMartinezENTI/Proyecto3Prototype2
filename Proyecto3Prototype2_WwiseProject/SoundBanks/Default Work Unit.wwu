@@ -3,9 +3,21 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{8CB58949-D40C-4B0A-A8CB-B798D9902D95}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="SB1" ID="{6877E771-AD39-44E9-9BAB-B4C216B1CD05}">
+				<SoundBank Name="Player_Effects" ID="{6877E771-AD39-44E9-9BAB-B4C216B1CD05}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_SFX1" ID="{D607FD13-2EE0-4041-B99C-488C561AD9C4}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Footsteps" ID="{B5D261A3-70C6-4004-BB90-0BF651CDA037}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Land" ID="{6BE49E25-0FBA-4708-81D0-AF1AA5F07964}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Jump" ID="{B617875B-FE3F-4F3E-8087-F0971B623C33}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Ambient" ID="{B3276CA3-179A-4CE2-985E-544A607F9FE3}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_3D_Electrical_towers" ID="{5FC35448-B2E7-4481-80C3-AA5B6ACE2B62}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_2Dext_Wind" ID="{607E825F-2499-46BF-B829-165264F6A5C9}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_3D_Birds" ID="{6ECCD55B-8629-4C25-8C0F-0A21B79CF367}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_3D_radiof" ID="{4317BB1B-1954-4F56-9586-C5F259265282}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

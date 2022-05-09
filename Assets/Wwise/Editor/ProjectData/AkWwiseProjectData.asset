@@ -66,11 +66,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 4989b58c0cd40a4ba8cbb798d9902d95
     GuidInternal: 
-    m_lastTime: -8585495562301382552
+    m_lastTime: -8585494746736259771
     List:
-    - name: SB1
-      guid: 71e7776839ade9449babb4c216b1cd05
-      id: 460350371
+    - name: Ambient
+      guid: a36c27b39a17e24c985e544a607f9fe3
+      id: 77978275
       PathAndIcons:
       - ElementName: SoundBanks
         ObjectType: 5
@@ -78,10 +78,24 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 4989b58c0cd40a4ba8cbb798d9902d95
-      - ElementName: SB1
+      - ElementName: Ambient
+        ObjectType: 7
+        guid: a36c27b39a17e24c985e544a607f9fe3
+      Path: SoundBanks\Default Work Unit\Ambient
+    - name: Player_Effects
+      guid: 71e7776839ade9449babb4c216b1cd05
+      id: 3164696837
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4989b58c0cd40a4ba8cbb798d9902d95
+      - ElementName: Player_Effects
         ObjectType: 7
         guid: 71e7776839ade9449babb4c216b1cd05
-      Path: SoundBanks\Default Work Unit\SB1
+      Path: SoundBanks\Default Work Unit\Player_Effects
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -94,11 +108,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
     GuidInternal: 
-    m_lastTime: -8585495562301632603
+    m_lastTime: -8585494747019373546
     List:
-    - name: E1
-      guid: eefb31d62f39e841a8c2e495a7f0ced8
-      id: 1819748159
+    - name: Play_2Dext_Wind
+      guid: 5f827e609924bf46b829165264f6a5c9
+      id: 2161176454
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -106,16 +120,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
-      - ElementName: E1
+      - ElementName: Play_2Dext_Wind
         ObjectType: 3
-        guid: eefb31d62f39e841a8c2e495a7f0ced8
-      Path: Events\Default Work Unit\E1
+        guid: 5f827e609924bf46b829165264f6a5c9
+      Path: Events\Default Work Unit\Play_2Dext_Wind
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_SFX1
-      guid: 13fd07d6e02e4140b99c488c561ad9c4
-      id: 4278995784
+    - name: Play_3D_Birds
+      guid: 5bd5cc6e2986254c8c0f0a21b79cf367
+      id: 602173894
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -123,13 +137,149 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
-      - ElementName: Play_SFX1
+      - ElementName: Play_3D_Birds
         ObjectType: 3
-        guid: 13fd07d6e02e4140b99c488c561ad9c4
-      Path: Events\Default Work Unit\Play_SFX1
+        guid: 5bd5cc6e2986254c8c0f0a21b79cf367
+      Path: Events\Default Work Unit\Play_3D_Birds
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_3D_Electrical_towers
+      guid: 4854c35fe7b2814480c3aa5b6ace2b62
+      id: 626408553
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_3D_Electrical_towers
+        ObjectType: 3
+        guid: 4854c35fe7b2814480c3aa5b6ace2b62
+      Path: Events\Default Work Unit\Play_3D_Electrical_towers
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_3D_radiof
+      guid: 1bbb17435419564f9586c5f259265282
+      id: 140370495
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_3D_radiof
+        ObjectType: 3
+        guid: 1bbb17435419564f9586c5f259265282
+      Path: Events\Default Work Unit\Play_3D_radiof
+      maxAttenuation: 20
+      maxDuration: 15.554576
+      minDuration: 13.857551
+    - name: Play_Footsteps
+      guid: a361d2b5c6700440bb900bf651cda037
+      id: 3854155799
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_Footsteps
+        ObjectType: 3
+        guid: a361d2b5c6700440bb900bf651cda037
+      Path: Events\Default Work Unit\Play_Footsteps
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: 0.337265
+      minDuration: 0.257451
+    - name: Play_FSt_Dirt
+      guid: b22067c3a749094597d89cf23421bd83
+      id: 1453764123
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_FSt_Dirt
+        ObjectType: 3
+        guid: b22067c3a749094597d89cf23421bd83
+      Path: Events\Default Work Unit\Play_FSt_Dirt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_FSt_Grass
+      guid: cea7a447666bc448b1dda35db183b12a
+      id: 69581830
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_FSt_Grass
+        ObjectType: 3
+        guid: cea7a447666bc448b1dda35db183b12a
+      Path: Events\Default Work Unit\Play_FSt_Grass
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Fts_Wood
+      guid: 71f24f8bbf24294194c51e628be33a3d
+      id: 683513317
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_Fts_Wood
+        ObjectType: 3
+        guid: 71f24f8bbf24294194c51e628be33a3d
+      Path: Events\Default Work Unit\Play_Fts_Wood
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Jump
+      guid: 5b8717b63ffe3e4f8087f0971b623c33
+      id: 3689126666
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_Jump
+        ObjectType: 3
+        guid: 5b8717b63ffe3e4f8087f0971b623c33
+      Path: Events\Default Work Unit\Play_Jump
+      maxAttenuation: 0
+      maxDuration: 0.262132
+      minDuration: 0.262132
+    - name: Play_Land
+      guid: 259ee46bba0f084781d0af1aa5f07964
+      id: 4285282925
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_Land
+        ObjectType: 3
+        guid: 259ee46bba0f084781d0af1aa5f07964
+      Path: Events\Default Work Unit\Play_Land
+      maxAttenuation: 0
+      maxDuration: 0.155533
+      minDuration: 0.155533
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -170,8 +320,74 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 42eb5f9d9a8896488c36ee1cc88b2bde
     GuidInternal: 
-    m_lastTime: -8585495562299733045
-    List: []
+    m_lastTime: -8585494751408846469
+    List:
+    - name: Footsteps
+      guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 42eb5f9d9a8896488c36ee1cc88b2bde
+      - ElementName: Footsteps
+        ObjectType: 11
+        guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
+      Path: Switches\Default Work Unit\Footsteps
+      values:
+      - name: Dirt
+        guid: e1f41c91244a33448095d113c68ae2e5
+        id: 2195636714
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 42eb5f9d9a8896488c36ee1cc88b2bde
+        - ElementName: Footsteps
+          ObjectType: 11
+          guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
+        - ElementName: Dirt
+          ObjectType: 10
+          guid: e1f41c91244a33448095d113c68ae2e5
+      - name: Grass
+        guid: 2d3554f609c1f04c9ba4a352fdf234d6
+        id: 4248645337
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 42eb5f9d9a8896488c36ee1cc88b2bde
+        - ElementName: Footsteps
+          ObjectType: 11
+          guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
+        - ElementName: Grass
+          ObjectType: 10
+          guid: 2d3554f609c1f04c9ba4a352fdf234d6
+      - name: Wood
+        guid: 968dee9280c0814393d6d823f4017887
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 42eb5f9d9a8896488c36ee1cc88b2bde
+        - ElementName: Footsteps
+          ObjectType: 11
+          guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
+        - ElementName: Wood
+          ObjectType: 10
+          guid: 968dee9280c0814393d6d823f4017887
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -187,7 +403,7 @@ MonoBehaviour:
     m_lastTime: -8585495562299733045
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0100000005000000070000000a0000000b0000000c0000000f000000100000001700000018000000190000003c0000003d000000ad000000ae000000d10000000c0100000d0100000e010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

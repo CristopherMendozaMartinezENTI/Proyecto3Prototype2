@@ -3,13 +3,111 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="E1" ID="{D631FBEE-392F-41E8-A8C2-E495A7F0CED8}"/>
-				<Event Name="Play_SFX1" ID="{D607FD13-2EE0-4041-B99C-488C561AD9C4}">
+				<Event Name="Play_Jump" ID="{B617875B-FE3F-4F3E-8087-F0971B623C33}">
 					<ChildrenList>
-						<Action Name="" ID="{1BBE30CD-CA7E-4FE4-8861-0BBE9D927F53}" ShortID="856558134">
+						<Action Name="" ID="{16FA4358-BCD4-45BF-97C3-7B7C7A41629D}" ShortID="221358524">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SFX1" ID="{5B8AA765-3183-475F-8E09-E651BE1D89BD}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+									<ObjectRef Name="Audio_Jump" ID="{3FA38DAA-59EA-4AEE-9F4D-A590AE53C005}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Land" ID="{6BE49E25-0FBA-4708-81D0-AF1AA5F07964}">
+					<ChildrenList>
+						<Action Name="" ID="{731173CF-491B-4047-A9E7-4F95C1E25F6E}" ShortID="57638624">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Audio_Land" ID="{722C4F39-BA75-4493-98D9-DD04978E61F7}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_2Dext_Wind" ID="{607E825F-2499-46BF-B829-165264F6A5C9}">
+					<ChildrenList>
+						<Action Name="" ID="{18D2711A-BB0B-4EC6-8B28-CF179C4DC706}" ShortID="433565590">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2Dext_Wind" ID="{42F1C91E-3E87-43D0-9263-EFF5D70A4D08}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_3D_Electrical_towers" ID="{5FC35448-B2E7-4481-80C3-AA5B6ACE2B62}">
+					<ChildrenList>
+						<Action Name="" ID="{0DD5B87B-5826-46EC-A992-33760DB4F5E5}" ShortID="507272169">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ElectricalTowers" ID="{5CD34E4D-B7D3-426C-ABCE-B5E779D34391}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_3D_Birds" ID="{6ECCD55B-8629-4C25-8C0F-0A21B79CF367}">
+					<ChildrenList>
+						<Action Name="" ID="{CA872271-98D4-4840-9BCF-F48F47064E88}" ShortID="981107234">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Birds" ID="{CF1AEF5C-B8EC-42A1-84D6-7A9A0100A67A}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_3D_radiof" ID="{4317BB1B-1954-4F56-9586-C5F259265282}">
+					<ChildrenList>
+						<Action Name="" ID="{1767CE9F-C01F-43FB-A04A-C0EC67D7FE76}" ShortID="596201434">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="3D_radiof" ID="{11D8F3EB-9643-4ACD-BC36-6E08892DE0DB}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FSt_Dirt" ID="{C36720B2-49A7-4509-97D8-9CF23421BD83}">
+					<ChildrenList>
+						<Action Name="" ID="{AD0DC518-F435-4403-910D-463CA551C2D2}" ShortID="870814208">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FSt_Dirt" ID="{CC4AFEAC-6041-47D3-BBA9-48C3AECA0BE6}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FSt_Grass" ID="{47A4A7CE-6B66-48C4-B1DD-A35DB183B12A}">
+					<ChildrenList>
+						<Action Name="" ID="{435116E2-2CC5-41D9-8181-0228DA4832B4}" ShortID="301909988">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FSt_Grass" ID="{47B63C19-8987-4163-9A2B-013734E0EB47}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Fts_Wood" ID="{8B4FF271-24BF-4129-94C5-1E628BE33A3D}">
+					<ChildrenList>
+						<Action Name="" ID="{FA5DE758-D629-40F8-807D-2E48548FC367}" ShortID="129891053">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fts_Wood" ID="{0A506778-C2B0-4E3A-806B-398996CDA9A2}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Footsteps" ID="{B5D261A3-70C6-4004-BB90-0BF651CDA037}">
+					<ChildrenList>
+						<Action Name="" ID="{0EF14CD7-1F3C-42F6-B421-C31A2AF7DAFA}" ShortID="702444713">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{EFECE585-5DAF-4D88-B612-AA3F7A4884EE}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

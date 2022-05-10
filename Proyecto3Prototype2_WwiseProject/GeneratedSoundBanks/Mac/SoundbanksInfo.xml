@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="602548487">
+		<SoundBank Id="77978275" Language="SFX" Hash="1887865793">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
@@ -78,12 +78,20 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3826520112">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="2675173306" Name="House_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\House_Reverb"/>
+			</IncludedAuxBusses>
+			<GameParameters>
+				<GameParameter Id="1492361653" Name="Sounds" ObjectPath="\Game Parameters\Default Work Unit\Sounds"/>
+				<GameParameter Id="3991942870" Name="Music" ObjectPath="\Game Parameters\Default Work Unit\Music"/>
+				<GameParameter Id="4056684167" Name="Master" ObjectPath="\Game Parameters\Default Work Unit\Master"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1551306167" Language="SFX" Hash="214049851">
+		<SoundBank Id="1551306167" Language="SFX" Hash="703870282">
 			<ObjectPath>\SoundBanks\Default Work Unit\UI</ObjectPath>
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
@@ -114,7 +122,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="3164696837" Language="SFX" Hash="1972482110">
+		<SoundBank Id="3164696837" Language="SFX" Hash="3438799241">
 			<ObjectPath>\SoundBanks\Default Work Unit\Player_Effects</ObjectPath>
 			<ShortName>Player_Effects</ShortName>
 			<Path>Player_Effects.bnk</Path>

@@ -41,6 +41,13 @@ namespace AK
 
     } // namespace SWITCHES
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MASTER = 4056684167U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SOUNDS = 1492361653U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -52,7 +59,17 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID PLAYER = 1069431850U;
+        static const AkUniqueID SFX = 393239870U;
+        static const AkUniqueID SOUNDS = 1492361653U;
+        static const AkUniqueID UI = 1551306167U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID HOUSE_REVERB = 2675173306U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

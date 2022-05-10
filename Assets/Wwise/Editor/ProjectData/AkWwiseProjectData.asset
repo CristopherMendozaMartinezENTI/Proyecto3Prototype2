@@ -194,7 +194,7 @@ MonoBehaviour:
       Path: Events\Default Work Unit\Play_Footsteps
       maxAttenuation: 0
       maxDuration: 0.337265
-      minDuration: 0.257451
+      minDuration: 0.138564
     - name: Play_FSt_Dirt
       guid: b22067c3a749094597d89cf23421bd83
       id: 1453764123
@@ -320,7 +320,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 42eb5f9d9a8896488c36ee1cc88b2bde
     GuidInternal: 
-    m_lastTime: -8585494751408846469
+    m_lastTime: -8585494020703549464
     List:
     - name: Footsteps
       guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
@@ -337,22 +337,6 @@ MonoBehaviour:
         guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
       Path: Switches\Default Work Unit\Footsteps
       values:
-      - name: Dirt
-        guid: e1f41c91244a33448095d113c68ae2e5
-        id: 2195636714
-        PathAndIcons:
-        - ElementName: Switches
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: 42eb5f9d9a8896488c36ee1cc88b2bde
-        - ElementName: Footsteps
-          ObjectType: 11
-          guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
-        - ElementName: Dirt
-          ObjectType: 10
-          guid: e1f41c91244a33448095d113c68ae2e5
       - name: Grass
         guid: 2d3554f609c1f04c9ba4a352fdf234d6
         id: 4248645337
@@ -369,6 +353,22 @@ MonoBehaviour:
         - ElementName: Grass
           ObjectType: 10
           guid: 2d3554f609c1f04c9ba4a352fdf234d6
+      - name: Rocks
+        guid: 6155ca0b5d1aad45872c625d52f1dbea
+        id: 1863277117
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 42eb5f9d9a8896488c36ee1cc88b2bde
+        - ElementName: Footsteps
+          ObjectType: 11
+          guid: 6eeb2c02b2b0b94fa3cc5bc0785803f7
+        - ElementName: Rocks
+          ObjectType: 10
+          guid: 6155ca0b5d1aad45872c625d52f1dbea
       - name: Wood
         guid: 968dee9280c0814393d6d823f4017887
         id: 2058049674
@@ -403,7 +403,7 @@ MonoBehaviour:
     m_lastTime: -8585495562299733045
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0100000005000000070000000a0000000b0000000c0000000f000000100000001700000018000000190000003c0000003d000000ad000000ae000000d10000000c0100000d0100000e010000
+  ExpandedWaapiItemIds: 010000000500000006000000070000000a0000000b0000000c0000000f000000100000001700000018000000190000001a0000003c0000003d0000008c0000008d000000ad000000ae000000d10000000c0100000d0100000e01000088010000890100008a010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

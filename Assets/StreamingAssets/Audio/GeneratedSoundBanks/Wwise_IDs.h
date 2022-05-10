@@ -30,8 +30,8 @@ namespace AK
 
             namespace SWITCH
             {
-                static const AkUniqueID DIRT = 2195636714U;
                 static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID ROCKS = 1863277117U;
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace FOOTSTEPS

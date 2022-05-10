@@ -846,7 +846,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
 						</Reference>
 						<Reference Name="DefaultSwitchOrState">
-							<ObjectRef Name="Dirt" ID="{911CF4E1-4A24-4433-8095-D113C68AE2E5}" WorkUnitID="{9D5FEB42-889A-4896-8C36-EE1CC88B2BDE}"/>
+							<ObjectRef Name="Grass" ID="{F654352D-C109-4CF0-9BA4-A352FDF234D6}" WorkUnitID="{9D5FEB42-889A-4896-8C36-EE1CC88B2BDE}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -872,6 +872,9 @@
 									</ModifierList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{111BB207-6625-489B-80E4-7CFE6448F4CA}">
@@ -1073,6 +1076,79 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Rock" ID="{D91386E8-9D7C-4656-B3E9-7C7B1C128F3F}" ShortID="928875888">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1588CAFB-302D-4D0D-93D0-30BDFCEAF7FF}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1EFDB5C3-328B-481E-A858-D0409D54C3E9}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Fts_Rock" ID="{EAA50E66-26EA-42A3-99D0-1372A3E59933}" ShortID="621183799">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{5BFE62EA-7834-4A4A-B14E-B251E1BDAC94}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Audio_Land" ID="{EA658E3D-FA4C-4AD8-A78A-A2A2A29FA39F}">
+											<Language>SFX</Language>
+											<AudioFile>Audio_Land.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="10437246"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Audio_Land" ID="{EA658E3D-FA4C-4AD8-A78A-A2A2A29FA39F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 					<GroupingInfo>
@@ -1086,6 +1162,9 @@
 							<GroupingBehavior>
 								<ItemRef Name="Wood" ID="{AAA05EDE-B6B3-405C-93C7-09E8425EF96F}"/>
 							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Rock" ID="{D91386E8-9D7C-4656-B3E9-7C7B1C128F3F}"/>
+							</GroupingBehavior>
 						</GroupingBehaviorList>
 						<GroupingList>
 							<Grouping>
@@ -1096,15 +1175,16 @@
 								</ItemList>
 							</Grouping>
 							<Grouping>
-								<SwitchRef Name="Wood" ID="{92EE8D96-C080-4381-93D6-D823F4017887}"/>
+								<SwitchRef Name="Rocks" ID="{0BCA5561-1A5D-45AD-872C-625D52F1DBEA}"/>
 								<ItemList>
-									<ItemRef Name="Wood" ID="{AAA05EDE-B6B3-405C-93C7-09E8425EF96F}"/>
+									<ItemRef Name="Rock" ID="{D91386E8-9D7C-4656-B3E9-7C7B1C128F3F}"/>
+									<ItemRef Name="Dirt" ID="{868B6FBD-8A55-44D9-8B48-EF4FAC4BB278}"/>
 								</ItemList>
 							</Grouping>
 							<Grouping>
-								<SwitchRef Name="Dirt" ID="{911CF4E1-4A24-4433-8095-D113C68AE2E5}"/>
+								<SwitchRef Name="Wood" ID="{92EE8D96-C080-4381-93D6-D823F4017887}"/>
 								<ItemList>
-									<ItemRef Name="Dirt" ID="{868B6FBD-8A55-44D9-8B48-EF4FAC4BB278}"/>
+									<ItemRef Name="Wood" ID="{AAA05EDE-B6B3-405C-93C7-09E8425EF96F}"/>
 								</ItemList>
 							</Grouping>
 						</GroupingList>

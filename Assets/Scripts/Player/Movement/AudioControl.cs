@@ -5,7 +5,6 @@ using UnityEngine;
 //Script para los sonidos del player
 public class AudioControl : MonoBehaviour 
 {
-	[SerializeField] private AudioSource audioSource;
 
 	private Controller controller;
 	private Animator animator;
@@ -25,6 +24,7 @@ public class AudioControl : MonoBehaviour
 	[SerializeField] private float audioClipVolume = 0.1f;
 	[SerializeField] private float relativeRandomizedVolumeRange = 0.2f;
 
+	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private AudioClip[] footStepClips;
 	[SerializeField] private AudioClip jumpClip;
 	[SerializeField] private AudioClip landClip;

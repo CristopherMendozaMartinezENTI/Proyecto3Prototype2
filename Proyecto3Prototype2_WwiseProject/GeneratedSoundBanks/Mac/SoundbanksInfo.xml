@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="2242028756">
+		<SoundBank Id="77978275" Language="SFX" Hash="602548487">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
@@ -20,7 +20,7 @@
 					<IncludedMemoryFiles>
 						<File Id="876069347" Language="SFX">
 							<ShortName>2Dext_Wind.wav</ShortName>
-							<Path>SFX\2Dext_Wind_1209036B.wem</Path>
+							<Path>SFX\2Dext_Wind_45ABA84B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -28,7 +28,7 @@
 					<IncludedMemoryFiles>
 						<File Id="192987934" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_AD566B1E.wem</Path>
+							<Path>SFX\3Dext_forest_birds_ambient_99F21697.wem</Path>
 						</File>
 						<File Id="223278858" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
@@ -36,11 +36,11 @@
 						</File>
 						<File Id="742168086" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_239AC608.wem</Path>
+							<Path>SFX\3Dext_forest_birds_ambient_3DB2A897.wem</Path>
 						</File>
 						<File Id="1000819824" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_582CF1D0.wem</Path>
+							<Path>SFX\3Dext_forest_birds_ambient_119BD565.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -48,19 +48,19 @@
 					<IncludedMemoryFiles>
 						<File Id="287365950" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_4B7623A6.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_52376088.wem</Path>
 						</File>
 						<File Id="549529856" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_FE5FFAAC.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_ABDE4C9E.wem</Path>
 						</File>
 						<File Id="763936304" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_4EB080E3.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_D993B6A3.wem</Path>
 						</File>
 						<File Id="899621406" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_E9AA1D03.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_B8C0E733.wem</Path>
 						</File>
 						<File Id="964190120" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
@@ -83,13 +83,17 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3164696837" Language="SFX" Hash="2110556289">
+		<SoundBank Id="3164696837" Language="SFX" Hash="1972482110">
 			<ObjectPath>\SoundBanks\Default Work Unit\Player_Effects</ObjectPath>
 			<ShortName>Player_Effects</ShortName>
 			<Path>Player_Effects.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Play_Footsteps" DurationType="OneShot" DurationMin="0.257451" DurationMax="0.337265">
+				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Play_Footsteps" DurationType="OneShot" DurationMin="0.138564" DurationMax="0.337265">
 					<IncludedMemoryFiles>
+						<File Id="10437246" Language="SFX">
+							<ShortName>Audio_Land.wav</ShortName>
+							<Path>SFX\Audio_Land_10C4C929.wem</Path>
+						</File>
 						<File Id="606957613" Language="SFX">
 							<ShortName>FSt_Dirt.wav</ShortName>
 							<Path>SFX\FSt_Dirt_10C4C929.wem</Path>
@@ -103,7 +107,7 @@
 							<Path>SFX\FSt_Grass_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<DefaultSwitchValue>{911CF4E1-4A24-4433-8095-D113C68AE2E5}</DefaultSwitchValue>
+					<DefaultSwitchValue>{F654352D-C109-4CF0-9BA4-A352FDF234D6}</DefaultSwitchValue>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{F654352D-C109-4CF0-9BA4-A352FDF234D6}">
 							<Media>
@@ -111,14 +115,15 @@
 								<File Id="924003502"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{0BCA5561-1A5D-45AD-872C-625D52F1DBEA}">
+							<Media>
+								<File Id="10437246"/>
+								<File Id="606957613"/>
+							</Media>
+						</SwitchContainer>
 						<SwitchContainer SwitchValue="{92EE8D96-C080-4381-93D6-D823F4017887}">
 							<Media>
 								<File Id="743130849"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{911CF4E1-4A24-4433-8095-D113C68AE2E5}">
-							<Media>
-								<File Id="606957613"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -143,9 +148,9 @@
 			<SwitchGroups>
 				<SwitchGroup Id="2385628198" Name="Footsteps" ObjectPath="\Switches\Default Work Unit\Footsteps" GUID="{022CEB6E-B0B2-4FB9-A3CC-5BC0785803F7}">
 					<Switches>
-						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\Footsteps\Dirt" GUID="{911CF4E1-4A24-4433-8095-D113C68AE2E5}"/>
 						<Switch Id="4248645337" Name="Grass" ObjectPath="\Switches\Default Work Unit\Footsteps\Grass" GUID="{F654352D-C109-4CF0-9BA4-A352FDF234D6}"/>
 						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Footsteps\Wood" GUID="{92EE8D96-C080-4381-93D6-D823F4017887}"/>
+						<Switch Id="1863277117" Name="Rocks" ObjectPath="\Switches\Default Work Unit\Footsteps\Rocks" GUID="{0BCA5561-1A5D-45AD-872C-625D52F1DBEA}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

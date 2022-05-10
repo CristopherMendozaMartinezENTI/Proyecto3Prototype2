@@ -8,63 +8,80 @@
 		<ExternalSourcesOutputRoot>C:\Users\Roger\Documents\GitHub\Proyecto3Prototype2\Proyecto3Prototype2_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
+	<StreamedFiles>
+		<File Id="287365950" Language="SFX">
+			<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
+			<Path>SFX\3D_Electrical_towers_buzz_2DE44218.wem</Path>
+		</File>
+		<File Id="742168086" Language="SFX">
+			<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
+			<Path>SFX\3Dext_forest_birds_ambient_6329E8E7.wem</Path>
+		</File>
+		<File Id="876069347" Language="SFX">
+			<ShortName>2Dext_Wind.wav</ShortName>
+			<Path>SFX\2Dext_Wind_F500F67B.wem</Path>
+		</File>
+	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="1887865793">
+		<SoundBank Id="77978275" Language="SFX" Hash="902860747">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2161176454" Name="Play_2Dext_Wind" ObjectPath="\Events\Default Work Unit\Play_2Dext_Wind" DurationType="Infinite">
-					<IncludedMemoryFiles>
+					<ReferencedStreamedFiles>
 						<File Id="876069347" Language="SFX">
 							<ShortName>2Dext_Wind.wav</ShortName>
-							<Path>SFX\2Dext_Wind_45ABA84B.wem</Path>
+							<Path>SFX\2Dext_Wind_F500F67B.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
+					</ReferencedStreamedFiles>
 				</Event>
 				<Event Id="602173894" Name="Play_3D_Birds" ObjectPath="\Events\Default Work Unit\Play_3D_Birds" MaxAttenuation="50." DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="742168086" Language="SFX">
+							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
+							<Path>SFX\3Dext_forest_birds_ambient_6329E8E7.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
 					<IncludedMemoryFiles>
 						<File Id="192987934" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_99F21697.wem</Path>
+							<Path>SFX\3Dext_forest_birds_ambient_C0F9D5A7.wem</Path>
 						</File>
 						<File Id="223278858" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_D79FB2B7.wem</Path>
-						</File>
-						<File Id="742168086" Language="SFX">
-							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_3DB2A897.wem</Path>
+							<Path>SFX\3Dext_forest_birds_ambient_9EDFC787.wem</Path>
 						</File>
 						<File Id="1000819824" Language="SFX">
 							<ShortName>3Dext_forest_birds_ambient.wav</ShortName>
-							<Path>SFX\3Dext_forest_birds_ambient_119BD565.wem</Path>
+							<Path>SFX\3Dext_forest_birds_ambient_9E025915.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="626408553" Name="Play_3D_Electrical_towers" ObjectPath="\Events\Default Work Unit\Play_3D_Electrical_towers" MaxAttenuation="50." DurationType="Infinite">
-					<IncludedMemoryFiles>
+					<ReferencedStreamedFiles>
 						<File Id="287365950" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_52376088.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_2DE44218.wem</Path>
 						</File>
+					</ReferencedStreamedFiles>
+					<IncludedMemoryFiles>
 						<File Id="549529856" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_ABDE4C9E.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_7BA4802E.wem</Path>
 						</File>
 						<File Id="763936304" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_D993B6A3.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_5DA7C093.wem</Path>
 						</File>
 						<File Id="899621406" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_B8C0E733.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_2755AE83.wem</Path>
 						</File>
 						<File Id="964190120" Language="SFX">
 							<ShortName>3D_Electrical_towers_buzz.wav</ShortName>
-							<Path>SFX\3D_Electrical_towers_buzz_C5579977.wem</Path>
+							<Path>SFX\3D_Electrical_towers_buzz_18A59087.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -72,17 +89,18 @@
 					<IncludedMemoryFiles>
 						<File Id="607329239" Language="SFX">
 							<ShortName>3D_radiof.wav</ShortName>
-							<Path>SFX\3D_radiof_10C4C929.wem</Path>
+							<Path>SFX\3D_radiof_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3826520112">
+		<SoundBank Id="1355168291" Language="SFX" Hash="381171831">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
+				<AuxBus Id="533459630" Name="House_attenuation" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\House_attenuation"/>
 				<AuxBus Id="2675173306" Name="House_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\House_Reverb"/>
 			</IncludedAuxBusses>
 			<GameParameters>
@@ -91,7 +109,7 @@
 				<GameParameter Id="4056684167" Name="Master" ObjectPath="\Game Parameters\Default Work Unit\Master"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1551306167" Language="SFX" Hash="703870282">
+		<SoundBank Id="1551306167" Language="SFX" Hash="2445818035">
 			<ObjectPath>\SoundBanks\Default Work Unit\UI</ObjectPath>
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
@@ -100,7 +118,7 @@
 					<IncludedMemoryFiles>
 						<File Id="803145863" Language="SFX">
 							<ShortName>UI_exit.wav</ShortName>
-							<Path>SFX\UI_exit_10C4C929.wem</Path>
+							<Path>SFX\UI_exit_3CADDE39.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -108,7 +126,7 @@
 					<IncludedMemoryFiles>
 						<File Id="681137049" Language="SFX">
 							<ShortName>UI_play.wav</ShortName>
-							<Path>SFX\UI_play_10C4C929.wem</Path>
+							<Path>SFX\UI_play_3CADDE39.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -116,13 +134,13 @@
 					<IncludedMemoryFiles>
 						<File Id="77513625" Language="SFX">
 							<ShortName>UI_reset.wav</ShortName>
-							<Path>SFX\UI_reset_10C4C929.wem</Path>
+							<Path>SFX\UI_reset_3CADDE39.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="3164696837" Language="SFX" Hash="3438799241">
+		<SoundBank Id="3164696837" Language="SFX" Hash="2868197793">
 			<ObjectPath>\SoundBanks\Default Work Unit\Player_Effects</ObjectPath>
 			<ShortName>Player_Effects</ShortName>
 			<Path>Player_Effects.bnk</Path>
@@ -131,19 +149,19 @@
 					<IncludedMemoryFiles>
 						<File Id="10437246" Language="SFX">
 							<ShortName>Audio_Land.wav</ShortName>
-							<Path>SFX\Audio_Land_10C4C929.wem</Path>
+							<Path>SFX\Audio_Land_3F75BDB9.wem</Path>
 						</File>
 						<File Id="606957613" Language="SFX">
 							<ShortName>FSt_Dirt.wav</ShortName>
-							<Path>SFX\FSt_Dirt_10C4C929.wem</Path>
+							<Path>SFX\FSt_Dirt_3F75BDB9.wem</Path>
 						</File>
 						<File Id="743130849" Language="SFX">
 							<ShortName>Fts_Wood.wav</ShortName>
-							<Path>SFX\Fts_Wood_10C4C929.wem</Path>
+							<Path>SFX\Fts_Wood_3F75BDB9.wem</Path>
 						</File>
 						<File Id="924003502" Language="SFX">
 							<ShortName>FSt_Grass.wav</ShortName>
-							<Path>SFX\FSt_Grass_10C4C929.wem</Path>
+							<Path>SFX\FSt_Grass_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{F654352D-C109-4CF0-9BA4-A352FDF234D6}</DefaultSwitchValue>
@@ -171,7 +189,7 @@
 					<IncludedMemoryFiles>
 						<File Id="872421389" Language="SFX">
 							<ShortName>Audio_Jump.wav</ShortName>
-							<Path>SFX\Audio_Jump_10C4C929.wem</Path>
+							<Path>SFX\Audio_Jump_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -179,7 +197,7 @@
 					<IncludedMemoryFiles>
 						<File Id="10437246" Language="SFX">
 							<ShortName>Audio_Land.wav</ShortName>
-							<Path>SFX\Audio_Land_10C4C929.wem</Path>
+							<Path>SFX\Audio_Land_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

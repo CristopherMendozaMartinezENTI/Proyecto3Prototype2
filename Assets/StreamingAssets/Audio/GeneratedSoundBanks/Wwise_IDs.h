@@ -68,6 +68,7 @@ namespace AK
 
     namespace AUX_BUSSES
     {
+        static const AkUniqueID HOUSE_ATTENUATION = 533459630U;
         static const AkUniqueID HOUSE_REVERB = 2675173306U;
     } // namespace AUX_BUSSES
 

@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{8CB58949-D40C-4B0A-A8CB-B798D9902D95}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="Player_Effects" ID="{6877E771-AD39-44E9-9BAB-B4C216B1CD05}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>100000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Footsteps" ID="{B5D261A3-70C6-4004-BB90-0BF651CDA037}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Land" ID="{6BE49E25-0FBA-4708-81D0-AF1AA5F07964}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
@@ -13,6 +20,13 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="Ambient" ID="{B3276CA3-179A-4CE2-985E-544A607F9FE3}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>4000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_3D_Electrical_towers" ID="{5FC35448-B2E7-4481-80C3-AA5B6ACE2B62}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_2Dext_Wind" ID="{607E825F-2499-46BF-B829-165264F6A5C9}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
@@ -23,6 +37,13 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="UI" ID="{8D89D2F7-D371-4ACA-972F-41FE8F11B548}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>200000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_UI_reset" ID="{2E04C794-24E4-4405-BD4A-4C967F138C95}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UI_Play" ID="{9DDFF5DC-908B-4DE9-9635-81230663A411}" WorkUnitID="{A78C4633-A3FD-4E5F-9C6D-3A5F5D4A1FF1}" Origin="Manual" Filter="7"/>

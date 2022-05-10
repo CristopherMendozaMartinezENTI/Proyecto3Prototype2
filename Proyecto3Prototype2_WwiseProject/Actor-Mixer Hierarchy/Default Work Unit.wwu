@@ -5,6 +5,16 @@
 			<ChildrenList>
 				<Sound Name="UI_Play" ID="{5B67BFD3-EE55-44B2-BDEF-06A6193FECCE}" ShortID="768771159">
 					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-10</Value>
@@ -13,7 +23,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="UI" ID="{F5D5A596-31AD-47D0-8254-035F537BB85E}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -102,7 +112,7 @@
 							<ObjectRef Name="Radio" ID="{648EE15B-96B4-4BE8-A2CA-FCEB7798DF04}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
 						</Reference>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="SFX" ID="{EBD01D13-D019-4D1B-B038-3FC2FB4F8A07}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -124,6 +134,16 @@
 				</Sound>
 				<Sound Name="UI_exit" ID="{42180CDE-F4E3-4F3D-81C5-CA590C5E0396}" ShortID="408302008">
 					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-5</Value>
@@ -132,7 +152,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="UI" ID="{F5D5A596-31AD-47D0-8254-035F537BB85E}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -154,9 +174,19 @@
 				</Sound>
 				<Sound Name="UI_reset" ID="{C7DC7EA2-4FE3-4949-92DB-8DCAE4D0CC0C}" ShortID="835218661">
 					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
 								<Value>-50</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
 							</ValueList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
@@ -167,7 +197,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="UI" ID="{F5D5A596-31AD-47D0-8254-035F537BB85E}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -190,15 +220,25 @@
 				<Sound Name="2Dext_Wind" ID="{42F1C91E-3E87-43D0-9263-EFF5D70A4D08}" ShortID="360675783">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="IsStreamingEnabled" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="MakeUpGain" Type="Real64">
 							<ValueList>
 								<Value>-15</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>60</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Music" ID="{E849EFE1-9FBC-46F5-BED0-F367C36E7C36}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -231,7 +271,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Player" ID="{B8530470-E894-490B-BFB4-104807919E09}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -253,11 +293,22 @@
 				</Sound>
 				<Sound Name="Audio_Land" ID="{722C4F39-BA75-4493-98D9-DD04978E61F7}" ShortID="489667034">
 					<PropertyList>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
 						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Player" ID="{B8530470-E894-490B-BFB4-104807919E09}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -319,7 +370,7 @@
 							<ObjectRef Name="ElectricalPosts" ID="{0DE67BE5-5DB4-4A02-8811-45D70B9C19EE}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
 						</Reference>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="SFX" ID="{EBD01D13-D019-4D1B-B038-3FC2FB4F8A07}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -558,6 +609,11 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -659,7 +715,7 @@
 							<ObjectRef Name="Enviroment" ID="{69723173-E97D-40BA-895D-74E1E4D5359B}" WorkUnitID="{AF1E17FE-CC06-42FC-ABA6-EED8D2EA9949}"/>
 						</Reference>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="SFX" ID="{EBD01D13-D019-4D1B-B038-3FC2FB4F8A07}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
@@ -670,6 +726,11 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -902,7 +963,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="DefaultSwitchOrState">
 							<ObjectRef Name="Grass" ID="{F654352D-C109-4CF0-9BA4-A352FDF234D6}" WorkUnitID="{9D5FEB42-889A-4896-8C36-EE1CC88B2BDE}"/>
@@ -1249,17 +1310,6 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
-				<ActorMixer Name="New Actor-Mixer" ID="{D042B858-3CB2-4596-86C1-37DC3B41F153}" ShortID="535099258">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6E091684-8FEF-43E6-A4E9-1B841D814D90}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8EECBA9-5FE3-4346-A082-1BECBC3C9512}"/>
-						</Reference>
-					</ReferenceList>
-					<ObjectLists/>
-				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

@@ -113,6 +113,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_UI_exit" ID="{A3DB4C46-C47F-4FEE-BC96-4885FC72F2B7}">
+					<ChildrenList>
+						<Action Name="" ID="{FD41A632-1077-4BA3-8912-0503C30E5820}" ShortID="873065651">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_exit" ID="{42180CDE-F4E3-4F3D-81C5-CA590C5E0396}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Play" ID="{9DDFF5DC-908B-4DE9-9635-81230663A411}">
+					<ChildrenList>
+						<Action Name="" ID="{BBC4DC5B-9E59-42CF-807F-237073FE2F7E}" ShortID="934134819">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Play" ID="{5B67BFD3-EE55-44B2-BDEF-06A6193FECCE}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_reset" ID="{2E04C794-24E4-4405-BD4A-4C967F138C95}">
+					<ChildrenList>
+						<Action Name="" ID="{CDA4017A-3380-4019-99E5-4A0E8DCBF0B6}" ShortID="454030803">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_reset" ID="{C7DC7EA2-4FE3-4949-92DB-8DCAE4D0CC0C}" WorkUnitID="{3D5164EE-F882-4C62-B228-09558DFE9ECD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

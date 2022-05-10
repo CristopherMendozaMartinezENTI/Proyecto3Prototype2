@@ -441,6 +441,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3858695309414786778}
+        m_TargetAssemblyTypeName: AudioButtonUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4715787405317374078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f879cc6e0e3894bba6d47823f0eb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipSound: {fileID: 8300000, guid: 2efc5039de8e19449920b5b77dde35f2, type: 3}
+  name: Play_UI_reset
   btn: {fileID: 2876617951430872747}
 --- !u!82 &3185229445998956774
 AudioSource:
@@ -719,7 +731,6 @@ GameObject:
   - component: {fileID: 2194377623369970600}
   - component: {fileID: 4098658893130382301}
   - component: {fileID: 3858695309414786778}
-  - component: {fileID: 4365481924273556530}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -841,6 +852,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3858695309414786778}
+        m_TargetAssemblyTypeName: AudioButtonUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3858695309414786778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,105 +876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f879cc6e0e3894bba6d47823f0eb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipSound: {fileID: 8300000, guid: fb26f2f7c9bdef04a9a6904f008b9ca3, type: 3}
+  name: Play_UI_Play
   btn: {fileID: 4098658893130382301}
---- !u!82 &4365481924273556530
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2347507959835789954}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2525859580704306082, guid: 31bd84ee218dada4d8858aa1b7cb0a6d,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.6
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &2833856521225311048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1195,7 @@ GameObject:
   - component: {fileID: 3643188041580836982}
   - component: {fileID: 3643188041580836983}
   - component: {fileID: 6370022811734141928}
+  - component: {fileID: 1617488437604478}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1378,6 +1305,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuCanvas: {fileID: 8076544387134830915}
+--- !u!114 &1617488437604478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643188041580836980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c92c8d668f28442bdf68524f74ae81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 615ba5f26b42ad840b86cb56f6d11f90,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &3643188041973865996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +1944,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6574833362378447205}
+        m_TargetAssemblyTypeName: AudioButtonUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6574833362378447205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +1968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f879cc6e0e3894bba6d47823f0eb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipSound: {fileID: 8300000, guid: cc7c7035b0dd13f4596c5aac162fd8e2, type: 3}
+  name: Play_UI_exit
   btn: {fileID: 4895558391677754950}
 --- !u!82 &453149681029958365
 AudioSource:

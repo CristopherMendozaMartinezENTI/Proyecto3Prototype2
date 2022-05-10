@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 4989b58c0cd40a4ba8cbb798d9902d95
     GuidInternal: 
-    m_lastTime: -8585494746736259771
+    m_lastTime: -8585494005303633627
     List:
     - name: Ambient
       guid: a36c27b39a17e24c985e544a607f9fe3
@@ -96,6 +96,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 71e7776839ade9449babb4c216b1cd05
       Path: SoundBanks\Default Work Unit\Player_Effects
+    - name: UI
+      guid: f7d2898d71d3ca4a972f41fe8f11b548
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4989b58c0cd40a4ba8cbb798d9902d95
+      - ElementName: UI
+        ObjectType: 7
+        guid: f7d2898d71d3ca4a972f41fe8f11b548
+      Path: SoundBanks\Default Work Unit\UI
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -108,7 +122,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
     GuidInternal: 
-    m_lastTime: -8585494747019373546
+    m_lastTime: -8585494005303463585
     List:
     - name: Play_2Dext_Wind
       guid: 5f827e609924bf46b829165264f6a5c9
@@ -280,6 +294,57 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.155533
       minDuration: 0.155533
+    - name: Play_UI_exit
+      guid: 464cdba37fc4ee4fbc964885fc72f2b7
+      id: 1986548623
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_UI_exit
+        ObjectType: 3
+        guid: 464cdba37fc4ee4fbc964885fc72f2b7
+      Path: Events\Default Work Unit\Play_UI_exit
+      maxAttenuation: 0
+      maxDuration: 1.104308
+      minDuration: 1.104308
+    - name: Play_UI_Play
+      guid: dcf5df9d8b90e94d963581230663a411
+      id: 2681605209
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_UI_Play
+        ObjectType: 3
+        guid: dcf5df9d8b90e94d963581230663a411
+      Path: Events\Default Work Unit\Play_UI_Play
+      maxAttenuation: 0
+      maxDuration: 1.02517
+      minDuration: 1.02517
+    - name: Play_UI_reset
+      guid: 94c7042ee4240544bd4a4c967f138c95
+      id: 781065240
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 33468ca7fda35f4e9c6d3a5f5d4a1ff1
+      - ElementName: Play_UI_reset
+        ObjectType: 3
+        guid: 94c7042ee4240544bd4a4c967f138c95
+      Path: Events\Default Work Unit\Play_UI_reset
+      maxAttenuation: 0
+      maxDuration: 2.444044
+      minDuration: 2.444044
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:

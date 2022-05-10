@@ -7,27 +7,17 @@ using UnityEngine.UI;
 public class AudioButtonUI : MonoBehaviour
 {
 
-    public AudioClip clipSound;
-    private AudioSource aSource;
     public Button btn;
-    public void Start()
-    {
-        aSource = GetComponent<AudioSource>();
-    }
+    public string name = "Play_UI_Play";
+
     public void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
             if(EventSystem.current.currentSelectedGameObject.GetComponent<Button>() == btn)
             {
-                PlaySound(clipSound);
+                AkSoundEngine.PostEvent(name, gameObject);
             }
         }
     }
-    
-
-    void PlaySound(AudioClip aClip)
-    {
-       aSource.PlayOneShot(aClip);
-    }
-}
+ }

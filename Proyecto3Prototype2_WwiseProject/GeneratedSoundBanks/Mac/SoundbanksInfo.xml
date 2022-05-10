@@ -83,6 +83,37 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
+		<SoundBank Id="1551306167" Language="SFX" Hash="214049851">
+			<ObjectPath>\SoundBanks\Default Work Unit\UI</ObjectPath>
+			<ShortName>UI</ShortName>
+			<Path>UI.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1986548623" Name="Play_UI_exit" ObjectPath="\Events\Default Work Unit\Play_UI_exit" DurationType="OneShot" DurationMin="1.104308" DurationMax="1.104308">
+					<IncludedMemoryFiles>
+						<File Id="803145863" Language="SFX">
+							<ShortName>UI_exit.wav</ShortName>
+							<Path>SFX\UI_exit_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2681605209" Name="Play_UI_Play" ObjectPath="\Events\Default Work Unit\Play_UI_Play" DurationType="OneShot" DurationMin="1.02517" DurationMax="1.02517">
+					<IncludedMemoryFiles>
+						<File Id="681137049" Language="SFX">
+							<ShortName>UI_play.wav</ShortName>
+							<Path>SFX\UI_play_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="781065240" Name="Play_UI_reset" ObjectPath="\Events\Default Work Unit\Play_UI_reset" DurationType="OneShot" DurationMin="2.444044" DurationMax="2.444044">
+					<IncludedMemoryFiles>
+						<File Id="77513625" Language="SFX">
+							<ShortName>UI_reset.wav</ShortName>
+							<Path>SFX\UI_reset_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
 		<SoundBank Id="3164696837" Language="SFX" Hash="1972482110">
 			<ObjectPath>\SoundBanks\Default Work Unit\Player_Effects</ObjectPath>
 			<ShortName>Player_Effects</ShortName>

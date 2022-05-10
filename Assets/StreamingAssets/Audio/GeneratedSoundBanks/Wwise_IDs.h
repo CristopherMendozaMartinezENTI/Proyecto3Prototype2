@@ -20,6 +20,9 @@ namespace AK
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_UI_EXIT = 1986548623U;
+        static const AkUniqueID PLAY_UI_PLAY = 2681605209U;
+        static const AkUniqueID PLAY_UI_RESET = 781065240U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -43,6 +46,7 @@ namespace AK
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID AMBIENT = 77978275U;
         static const AkUniqueID PLAYER_EFFECTS = 3164696837U;
+        static const AkUniqueID UI = 1551306167U;
     } // namespace BANKS
 
     namespace BUSSES

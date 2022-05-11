@@ -100,11 +100,7 @@ public class Portal : MonoBehaviour {
             portalCam.transform.SetPositionAndRotation (renderPositions[i], renderRotations[i]);
             SetNearClipPlane ();
             HandleClipping ();
-            if (portalCam.transform.eulerAngles != Vector3.zero)
-            {
-                portalCam.Render();
-
-            }
+            portalCam.Render();
             if (i == startIndex) {
                 linkedPortal.screen.material.SetInt ("displayMask", 1);
             }

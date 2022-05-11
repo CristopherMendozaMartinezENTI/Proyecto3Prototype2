@@ -9,26 +9,21 @@ public class PortalMainCameraRenderer : MonoBehaviour {
         portals = FindObjectsOfType<Portal> ();
     }
 
-    private void OnPreCull () 
+    private void LateUpdate()  
     {
         foreach(Portal portal in portals)
         {
             portal.PrePortalRender();
         }
 
-        foreach (Portal portal in portals)
+        foreach(Portal portal in portals)
         {
-            if (portal.transform.eulerAngles != Vector3.zero)
-            {
-                portal.Render();
-
-            }
+            portal.Render();
         }
 
-        foreach (Portal portal in portals)
+        foreach(Portal portal in portals)
         {
             portal.PostPortalRender();
         }
     }
-
 }

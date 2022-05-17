@@ -244,7 +244,7 @@ public class TelekinesisController : MonoBehaviour
                     gameObject.GetComponent<AudioSource>().clip = onGrabbed;
                     gameObject.GetComponent<AudioSource>().Play();
                     _grabbedRigidbody = hit.rigidbody;
-                    _grabbedRigidbody.transform.parent = playerTransform.transform;
+                    //_grabbedRigidbody.transform.parent = playerTransform.transform;
                     _wasKinematic = _grabbedRigidbody.isKinematic;
                     _grabbedRigidbody.isKinematic = false;
                     if (!_grabbedRigidbody.freezeRotation)

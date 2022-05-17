@@ -17,6 +17,7 @@ public class Portal : MonoBehaviour {
     private List<PortalTraveller> trackedTravellers;
     private MeshFilter screenMeshFilter;
     private GameObject playerCameraRig;
+    private GameObject telekisisController;
 
     void Start () {
         playerCam = Camera.main;
@@ -26,6 +27,7 @@ public class Portal : MonoBehaviour {
         screenMeshFilter = screen.GetComponent<MeshFilter> ();
         screen.material.SetInt ("displayMask", 1);
         playerCameraRig = GameObject.Find("CameraRig");
+        telekisisController = GameObject.Find("TelekinesisGaunlet");
     }
 
     void LateUpdate () {
@@ -241,6 +243,11 @@ public class Portal : MonoBehaviour {
         PortalTraveller traveller = other.GetComponent<PortalTraveller> ();
         if (traveller) {
             playerCameraRig.GetComponent<SmoothRotation>().enabled = false;
+            if (other.GetComponent<PropPhysicsController>())
+            {
+                //other.GetComponent<Rigidbody>().freezeRotation = true;
+                Debug.Log("Entra");
+            }
             OnTravellerEnterPortal (traveller);
         }
     }
@@ -249,6 +256,11 @@ public class Portal : MonoBehaviour {
         PortalTraveller traveller = other.GetComponent<PortalTraveller> ();
         if (traveller && trackedTravellers.Contains (traveller)) {
             playerCameraRig.GetComponent<SmoothRotation>().enabled = true;
+            if (other.GetComponent<PropPhysicsController>())
+            {
+                other.transform.eulerAngles = Vector3.zero;
+                Debug.Log("Sale");
+            }
             traveller.ExitPortalThreshold ();
             trackedTravellers.Remove (traveller);
         }

@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//ESTO SE TIENE QUE BORRAR
+using UnityEngine.SceneManagement;
+
 
 ////Esta script permite controlar el movimiento del player
 public class PlayerMovementController : Controller 
 {
+	private CheckPointSystem cps;
+
 	protected Transform tr;
 	protected PlayerColliderController collCtrl;
 	protected PlayerInput characterInput;
@@ -53,8 +58,14 @@ public class PlayerMovementController : Controller
 			Debug.LogWarning("Al siguiente objeto le falta el script PlayerInput" + this.gameObject + "MADRE MIA KRIS!");
 		Setup();
 	}
+    private void Start()
+    {
+		cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
+		this.transform.position = cps.lastCheckPoint;
+		this.transform.rotation = cps.lastRotation;
+    }
 
-	protected virtual void Setup(){}
+    protected virtual void Setup(){}
 
 	private void FixedUpdate()
 	{
@@ -64,6 +75,12 @@ public class PlayerMovementController : Controller
 	private void Update()
 	{
 		HandleJumpKeyInput();
+        
+		//ESTO SE TIENE QUE BORRAR.
+		if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 	}
 
 	private void ControllerUpdate()

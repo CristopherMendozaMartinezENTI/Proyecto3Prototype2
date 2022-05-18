@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenuCanvas;
+    [SerializeField] private GameObject SettingsCanvas;
+    [SerializeField] List<GameObject> uiElements;
     private static bool gameIsPaused;
 
     void Update()
@@ -25,6 +27,7 @@ public class PauseMenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             PauseMenuCanvas.SetActive(true);
+            SettingsCanvas.SetActive(false);
         }
         else
         {
@@ -44,6 +47,25 @@ public class PauseMenuManager : MonoBehaviour
         PauseMenuCanvas.SetActive(false);
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, SceneManager.GetActiveScene().name));
     }
+
+    public void enableOptions()
+    {
+        foreach (GameObject uiElement in uiElements)
+        {
+            uiElement.SetActive(false);
+        }
+        SettingsCanvas.SetActive(true);
+    }
+
+    public void SaveSettingsButton()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        PauseMenuCanvas.SetActive(false);
+        SettingsCanvas.SetActive(false);
+    }
+
     public void ExitScene()
     {
         gameIsPaused = false;

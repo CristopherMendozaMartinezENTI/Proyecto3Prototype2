@@ -1709,11 +1709,9 @@ GameObject:
   - component: {fileID: 3282191014706142214}
   - component: {fileID: 3231588005391234018}
   - component: {fileID: 3232279421453417774}
-  - component: {fileID: 3200768312901682828}
   - component: {fileID: 3263224906063933120}
-  - component: {fileID: 3263224906063933122}
-  - component: {fileID: 3263224906063933123}
   - component: {fileID: 3263224906063933125}
+  - component: {fileID: 3200768312901682828}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1833,6 +1831,42 @@ MonoBehaviour:
   verticalInputAxis: Vertical
   jumpKey: 32
   useRawInput: 1
+--- !u!114 &3263224906063933120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263224906063933124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906cf3fd207e5450784f73a2d4b57b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphicsObject: {fileID: 3264488835933018107}
+--- !u!114 &3263224906063933125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263224906063933124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d296f3412ce1434a84b75a9a8ec966e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 3200768312901682828}
+  useAnimationBasedFootsteps: 0
+  landVelocityThreshold: 5
+  footstepDistance: 3
+  audioClipVolume: 0.1
+  relativeRandomizedVolumeRange: 0.3
+  footStepClips:
+  - {fileID: 8300000, guid: 7341ba07f02fa6941b16a463ddd73f99, type: 3}
+  - {fileID: 8300000, guid: 3efdd4c11a4bdc54a9087ab115c1de9e, type: 3}
+  jumpClip: {fileID: 8300000, guid: 99ab8a4503de1f448ad764a5c4cdf9cc, type: 3}
+  landClip: {fileID: 8300000, guid: c212aa2d646dfe248b7c96b4f0e4cb27, type: 3}
 --- !u!82 &3200768312901682828
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1930,74 +1964,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &3263224906063933120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906cf3fd207e5450784f73a2d4b57b4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphicsObject: {fileID: 3264488835933018107}
---- !u!114 &3263224906063933122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9830259acb1f0ed4a87ab1737b92341e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRewindData: 24
-  secondsBetweenData: 0.1
-  rewindDuration: 0.2
-  playerCameraController: {fileID: 3231935991915794946}
-  rData: []
---- !u!114 &3263224906063933123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f1acc68ce5c9c4da7c7bbbf24128bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxGrabDistance: 10
-  _player: {fileID: 3231588005391234018}
-  _camera: {fileID: 3231935991915794946}
---- !u!114 &3263224906063933125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d296f3412ce1434a84b75a9a8ec966e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 3200768312901682828}
-  useAnimationBasedFootsteps: 0
-  landVelocityThreshold: 5
-  footstepDistance: 3
-  audioClipVolume: 0.1
-  relativeRandomizedVolumeRange: 0.3
-  footStepClips:
-  - {fileID: 8300000, guid: 7341ba07f02fa6941b16a463ddd73f99, type: 3}
-  - {fileID: 8300000, guid: 3efdd4c11a4bdc54a9087ab115c1de9e, type: 3}
-  jumpClip: {fileID: 8300000, guid: 99ab8a4503de1f448ad764a5c4cdf9cc, type: 3}
-  landClip: {fileID: 8300000, guid: c212aa2d646dfe248b7c96b4f0e4cb27, type: 3}
 --- !u!1 &3263237676914732113
 GameObject:
   m_ObjectHideFlags: 0

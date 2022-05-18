@@ -16,6 +16,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject exitCanvas;
     [SerializeField] List<GameObject> uiElements;
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape) && playCamera.activeInHierarchy == false)
+        {
+            if (optionsCamera.activeInHierarchy || creditsCamera.activeInHierarchy || exitCamera.activeInHierarchy) enableMainCamera();
+            else enableExitCamera();
+        }
+    }
+
     private void LoadScene()
     {
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, sceneName));

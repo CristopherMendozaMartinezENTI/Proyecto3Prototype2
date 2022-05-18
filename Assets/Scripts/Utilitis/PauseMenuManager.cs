@@ -27,7 +27,6 @@ public class PauseMenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             PauseMenuCanvas.SetActive(true);
-            SettingsCanvas.SetActive(false);
         }
         else
         {
@@ -35,6 +34,7 @@ public class PauseMenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             PauseMenuCanvas.SetActive(false);
+            SettingsCanvas.SetActive(false);
         }
     }
 

@@ -243,10 +243,10 @@ public class Portal : MonoBehaviour {
         PortalTraveller traveller = other.GetComponent<PortalTraveller> ();
         if (traveller) {
             playerCameraRig.GetComponent<SmoothRotation>().enabled = false;
-            if (other.GetComponent<PropPhysicsController>())
+            if (other.GetComponent<PropPhysicsController>() && telekisisController.GetComponent<TelekinesisController>().IsObjectGrabbed())
             {
-                //other.GetComponent<Rigidbody>().freezeRotation = true;
-                Debug.Log("Entra");
+                other.transform.eulerAngles = Vector3.zero;
+                //telekisisController.GetComponent<TelekinesisController>().ReleaseObject();
             }
             OnTravellerEnterPortal (traveller);
         }
@@ -259,7 +259,6 @@ public class Portal : MonoBehaviour {
             if (other.GetComponent<PropPhysicsController>())
             {
                 other.transform.eulerAngles = Vector3.zero;
-                Debug.Log("Sale");
             }
             traveller.ExitPortalThreshold ();
             trackedTravellers.Remove (traveller);

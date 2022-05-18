@@ -10,8 +10,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject playCamera;
     [SerializeField] private GameObject optionsCamera;
     [SerializeField] private GameObject creditsCamera;
+    [SerializeField] private GameObject exitCamera;
     [SerializeField] private GameObject returnButton;
     [SerializeField] private GameObject SettingsCanvas;
+    [SerializeField] private GameObject exitCanvas;
     [SerializeField] List<GameObject> uiElements;
 
     private void LoadScene()
@@ -66,6 +68,18 @@ public class MenuManager : MonoBehaviour
         SettingsCanvas.SetActive(false);
         creditsCamera.SetActive(false);
         returnButton.SetActive(false);
+        exitCanvas.SetActive(false);
+        exitCamera.SetActive(false);
+    }
+
+    public void enableExitCamera()
+    {
+        foreach (GameObject uiElement in uiElements)
+        {
+            uiElement.SetActive(false);
+        }
+        exitCamera.SetActive(true);
+        exitCanvas.SetActive(true);
     }
 
     public void ExitGame()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GravitationalForce { xRedFoward, xRedBackward, yGreenFoward, yGreenBackward, zBlueForward, zBlueBackward, None }
-public class PropPhysicsController : Controller
+public class PropPhysicsController : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private GravitationalForce gravityOrientation;
@@ -111,17 +111,17 @@ public class PropPhysicsController : Controller
         transform.position = initialPos;
     }
 
-    public override Vector3 GetVelocity()
+    public Vector3 GetVelocity()
     {
         return this.gameObject.GetComponent<Rigidbody>().velocity;
     }
 
-    public override Vector3 GetMovementVelocity()
+    public Vector3 GetMovementVelocity()
     {
         return this.gameObject.GetComponent<Rigidbody>().angularVelocity;
     }
 
-    public override bool IsGrounded()
+    public bool IsGrounded()
     {
         if (this.gameObject.GetComponent<Rigidbody>().velocity == Vector3.zero) return true;
         else return false;

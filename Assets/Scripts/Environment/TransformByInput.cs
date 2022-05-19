@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TransformByInput : MonoBehaviour
 {
-    //[Tooltip("Important to use world final transform, not local. It is recomended have the object out of any parent")]
     [Header("Desired Transform")]
     [Tooltip("If empty, will take 'this' as reference")]
     [SerializeField] private GameObject connectedGameObject;

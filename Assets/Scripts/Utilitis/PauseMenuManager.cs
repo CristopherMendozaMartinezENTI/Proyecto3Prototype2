@@ -59,10 +59,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void SaveSettingsButton()
     {
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        PauseMenuCanvas.SetActive(false);
+        PauseMenuCanvas.SetActive(true);
         SettingsCanvas.SetActive(false);
     }
 

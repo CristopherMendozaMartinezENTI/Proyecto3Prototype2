@@ -60,9 +60,11 @@ public class PlayerMovementController : Controller
 	}
     private void Start()
     {
+		/*
 		cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
 		this.transform.position = cps.lastCheckPoint;
 		this.transform.rotation = cps.lastRotation;
+		*/
     }
 
     protected virtual void Setup(){}

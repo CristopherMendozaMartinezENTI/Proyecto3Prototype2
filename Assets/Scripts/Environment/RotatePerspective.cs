@@ -21,6 +21,9 @@ public class RotatePerspective : MonoBehaviour
 
 	private void OnTriggerEnter(Collider col)
 	{
+		if (!GetComponent<ActiveStateManager>().active)
+			return;
+
 		if(col.GetComponent<Controller>() == null)
 			return;
 

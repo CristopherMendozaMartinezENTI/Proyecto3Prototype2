@@ -9,7 +9,7 @@ public class PressurePad : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] public string KeyTag = "";
-    [SerializeField] private Connections ConnectedTo;
+    [SerializeField] private Connections ConnectedTo = Connections.None;
     [SerializeField] private GameObject connectedGameObject;
     [SerializeField] private bool invertedAMFF;
     public bool active { get; private set; } = false;
@@ -24,8 +24,11 @@ public class PressurePad : MonoBehaviour
 
     private void Update()
     {
+        ps.gameObject.SetActive(active);
+
         if(active)
         {
+
             if (KeyTag == "KeyBlue")
                 main.startColor = Color.cyan;
 

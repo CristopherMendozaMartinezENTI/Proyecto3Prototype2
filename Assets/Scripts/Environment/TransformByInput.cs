@@ -5,7 +5,7 @@ using UnityEngine;
 public class TransformByInput : MonoBehaviour
 {
     [Header("Desired Transform")]
-    [Tooltip("If empty, will take 'this' as reference")]
+    [Tooltip("World Position")]
     [SerializeField] private Vector3 position;
     [SerializeField] private bool IgnorePosition;
     [SerializeField] private Vector3 rotation;

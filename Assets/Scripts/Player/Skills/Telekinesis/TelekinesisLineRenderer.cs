@@ -26,9 +26,6 @@ public class TelekinesisLineRenderer : MonoBehaviour
 
     private TelekinesisController _playerrTelekinesis;
 
-    [SerializeField]
-    private bool renderChildren;
-
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -105,7 +102,7 @@ public class TelekinesisLineRenderer : MonoBehaviour
         _objectToHightlight = objectToHighlight;
 
         Renderer[] renderers = _objectToHightlight.GetComponents<Renderer>();
-        if(renderChildren)
+        if(_objectToHightlight.GetComponent<PropPhysicsController>().telekinesisRendersChildren)
             renderers = _objectToHightlight.GetComponentsInChildren<Renderer>();
 
         for (int i = 0; i < renderers.Length; i++)

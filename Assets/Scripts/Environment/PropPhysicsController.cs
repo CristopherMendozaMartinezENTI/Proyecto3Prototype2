@@ -10,6 +10,7 @@ public class PropPhysicsController : MonoBehaviour
     [SerializeField] private float gravityForce = 9.81f;
     [SerializeField] private GameObject RespawFxPrefab;
     [SerializeField] private bool useLocalMomentum = true;
+    public bool telekinesisRendersChildren;
     private Vector3 initialPos;
     private GameObject _RespawFxTmp;
     protected Transform tr;

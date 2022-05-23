@@ -6,7 +6,6 @@ public class TransformByInput : MonoBehaviour
 {
     [Header("Desired Transform")]
     [Tooltip("If empty, will take 'this' as reference")]
-    [SerializeField] private GameObject connectedGameObject;
     [SerializeField] private Vector3 position;
     [SerializeField] private bool IgnorePosition;
     [SerializeField] private Vector3 rotation;
@@ -15,6 +14,8 @@ public class TransformByInput : MonoBehaviour
     [SerializeField] private bool IgnoreScale;
 
     //
+    private GameObject connectedGameObject;
+
     private Vector3 worldInitialPosition;
     private Vector3 worldInitialRotation;
     private Vector3 worldInitialScale;

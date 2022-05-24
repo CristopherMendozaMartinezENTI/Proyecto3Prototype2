@@ -20,6 +20,7 @@ public class TelekinesisController : MonoBehaviour
     private Rigidbody _grabbedRigidbody;
     private Transform _grabbedTransform;
     private bool hasFreezedRotation;
+    public bool usingTelequinesis;
     private Vector3 _hitOffsetLocal;
     private float  _currentGrabDistance;
     private RigidbodyInterpolation  _initialInterpolationSetting;
@@ -227,6 +228,7 @@ public class TelekinesisController : MonoBehaviour
         {
             if (_grabbedRigidbody != null) ReleaseObject();
             _justReleased = false;
+            usingTelequinesis = false;
             return;
         }
 
@@ -262,6 +264,7 @@ public class TelekinesisController : MonoBehaviour
                     _grabbedTransform = _grabbedRigidbody.transform;
                     _grabbedRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
                     OnObjectGrabbed.Invoke(_grabbedRigidbody.gameObject);
+                    usingTelequinesis = true;
                     Debug.DrawRay(hit.point, hit.normal * 10f, Color.red, 10f);
                 }
             }
@@ -350,6 +353,7 @@ public class TelekinesisController : MonoBehaviour
                 _grabbedRigidbody.collisionDetectionMode = !_wasKinematic ? CollisionDetectionMode.ContinuousSpeculative : CollisionDetectionMode.Continuous;
                 _grabbedRigidbody.isKinematic = _wasKinematic = !_wasKinematic;
                 _justReleased = true;
+                usingTelequinesis = false;
                 ReleaseObject();
             }
         }

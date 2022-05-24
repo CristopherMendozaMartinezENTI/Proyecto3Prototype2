@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 571361841}
-  m_IndirectSpecularColor: {r: 0.45489275, g: 0.56947803, b: 0.7743678, a: 1}
+  m_IndirectSpecularColor: {r: 0.45489225, g: 0.56947714, b: 0.7743658, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -204,6 +204,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &12436052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,6 +365,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &31275602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1022,6 +1024,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &116784885
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1568,6 +1571,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &192312482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1783,6 +1787,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &202208616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1885,6 +1890,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &225278252
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2511,6 +2517,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &437451807
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2951,6 +2958,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &520352597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3773,6 +3781,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &624491118
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4048,6 +4057,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &666969820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4345,6 +4355,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &693854702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4543,6 +4554,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &697354140
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4820,6 +4832,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &737317397
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4884,42 +4897,6 @@ Transform:
   m_Father: {fileID: 1358546023}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!84 &755768995
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 3
-  m_Width: 907
-  m_Height: 510
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 1
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &785689016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5076,6 +5053,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &806212335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5366,42 +5344,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17289450f1029f14e8cf52177de090b4, type: 3}
---- !u!84 &912484241
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 3
-  m_Width: 907
-  m_Height: 510
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 1
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &915189946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,6 +5382,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &915189948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5824,6 +5767,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &986557198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5955,6 +5899,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &991466325
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6086,6 +6031,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &996373686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6313,6 +6259,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1010055103
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6415,6 +6362,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1033117388
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6658,7 +6606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 912484241}
+      objectReference: {fileID: 2121981953}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6c487745307bc7479a500de21476d55, type: 3}
 --- !u!1001 &1058855340
@@ -6844,6 +6792,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1083658936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6990,6 +6939,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1085652928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7281,6 +7231,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1107262041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7508,6 +7459,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1118209093
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7780,6 +7732,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1143485332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7940,6 +7893,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1152159163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8458,6 +8412,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1216072472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8589,6 +8544,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1225276029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8837,6 +8793,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1292768821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8997,6 +8954,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1302366584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9140,6 +9098,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1342621476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9431,6 +9390,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1368302676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9562,6 +9522,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1391773954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9760,6 +9721,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1462643934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9891,6 +9853,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1473025346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10036,6 +9999,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1516137755
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10153,6 +10117,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1526303905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10936,6 +10901,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1683784625
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11193,6 +11159,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1782971103
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11837,6 +11804,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1823168535
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11939,6 +11907,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1876788366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12120,6 +12089,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1924273385
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12285,6 +12255,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &1944312278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12727,6 +12698,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &1971453145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13019,6 +12991,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!54 &2031872599
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13248,6 +13221,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &2076559235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13460,6 +13434,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &2118464176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13524,6 +13499,42 @@ Transform:
   m_Father: {fileID: 1358546023}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!84 &2121981953
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 3
+  m_Width: 1173
+  m_Height: 634
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 1
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &2138545347
 GameObject:
   m_ObjectHideFlags: 0
@@ -13591,6 +13602,7 @@ MonoBehaviour:
   RespawFxPrefab: {fileID: 375003235445527493, guid: d23a4a3ce42fe36459f43b98393f0675,
     type: 3}
   useLocalMomentum: 1
+  telekinesisRendersChildren: 0
 --- !u!23 &2138545351
 MeshRenderer:
   m_ObjectHideFlags: 0

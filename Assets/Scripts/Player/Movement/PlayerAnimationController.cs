@@ -5,17 +5,29 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private GameObject playerController;
+    private TelekinesisController tkc;
+    private bool telequinesis = false;
 
     private void Start()
     {
         playerController = GameObject.Find("Player");
+        tkc = GameObject.Find("TelekinesisGaunlet").GetComponent<TelekinesisController>();
     }
 
     private void Update()
     {
+        if (tkc.usingTelequinesis)
+            telequinesis = true;
+        else if (!tkc.usingTelequinesis)
+            telequinesis = false;
+
+
         if (Input.GetKey(KeyCode.W))
         {
-            gameObject.GetComponent<Animator>().Play("Run");
+            if (telequinesis)
+                gameObject.GetComponent<Animator>().Play("run telequinesis");
+            else
+                gameObject.GetComponent<Animator>().Play("Run");
         }
         else if (Input.GetKey(KeyCode.S))
         {

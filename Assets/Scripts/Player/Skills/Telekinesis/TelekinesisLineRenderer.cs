@@ -1,5 +1,4 @@
-﻿using cakeslice;
-using UnityEngine;
+﻿using UnityEngine;
 
 //Con este scrip pintamos la linea y el outline del objeto que el player coge con la Telekinesis
 [RequireComponent(typeof(TelekinesisLineRenderer))]

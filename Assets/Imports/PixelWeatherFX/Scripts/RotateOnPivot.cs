@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RotateObject : MonoBehaviour {
+public class RotateOnPivot : MonoBehaviour {
 
 	public bool rotate = true;
 	public float speed = 7.0f;

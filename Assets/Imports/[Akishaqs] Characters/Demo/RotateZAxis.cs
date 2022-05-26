@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour {
+public class RotateZAxis : MonoBehaviour {
 
-	public int speed = 5;
+	[SerializeField] private int speed = 5;
 
 	// Use this for initialization
 	void Update () 
 	{
-		transform.Rotate (0,0, speed * Time.deltaTime);
+		transform.Rotate(0,0, speed * Time.deltaTime);
 	}
 }

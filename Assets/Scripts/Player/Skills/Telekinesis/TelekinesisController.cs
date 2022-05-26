@@ -335,8 +335,6 @@ public class TelekinesisController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Q))
                 direction = 0.1f;
 
-            */
-
             if (Mathf.Abs(direction) > 0 && CheckObjectDistance(direction))
             {
                 _distanceChanged = true;
@@ -346,6 +344,7 @@ public class TelekinesisController : MonoBehaviour
             {
                 _scrollWheelInput = _zeroVector3;
             }
+            */
 
             //Freeze
             if(Input.GetKeyDown(Freeze))

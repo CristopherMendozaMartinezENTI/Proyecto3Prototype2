@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Connections { Door, Platform, ForceFild, DisableObject, Portal, None }
+public enum Connections { Door, MovingPlatform, AMFF, DisableObject, Portal, None }
 
 public class PressurePad : MonoBehaviour
 {
@@ -11,7 +11,6 @@ public class PressurePad : MonoBehaviour
     [SerializeField] public string KeyTag = "";
     [SerializeField] private Connections ConnectedTo = Connections.None;
     [SerializeField] private GameObject connectedGameObject;
-    [SerializeField] private bool invertedAMFF;
     public bool active { get; private set; } = false;
     private ParticleSystem ps;
     private ParticleSystem.MainModule main;
@@ -65,11 +64,11 @@ public class PressurePad : MonoBehaviour
                 case Connections.Door:
                     connectedGameObject.GetComponent<Animator>().Play("Door_open");
                     return;
-                case Connections.Platform:
+                case Connections.MovingPlatform:
                     connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
                     return;
-                case Connections.ForceFild:
-                    connectedGameObject.SetActive(invertedAMFF);
+                case Connections.AMFF:
+                    //--------------------
                     return;
                 case Connections.DisableObject:
                     connectedGameObject.SetActive(true);
@@ -96,11 +95,11 @@ public class PressurePad : MonoBehaviour
                 case Connections.Door:
                     connectedGameObject.GetComponent<Animator>().Play("Door_opened");
                     return;
-                case Connections.Platform:
+                case Connections.MovingPlatform:
                     connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
                     return;
-                case Connections.ForceFild:
-                    connectedGameObject.SetActive(!invertedAMFF);
+                case Connections.AMFF:
+                    //--------------------
                     return;
                 case Connections.DisableObject:
                     connectedGameObject.SetActive(false);

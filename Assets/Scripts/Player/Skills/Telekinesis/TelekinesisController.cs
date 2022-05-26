@@ -47,8 +47,8 @@ public class TelekinesisController : MonoBehaviour
 
     [Header("Scroll Wheel Object Movement"), Space(5)]
     private Vector3  _scrollWheelInput = Vector3.zero;
-    [SerializeField]
-    private float _scrollWheelSensitivity = 5f;
+    //[SerializeField]
+    //private float _scrollWheelSensitivity = 5f;
     [SerializeField, Tooltip("The min distance the object can be from the player")]
     private float _minObjectDistance = 2.5f;
     [SerializeField, Tooltip("The maximum distance at which a new object can be picked up")]

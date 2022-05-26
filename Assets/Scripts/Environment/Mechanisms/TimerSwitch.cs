@@ -70,11 +70,11 @@ public class TimerSwitch : MonoBehaviour
             case Connections.Door:
                 connectedGameObject.GetComponent<Animator>().Play("Door_open");
                 return;
-            case Connections.Platform:
+            case Connections.MovingPlatform:
                 connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = true;
                 return;
-            case Connections.ForceFild:
-                connectedGameObject.SetActive(false);
+            case Connections.AMFF:
+                //--------------------
                 return;
             case Connections.DisableObject:
                 connectedGameObject.SetActive(true);
@@ -97,11 +97,11 @@ public class TimerSwitch : MonoBehaviour
             case Connections.Door:
                 connectedGameObject.GetComponent<Animator>().Play("Door_opened");
                 return;
-            case Connections.Platform:
+            case Connections.MovingPlatform:
                 connectedGameObject.GetComponent<MovingPlatform>().movementEnabled = false;
                 return;
-            case Connections.ForceFild:
-                connectedGameObject.SetActive(true);
+            case Connections.AMFF:
+                //--------------------
                 return;
             case Connections.DisableObject:
                 connectedGameObject.SetActive(false);

@@ -13,7 +13,6 @@ public class SelfRotate : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 dir;
-        float x, y, z;
 
         dir = _camera.GetAimingDirection();
         Debug.Log(dir);

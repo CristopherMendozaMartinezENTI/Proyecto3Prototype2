@@ -1837,6 +1837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3200768312901682828}
+  floorTag: 
   useAnimationBasedFootsteps: 0
   landVelocityThreshold: 5
   footstepDistance: 3
@@ -1844,7 +1845,13 @@ MonoBehaviour:
   relativeRandomizedVolumeRange: 0.3
   footStepClips:
   - {fileID: 8300000, guid: 7341ba07f02fa6941b16a463ddd73f99, type: 3}
-  - {fileID: 8300000, guid: 3efdd4c11a4bdc54a9087ab115c1de9e, type: 3}
+  - {fileID: 8300000, guid: e3f49445f5561454ebd1204104503cd3, type: 3}
+  footMetalStepClips:
+  - {fileID: 8300000, guid: 02a09a5a92e506c489928393c3ce2761, type: 3}
+  - {fileID: 8300000, guid: f3f81d4c59f9ddf4ebe24bfea36670b7, type: 3}
+  footRugStepClips:
+  - {fileID: 8300000, guid: d123d51cb7d1be440b7bb129201b381f, type: 3}
+  - {fileID: 8300000, guid: 5e1a85ad9a9e8704d82ed94745360640, type: 3}
   jumpClip: {fileID: 8300000, guid: 99ab8a4503de1f448ad764a5c4cdf9cc, type: 3}
   landClip: {fileID: 8300000, guid: c212aa2d646dfe248b7c96b4f0e4cb27, type: 3}
 --- !u!82 &3200768312901682828

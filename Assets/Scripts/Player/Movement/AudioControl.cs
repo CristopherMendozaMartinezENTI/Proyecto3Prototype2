@@ -12,6 +12,8 @@ public class AudioControl : MonoBehaviour
 	private Controller mover;
 	private Transform tr;
 
+	public string floorTag;
+
 	//Esto es para cuando el player tenga animaciones
 	[SerializeField] private bool useAnimationBasedFootsteps = true;
 
@@ -26,6 +28,8 @@ public class AudioControl : MonoBehaviour
 	[SerializeField] private float relativeRandomizedVolumeRange = 0.2f;
 
 	[SerializeField] private AudioClip[] footStepClips;
+	[SerializeField] private AudioClip[] footMetalStepClips;
+	[SerializeField] private AudioClip[] footRugStepClips;
 	[SerializeField] private AudioClip jumpClip;
 	[SerializeField] private AudioClip landClip;
 
@@ -47,6 +51,14 @@ public class AudioControl : MonoBehaviour
 		Vector3 _velocity = controller.GetVelocity();
 		Vector3 _horizontalVelocity = MathVector.RemoveDotVector(_velocity, tr.up);
 		FootStepUpdate(_horizontalVelocity.magnitude);
+
+
+		RaycastHit hit;
+		if (Physics.Raycast((transform.position), transform.up * -1, out hit))
+		{
+			//This is the colliders tag
+			floorTag = hit.collider.tag;
+		}
 	}
 
 	private void FootStepUpdate(float _movementSpeed)
@@ -78,7 +90,20 @@ public class AudioControl : MonoBehaviour
 	private void PlayFootstepSound(float _movementSpeed)
 	{
 		int _footStepClipIndex = Random.Range(0, footStepClips.Length);
-		audioSource.PlayOneShot(footStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
+		switch (floorTag)
+		{
+
+			case "RugGround":
+				audioSource.PlayOneShot(footRugStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
+				break;
+			case "MetalGround":
+				audioSource.PlayOneShot(footMetalStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
+				break;
+			case "Untagged":
+				audioSource.PlayOneShot(footStepClips[_footStepClipIndex], audioClipVolume + audioClipVolume * Random.Range(-relativeRandomizedVolumeRange, relativeRandomizedVolumeRange));
+				break;
+
+		}
 	}
 
 	private void OnLand(Vector3 _v)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 //Script que controla todo relacionado con la Telekinesis
 public class TelekinesisController : MonoBehaviour
@@ -61,6 +62,8 @@ public class TelekinesisController : MonoBehaviour
     [Header("Audio Settings")]
     [SerializeField] private AudioClip onGrabbed;
     [SerializeField] private AudioClip onReleased;
+
+    private GameObject CrosshairOnRange;
 
     private bool _justReleased;
     private bool _wasKinematic;
@@ -145,6 +148,8 @@ public class TelekinesisController : MonoBehaviour
             playerTransform = this.transform;
             Debug.Log($"El {nameof(playerTransform)} es, asi que se ha tomado como referencia en transform del objetivo que contiene el script", this);
         }
+
+        CrosshairOnRange = GameObject.Find("CrosshairOnRange");
     }
 
     private void FixedUpdate()
@@ -224,6 +229,14 @@ public class TelekinesisController : MonoBehaviour
 
     private void Update ()
     {
+        Ray hudRay = CenterRay();
+        RaycastHit hudHit;
+
+        Debug.DrawRay(hudRay.origin, hudRay.direction * _maxGrabDistance, Color.blue, 0.01f);
+
+        if (Physics.Raycast(hudRay, out hudHit, _maxGrabDistance, _grabLayer)) CrosshairOnRange.GetComponent<Image>().enabled = true;
+        else CrosshairOnRange.GetComponent<Image>().enabled = false;
+
         if (!Input.GetMouseButton(0))
         {
             if (_grabbedRigidbody != null) ReleaseObject();

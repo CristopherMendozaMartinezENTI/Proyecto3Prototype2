@@ -43,7 +43,8 @@ public class SoundTrigger : MonoBehaviour
         UI_Subtitles.GetComponent<Text>().text = text;
 
         yield return new WaitForSeconds(sec - 0.3f);
-
+        
+        UI_Subtitles.SetActive(false);
         Destroy(gameObject);
     }
 

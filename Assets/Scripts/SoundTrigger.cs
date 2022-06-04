@@ -53,44 +53,6 @@ public class SoundTrigger : MonoBehaviour
 
     private IEnumerator setSubtitles(string text)
     {
-
-        /*if (listComp.Count > 1)
-        {
-            for (int i = 0; i < listComp.Count; i++)
-            {
-                yield return new WaitForSeconds(0.7f);
-
-                UI_Subtitles.SetActive(true);
-
-                for (int j = 0; j < AudioTrigger.listGO.Count; j++)
-                {
-                    if (AudioTrigger.listGO[j].name == gameObject.name)
-                    {
-                        UI_Subtitles.GetComponent<Text>().text = AudioTrigger.triggersList[j].Conversation[i].Dialog;
-                    }
-                }
-
-                yield return new WaitForSeconds(sec - 0.3f);
-            }
-
-            UI_Subtitles.SetActive(false);
-            Destroy(gameObject);
-        }
-        else 
-        {
-            
-            yield return new WaitForSeconds(0.7f);
-
-            UI_Subtitles.SetActive(true);
-            UI_Subtitles.GetComponent<Text>().text = text;
-
-            yield return new WaitForSeconds(sec - 0.3f);
-
-            UI_Subtitles.SetActive(false);
-            Destroy(gameObject);
-
-        }*/
-
         float sec = 0;
 
         for (int i = 0; i < listComp.Count; i++)
@@ -101,6 +63,7 @@ public class SoundTrigger : MonoBehaviour
 
                 for (int j = 0; j < AudioTrigger.listGO.Count; j++)
                 {
+                    Debug.Log(AudioTrigger.listGO[j].name + " - VS - " + gameObject.name);
                     if (AudioTrigger.listGO[j].name == gameObject.name)
                     {
                         UI_Subtitles.GetComponent<Text>().text = AudioTrigger.triggersList[j].Conversation[i].Dialog;
@@ -109,13 +72,12 @@ public class SoundTrigger : MonoBehaviour
 
                         yield return new WaitForSeconds(sec - 1.0f);
                     }
-                }
-
-                
+                }                
             }
 
             UI_Subtitles.SetActive(false);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
     }
 
 }

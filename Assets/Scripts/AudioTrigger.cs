@@ -8,7 +8,14 @@ public class AudioTrigger : MonoBehaviour
     public class AudioTriggers
     {
         public GameObject Trigger;
+        public AudioDialogo[] Conversation;
+    }
+
+    [System.Serializable]
+    public class AudioDialogo 
+    {
         public string Dialog;
+        public AudioClip Audio;
     }
 
     [SerializeField]
@@ -32,9 +39,14 @@ public class AudioTrigger : MonoBehaviour
         });
 
 
+        //Relaciono el texto de la lista de los triggers en la escena con el texto de la lista creada en el editor:
         for (int i = 0; i < triggersList.Count; i++)
         {
-            listGO[i].GetComponent<SoundTrigger>().DialogText = triggersList[i].Dialog;
+            listGO[i].GetComponent<SoundTrigger>().DialogText = triggersList[i].Conversation[0].Dialog;
+            if (triggersList[i].Conversation.Length <= 1) 
+            { 
+                //Función de más de una conversación...
+            }
         }
     }
 

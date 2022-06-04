@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TransformByInput : MonoBehaviour
 {
+    [SerializeField] private int activeLevel;
     [Header("Desired Transform")]
     [Tooltip("World Position")]
     [SerializeField] private Vector3 position;
@@ -34,14 +35,23 @@ public class TransformByInput : MonoBehaviour
         worldInitialRotation = connectedGameObject.transform.eulerAngles;
         worldInitialScale = connectedGameObject.transform.localScale;
 
+
         worldDesiredPosition = position;
+        if (transform.parent)
+            worldDesiredPosition += transform.parent.position;
         worldDesiredRotation = rotation;
         worldDesiredScale = scale;
     }
 
     private void Update()
     {
-        bool transform = (GetComponent<ActiveStateManager>().active);;
+        bool transform = false;
+
+        if (GetComponent<ActiveStateManager>())
+            transform = GetComponent<ActiveStateManager>().active;
+        if (GetComponent<ActiveHirearchyManager>())
+            if (GetComponent<ActiveHirearchyManager>().currentLevel >= activeLevel)
+            transform = true;
 
 
         //Transform game object accordingly

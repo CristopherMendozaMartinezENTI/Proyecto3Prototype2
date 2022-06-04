@@ -63,7 +63,7 @@ public class SoundTrigger : MonoBehaviour
 
                 for (int j = 0; j < AudioTrigger.listGO.Count; j++)
                 {
-                    Debug.Log(AudioTrigger.listGO[j].name + " - VS - " + gameObject.name);
+                    //Debug.Log(AudioTrigger.listGO[j].name + " - VS - " + gameObject.name);
                     if (AudioTrigger.listGO[j].name == gameObject.name)
                     {
                         UI_Subtitles.GetComponent<Text>().text = AudioTrigger.triggersList[j].Conversation[i].Dialog;

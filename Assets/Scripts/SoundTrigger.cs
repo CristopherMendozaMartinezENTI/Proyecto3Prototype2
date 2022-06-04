@@ -8,6 +8,21 @@ public class SoundTrigger : MonoBehaviour
     GameObject UI_Subtitles;
     public string DialogText = "DefaultText";
 
+    private List<Component> listComp = new List<Component>();
+    private Component[] components;
+
+    private void Start()
+    {
+        //Miro si tiene varios audios y los pongo en una lista
+        components = gameObject.GetComponents(typeof(Component));
+
+        for (int i = 0; i < components.Length; i++)
+        {
+            if (components[i].GetType().ToString() == "UnityEngine.AudioSource")
+                listComp.Add(components[i]);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -15,7 +30,8 @@ public class SoundTrigger : MonoBehaviour
             gameObject.GetComponent<AudioSource>().enabled = true;
 
             UI_Subtitles = GameObject.Find("HUD").gameObject.transform.Find("Subtitles").gameObject;
-            StartCoroutine(setSubtitles(gameObject.GetComponent<AudioSource>().clip.length, DialogText));
+
+            StartCoroutine(setSubtitles(DialogText));
         }
     }
 
@@ -35,18 +51,71 @@ public class SoundTrigger : MonoBehaviour
             gameObject.GetComponent<AudioSource>().Play();
     }
 
-    private IEnumerator setSubtitles(float sec, string text)
+    private IEnumerator setSubtitles(string text)
     {
-        yield return new WaitForSeconds(0.7f);
-        
-        UI_Subtitles.SetActive(true);
-        UI_Subtitles.GetComponent<Text>().text = text;
 
-        yield return new WaitForSeconds(sec - 0.3f);
-        
-        UI_Subtitles.SetActive(false);
-        Destroy(gameObject);
+        /*if (listComp.Count > 1)
+        {
+            for (int i = 0; i < listComp.Count; i++)
+            {
+                yield return new WaitForSeconds(0.7f);
+
+                UI_Subtitles.SetActive(true);
+
+                for (int j = 0; j < AudioTrigger.listGO.Count; j++)
+                {
+                    if (AudioTrigger.listGO[j].name == gameObject.name)
+                    {
+                        UI_Subtitles.GetComponent<Text>().text = AudioTrigger.triggersList[j].Conversation[i].Dialog;
+                    }
+                }
+
+                yield return new WaitForSeconds(sec - 0.3f);
+            }
+
+            UI_Subtitles.SetActive(false);
+            Destroy(gameObject);
+        }
+        else 
+        {
+            
+            yield return new WaitForSeconds(0.7f);
+
+            UI_Subtitles.SetActive(true);
+            UI_Subtitles.GetComponent<Text>().text = text;
+
+            yield return new WaitForSeconds(sec - 0.3f);
+
+            UI_Subtitles.SetActive(false);
+            Destroy(gameObject);
+
+        }*/
+
+        float sec = 0;
+
+        for (int i = 0; i < listComp.Count; i++)
+            {
+                yield return new WaitForSeconds(0.7f);
+
+                UI_Subtitles.SetActive(true);
+
+                for (int j = 0; j < AudioTrigger.listGO.Count; j++)
+                {
+                    if (AudioTrigger.listGO[j].name == gameObject.name)
+                    {
+                        UI_Subtitles.GetComponent<Text>().text = AudioTrigger.triggersList[j].Conversation[i].Dialog;
+                        gameObject.GetComponent<AudioSource>().clip = AudioTrigger.triggersList[j].Conversation[i].Audio;
+                        sec = gameObject.GetComponent<AudioSource>().clip.length;
+
+                        yield return new WaitForSeconds(sec - 1.0f);
+                    }
+                }
+
+                
+            }
+
+            UI_Subtitles.SetActive(false);
+            Destroy(gameObject);
     }
-
 
 }

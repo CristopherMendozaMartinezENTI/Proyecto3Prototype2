@@ -19,12 +19,16 @@ public class AudioTrigger : MonoBehaviour
     }
 
     [SerializeField]
-    public List<AudioTriggers> triggersList = new List<AudioTriggers>();
+    private List<AudioTriggers> tL = new List<AudioTriggers>();
 
-    private List<GameObject> listGO = new List<GameObject>(); 
+    public static List<AudioTriggers> triggersList = new List<AudioTriggers>();
+
+    public static List<GameObject> listGO = new List<GameObject>(); 
 
     private void Start()
     {
+        triggersList = tL;
+
         foreach (GameObject gameObj in GameObject.FindObjectsOfType<GameObject>())
         {
             if (gameObj.name.Contains("audio"))

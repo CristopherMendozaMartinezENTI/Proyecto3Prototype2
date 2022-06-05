@@ -5,6 +5,7 @@ using UnityEngine;
 public class TransformByInput : MonoBehaviour
 {
     [SerializeField] private int activeLevel;
+    [SerializeField] private bool usingLocalCoords;
     [Header("Desired Transform")]
     [Tooltip("World Position")]
     [SerializeField] private Vector3 position;
@@ -37,7 +38,7 @@ public class TransformByInput : MonoBehaviour
 
 
         worldDesiredPosition = position;
-        if (transform.parent)
+        if (usingLocalCoords && transform.parent)
             worldDesiredPosition += transform.parent.position;
         worldDesiredRotation = rotation;
         worldDesiredScale = scale;

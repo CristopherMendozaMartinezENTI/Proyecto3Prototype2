@@ -16,6 +16,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject exitCanvas;
     [SerializeField] List<GameObject> uiElements;
 
+    private int level;
+    [SerializeField] List<string> sceneNames;
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape) && playCamera.activeInHierarchy == false)
@@ -32,6 +35,25 @@ public class MenuManager : MonoBehaviour
 
     public void startGame()
     {
+        DataManager.instance.NewGame();
+        StartCoroutine(enablePlayCamera());
+    }
+
+    public void loadGame()
+    {
+        DataManager.instance.LoadGame();
+        switch(level)
+        {
+            case 1:
+                sceneName = sceneName;
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
         StartCoroutine(enablePlayCamera());
     }
 

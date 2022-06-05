@@ -12,6 +12,7 @@ public class CheckPointSystem : MonoBehaviour
 
     private Scene currentScene, lastScene;
     private string sceneName;
+    private int currentLevel;
 
     private Vector3 startingPosition = new Vector3(-111.8813f, -3.5f, -0.9537506f);
     private Vector3 startingPosition1 = new Vector3(12.00013f, 0.02685702f, 8.397099f);
@@ -48,15 +49,19 @@ public class CheckPointSystem : MonoBehaviour
         {
             case "SC-1":
                 lastCheckPoint = startingPosition1;
+                currentLevel = 1;
                 break;
             case "SC-2":
                 lastCheckPoint = startingPosition2;
+                currentLevel = 2;
                 break;
             case "SC-3":
                 lastCheckPoint = startingPosition3;
+                currentLevel = 3;
                 break;
-            case "":
+            default:
                 lastCheckPoint = startingPosition;
+                currentLevel = 0;
                 break;
         }
     }

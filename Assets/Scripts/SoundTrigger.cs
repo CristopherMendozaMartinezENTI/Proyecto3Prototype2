@@ -57,7 +57,7 @@ public class SoundTrigger : MonoBehaviour
 
         for (int i = 0; i < listComp.Count; i++)
             {
-                yield return new WaitForSeconds(0.7f);
+                yield return new WaitForSeconds(0.5f);
 
                 UI_Subtitles.SetActive(true);
 
@@ -70,7 +70,8 @@ public class SoundTrigger : MonoBehaviour
                         gameObject.GetComponent<AudioSource>().clip = AudioTrigger.triggersList[j].Conversation[i].Audio;
                         sec = gameObject.GetComponent<AudioSource>().clip.length;
 
-                        yield return new WaitForSeconds(sec - 1.0f);
+                        yield return new WaitForSeconds(sec - 0.4f);
+                        break;
                     }
                 }                
             }

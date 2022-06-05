@@ -5,7 +5,7 @@ using UnityEngine;
 public class TransformByInput : MonoBehaviour
 {
     [SerializeField] private int activeLevel;
-    [SerializeField] private bool usingLocalCoords;
+    [SerializeField] private bool usingLocalCoords = true;
     [Header("Desired Transform")]
     [Tooltip("World Position")]
     [SerializeField] private Vector3 position;

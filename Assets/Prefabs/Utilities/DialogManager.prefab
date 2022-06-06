@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7457276905445982908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7457276905445982898}
+  - component: {fileID: 7457276905445982899}
+  m_Layer: 0
+  m_Name: SC-1_DialogManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7457276905445982898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457276905445982908}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 58.99998, y: 5, z: -39.25537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7457276905445982899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457276905445982908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c80f284e7f1509489c641628ad45b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggersList:
+  - Trigger: {fileID: 0}
+    Conversation:
+    - Dialog: MECHANICAL PROBLEM DETECTED IN HALLWAY V ON THE ROAD TO CAFETERIA -
+        IMMEDIATE REPAIR REQUIRED
+      Audio: {fileID: 8300000, guid: be24dd8d6811bcf4e9aa49454ce99878, type: 3}
+    - Dialog: Good morning Olive, you are finally awake.
+      Audio: {fileID: 8300000, guid: 7df1934a59319f54482576d292d87147, type: 3}
+    - Dialog: Sorry for the booming alarm.
+      Audio: {fileID: 8300000, guid: 84515c270da929d41a258c6ce56ec387, type: 3}
+    - Dialog: "Don\u2019t worry Kissa, it was time to work anyway."
+      Audio: {fileID: 8300000, guid: 99a68827076b25644b05fd3b9008d2a8, type: 3}
+    - Dialog: Take the access card that is in my room and go ahead, I will be guiding
+        you through the transmitter in case you need some kind of help.
+      Audio: {fileID: 8300000, guid: 36434fed1ae09df45b1476cc207c67a1, type: 3}
+    - Dialog: Ok, you know machines are my specialty.
+      Audio: {fileID: 8300000, guid: 7c21afc3e6293af45a776ce3bb351a2d, type: 3}

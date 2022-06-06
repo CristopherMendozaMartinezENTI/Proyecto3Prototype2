@@ -18,6 +18,11 @@ public class TriggerHudMechanics : MonoBehaviour
     {
         if (other.tag == "Player")
             mechanicsPanel.GetComponent<HudMechanicsManager>().SetActives(roomName, stairs, portals, cube, pad, _switch, amff, moving);
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+            gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 }

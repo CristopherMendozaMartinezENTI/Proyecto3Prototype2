@@ -42,6 +42,7 @@ public class PauseMenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             PauseMenuCanvas.SetActive(false);
+            saveMessage.SetActive(false);
             SettingsCanvas.SetActive(false);
         }
     }
@@ -64,6 +65,7 @@ public class PauseMenuManager : MonoBehaviour
         {
             uiElement.SetActive(false);
         }
+        saveMessage.SetActive(false);
         SettingsCanvas.SetActive(true);
     }
 

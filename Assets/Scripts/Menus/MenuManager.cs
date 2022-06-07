@@ -23,9 +23,9 @@ public class MenuManager : MonoBehaviour
     {
         cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
         sceneNames.Add("Test");
-        sceneNames.Add("SC-1 PZL-1-2-3");
+        sceneNames.Add("SC-1 TMP");
         sceneNames.Add("SC-2");
-        sceneNames.Add("SC-3");
+        //sceneNames.Add("SC-3");
         sceneNames.Add("SC - Final");
     }
     private void Update()
@@ -46,8 +46,6 @@ public class MenuManager : MonoBehaviour
     public void startGame()
     {
         DataPersistenceManager.instance.NewGame();
-        //Esto en principio tendria no haria falta que estuviese aqui pero por algun motivo el jugador no actiualiza a tiempo y se cae al vacio.
-        cps.lastCheckPoint = cps.startingPositions[1];
         StartCoroutine(enablePlayCamera());
     }
 
@@ -55,7 +53,6 @@ public class MenuManager : MonoBehaviour
     {
         DataPersistenceManager.instance.LoadGame();
         sceneName = sceneNames[cps.currentLevel];
-        
         cps.loadOrReset = true;
         StartCoroutine(enablePlayCamera());
     }

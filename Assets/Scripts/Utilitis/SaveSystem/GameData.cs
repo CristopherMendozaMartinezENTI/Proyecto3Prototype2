@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-
 public class GameData
 {
-    public int level;
+    public int currentLevel;
+    public Vector3 lastCheckpoint;
+    public Quaternion lastRotation;
 
-    //Los valores que se definen en el constructor se utilizan cuando se crea un juego nuevo.
+    //Valores defoult
     public GameData()
     {
-        this.level = 1;
+        this.currentLevel = 0;
+        lastCheckpoint = Vector3.zero;
+        lastRotation = Quaternion.identity;
     }
 }

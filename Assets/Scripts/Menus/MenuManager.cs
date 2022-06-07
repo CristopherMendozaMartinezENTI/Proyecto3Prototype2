@@ -16,9 +16,18 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject exitCanvas;
     [SerializeField] List<GameObject> uiElements;
 
-    private int level;
-    [SerializeField] List<string> sceneNames;
+    private CheckPointSystem cps;
+    [SerializeField] private List<string> sceneNames;
 
+    private void Start()
+    {
+        cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
+        sceneNames.Add("Test");
+        sceneNames.Add("SC-1 PZL-1-2-3");
+        sceneNames.Add("SC-2");
+        sceneNames.Add("SC-3");
+        sceneNames.Add("SC - Final");
+    }
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape) && playCamera.activeInHierarchy == false)
@@ -28,6 +37,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+
     private void LoadScene()
     {
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, sceneName));
@@ -35,25 +45,18 @@ public class MenuManager : MonoBehaviour
 
     public void startGame()
     {
-        DataManager.instance.NewGame();
+        DataPersistenceManager.instance.NewGame();
+        //Esto en principio tendria no haria falta que estuviese aqui pero por algun motivo el jugador no actiualiza a tiempo y se cae al vacio.
+        cps.lastCheckPoint = cps.startingPositions[1];
         StartCoroutine(enablePlayCamera());
     }
 
     public void loadGame()
     {
-        DataManager.instance.LoadGame();
-        switch(level)
-        {
-            case 1:
-                sceneName = sceneName;
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                break;
-        }
+        DataPersistenceManager.instance.LoadGame();
+        sceneName = sceneNames[cps.currentLevel];
+        
+        cps.loadOrReset = true;
         StartCoroutine(enablePlayCamera());
     }
 

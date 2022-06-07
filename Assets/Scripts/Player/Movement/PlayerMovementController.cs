@@ -37,6 +37,8 @@ public class PlayerMovementController : Controller
 	[SerializeField] private float slopeLimit = 80f;
 	[SerializeField] private bool useLocalMomentum = false;
 
+
+
 	public enum ControllerState
 	{
 		Grounded,
@@ -58,13 +60,14 @@ public class PlayerMovementController : Controller
 			Debug.LogWarning("Al siguiente objeto le falta el script PlayerInput" + this.gameObject + "MADRE MIA KRIS!");
 		Setup();
 	}
-    private void Start()
+
+	private void Start()
     {
-		/*
+		
 		cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
 		this.transform.position = cps.lastCheckPoint;
 		this.transform.rotation = cps.lastRotation;
-		*/
+		
     }
 
     protected virtual void Setup(){}

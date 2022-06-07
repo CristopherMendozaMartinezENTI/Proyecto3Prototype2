@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenuCanvas;
     [SerializeField] private GameObject SettingsCanvas;
+    [SerializeField] private GameObject saveMessage; 
     [SerializeField] List<GameObject> uiElements;
     private static bool gameIsPaused;
+    CheckPointSystem cps;
+
+    private void Start()
+    {
+        cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
+    }
 
     void Update()
     {
@@ -41,10 +49,12 @@ public class PauseMenuManager : MonoBehaviour
     public void ResetScene()
     {
         gameIsPaused = false;
+        cps.loadOrReset = true;
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PauseMenuCanvas.SetActive(false);
+        saveMessage.SetActive(false);
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, SceneManager.GetActiveScene().name));
     }
 
@@ -72,4 +82,11 @@ public class PauseMenuManager : MonoBehaviour
         PauseMenuCanvas.SetActive(false);
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "MainMenu"));
     }
+
+    public void SaveGameClicked()
+    {
+        DataPersistenceManager.instance.SaveGame();
+        saveMessage.SetActive(true);
+    }
+
 }

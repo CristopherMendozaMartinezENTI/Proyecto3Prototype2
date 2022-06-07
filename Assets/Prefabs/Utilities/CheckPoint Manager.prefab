@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5271764105675738163}
   - component: {fileID: 5271764105675738172}
   m_Layer: 0
-  m_Name: CheckPointSystem
+  m_Name: CheckPoint Manager
   m_TagString: CPS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6a6c3ae0fd27d49a46d21b602b8a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckPoint: {x: -111.795, y: -2.31, z: -3.382}
+  lastCheckPoint: {x: -33.5, y: 0.375, z: 12.25005}
   lastRotation: {x: 0, y: 0, z: 0, w: 0}
-  startingPosition1: {x: 12.00013, y: 0.02685702, z: 8.397099}
-  startingPosition2: {x: 0, y: 0, z: 0}
-  startingPosition3: {x: 0, y: 0, z: 0}
+  loadOrReset: 0
+  currentLevel: 0
+  startingPositions: []
+  startingRotations: []

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class OptionMenuManager : MonoBehaviour
 {
-    [SerializeField ]private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Dropdown resolutionDropdown;
     [SerializeField] private Dropdown qualityDropdown;
     [SerializeField] private Slider volumeSlider;

@@ -49,10 +49,8 @@ public class MenuManager : MonoBehaviour
 
     public void loadGame()
     {
-        if (DataPersistenceManager.instance.newGame == false)
-            cps.loadOrReset = true;
-     
         DataPersistenceManager.instance.LoadGame();
+        cps.loadOrReset = true;
         sceneName = sceneNames[cps.currentLevel];
         StartCoroutine(enablePlayCamera());
     }

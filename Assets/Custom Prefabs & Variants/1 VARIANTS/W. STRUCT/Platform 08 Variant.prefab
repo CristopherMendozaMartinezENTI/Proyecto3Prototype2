@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &-928519771741262478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060665655875792985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.081137, y: 0.2000003, z: 4.1185107}
+  m_Center: {x: -1.0405686, y: -0.05000008, z: 0.9502678}
 --- !u!1001 &3268395554862088959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +20,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8229390078104740445, guid: 7b9b25e7322c6c94489b6a8ff0be0695,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8737092392384999046, guid: 7b9b25e7322c6c94489b6a8ff0be0695,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +83,13 @@ PrefabInstance:
     - target: {fileID: 8737092392385491622, guid: 7b9b25e7322c6c94489b6a8ff0be0695,
         type: 3}
       propertyPath: m_Name
-      value: Platform 08
+      value: Platform 08 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b9b25e7322c6c94489b6a8ff0be0695, type: 3}
+--- !u!1 &6060665655875792985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8737092392385491622, guid: 7b9b25e7322c6c94489b6a8ff0be0695,
+    type: 3}
+  m_PrefabInstance: {fileID: 3268395554862088959}
+  m_PrefabAsset: {fileID: 0}

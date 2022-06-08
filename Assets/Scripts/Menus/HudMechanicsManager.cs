@@ -21,6 +21,7 @@ public class HudMechanicsManager : MonoBehaviour
     [SerializeField] private GameObject _switch;
     [SerializeField] private GameObject amff;
     [SerializeField] private GameObject moving;
+    [SerializeField] private GameObject chess;
 
     private float fadeSpeed = 2f;
     private List<RawImage> imagesToFade;
@@ -43,9 +44,10 @@ public class HudMechanicsManager : MonoBehaviour
         imagesToFade.Add(_switch.GetComponent<RawImage>());
         imagesToFade.Add(amff.GetComponent<RawImage>());
         imagesToFade.Add(moving.GetComponent<RawImage>());
+        imagesToFade.Add(chess.GetComponent<RawImage>());
     }
 
-    public void SetActives(string _roomName, bool _stairs, bool _portals, bool _cube, bool _pad, bool __switch, bool _amff, bool _moving)
+    public void SetActives(string _roomName, bool _stairs, bool _portals, bool _cube, bool _pad, bool __switch, bool _amff, bool _moving, bool _chess)
     {
         roomName.text = _roomName;
         stairs.SetActive(_stairs);
@@ -55,6 +57,7 @@ public class HudMechanicsManager : MonoBehaviour
         _switch.SetActive(__switch);
         amff.SetActive(_amff);
         moving.SetActive(_moving);
+        chess.SetActive(_chess);
 
         StartCoroutine(StartAnimation());
     }

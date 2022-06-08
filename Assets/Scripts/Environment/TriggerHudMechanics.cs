@@ -13,11 +13,12 @@ public class TriggerHudMechanics : MonoBehaviour
     [SerializeField] private bool _switch;
     [SerializeField] private bool amff;
     [SerializeField] private bool moving;
+    [SerializeField] private bool chess;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-            mechanicsPanel.GetComponent<HudMechanicsManager>().SetActives(roomName, stairs, portals, cube, pad, _switch, amff, moving);
+            mechanicsPanel.GetComponent<HudMechanicsManager>().SetActives(roomName, stairs, portals, cube, pad, _switch, amff, moving, chess);
     }
 
     private void OnTriggerExit(Collider other)

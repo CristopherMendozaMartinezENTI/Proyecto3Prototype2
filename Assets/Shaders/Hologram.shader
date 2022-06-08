@@ -131,6 +131,4 @@
 			ENDCG
 		}
 	}
-
-	CustomEditor "HologramShaderGUI"
 }

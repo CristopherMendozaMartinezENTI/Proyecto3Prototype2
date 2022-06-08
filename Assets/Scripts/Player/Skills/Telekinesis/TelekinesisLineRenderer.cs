@@ -1,5 +1,4 @@
-﻿using cakeslice;
-using UnityEngine;
+﻿using UnityEngine;
 
 //Con este scrip pintamos la linea y el outline del objeto que el player coge con la Telekinesis
 [RequireComponent(typeof(TelekinesisLineRenderer))]
@@ -25,9 +24,6 @@ public class TelekinesisLineRenderer : MonoBehaviour
     private OutlineEffect _outlineEffect;
 
     private TelekinesisController _playerrTelekinesis;
-
-    [SerializeField]
-    private bool renderChildren;
 
     private void Start()
     {
@@ -105,7 +101,7 @@ public class TelekinesisLineRenderer : MonoBehaviour
         _objectToHightlight = objectToHighlight;
 
         Renderer[] renderers = _objectToHightlight.GetComponents<Renderer>();
-        if(renderChildren)
+        if(_objectToHightlight.GetComponent<PropPhysicsController>().telekinesisRendersChildren)
             renderers = _objectToHightlight.GetComponentsInChildren<Renderer>();
 
         for (int i = 0; i < renderers.Length; i++)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 //Script que controla todo relacionado con la Telekinesis
 public class TelekinesisController : MonoBehaviour
@@ -20,6 +21,7 @@ public class TelekinesisController : MonoBehaviour
     private Rigidbody _grabbedRigidbody;
     private Transform _grabbedTransform;
     private bool hasFreezedRotation;
+    public bool usingTelequinesis;
     private Vector3 _hitOffsetLocal;
     private float  _currentGrabDistance;
     private RigidbodyInterpolation  _initialInterpolationSetting;
@@ -46,8 +48,8 @@ public class TelekinesisController : MonoBehaviour
 
     [Header("Scroll Wheel Object Movement"), Space(5)]
     private Vector3  _scrollWheelInput = Vector3.zero;
-    [SerializeField]
-    private float _scrollWheelSensitivity = 5f;
+    //[SerializeField]
+    //private float _scrollWheelSensitivity = 5f;
     [SerializeField, Tooltip("The min distance the object can be from the player")]
     private float _minObjectDistance = 2.5f;
     [SerializeField, Tooltip("The maximum distance at which a new object can be picked up")]
@@ -60,6 +62,8 @@ public class TelekinesisController : MonoBehaviour
     [Header("Audio Settings")]
     [SerializeField] private AudioClip onGrabbed;
     [SerializeField] private AudioClip onReleased;
+
+    private GameObject CrosshairOnRange;
 
     private bool _justReleased;
     private bool _wasKinematic;
@@ -144,6 +148,8 @@ public class TelekinesisController : MonoBehaviour
             playerTransform = this.transform;
             Debug.Log($"El {nameof(playerTransform)} es, asi que se ha tomado como referencia en transform del objetivo que contiene el script", this);
         }
+
+        CrosshairOnRange = GameObject.Find("CrosshairOnRange");
     }
 
     private void FixedUpdate()
@@ -223,10 +229,19 @@ public class TelekinesisController : MonoBehaviour
 
     private void Update ()
     {
+        Ray hudRay = CenterRay();
+        RaycastHit hudHit;
+
+        Debug.DrawRay(hudRay.origin, hudRay.direction * _maxGrabDistance, Color.blue, 0.01f);
+
+        if (Physics.Raycast(hudRay, out hudHit, _maxGrabDistance, _grabLayer)) CrosshairOnRange.GetComponent<Image>().enabled = true;
+        else CrosshairOnRange.GetComponent<Image>().enabled = false;
+
         if (!Input.GetMouseButton(0))
         {
             if (_grabbedRigidbody != null) ReleaseObject();
             _justReleased = false;
+            usingTelequinesis = false;
             return;
         }
 
@@ -244,7 +259,7 @@ public class TelekinesisController : MonoBehaviour
                     gameObject.GetComponent<AudioSource>().clip = onGrabbed;
                     gameObject.GetComponent<AudioSource>().Play();
                     _grabbedRigidbody = hit.rigidbody;
-                    _grabbedRigidbody.transform.parent = playerTransform.transform;
+                    //_grabbedRigidbody.transform.parent = playerTransform.transform;
                     _wasKinematic = _grabbedRigidbody.isKinematic;
                     _grabbedRigidbody.isKinematic = false;
                     if (!_grabbedRigidbody.freezeRotation)
@@ -262,6 +277,7 @@ public class TelekinesisController : MonoBehaviour
                     _grabbedTransform = _grabbedRigidbody.transform;
                     _grabbedRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
                     OnObjectGrabbed.Invoke(_grabbedRigidbody.gameObject);
+                    usingTelequinesis = true;
                     Debug.DrawRay(hit.point, hit.normal * 10f, Color.red, 10f);
                 }
             }
@@ -332,8 +348,6 @@ public class TelekinesisController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Q))
                 direction = 0.1f;
 
-            */
-
             if (Mathf.Abs(direction) > 0 && CheckObjectDistance(direction))
             {
                 _distanceChanged = true;
@@ -343,6 +357,7 @@ public class TelekinesisController : MonoBehaviour
             {
                 _scrollWheelInput = _zeroVector3;
             }
+            */
 
             //Freeze
             if(Input.GetKeyDown(Freeze))
@@ -350,6 +365,7 @@ public class TelekinesisController : MonoBehaviour
                 _grabbedRigidbody.collisionDetectionMode = !_wasKinematic ? CollisionDetectionMode.ContinuousSpeculative : CollisionDetectionMode.Continuous;
                 _grabbedRigidbody.isKinematic = _wasKinematic = !_wasKinematic;
                 _justReleased = true;
+                usingTelequinesis = false;
                 ReleaseObject();
             }
         }

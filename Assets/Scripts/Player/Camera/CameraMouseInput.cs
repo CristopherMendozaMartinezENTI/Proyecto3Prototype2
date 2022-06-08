@@ -48,5 +48,10 @@ public class CameraMouseInput : CameraInput
 
         return _input;
     }
+
+    public void SetMouseInputMultiplier(float multiplier)
+    {
+        mouseInputMultiplier = multiplier;
+    }
 }
 

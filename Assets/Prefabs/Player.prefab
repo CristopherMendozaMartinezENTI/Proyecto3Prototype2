@@ -47,7 +47,6 @@ MonoBehaviour:
   _uvAnimationRate: {x: 1, y: 0}
   _arcResolution: 16
   _attachEffect: {fileID: 3264488835214939277}
-  renderChildren: 1
 --- !u!120 &316846433293940231
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -204,6 +203,7 @@ MonoBehaviour:
   RotateZ: 304
   RotationSpeedIncrease: 306
   ResetRotation: 325
+  usingTelequinesis: 0
   _laserStartPoint: {fileID: 3264488835536850073}
   playerTransform: {fileID: 3261572382688342256}
   _rotationSenstivity: 1.5
@@ -211,7 +211,6 @@ MonoBehaviour:
   _snappedRotationSens: 10
   _rotationSpeed: 5
   _rotationTollerance: 0.8
-  _scrollWheelSensitivity: 15
   _minObjectDistance: 2.5
   _maxGrabDistance: 7
   onGrabbed: {fileID: 8300000, guid: 5d6b5d11c8db921428eac318242fc300, type: 3}
@@ -1119,11 +1118,10 @@ GameObject:
   - component: {fileID: 3263111087555331594}
   - component: {fileID: 3263111087555331596}
   - component: {fileID: 3263111087555331599}
-  - component: {fileID: 3263111087555331597}
   - component: {fileID: 3263111087555331592}
   - component: {fileID: 3263111087555331595}
-  - component: {fileID: 3263111087555331593}
   - component: {fileID: 3263111087555331606}
+  - component: {fileID: 3263111087555331593}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1177,7 +1175,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967287
+    m_Bits: 8183
   m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1282,22 +1280,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &3263111087555331597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263111087555331598}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7cb136528f8704a9446a648456a1ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: f3e1b2051225fbd4d9c8fcf5efba2655, type: 3}
-  lineWidth: 2
-  hardness: 0.5
-  displacementSpeed: 0.5
 --- !u!114 &3263111087555331592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,15 +1323,6 @@ MonoBehaviour:
   outlineShaderMaterial: {fileID: 0}
   renderTexture: {fileID: 0}
   extraRenderTexture: {fileID: 0}
---- !u!45 &3263111087555331593
-Skybox:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263111087555331598}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 16bc8a9d5451ca44d8f70575adbece3a, type: 2}
 --- !u!114 &3263111087555331606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,6 +1335,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a42331d6ec5746d4960a877e58cfb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!45 &3263111087555331593
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263111087555331598}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 16bc8a9d5451ca44d8f70575adbece3a, type: 2}
 --- !u!1 &3263148528201215117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,11 +1691,9 @@ GameObject:
   - component: {fileID: 3282191014706142214}
   - component: {fileID: 3231588005391234018}
   - component: {fileID: 3232279421453417774}
-  - component: {fileID: 3200768312901682828}
   - component: {fileID: 3263224906063933120}
-  - component: {fileID: 3263224906063933122}
-  - component: {fileID: 3263224906063933123}
   - component: {fileID: 3263224906063933125}
+  - component: {fileID: 3200768312901682828}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1814,8 +1794,8 @@ MonoBehaviour:
   groundFriction: 100
   gravity: 30
   slideGravity: 5
-  slopeLimit: 80
-  useLocalMomentum: 0
+  slopeLimit: 60
+  useLocalMomentum: 1
   cameraTransform: {fileID: 3261350602266547094}
 --- !u!114 &3232279421453417774
 MonoBehaviour:
@@ -1833,6 +1813,49 @@ MonoBehaviour:
   verticalInputAxis: Vertical
   jumpKey: 32
   useRawInput: 1
+--- !u!114 &3263224906063933120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263224906063933124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906cf3fd207e5450784f73a2d4b57b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphicsObject: {fileID: 3264488835933018107}
+--- !u!114 &3263224906063933125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263224906063933124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d296f3412ce1434a84b75a9a8ec966e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 3200768312901682828}
+  floorTag: 
+  useAnimationBasedFootsteps: 0
+  landVelocityThreshold: 5
+  footstepDistance: 3
+  audioClipVolume: 0.1
+  relativeRandomizedVolumeRange: 0.3
+  footStepClips:
+  - {fileID: 8300000, guid: 7341ba07f02fa6941b16a463ddd73f99, type: 3}
+  - {fileID: 8300000, guid: e3f49445f5561454ebd1204104503cd3, type: 3}
+  footMetalStepClips:
+  - {fileID: 8300000, guid: 02a09a5a92e506c489928393c3ce2761, type: 3}
+  - {fileID: 8300000, guid: f3f81d4c59f9ddf4ebe24bfea36670b7, type: 3}
+  footRugStepClips:
+  - {fileID: 8300000, guid: d123d51cb7d1be440b7bb129201b381f, type: 3}
+  - {fileID: 8300000, guid: 5e1a85ad9a9e8704d82ed94745360640, type: 3}
+  jumpClip: {fileID: 8300000, guid: 99ab8a4503de1f448ad764a5c4cdf9cc, type: 3}
+  landClip: {fileID: 8300000, guid: c212aa2d646dfe248b7c96b4f0e4cb27, type: 3}
 --- !u!82 &3200768312901682828
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1930,74 +1953,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &3263224906063933120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906cf3fd207e5450784f73a2d4b57b4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphicsObject: {fileID: 3264488835933018107}
---- !u!114 &3263224906063933122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9830259acb1f0ed4a87ab1737b92341e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRewindData: 24
-  secondsBetweenData: 0.1
-  rewindDuration: 0.2
-  playerCameraController: {fileID: 3231935991915794946}
-  rData: []
---- !u!114 &3263224906063933123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f1acc68ce5c9c4da7c7bbbf24128bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxGrabDistance: 10
-  _player: {fileID: 3231588005391234018}
-  _camera: {fileID: 3231935991915794946}
---- !u!114 &3263224906063933125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263224906063933124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d296f3412ce1434a84b75a9a8ec966e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 3200768312901682828}
-  useAnimationBasedFootsteps: 0
-  landVelocityThreshold: 5
-  footstepDistance: 3
-  audioClipVolume: 0.1
-  relativeRandomizedVolumeRange: 0.3
-  footStepClips:
-  - {fileID: 8300000, guid: 7341ba07f02fa6941b16a463ddd73f99, type: 3}
-  - {fileID: 8300000, guid: 3efdd4c11a4bdc54a9087ab115c1de9e, type: 3}
-  jumpClip: {fileID: 8300000, guid: 99ab8a4503de1f448ad764a5c4cdf9cc, type: 3}
-  landClip: {fileID: 8300000, guid: c212aa2d646dfe248b7c96b4f0e4cb27, type: 3}
 --- !u!1 &3263237676914732113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,7 +3644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3264488834742213290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.000000059604645, y: 0, z: 0.0000015199184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3261355755753294380}

@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//ESTO SE TIENE QUE BORRAR
+using UnityEngine.SceneManagement;
+
 
 ////Esta script permite controlar el movimiento del player
 public class PlayerMovementController : Controller 
 {
+	private CheckPointSystem cps;
+
 	protected Transform tr;
 	protected PlayerColliderController collCtrl;
 	protected PlayerInput characterInput;
@@ -13,6 +18,8 @@ public class PlayerMovementController : Controller
 	private bool jumpKeyWasPressed = false;
 	private bool jumpKeyWasLetGo = false;
 	private bool jumpKeyIsPressed = false;
+
+	private bool setupPlayerinScene = false;
 
 	[Header("Player Options")]
 	[SerializeField] private float movementSpeed = 7f;
@@ -31,6 +38,8 @@ public class PlayerMovementController : Controller
 	[SerializeField] private float slideGravity = 5f;
 	[SerializeField] private float slopeLimit = 80f;
 	[SerializeField] private bool useLocalMomentum = false;
+
+
 
 	public enum ControllerState
 	{
@@ -54,7 +63,19 @@ public class PlayerMovementController : Controller
 		Setup();
 	}
 
-	protected virtual void Setup(){}
+	private void Start()
+    {
+		cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
+		setupPlayerinScene = false;
+    }
+
+	private void SetupPlayer()
+    {
+		this.transform.position = cps.lastCheckPoint;
+		this.transform.rotation = cps.lastRotation;
+	}
+
+    protected virtual void Setup(){}
 
 	private void FixedUpdate()
 	{
@@ -64,6 +85,19 @@ public class PlayerMovementController : Controller
 	private void Update()
 	{
 		HandleJumpKeyInput();
+        
+		//ESTO SE TIENE QUE BORRAR.
+		if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+		
+		if (!setupPlayerinScene)
+		{
+			SetupPlayer();
+			setupPlayerinScene = true;
+		}
+
 	}
 
 	private void ControllerUpdate()

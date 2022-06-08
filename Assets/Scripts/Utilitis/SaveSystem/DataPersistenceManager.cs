@@ -17,11 +17,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance == null)
         {
-            Debug.LogError("Found more than one Data Persistence Manager in the scene.");
+            instance = this;
+            DontDestroyOnLoad(instance);
         }
-        instance = this;
+        else Destroy(gameObject);
     }
 
     private void Start()
@@ -63,7 +64,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(gameData);
         }
-
+        Debug.Log("lvl: " + gameData.currentLevel + "postn: " + gameData.lastCheckpoint);
         //Guardar la data utilizando el datahandler
         dataHandler.Save(gameData);
     }

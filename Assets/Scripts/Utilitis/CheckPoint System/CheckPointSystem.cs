@@ -30,6 +30,7 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
 
         lastScene = SceneManager.GetActiveScene();
 
+        //Test
         startingPositions.Add(new Vector3(-111.8813f, -3.5f, -0.9537506f));
         startingRotations.Add(new Vector3(0, 90, 0));
         //SC-1
@@ -38,11 +39,6 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
         //SC-2
         startingPositions.Add(new Vector3(30.09577f, 34.10477f, 19.0097f));
         startingRotations.Add(new Vector3(0, -180, 0));
-        //SC-3
-        /*
-        startingPositions.Add(new Vector3(-111.2674f, 16.27318f, 96.5537f));
-        startingRotations.Add(new Vector3(0, -60, 0));
-        */
         //SC - Final
         startingPositions.Add(new Vector3(241.27f, 15.3f, 230.3291f));
         startingRotations.Add(new Vector3(0, 90, 0));
@@ -69,31 +65,28 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
         //Si Reset Level ha sido seleccionado. La posicion del player pasa a ser la posicion inicial del puzle.
         switch (name)
         {
+            //SC1
             case "SC-1 TMP":
                 lastCheckPoint = startingPositions[1];
                 lastRotation = Quaternion.Euler(startingRotations[1]);
                 currentLevel = 1;
                 break;
+            //SC2
             case "SC-2":
                 lastCheckPoint = startingPositions[2]; 
                 lastRotation = Quaternion.Euler(startingRotations[2]);
                 currentLevel = 2;
                 break;
-                     /*
-                        case "SC-3":
-                        lastCheckPoint = startingPositions[3];
-                        lastRotation = Quaternion.Euler(startingRotations[3]);
-                        currentLevel = 3;
-                        break;
-                     */
+            //final
             case "SC - Final":
                 lastCheckPoint = startingPositions[3];
-                lastRotation = Quaternion.Euler(startingRotations[4]);
+                lastRotation = Quaternion.Euler(startingRotations[1]);
                 currentLevel = 3;
                 break;
+            //TEST
             default:
-                lastCheckPoint = startingPositions[0];
-                lastRotation = Quaternion.Euler(startingRotations[0]);
+                lastCheckPoint = startingPositions[1];
+                lastRotation = Quaternion.Euler(startingRotations[1]);
                 currentLevel = 0;
                 break;
         }

@@ -25,7 +25,6 @@ public class MenuManager : MonoBehaviour
         sceneNames.Add("Test");
         sceneNames.Add("SC-1 TMP");
         sceneNames.Add("SC-2");
-        //sceneNames.Add("SC-3");
         sceneNames.Add("SC - Final");
     }
     private void Update()

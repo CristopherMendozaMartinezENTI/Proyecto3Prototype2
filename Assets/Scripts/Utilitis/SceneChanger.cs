@@ -13,31 +13,29 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            cps.lastCheckPoint = cps.startingPositions[1];
-            cps.lastRotation = Quaternion.Euler(cps.startingRotations[1]);
+            cps.lastCheckPoint = cps.startingPositions[0];
+            cps.lastRotation = Quaternion.Euler(cps.startingRotations[0]);
             SceneManager.LoadScene(1);
         }
 
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            cps.lastCheckPoint = cps.startingPositions[2];
-            cps.lastRotation = Quaternion.Euler(cps.startingRotations[2]);
+            cps.lastCheckPoint = cps.startingPositions[1];
+            cps.lastRotation = Quaternion.Euler(cps.startingRotations[1]);
             SceneManager.LoadScene(2);
         }
 
         if (Input.GetKeyDown(KeyCode.F3))
         {
-            cps.lastCheckPoint = cps.startingPositions[3];
-            cps.lastRotation = Quaternion.Euler(cps.startingRotations[3]);
+            cps.lastCheckPoint = cps.startingPositions[2];
+            cps.lastRotation = Quaternion.Euler(cps.startingRotations[2]);
 
             SceneManager.LoadScene(3);
         }
-
+/*
         if (Input.GetKeyDown(KeyCode.F4))
         {
-            cps.lastCheckPoint = cps.startingPositions[4];
-            cps.lastRotation = Quaternion.Euler(cps.startingRotations[4]);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(0);
         }
 
         if (Input.GetKeyDown(KeyCode.F5))
@@ -80,5 +78,6 @@ public class SceneChanger : MonoBehaviour
         {
             SceneManager.LoadScene(11);
         }
+*/
     }
 }

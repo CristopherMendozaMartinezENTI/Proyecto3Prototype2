@@ -22,7 +22,6 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
-        sceneNames.Add("Test");
         sceneNames.Add("SC-1 TMP");
         sceneNames.Add("SC-2");
         sceneNames.Add("SC - Final");
@@ -50,9 +49,11 @@ public class MenuManager : MonoBehaviour
 
     public void loadGame()
     {
+        if (DataPersistenceManager.instance.newGame == false)
+            cps.loadOrReset = true;
+     
         DataPersistenceManager.instance.LoadGame();
         sceneName = sceneNames[cps.currentLevel];
-        cps.loadOrReset = true;
         StartCoroutine(enablePlayCamera());
     }
 

@@ -19,6 +19,8 @@ public class PlayerMovementController : Controller
 	private bool jumpKeyWasLetGo = false;
 	private bool jumpKeyIsPressed = false;
 
+	private bool setupPlayerinScene = false;
+
 	[Header("Player Options")]
 	[SerializeField] private float movementSpeed = 7f;
 	[SerializeField] private float airControlRate = 2f;
@@ -63,12 +65,15 @@ public class PlayerMovementController : Controller
 
 	private void Start()
     {
-		
 		cps = GameObject.FindGameObjectWithTag("CPS").GetComponent<CheckPointSystem>();
+		setupPlayerinScene = false;
+    }
+
+	private void SetupPlayer()
+    {
 		this.transform.position = cps.lastCheckPoint;
 		this.transform.rotation = cps.lastRotation;
-		
-    }
+	}
 
     protected virtual void Setup(){}
 
@@ -86,6 +91,13 @@ public class PlayerMovementController : Controller
         {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+		
+		if (!setupPlayerinScene)
+		{
+			SetupPlayer();
+			setupPlayerinScene = true;
+		}
+
 	}
 
 	private void ControllerUpdate()

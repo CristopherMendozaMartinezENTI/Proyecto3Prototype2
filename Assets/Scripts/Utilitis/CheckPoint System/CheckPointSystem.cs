@@ -30,9 +30,6 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
 
         lastScene = SceneManager.GetActiveScene();
 
-        //Test
-        startingPositions.Add(new Vector3(-111.8813f, -3.5f, -0.9537506f));
-        startingRotations.Add(new Vector3(0, 90, 0));
         //SC-1
         startingPositions.Add(new Vector3(-33.5f, 0.375f, 12.25005f));
         startingRotations.Add(new Vector3(0, -270, 0));
@@ -43,10 +40,10 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
         startingPositions.Add(new Vector3(241.27f, 15.3f, 230.3291f));
         startingRotations.Add(new Vector3(0, 90, 0));
 
-        lastCheckPoint = startingPositions[1];
+        lastCheckPoint = startingPositions[0];
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         currentScene = SceneManager.GetActiveScene();
         if (currentScene != lastScene)
@@ -67,26 +64,26 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
         {
             //SC1
             case "SC-1 TMP":
-                lastCheckPoint = startingPositions[1];
-                lastRotation = Quaternion.Euler(startingRotations[1]);
+                lastCheckPoint = startingPositions[0];
+                lastRotation = Quaternion.Euler(startingRotations[0]);
                 currentLevel = 1;
                 break;
             //SC2
             case "SC-2":
-                lastCheckPoint = startingPositions[2]; 
-                lastRotation = Quaternion.Euler(startingRotations[2]);
+                lastCheckPoint = startingPositions[1]; 
+                lastRotation = Quaternion.Euler(startingRotations[1]);
                 currentLevel = 2;
                 break;
             //final
             case "SC - Final":
-                lastCheckPoint = startingPositions[3];
-                lastRotation = Quaternion.Euler(startingRotations[1]);
+                lastCheckPoint = startingPositions[2];
+                lastRotation = Quaternion.Euler(startingRotations[2]);
                 currentLevel = 3;
                 break;
-            //TEST
+            //sc1
             default:
-                lastCheckPoint = startingPositions[1];
-                lastRotation = Quaternion.Euler(startingRotations[1]);
+                lastCheckPoint = startingPositions[0];
+                lastRotation = Quaternion.Euler(startingRotations[0]);
                 currentLevel = 0;
                 break;
         }

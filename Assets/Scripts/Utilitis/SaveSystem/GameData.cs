@@ -13,7 +13,7 @@ public class GameData
     public GameData()
     {
         this.currentLevel = 0;
-        lastCheckpoint = Vector3.zero;
-        lastRotation = Quaternion.identity;
+        lastCheckpoint = new Vector3(-33.5f, 0.375f, 12.25005f);
+        lastRotation = Quaternion.Euler(new Vector3(0, -270, 0));
     }
 }

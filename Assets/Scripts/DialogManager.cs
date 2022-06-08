@@ -46,6 +46,7 @@ public class DialogManager : MonoBehaviour
     }
     public void PlayDialogue(string triggerName)
     {
+        StopAllCoroutines();
         StartCoroutine(setSubtitles(triggerName));
     }
     public IEnumerator setSubtitles(string _triggerName)

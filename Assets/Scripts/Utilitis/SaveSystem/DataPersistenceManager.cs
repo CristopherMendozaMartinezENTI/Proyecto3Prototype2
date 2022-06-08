@@ -8,7 +8,6 @@ public class DataPersistenceManager : MonoBehaviour
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
-    public bool newGame;
 
     public GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
@@ -48,7 +47,6 @@ public class DataPersistenceManager : MonoBehaviour
         if (this.gameData == null)
         {
             Debug.Log("No data was found. Initializing data to defaults.");
-            newGame = true;
             NewGame();
         }
 

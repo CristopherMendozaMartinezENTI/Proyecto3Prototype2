@@ -66,19 +66,19 @@ public class CheckPointSystem : MonoBehaviour, IDataPersistence
             case "SC-1 TMP":
                 lastCheckPoint = startingPositions[0];
                 lastRotation = Quaternion.Euler(startingRotations[0]);
-                currentLevel = 1;
+                currentLevel = 0;
                 break;
             //SC2
             case "SC-2":
                 lastCheckPoint = startingPositions[1]; 
                 lastRotation = Quaternion.Euler(startingRotations[1]);
-                currentLevel = 2;
+                currentLevel = 1;
                 break;
             //final
             case "SC - Final":
                 lastCheckPoint = startingPositions[2];
                 lastRotation = Quaternion.Euler(startingRotations[2]);
-                currentLevel = 3;
+                currentLevel = 2;
                 break;
             //sc1
             default:

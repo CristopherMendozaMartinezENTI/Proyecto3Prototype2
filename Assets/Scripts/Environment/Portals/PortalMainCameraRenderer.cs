@@ -14,7 +14,15 @@ public class PortalMainCameraRenderer : MonoBehaviour {
         foreach(Portal portal in portals)
         {
             portal.PrePortalRender();
+        }
+
+        foreach (Portal portal in portals)
+        {
             portal.Render();
+        }
+
+        foreach (Portal portal in portals)
+        {
             portal.PostPortalRender();
         }
     }
